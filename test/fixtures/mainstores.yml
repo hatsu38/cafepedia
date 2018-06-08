@@ -3,9 +3,7 @@
 one:
   name: MyString
   logo: MyString
-  store: one
 
 two:
   name: MyString
   logo: MyString
-  store: two

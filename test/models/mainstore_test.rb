@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MainstroreTest < ActiveSupport::TestCase
+class MainstoreTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
