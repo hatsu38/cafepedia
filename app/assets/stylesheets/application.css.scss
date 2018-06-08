@@ -18,9 +18,15 @@ $primary-color: color("green","darken-3") !default;
 @import "materialize";
 @import 'font-awesome.css';
 
+body{
+  background-color:#fefefe;
+}
 header{
   background:linear-gradient(45deg,#008E41 0,#009137 100%);
   padding:.5em;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.32),
+              0 4px 5px 0 rgba(0,0,0,0.06),
+              0 1px 10px 0 rgba(0,0,0,0.08);
   a{
     font-size:2.2em;
   }
@@ -44,11 +50,59 @@ header{
       .filter_content{
         border: 1.5px solid #999;
         border-radius: 5px;
-        font-size:1.1555555em;
+        font-size:1.15em;
+        background-color:#fff;
       }
       &.col{
         padding:0 0.2em;
       }
     }
   }
+  .stores_box{
+    .store{
+      background-color:#fff;
+      margin: 1em auto;
+      border: 1.5px solid #999;
+      padding: 0 .5em;
+      h2{
+        font-size:1.2em;
+        margin: .2em auto;
+      }
+      .row{
+        margin-bottom:0;
+      }
+      .mainstore_logo{
+        img{
+          max-width: 100%;
+          border:1px solid #999;
+        }
+      }
+      table{
+        tr{
+          font-size: 12px;
+          th{
+            width: 55px;
+          }
+          th,td{
+            padding: 4px 1px;
+            p{
+              margin: 2px auto;
+            }
+          }
+        }
+      }
+      .icons_box{
+        margin-bottom: 1em;
+        i{
+          border:1.5px solid #999;
+          padding:.2em;
+          font-size: 1.5em;
+          margin: .2em .3em;
+          width: 1.8em;
+          text-align:center;
+        }
+      }
+    }
+  }
 }
+
