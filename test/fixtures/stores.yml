@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  prefecture: MyString
+  city: MyString
+  town: MyString
+  tyo: 1
+  ban: 1
+  go: 1
+  access: MyText
+  tel: 1
+  weekday_start: 2018-06-08 19:02:31
+  weekday_finish: 2018-06-08 19:02:31
+  saturday_start: 2018-06-08 19:02:31
+  saturday_finish: 2018-06-08 19:02:31
+  sunday_start: 2018-06-08 19:02:31
+  sunday_finish: 2018-06-08 19:02:31
+  hp: MyString
+  wifi: false
+  socket: false
+  smoking: false
+  mainstore: one
+
+two:
+  name: MyString
+  prefecture: MyString
+  city: MyString
+  town: MyString
+  tyo: 1
+  ban: 1
+  go: 1
+  access: MyText
+  tel: 1
+  weekday_start: 2018-06-08 19:02:31
+  weekday_finish: 2018-06-08 19:02:31
+  saturday_start: 2018-06-08 19:02:31
+  saturday_finish: 2018-06-08 19:02:31
+  sunday_start: 2018-06-08 19:02:31
+  sunday_finish: 2018-06-08 19:02:31
+  hp: MyString
+  wifi: false
+  socket: false
+  smoking: false
+  mainstore: two
