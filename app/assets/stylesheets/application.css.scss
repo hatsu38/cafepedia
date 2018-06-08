@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+@import "materialize/components/color";
+$primary-color: color("green","darken-3") !default;
+@import "materialize";
+@import 'font-awesome.css';
+
+header{
+  background:linear-gradient(45deg,#008E41 0,#009137 100%);
+  padding:.5em;
+  a{
+    font-size:2.2em;
+  }
+  h1.logo{
+    margin: 0;
+    letter-spacing:.2em;
+    font-size:1.3em;
+  }
+}
+
+.content{
+  .search_box{
+    padding-top: .8em;
+  }
+  .filter_box{
+    width: 95%;
+    margin:0 auto;
+    .filter{
+        line-height:2.8em;
+        height:2.8em;
+      .filter_content{
+        border: 1.5px solid #999;
+        border-radius: 5px;
+        font-size:1.1555555em;
+      }
+      &.col{
+        padding:0 0.2em;
+      }
+    }
+  }
+}

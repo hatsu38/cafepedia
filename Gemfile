@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 gem 'materialize-sass'
+# gem 'font-awesome-sass'
+gem "font-awesome-rails"
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
