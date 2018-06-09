@@ -26,7 +26,7 @@
     hp: "https://www.starbucks.co.jp/store/search/detail.php?id=0264i",
     wifi: Faker::Boolean.boolean,
     socket: Faker::Boolean.boolean,
-    smoking: Faker::Boolean.boolean,
+    smoking: true,
     mainstore_id: 1
   )
 end
