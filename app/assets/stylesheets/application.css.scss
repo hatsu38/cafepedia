@@ -61,30 +61,41 @@ header{
   .stores_box{
     .store{
       background-color:#fff;
-      margin: 1em auto;
+      margin: 2em auto;
       border: 1.5px solid #999;
       padding: 0 .5em;
       h2{
         font-size:1.2em;
-        margin: .2em auto;
+        margin: .2em auto 0;
+      }
+      span{
+        font-size:.8em;
+        color: #595960;
       }
       .row{
         margin-bottom:0;
       }
       .mainstore_logo{
+        padding-left: 0px;
+        // height:4em;
         img{
           max-width: 100%;
           border:1px solid #999;
         }
       }
       table{
+        height:115px;
+        border:1px solid #ccc;
         tr{
-          font-size: 12px;
+          // font-size: 12px;
           th{
-            width: 55px;
+            // width: 55px;
+            background-color:#eee;
           }
           th,td{
-            padding: 4px 1px;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            padding: .2em;
             p{
               margin: 2px auto;
             }
@@ -100,6 +111,9 @@ header{
           margin: .2em .3em;
           width: 1.8em;
           text-align:center;
+          &:first-child{
+            margin-left:0;
+          }
         }
       }
     }

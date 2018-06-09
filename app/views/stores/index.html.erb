@@ -24,51 +24,45 @@
   </div>
 
   <div class="stores_box">
-    <%= @stores.each do |store| %>
+    <% @stores.each do |store| %>
       <div class="store">
         <h2><%= store.name %></h2>
+        <span><%= store.access %></span>
         <div class="row">
           <div class="col s5 mainstore_logo">
             <%= image_tag(store.mainstore.logo) %>
           </div>
-          <table class="col s7">
-          <tbody>
-            <tr>
-              <td>アクセス</td>
-              <td><%= store.access %></td>
-            </tr>
-            <tr>
-              <td>住所</td>
-              <td>
-                <%= store.prefecture %>
-                <%= store.city %>
-                <%= store.town %>
-                <%= store.tyo %>-
-                <%= store.ban %>-
-                <%= store.go %>
-              </td>
-            </tr>
-            <tr>
-              <th>営業時間</th>
-              <td><p>平日：<%= store.weekday_start.strftime("%I:%M") %>~<%= store.weekday_finish.strftime("%I:%M")%></p>
-              <p>土曜：<%= store.saturday_start.strftime("%I:%M") %>~<%= store.saturday_finish.strftime("%I:%M") %></p>
-              <p>日祝：<%= store.sunday_start.strftime("%I:%M") %>~<%= store.sunday_finish.strftime("%I:%M") %></p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          <div class="col s7">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>営業時間</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <p>平日：<%= store.weekday_start.strftime("%I:%M") %>~<%= store.weekday_finish.strftime("%I:%M")%></p>
+                  <p>土曜：<%= store.saturday_start.strftime("%I:%M") %>~<%= store.saturday_finish.strftime("%I:%M") %></p>
+                  <p>日祝：<%= store.sunday_start.strftime("%I:%M") %>~<%= store.sunday_finish.strftime("%I:%M") %></p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
         </div>
         <div class="icons_box">
-        <% if store.smoking %>
-          <i class="fas fa-smoking"></i>
-        <% end %>
-        <% if store.wifi %>
-          <i class="fas fa-wifi"></i>
-        <% end %>
-        <% if store.socket %>
-          <i class="fas fa-plug"></i>
-        <% end %>
+          <% if store.smoking %>
+            <i class="fas fa-smoking"></i>
+          <% end %>
+          <% if store.wifi %>
+            <i class="fas fa-wifi"></i>
+          <% end %>
+          <% if store.socket %>
+            <i class="fas fa-plug"></i>
+          <% end %>
         </div>
-    </div>
-  <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
