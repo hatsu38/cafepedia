@@ -22,6 +22,7 @@ json.set! :stores do
       :socket,
       :smoking,
       :mainstore_id,
+      :mainstore,
       :created_at,
       :updated_at
   end

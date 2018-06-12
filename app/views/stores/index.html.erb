@@ -29,8 +29,7 @@
     <span>{{ store.access}}</span>
     <div class="row">
       <div class="col s5 mainstore_logo">
-      <!--   {{store.mainstore.logo}} -->
-      <%= image_tag
+        <img v-bind:src="store.mainstore.logo">
       </div>
       <div class="col s7">
         <table class="table">
