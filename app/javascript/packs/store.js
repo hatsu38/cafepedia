@@ -8,7 +8,9 @@ var app = new Vue({
   //   'store_list': Index,
   // },
   data: {
-    stores: []
+    stores: [],
+    isSocketFilterOn: false,
+    isWifiFilterOn: false
   },
   mounted: function(){
     this.fetchStores();
@@ -22,7 +24,27 @@ var app = new Vue({
       },function(){
         alert('Sory');
       });
-    }
+    },
+    socketFilter: function(){
+      var stores = []
+      this.stores.filter(function(value){
+        if(value.socket == true){
+          stores.push(value);
+        }
+      });
+      app.stores = stores
+      app.isSocketFilterOn = !app.isSocketFilterOn
+    },
+    wifiFilter: function(){
+      var stores = []
+      this.stores.filter(function(value){
+        if(value.wifi == true){
+          stores.push(value);
+        }
+      });
+      app.stores = stores
+      app.isWifiFilterOn = !app.isWifiFilterOn
+    },
   },
   filters: {
     moment: function(data){

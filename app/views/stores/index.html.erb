@@ -8,55 +8,63 @@
     </form>
   </div>
 
-  <div class="filter_box row center">
-    <div class="filter col s6">
-      <div class="filter_content">
-        <i class="fas fa-plug"></i>
-        コンセント
+  <div id="stores_index">
+    <div class="filter_box row center">
+      <div class="filter col s6">
+        <div class="filter_content"
+             @click="socketFilter"
+             :class="{socketFilterOn: isSocketFilterOn}"
+            >
+          <i class="fas fa-plug"></i>
+          コンセント
+        </div>
+      </div>
+      <div class="filter col s6">
+        <div class="filter_content"
+             @click="wifiFilter"
+             :class="{wifiFilterOn: isWifiFilterOn}"
+             >
+          <i class="fas fa-wifi"></i>
+          フリーWi-Fi
+        </div>
       </div>
     </div>
-    <div class="filter col s6">
-      <div class="filter_content">
-        <i class="fas fa-wifi"></i>
-        フリーWi-Fi
-      </div>
-    </div>
-  </div>
 
-  <div class="stores_box" id="stores_index">
-  <div class="store" v-for="store in stores">
-    <h2>{{ store.name }}</h2>
-    <span>{{ store.access}}</span>
-    <div class="row">
-      <div class="col s5 mainstore_logo">
-        <img v-bind:src="store.mainstore.logo">
+    <div class="stores_box">
+      <div class="store" v-for="store in stores">
+        <h2>{{ store.name }}</h2>
+        <span>{{ store.access}}</span>
+        <div class="row">
+          <div class="col s5 mainstore_logo">
+            <img v-bind:src="store.mainstore.logo">
+          </div>
+          <div class="col s7">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>営業時間</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <p>　平日：{{store.weekday_start | moment}}~{{store.weekday_finish | moment }}</p>
+                    <p>土曜日：{{store.saturday_start | moment}}~{{store.saturday_finish | moment}}</p>
+                    <p>日祝日：{{store.sunday_start | moment}}~{{store.sunday_finish | moment}}</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="icons_box">
+          <i class="fas fa-smoking" v-show="store.smoking"></i>
+          <i class="fas fa-wifi" v-show="store.wifi"></i>
+          <i class="fas fa-plug" v-show="store.socket"></i>
+        </div>
       </div>
-      <div class="col s7">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>営業時間</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <p>　平日：{{store.weekday_start | moment}}~{{store.weekday_finish | moment }}</p>
-                <p>土曜日：{{store.saturday_start | moment}}~{{store.saturday_finish | moment}}</p>
-                <p>日祝日：{{store.sunday_start | moment}}~{{store.sunday_finish | moment}}</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="icons_box">
-      <i class="fas fa-smoking" v-show="store.smoking"></i>
-      <i class="fas fa-wifi" v-show="store.wifi"></i>
-      <i class="fas fa-plug" v-show="store.socket"></i>
-    </div>
-  </div>
 
+    </div>
   </div>
 </div>
 

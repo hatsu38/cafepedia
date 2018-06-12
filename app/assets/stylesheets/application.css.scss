@@ -56,6 +56,17 @@ header{
       &.col{
         padding:0 0.2em;
       }
+      .wifiFilterOn{
+        background-color:#ffaeae;
+        color: #ff3030;
+        font-weight: bold;
+      }
+      .socketFilterOn{
+        background-color:#9ec4ff;
+        color: #136df9;
+        font-weight: bold;
+      }
+
     }
   }
   .stores_box{
