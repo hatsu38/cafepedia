@@ -9,6 +9,7 @@ var app = new Vue({
   // },
   data: {
     stores: [],
+    allStores: [],
     isSocketFilterOn: false,
     isWifiFilterOn: false
   },
@@ -21,29 +22,40 @@ var app = new Vue({
         for(var i = 0; i < response.data.stores.length; i++){
           app.stores.push(response.data.stores[i]);
         }
+      app.allStores = app.stores
+        console.log(app.allStores);
       },function(){
         alert('Sory');
       });
     },
     socketFilter: function(){
-      var stores = []
-      this.stores.filter(function(value){
-        if(value.socket == true){
-          stores.push(value);
-        }
-      });
-      app.stores = stores
       app.isSocketFilterOn = !app.isSocketFilterOn
+      app.refreshFilter();
     },
     wifiFilter: function(){
-      var stores = []
-      this.stores.filter(function(value){
-        if(value.wifi == true){
-          stores.push(value);
-        }
-      });
-      app.stores = stores
       app.isWifiFilterOn = !app.isWifiFilterOn
+      app.refreshFilter();
+    },
+    refreshFilter: function(){
+      var stores = [];
+      if(app.isSocketFilterOn && app.isWifiFilterOn){
+        var stores = app.allStores.filter(function(value){
+          return value.socket && value.wifi
+        });
+      }else if(app.isSocketFilterOn && !app.isWifiFilterOn){
+        var stores = app.allStores.filter(function(value){
+          return value.socket && !value.wifi
+        });
+      }else if(!app.isSocketFilterOn && app.isWifiFilterOn){
+        var stores = app.allStores.filter(function(value){
+          return !value.socket && value.wifi
+        });
+      }else if(!app.isSocketFilterOn && !app.isWifiFilterOn){
+        var stores = app.allStores
+      }else{
+        alart("Error!");
+      }
+      app.stores = stores
     },
   },
   filters: {
