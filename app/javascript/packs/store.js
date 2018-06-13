@@ -44,11 +44,11 @@ var app = new Vue({
         });
       }else if(app.isSocketFilterOn && !app.isWifiFilterOn){
         var stores = app.allStores.filter(function(value){
-          return value.socket && !value.wifi
+          return value.socket
         });
       }else if(!app.isSocketFilterOn && app.isWifiFilterOn){
         var stores = app.allStores.filter(function(value){
-          return !value.socket && value.wifi
+          return value.wifi
         });
       }else if(!app.isSocketFilterOn && !app.isWifiFilterOn){
         var stores = app.allStores
