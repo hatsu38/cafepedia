@@ -7,8 +7,8 @@ var app = new Vue({
   data: {
     stores: [],
     allStores: [],
-    isSocketFilterOn: false,
-    isWifiFilterOn: false,
+    onSocket: false,
+    onWifi: false,
     storeSearch: '',
   },
   created: function(){
@@ -26,50 +26,56 @@ var app = new Vue({
       });
     },
     socketFilter: function(){
-      app.isSocketFilterOn = !app.isSocketFilterOn
+      app.onSocket = !app.onSocket
       app.refreshFilter();
     },
     wifiFilter: function(){
-      app.isWifiFilterOn = !app.isWifiFilterOn
+      app.onWifi = !app.onWifi
       app.refreshFilter();
     },
     refreshFilter: function(){
-      if(app.isSocketFilterOn && app.isWifiFilterOn){
-       var stores_list = app.stores.filter(function(value){
+      var stores_list =[];
+      var search_stores = app.wordListupStores();
+      if(app.onSocket && app.onWifi){
+        stores_list = search_stores.filter(function(value){
           return value.socket && value.wifi
         });
-      }else if(app.isSocketFilterOn && !app.isWifiFilterOn){
-        var stores_list = app.stores.filter(function(value){
+      }else if(app.onSocket && !app.onWifi){
+        stores_list = search_stores.filter(function(value){
           return value.socket
         });
-      }else if(!app.isSocketFilterOn && app.isWifiFilterOn){
-        var stores_list = app.stores.filter(function(value){
+      }else if(!app.onSocket && app.onWifi){
+        stores_list = search_stores.filter(function(value){
           return value.wifi
         });
-      }else if(!app.isSocketFilterOn && !app.isWifiFilterOn){
-        var stores_list = app.stores
+      }else if(!app.onSocket && !app.onWifi){
+        stores_list = search_stores
       }else{
         alart("Error!");
       }
       app.stores = stores_list
     },
-    filterStores: function(){
-      // var stores = [];
+    searchStores: function(){
+      app.wordListupStores();
+      app.resetFilter();
+    },
+    wordListupStores: function(){
       var searchWord = this.storeSearch && this.storeSearch.toLowerCase();
-      console.log(searchWord);
-      if(searchWord){
-        var stores_list = app.allStores.filter(function(value){
-          return Object.keys(value).some(function(key){
-            if(key === 'name'){
-            return String(value[key]).toLowerCase().indexOf(searchWord) > -1
-            }
-          })
-        })
-        app.isSocketFilterOn = false
-        app.isWifiFilterOn = false
-        return app.stores = stores_list
+      if(!searchWord){
+        return app.stores = app.allStores
       }
-      return app.stores = app.allStores
+      var stores_list = app.allStores.filter(function(value){
+        return Object.keys(value).some(function(key){
+          if(key === 'name'){
+            return String(value[key]).toLowerCase().indexOf(searchWord) > -1
+          }
+        })
+      })
+      return app.stores = stores_list
+    },
+    resetFilter: function(){
+      app.onSocket= false
+      app.onWifi = false
     }
   },
   // computed: {

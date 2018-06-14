@@ -9,17 +9,15 @@
           >
         <label for="aria">エリア・駅</label>
       </div>
-      <!-- <div class="col s4 input&#45;field"> -->
         <a class="btn waves-effect waves-light col s2 input-field"
-        @click="filterStores">検索</a>
-      <!-- </div> -->
+        @click="searchStores">検索</a>
     </form>
   </div>
   <div class="filter_box row center">
     <div class="filter col s6">
       <div class="filter_content"
            @click="socketFilter"
-           :class="{socketFilterOn: isSocketFilterOn}"
+           :class="{socketFilterOn: onSocket}"
            >
            <i class="fas fa-plug"></i>
            コンセント
@@ -28,7 +26,7 @@
     <div class="filter col s6">
       <div class="filter_content"
            @click="wifiFilter"
-           :class="{wifiFilterOn: isWifiFilterOn}"
+           :class="{wifiFilterOn: onWifi}"
            >
            <i class="fas fa-wifi"></i>
            フリーWi-Fi
