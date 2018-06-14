@@ -34,8 +34,11 @@ var app = new Vue({
       app.refreshFilter();
     },
     refreshFilter: function(){
-      var stores_list =[];
       var search_stores = app.wordListupStores();
+      app.stores = app.filterListupStores(search_stores);
+    },
+    filterListupStores: function(search_stores){
+      var stores_list =[];
       if(app.onSocket && app.onWifi){
         stores_list = search_stores.filter(function(value){
           return value.socket && value.wifi
@@ -53,14 +56,11 @@ var app = new Vue({
       }else{
         alart("Error!");
       }
-      app.stores = stores_list
-    },
-    filterListupStores: function(){
-      
+      return stores_list
     },
     searchStores: function(){
-      app.wordListupStores();
-      app.resetFilter();
+      var search_stores = app.wordListupStores();
+      app.stores = app.filterListupStores(search_stores);
     },
     wordListupStores: function(){
       var searchWord = this.storeSearch && this.storeSearch.toLowerCase();
@@ -74,31 +74,13 @@ var app = new Vue({
           }
         })
       })
-      return app.stores = stores_list
+      return stores_list
     },
     resetFilter: function(){
       app.onSocket= false
       app.onWifi = false
     }
   },
-  // computed: {
-  //   filterStores: function(){
-  //     var stores = [];
-  //     var searchWord = this.storeSearch && this.storeSearch.toLowerCase();
-  //     console.log(searchWord);
-  //     if(searchWord){
-  //       stores = app.allStores.filter(function(value){
-  //         return Object.keys(value).some(function(key){
-  //           if(key === 'name'){
-  //           return String(value[key]).toLowerCase().indexOf(searchWord) > -1
-  //           }
-  //         })
-  //       })
-  //       return app.stores = stores
-  //     }
-  //     return app.stores = app.allStores
-  //   }
-  // },
   filters: {
     moment: function(data){
       return moment(data).format('HH:mm');
