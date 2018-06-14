@@ -4,16 +4,14 @@ import axios from 'axios'
 
 var app = new Vue({
   el: '#stores_index',
-  // components: {
-  //   'store_list': Index,
-  // },
   data: {
     stores: [],
     allStores: [],
     isSocketFilterOn: false,
-    isWifiFilterOn: false
+    isWifiFilterOn: false,
+    storeSearch: '',
   },
-  mounted: function(){
+  created: function(){
     this.fetchStores();
   },
   methods: {
@@ -22,8 +20,7 @@ var app = new Vue({
         for(var i = 0; i < response.data.stores.length; i++){
           app.stores.push(response.data.stores[i]);
         }
-      app.allStores = app.stores
-        console.log(app.allStores);
+        app.allStores = app.stores
       },function(){
         alert('Sory');
       });
@@ -57,7 +54,41 @@ var app = new Vue({
       }
       app.stores = stores
     },
+    filterStores: function(){
+      var stores = [];
+      var searchWord = this.storeSearch && this.storeSearch.toLowerCase();
+      console.log(searchWord);
+      if(searchWord){
+        stores = app.allStores.filter(function(value){
+          return Object.keys(value).some(function(key){
+            if(key === 'name'){
+            return String(value[key]).toLowerCase().indexOf(searchWord) > -1
+            }
+          })
+        })
+        return app.stores = stores
+      }
+      return app.stores = app.allStores
+    }
   },
+  // computed: {
+  //   filterStores: function(){
+  //     var stores = [];
+  //     var searchWord = this.storeSearch && this.storeSearch.toLowerCase();
+  //     console.log(searchWord);
+  //     if(searchWord){
+  //       stores = app.allStores.filter(function(value){
+  //         return Object.keys(value).some(function(key){
+  //           if(key === 'name'){
+  //           return String(value[key]).toLowerCase().indexOf(searchWord) > -1
+  //           }
+  //         })
+  //       })
+  //       return app.stores = stores
+  //     }
+  //     return app.stores = app.allStores
+  //   }
+  // },
   filters: {
     moment: function(data){
       return moment(data).format('HH:mm');
