@@ -55,6 +55,9 @@ var app = new Vue({
       }
       app.stores = stores_list
     },
+    filterListupStores: function(){
+      
+    },
     searchStores: function(){
       app.wordListupStores();
       app.resetFilter();
