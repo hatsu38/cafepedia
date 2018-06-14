@@ -61,6 +61,7 @@ var app = new Vue({
     searchStores: function(){
       var search_stores = app.wordListupStores();
       app.stores = app.filterListupStores(search_stores);
+      $('#aria').blur();
     },
     wordListupStores: function(){
       var searchWord = this.storeSearch && this.storeSearch.toLowerCase();

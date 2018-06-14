@@ -1,17 +1,20 @@
 <div class="content" id="stores_index">
   <div class="search_box">
-    <form class="row search-form">
-      <div class="input-field col s10">
+    <div class="row search-form">
+      <form class="input-field col s10"
+            action="/"
+            onsubmit="return false"
+            @submit.prevent="searchStores">
         <input
-          type="text"
+          type="search"
           id="aria"
           v-model="storeSearch"
           >
         <label for="aria">エリア・駅</label>
-      </div>
+      </form>
         <a class="btn waves-effect waves-light col s2 input-field"
         @click="searchStores">検索</a>
-    </form>
+    </div>
   </div>
   <div class="filter_box row center">
     <div class="filter col s6">
