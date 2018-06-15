@@ -17,19 +17,21 @@
     </div>
   </div>
   <div class="filter_box row center">
-    <div class="filter col s6">
-      <div class="filter_content"
+    <div class="filter-block col s6">
+      <div class="filter_content sort"
            @click="socketFilter"
            :class="{socketFilterOn: onSocket}"
+           data-sort="my-order:asc"
            >
            <i class="fas fa-plug"></i>
            コンセント
       </div>
     </div>
-    <div class="filter col s6">
-      <div class="filter_content"
+    <div class="filter-block col s6">
+      <div class="filter_content sort"
            @click="wifiFilter"
            :class="{wifiFilterOn: onWifi}"
+           data-sort="my-order:asc"
            >
            <i class="fas fa-wifi"></i>
            フリーWi-Fi
@@ -37,8 +39,11 @@
     </div>
   </div>
 
-  <div class="stores_box">
-    <div class="store" v-for="store in stores">
+  <div class="stores_box" id="stores">
+    <div class="store mix"
+         v-for="(store,index) in stores"
+         :class="{socket: store.socket,wifi: store.wifi}"
+         :data-my-order="index+1">
       <h2>{{ store.name }}</h2>
       <span>{{ store.access}}</span>
       <div class="row">
@@ -74,7 +79,13 @@
   </div>
 </div>
 
-
+<%= javascript_include_tag 'jquery.mixitup.min' %>
 <%= javascript_pack_tag 'store' %>
 
 
+<script>
+$(function(){
+  // $('#stores').mixItUp();
+});
+
+</script>

@@ -28,10 +28,12 @@ var app = new Vue({
     socketFilter: function(){
       app.onSocket = !app.onSocket
       app.refreshFilter();
+      $('#stores_index').mixItUp();
     },
     wifiFilter: function(){
       app.onWifi = !app.onWifi
       app.refreshFilter();
+      $('#stores_index').mixItUp();
     },
     refreshFilter: function(){
       var search_stores = app.wordListupStores();
