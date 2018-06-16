@@ -21,7 +21,6 @@
       <div class="filter_content sort"
            @click="socketFilter"
            :class="{socketFilterOn: onSocket}"
-           data-sort="my-order:asc"
            >
            <i class="fas fa-plug"></i>
            コンセント
@@ -31,7 +30,6 @@
       <div class="filter_content sort"
            @click="wifiFilter"
            :class="{wifiFilterOn: onWifi}"
-           data-sort="my-order:asc"
            >
            <i class="fas fa-wifi"></i>
            フリーWi-Fi
@@ -43,7 +41,7 @@
     <div class="store mix"
          v-for="(store,index) in stores"
          :class="{socket: store.socket,wifi: store.wifi}"
-         :data-my-order="index+1">
+        >
       <h2>{{ store.name }}</h2>
       <span>{{ store.access}}</span>
       <div class="row">
@@ -75,17 +73,13 @@
         <i class="fas fa-plug" v-show="store.socket"></i>
       </div>
     </div>
-
   </div>
 </div>
 
-<%= javascript_include_tag 'jquery.mixitup.min' %>
+<%#= javascript_include_tag 'jquery.mixitup' %>
 <%= javascript_pack_tag 'store' %>
-
-
-<script>
-$(function(){
-  // $('#stores').mixItUp();
-});
-
-</script>
+  <script>
+// $(function(){
+//   $('#stores').delay(10000).mixItUp();
+// });
+  </script>

@@ -28,16 +28,15 @@ var app = new Vue({
     socketFilter: function(){
       app.onSocket = !app.onSocket
       app.refreshFilter();
-      $('#stores_index').mixItUp();
     },
     wifiFilter: function(){
       app.onWifi = !app.onWifi
       app.refreshFilter();
-      $('#stores_index').mixItUp();
     },
     refreshFilter: function(){
       var search_stores = app.wordListupStores();
       app.stores = app.filterListupStores(search_stores);
+      app.inOrderFadein();
     },
     filterListupStores: function(search_stores){
       var stores_list =[];
@@ -64,6 +63,7 @@ var app = new Vue({
       var search_stores = app.wordListupStores();
       app.stores = app.filterListupStores(search_stores);
       $('#aria').blur();
+      app.inOrderFadein();
     },
     wordListupStores: function(){
       var searchWord = this.storeSearch && this.storeSearch.toLowerCase();
@@ -82,6 +82,12 @@ var app = new Vue({
     resetFilter: function(){
       app.onSocket= false
       app.onWifi = false
+    },
+    inOrderFadein: function(){
+    $('#stores .store').hide();
+      $('#stores .store').each(function(i){
+        $(this).delay(150 * i).fadeIn(500);
+      });
     }
   },
   filters: {
