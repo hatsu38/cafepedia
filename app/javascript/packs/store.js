@@ -86,7 +86,7 @@ var app = new Vue({
     inOrderFadein: function(){
     $('#stores .store').hide();
       $('#stores .store').each(function(i){
-        $(this).delay(150 * i).fadeIn(500);
+        $(this).delay(180 * i).fadeIn(500);
       });
     }
   },
