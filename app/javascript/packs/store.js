@@ -81,7 +81,7 @@ var app = new Vue({
     refreshFilter: function(){
       var search_stores = app.wordListupStores();
       app.stores = app.filterListupStores(search_stores);
-      app.inOrderFadein();
+      // app.inOrderFadein();
     },
     filterListupStores: function(search_stores){
       var stores_list =[];
@@ -108,7 +108,8 @@ var app = new Vue({
       var search_stores = app.wordListupStores();
       app.stores = app.filterListupStores(search_stores);
       $('#aria').blur();
-      app.inOrderFadein();
+      app.first();
+      // app.inOrderFadein();
     },
     wordListupStores: function(){
       var searchWord = this.storeSearch && this.storeSearch.toLowerCase();
@@ -133,6 +134,15 @@ var app = new Vue({
       $('#stores .store').each(function(i){
         $(this).delay(180 * i).fadeIn(500);
       });
+    },
+    infiniteScroll (event) {
+      // スクロールの現在位置 + 親（.item-container）の高さ >= スクロール内のコンテンツの高さ
+      console.log(event.target.scrollTop);
+      if ((event.target.scrollTop + event.target.offsetHeight) >= event.target.scrollHeight) {
+        // this.fetch();
+      const head = this.currentPage * this.size;
+      return this.stores.slice(head,head+this.size);
+      }
     },
     first () {
       this.currentPage = 0;
