@@ -39,10 +39,10 @@
 
   <div class="stores_box" id="stores">
     <div class="store mix"
-         v-for="(store,index) in stores"
+         v-for="(store,index) in displayStores"
          :class="{socket: store.socket,wifi: store.wifi}"
         >
-      <h2>{{ store.name }}</h2>
+        <h2>{{ store.name }}</h2>
       <span>{{store.access}}</span>
       <div class="row">
         <div class="col s5 mainstore_logo">
@@ -72,12 +72,28 @@
       </div>
     </div>
   </div>
+    <ul class="pagination">
+      <li class="page-item waves-effect">
+        <a @click="first" class="page-link" href="#" onclick="return false;">&laquo;</a>
+      </li>
+      <li class="page-item waves-effect">
+        <a @click="prev" class="page-link" href="#" onclick="return false;">&lt;</a>
+      </li>
+
+      <li
+        v-for="i in displayPageRange"
+        class="page-item waves-effect"
+        :class="{active: i-1 === currentPage}">
+        <a @click="pageSelect(i)" class="page-link" href="#" onclick="return false;">{{ i }}</a>
+      </li>
+
+      <li class="page-item waves-effect">
+        <a @click="next" class="page-link" href="#" onclick="return false;">&gt;</a>
+      </li>
+      <li class="page-item waves-effect">
+        <a @click="last" class="page-link" href="#" onclick="return false;">&raquo;</a>
+      </li>
+    </ul>
 </div>
 
-<%#= javascript_include_tag 'jquery.mixitup' %>
 <%= javascript_pack_tag 'store' %>
-  <script>
-// $(function(){
-//   $('#stores').delay(10000).mixItUp();
-// });
-  </script>
