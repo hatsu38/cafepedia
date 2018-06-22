@@ -135,5 +135,15 @@ header{
       }
     }
   }
+  nav{
+    background-color:transparent;
+    .pagination{
+      .page-item{
+        a{
+          // color: #fff;
+        }
+      }
+    }
+  }
 }
 
