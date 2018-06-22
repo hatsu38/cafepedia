@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20180608121932) do
     t.boolean "wifi"
     t.boolean "socket"
     t.boolean "smoking"
+    t.boolean "iccard"
     t.integer "mainstore_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -5,23 +5,48 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "csv"
 
-30.times do |i|
+starbacks_csv_file = "db/migrate/starbacks_info.csv"
+CSV.read(starbacks_csv_file).each_with_index do |data,i|
+  next if i == 0
   Store.create(
-    name: Faker::FunnyName.name,
-    prefecture: "東京都",
-    city: "葛飾区",
-    other_address: "金町6-4-2ラヴィクレール金町",
-    access: "金町駅から徒歩1分",
-    tel: "03-3826-2323",
-    business_hour: "月〜土：07:00〜22:00日祝：08:00〜22:00",
-    hp: "https://www.starbucks.co.jp/store/search/detail.php?id=0264i",
-    wifi: Faker::Boolean.boolean,
-    socket: Faker::Boolean.boolean,
-    smoking: true,
-    mainstore_id: rand(2)+1
+    name: data[1],
+    prefecture: data[2],
+    city: data[3],
+    other_address: data[4],
+    access: data[5],
+    tel: data[6],
+    business_hour: data[7],
+    hp: data[8],
+    wifi: data[9],
+    socket: data[10],
+    smoking: data[11],
+    iccard: data[12],
+    mainstore_id: 1
   )
 end
+
+doutor_csv_file = "db/migrate/doutor_info.csv"
+CSV.read(doutor_csv_file).each_with_index do |data,i|
+  next if i == 0
+  Store.create(
+    name: data[1],
+    prefecture: data[2],
+    city: data[3],
+    other_address: data[4],
+    access: data[5],
+    tel: data[6],
+    business_hour: data[7],
+    hp: data[8],
+    wifi: data[9],
+    socket: data[10],
+    smoking: data[11],
+    iccard: data[12],
+    mainstore_id: 2
+  )
+end
+
 
 Mainstore.create(
   id: 1,

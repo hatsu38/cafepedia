@@ -12,6 +12,7 @@ class CreateStores < ActiveRecord::Migration[5.1]
       t.boolean :wifi
       t.boolean :socket
       t.boolean :smoking
+      t.boolean :iccard
       t.references :mainstore, foreign_key: true
 
       t.timestamps
