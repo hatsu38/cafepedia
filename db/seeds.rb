@@ -6,32 +6,30 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-30.times do
+30.times do |i|
   Store.create(
     name: Faker::FunnyName.name,
     prefecture: "東京都",
     city: "葛飾区",
-    town: "金町",
-    tyo: 6,
-    ban: 4,
-    go: 2,
+    other_address: "金町6-4-2ラヴィクレール金町",
     access: "金町駅から徒歩1分",
     tel: "03-3826-2323",
-    weekday_start: "7:00",
-    weekday_finish: "22:00",
-    saturday_start: "7:00",
-    saturday_finish: "22:00",
-    sunday_start: "7:00",
-    sunday_finish: "22:00",
+    business_hour: "月〜土：07:00〜22:00日祝：08:00〜22:00",
     hp: "https://www.starbucks.co.jp/store/search/detail.php?id=0264i",
     wifi: Faker::Boolean.boolean,
     socket: Faker::Boolean.boolean,
     smoking: true,
-    mainstore_id: 1
+    mainstore_id: rand(2)+1
   )
 end
 
 Mainstore.create(
-  name: Faker::Coffee.blend_name,
-  logo: Faker::Avatar.image,
+  id: 1,
+  name: "スターバックスコーヒー",
+  image: File.open("./app/assets/images/starbacks_logo.png")
+)
+Mainstore.create(
+  id: 2,
+  name: "ドトールコーヒー",
+  image: File.open("./app/assets/images/doutor_logo.jpg")
 )

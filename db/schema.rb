@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20180608121932) do
 
   create_table "mainstores", force: :cascade do |t|
     t.string "name"
-    t.string "logo"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -23,18 +23,10 @@ ActiveRecord::Schema.define(version: 20180608121932) do
     t.string "name"
     t.string "prefecture"
     t.string "city"
-    t.string "town"
-    t.integer "tyo"
-    t.integer "ban"
-    t.integer "go"
+    t.string "other_address"
     t.text "access"
-    t.integer "tel"
-    t.time "weekday_start"
-    t.time "weekday_finish"
-    t.time "saturday_start"
-    t.time "saturday_finish"
-    t.time "sunday_start"
-    t.time "sunday_finish"
+    t.string "tel"
+    t.text "business_hour"
     t.string "hp"
     t.boolean "wifi"
     t.boolean "socket"

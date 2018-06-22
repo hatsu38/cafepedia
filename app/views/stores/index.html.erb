@@ -43,10 +43,10 @@
          :class="{socket: store.socket,wifi: store.wifi}"
         >
       <h2>{{ store.name }}</h2>
-      <span>{{ store.access}}</span>
+      <span>{{store.access}}</span>
       <div class="row">
         <div class="col s5 mainstore_logo">
-          <img v-bind:src="store.mainstore.logo">
+          <img :src="store.mainstore.image.url">
         </div>
         <div class="col s7">
           <table class="table">
@@ -58,9 +58,7 @@
             <tbody>
               <tr>
                 <td>
-                  <p>　平日：{{store.weekday_start | moment}}~{{store.weekday_finish | moment }}</p>
-                  <p>土曜日：{{store.saturday_start | moment}}~{{store.saturday_finish | moment}}</p>
-                  <p>日祝日：{{store.sunday_start | moment}}~{{store.sunday_finish | moment}}</p>
+                  <p>{{store.business_hour}}</p>
                 </td>
               </tr>
             </tbody>
