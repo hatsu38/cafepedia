@@ -71,10 +71,12 @@ var app = new Vue({
     socketFilter: function(){
       app.onSocket = !app.onSocket
       app.refreshFilter();
+      app.first();
     },
     wifiFilter: function(){
       app.onWifi = !app.onWifi
       app.refreshFilter();
+      app.first();
     },
     refreshFilter: function(){
       var search_stores = app.wordListupStores();
@@ -127,12 +129,12 @@ var app = new Vue({
       app.onWifi = false
     },
     inOrderFadein: function(){
-    $('#stores .store').hide();
+      $('#stores .store').hide();
       $('#stores .store').each(function(i){
         $(this).delay(180 * i).fadeIn(500);
       });
     },
-        first () {
+    first () {
       this.currentPage = 0;
       this.selectHandler();
     },
