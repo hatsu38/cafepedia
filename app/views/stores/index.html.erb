@@ -74,24 +74,24 @@
   </div>
     <ul class="pagination">
       <li class="page-item waves-effect">
-        <a @click="first" class="page-link" href="#" onclick="return false;">&laquo;</a>
+        <a @click="first" class="page-link" href="#" onclick="return false;"><i class="fas fa-angle-double-left"></i></a>
       </li>
       <li class="page-item waves-effect">
-        <a @click="prev" class="page-link" href="#" onclick="return false;">&lt;</a>
+        <a @click="prev" class="page-link" href="#" onclick="return false;"><i class="fas fa-angle-left"></i> 前のページへ</a>
       </li>
 
-      <li
-        v-for="i in displayPageRange"
-        class="page-item waves-effect"
-        :class="{active: i-1 === currentPage}">
-        <a @click="pageSelect(i)" class="page-link" href="#" onclick="return false;">{{ i }}</a>
-      </li>
-
+      <!-- <li -->
+      <!--   v&#45;for="i in displayPageRange" -->
+      <!--   class="page&#45;item waves&#45;effect" -->
+      <!--   :class="{active: i&#45;1 === currentPage}"> -->
+      <!--   <a @click="pageSelect(i)" class="page&#45;link" href="#" onclick="return false;">{{ i }}</a> -->
+      <!-- </li> -->
+      <!--  -->
       <li class="page-item waves-effect">
-        <a @click="next" class="page-link" href="#" onclick="return false;">&gt;</a>
+        <a @click="next" class="page-link" href="#" onclick="return false;">次のページへ <i class="fas fa-angle-right"></i></a>
       </li>
       <li class="page-item waves-effect">
-        <a @click="last" class="page-link" href="#" onclick="return false;">&raquo;</a>
+        <a @click="last" class="page-link" href="#" onclick="return false;"><i class="fas fa-angle-double-right"></i></a>
       </li>
     </ul>
 </div>

@@ -135,12 +135,15 @@ header{
       }
     }
   }
-  nav{
-    background-color:transparent;
-    .pagination{
-      .page-item{
-        a{
-          // color: #fff;
+  .pagination{
+    text-align:center;
+    .page-item{
+      border: 1px solid #eee;
+      height: 3em;
+      line-height:3em;
+      a{
+        i{
+          font-size:1em;
         }
       }
     }

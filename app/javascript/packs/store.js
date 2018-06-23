@@ -12,7 +12,7 @@ var app = new Vue({
     storeSearch: '',
     currentPage: 0,
     size: 10,
-    pageRange: 10,
+    pageRange: 5,
   },
   created: function(){
     this.fetchStores();
@@ -54,8 +54,6 @@ var app = new Vue({
     isSelected(page){
       return page - 1 === this.currentPage;
     },
-    selectHandler () {
-    }
   },
   methods: {
     fetchStores: function(){
@@ -135,51 +133,24 @@ var app = new Vue({
         $(this).delay(180 * i).fadeIn(500);
       });
     },
-    infiniteScroll (event) {
-      // スクロールの現在位置 + 親（.item-container）の高さ >= スクロール内のコンテンツの高さ
-      console.log(event.target.scrollTop);
-      if ((event.target.scrollTop + event.target.offsetHeight) >= event.target.scrollHeight) {
-        // this.fetch();
-      const head = this.currentPage * this.size;
-      return this.stores.slice(head,head+this.size);
-      }
-    },
     first () {
       this.currentPage = 0;
-      this.selectHandler();
     },
-    /**
-     * ページ後尾に移動する
-     */
     last () {
       this.currentPage = this.pages - 1;
-      this.selectHandler();
     },
-    /**
-     * 1ページ前に移動する
-     */
     prev () {
       if (0 < this.currentPage) {
         this.currentPage--;
-        this.selectHandler();
       }
     },
-    /**
-     * 1ページ次に移動する
-     */
     next () {
       if (this.currentPage < this.pages - 1) {
         this.currentPage++;
-        this.selectHandler();
       }
     },
-    /**
-     * 指定したページに移動する
-     * @param {number} index ページ番号
-     */
     pageSelect (index) {
       this.currentPage = index - 1;
-      this.selectHandler();
     },
   },
   filters: {
