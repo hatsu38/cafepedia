@@ -87,9 +87,12 @@ header{
         font-size:1.2em;
         margin: .2em auto 0;
       }
-      span{
+      .access{
         font-size:.8em;
         color: #595960;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
       .row{
         margin-bottom:0;
@@ -121,7 +124,7 @@ header{
       .icons_box{
         margin-bottom: 1em;
         i{
-          border:1.5px solid #999;
+          border:1px solid #cdcdcd;
           padding:.2em;
           font-size: 1.5em;
           margin: .2em .3em;

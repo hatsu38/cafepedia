@@ -42,8 +42,10 @@
          v-for="(store,index) in displayStores"
          :class="{socket: store.socket,wifi: store.wifi}"
         >
-        <h2>{{ store.name }}</h2>
-      <span>{{store.access}}</span>
+      <h2>{{store.name }}</h2>
+      <div class="access">
+        <span>{{store.access}}</span>
+      </div>
       <div class="row">
         <div class="col s5 mainstore_logo">
           <img :src="store.mainstore.image.url">

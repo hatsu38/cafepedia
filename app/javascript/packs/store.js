@@ -83,7 +83,6 @@ var app = new Vue({
     refreshFilter: function(){
       var search_stores = app.wordListupStores();
       app.stores = app.filterListupStores(search_stores);
-      // app.inOrderFadein();
     },
     filterListupStores: function(search_stores){
       var stores_list =[];
