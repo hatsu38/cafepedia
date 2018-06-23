@@ -72,14 +72,17 @@
       </div>
     </div>
   </div>
-    <ul class="pagination">
-      <li class="page-item waves-effect">
-        <a @click="first" class="page-link" href="#" onclick="return false;"><i class="fas fa-angle-double-left"></i></a>
-      </li>
-      <li class="page-item waves-effect">
-        <a @click="prev" class="page-link" href="#" onclick="return false;"><i class="fas fa-angle-left"></i> 前のページへ</a>
-      </li>
-
+  <div class="moreread" @click="moreread">
+    <i class="fas fa-angle-down"></i><span>もっとみる</span>
+  </div>
+    <!-- <ul class="pagination"> -->
+      <!-- <li class="page&#45;item waves&#45;effect"> -->
+      <!--   <a @click="first" class="page&#45;link" href="#" onclick="return false;"><i class="fas fa&#45;angle&#45;double&#45;left"></i></a> -->
+      <!-- </li> -->
+      <!-- <li class="page&#45;item waves&#45;effect"> -->
+      <!--   <a @click="prev" class="page&#45;link" href="#" onclick="return false;"><i class="fas fa&#45;angle&#45;left"></i> 前のページへ</a> -->
+      <!-- </li> -->
+      <!--  -->
       <!-- <li -->
       <!--   v&#45;for="i in displayPageRange" -->
       <!--   class="page&#45;item waves&#45;effect" -->
@@ -87,13 +90,13 @@
       <!--   <a @click="pageSelect(i)" class="page&#45;link" href="#" onclick="return false;">{{ i }}</a> -->
       <!-- </li> -->
       <!--  -->
-      <li class="page-item waves-effect">
-        <a @click="next" class="page-link" href="#" onclick="return false;">次のページへ <i class="fas fa-angle-right"></i></a>
-      </li>
-      <li class="page-item waves-effect">
-        <a @click="last" class="page-link" href="#" onclick="return false;"><i class="fas fa-angle-double-right"></i></a>
-      </li>
-    </ul>
+    <!--   <li class="page&#45;item waves&#45;effect"> -->
+    <!--     <a @click="next" class="page&#45;link" href="#" onclick="return false;">次のページへ <i class="fas fa&#45;angle&#45;right"></i></a> -->
+    <!--   </li> -->
+    <!--   <li class="page&#45;item waves&#45;effect"> -->
+    <!--     <a @click="last" class="page&#45;link" href="#" onclick="return false;"><i class="fas fa&#45;angle&#45;double&#45;right"></i></a> -->
+    <!--   </li> -->
+    <!-- </ul> -->
 </div>
 
 <%= javascript_pack_tag 'store' %>

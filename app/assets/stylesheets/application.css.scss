@@ -54,10 +54,11 @@ header{
         line-height:2.8em;
         height:2.8em;
       .filter_content{
-        border: 1.5px solid #999;
+        border: 1px solid #cdcdcd;
         border-radius: 5px;
         font-size:1.15em;
         background-color:#fff;
+        box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
       }
       &.col{
         padding:0 0.2em;
@@ -72,15 +73,16 @@ header{
         color: #136df9;
         font-weight: bold;
       }
-
     }
   }
   .stores_box{
     .store{
       background-color:#fff;
       margin: 2em auto;
-      border: 1.5px solid #999;
+      border: 1px solid #cdcdcd;
+      border-radius:3px;
       padding: 0 .5em;
+      box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
       h2{
         font-size:1.2em;
         margin: .2em auto 0;
@@ -94,7 +96,6 @@ header{
       }
       .mainstore_logo{
         padding-left: 0px;
-        // height:4em;
         img{
           max-width: 100%;
           border:1px solid #999;
@@ -104,9 +105,7 @@ header{
         height:115px;
         border:1px solid #ccc;
         tr{
-          // font-size: 12px;
           th{
-            // width: 55px;
             background-color:#eee;
           }
           th,td{
@@ -133,6 +132,28 @@ header{
           }
         }
       }
+    }
+  }
+  .moreread{
+    width: 325px;
+    margin: 0 auto 1em;
+    text-align:center;
+    border: 1.2px solid #cdcdcd;
+    height: 2.8em;
+    line-height:2.8em;
+    border-radius:20px;
+    font-size: 1.1em;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    position:relative;
+    i{
+      line-height:3em;
+      position:absolute;
+      left: 1.5em;
+    }
+    span{
+      position:absolute;
+      left:0;
+      right:0;
     }
   }
   .pagination{

@@ -18,6 +18,7 @@ var app = new Vue({
     this.fetchStores();
   },
   computed: {
+    //ページネーション系メソッド
     pages: function(){
       return  Math.ceil(this.stores.length/this.size);
     },
@@ -48,8 +49,11 @@ var app = new Vue({
       return indexes;
     },
     displayStores: function(){
-      const head = this.currentPage * this.size;
-      return this.stores.slice(head,head+this.size);
+      //ページネーション系
+      // const head = this.currentPage * this.size;
+      // return this.stores.slice(head,head+this.size);
+      // もっと読む系
+      return this.stores.slice(0,this.size)
     },
     isSelected(page){
       return page - 1 === this.currentPage;
@@ -133,6 +137,7 @@ var app = new Vue({
         $(this).delay(180 * i).fadeIn(500);
       });
     },
+    //ページネーション系メソッド
     first () {
       this.currentPage = 0;
     },
@@ -151,6 +156,10 @@ var app = new Vue({
     },
     pageSelect (index) {
       this.currentPage = index - 1;
+    },
+    //もっと読むメソッド
+    moreread (){
+      this.size += 10
     },
   },
   filters: {
