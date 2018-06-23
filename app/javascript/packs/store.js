@@ -73,12 +73,10 @@ var app = new Vue({
     socketFilter: function(){
       app.onSocket = !app.onSocket
       app.refreshFilter();
-      app.first();
     },
     wifiFilter: function(){
       app.onWifi = !app.onWifi
       app.refreshFilter();
-      app.first();
     },
     refreshFilter: function(){
       var search_stores = app.wordListupStores();
@@ -109,8 +107,6 @@ var app = new Vue({
       var search_stores = app.wordListupStores();
       app.stores = app.filterListupStores(search_stores);
       $('#aria').blur();
-      app.first();
-      // app.inOrderFadein();
     },
     wordListupStores: function(){
       var searchWord = this.storeSearch && this.storeSearch.toLowerCase();
@@ -119,7 +115,7 @@ var app = new Vue({
       }
       var stores_list = app.allStores.filter(function(value){
         return Object.keys(value).some(function(key){
-          if(key === 'name'){
+          if(key === 'name' || key === "prefecture" || key === "city" || key === "other_address" || key === "access"){
             return String(value[key]).toLowerCase().indexOf(searchWord) > -1
           }
         })

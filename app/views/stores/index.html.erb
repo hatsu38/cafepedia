@@ -38,11 +38,12 @@
   </div>
 
   <div class="stores_box" id="stores">
+    <div class="store_count">{{stores.length}}店舗</div>
     <div class="store mix"
          v-for="(store,index) in displayStores"
          :class="{socket: store.socket,wifi: store.wifi}"
         >
-      <h2>{{store.name }}</h2>
+      <h2>{{store.name}}</h2>
       <div class="access">
         <span>{{store.access}}</span>
       </div>
@@ -74,7 +75,7 @@
       </div>
     </div>
   </div>
-  <div class="moreread" @click="moreread">
+  <div class="moreread" @click="moreread" v-if="displayStores.length <= stores.length">
     <i class="fas fa-angle-down"></i><span>もっとみる</span>
   </div>
     <!-- <ul class="pagination"> -->

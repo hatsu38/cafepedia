@@ -76,6 +76,16 @@ header{
     }
   }
   .stores_box{
+    .store_count{
+      border: 1px solid #cdcdcd;
+      color: #aaa;
+      text-align:center;
+      background-color:#eee;
+      height: 2.5em;
+      line-height:2.5em;
+      margin-top: 2em;
+      font-size:1.2em;
+    }
     .store{
       background-color:#fff;
       margin: 2em auto;
@@ -134,6 +144,9 @@ header{
             margin-left:0;
           }
         }
+      }
+      &:first-child{
+        margin-top: 0;
       }
     }
   }
