@@ -95,7 +95,7 @@ header{
       box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
       h2{
         font-size:1.2em;
-        margin: .2em auto 0;
+        margin: .6em auto .5em;
       }
       .access{
         font-size:.8em;
@@ -110,12 +110,13 @@ header{
       .mainstore_logo{
         padding-left: 0px;
         img{
+          padding: .5em;
           max-width: 100%;
           border:1px solid #999;
         }
       }
       table{
-        height:115px;
+        height:139px;
         border:1px solid #ccc;
         tr{
           th{
@@ -124,7 +125,6 @@ header{
           th,td{
             border-top: 1px solid #ccc;
             border-bottom: 1px solid #ccc;
-            padding: .2em;
             p{
               margin: 2px auto;
             }
@@ -144,8 +144,16 @@ header{
             margin-left:0;
           }
         }
+        .iccard_img_block{
+          display: inline-block;
+          border:1px solid #cdcdcd;
+          width: 37.8px;
+          img{
+            max-width: 100%;
+          }
+        }
       }
-      &:first-child{
+      &:nth-child(2){
         margin-top: 0;
       }
     }

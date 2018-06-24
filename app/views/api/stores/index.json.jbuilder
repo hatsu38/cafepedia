@@ -13,6 +13,7 @@ json.set! :stores do
       :wifi,
       :socket,
       :smoking,
+      :iccard,
       :mainstore_id,
       :mainstore,
       :created_at,

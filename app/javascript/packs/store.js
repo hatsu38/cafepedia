@@ -13,6 +13,7 @@ var app = new Vue({
     currentPage: 0,
     size: 10,
     pageRange: 5,
+    moreread_desp: true,
   },
   created: function(){
     this.fetchStores();
@@ -107,6 +108,8 @@ var app = new Vue({
       var search_stores = app.wordListupStores();
       app.stores = app.filterListupStores(search_stores);
       $('#aria').blur();
+      app.get_moreread_desp();
+      this.size = 10
     },
     wordListupStores: function(){
       var searchWord = this.storeSearch && this.storeSearch.toLowerCase();
@@ -115,7 +118,7 @@ var app = new Vue({
       }
       var stores_list = app.allStores.filter(function(value){
         return Object.keys(value).some(function(key){
-          if(key === 'name' || key === "prefecture" || key === "city" || key === "other_address" || key === "access"){
+          if(key === 'name' || key === "city" || key === "other_address" || key === "access"){
             return String(value[key]).toLowerCase().indexOf(searchWord) > -1
           }
         })
@@ -155,11 +158,27 @@ var app = new Vue({
     //もっと読むメソッド
     moreread (){
       this.size += 10
+      app.get_moreread_desp();
+    },
+    get_moreread_desp (){
+      if(this.displayStores.length >= this.stores.length){
+        return app.moreread_desp = false
+      }
+      return app.moreread_desp = true
     },
   },
   filters: {
     moment: function(data){
       return moment(data).format('HH:mm');
+    },
+    access_cut: function(data){
+      if(!data){
+        return data
+      }
+      if(data.match(/.+?[0-9]分|.+?[0-9]km/)){
+        return data.substr(0,data.search("[0-9]分|km")+2);
+      }
+      return data
     }
   }
 });
