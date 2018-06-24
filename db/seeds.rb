@@ -10,6 +10,7 @@ require "csv"
 starbacks_csv_file = "db/migrate/starbacks_info.csv"
 CSV.read(starbacks_csv_file).each_with_index do |data,i|
   next if i == 0
+  break if i == 1347
   Store.create(
     name: data[1],
     prefecture: data[2],
@@ -30,6 +31,7 @@ end
 doutor_csv_file = "db/migrate/doutor_info.csv"
 CSV.read(doutor_csv_file).each_with_index do |data,i|
   next if i == 0
+  break if i == 1123
   Store.create(
     name: data[1],
     prefecture: data[2],
