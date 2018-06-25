@@ -1,10 +1,92 @@
-import Vue  from 'vue/dist/vue.esm.js'
-import Index from '../components/index.vue'
-import axios from 'axios'
+<template>
+  <div class="search_box">
+    <div class="row search-form">
+      <form class="input-field col s10"
+            action="/"
+            onsubmit="return false"
+            @submit.prevent="searchStores">
+        <input
+          type="search"
+          id="aria"
+          v-model="storeSearch"
+          >
+        <label for="aria">エリア・駅</label>
+      </form>
+        <a class="btn waves-effect waves-light col s2 input-field"
+        @click="searchStores">検索</a>
+    </div>
+  </div>
+  <div class="filter_box row center">
+    <div class="filter-block col s6">
+      <div class="filter_content sort"
+           @click="socketFilter"
+           :class="{socketFilterOn: onSocket}"
+           >
+           <i class="fas fa-plug"></i>
+           コンセント
+      </div>
+    </div>
+    <div class="filter-block col s6">
+      <div class="filter_content sort"
+           @click="wifiFilter"
+           :class="{wifiFilterOn: onWifi}"
+           >
+           <i class="fas fa-wifi"></i>
+           フリーWi-Fi
+      </div>
+    </div>
+  </div>
 
-var app = new Vue({
-  el: '#stores_index',
-  data: {
+  <div class="stores_box" id="stores">
+    <div class="store_count">{{stores.length}}店舗</div>
+    <div class="store mix"
+         v-for="(store,index) in displayStores"
+         :class="{socket: store.socket,wifi: store.wifi}"
+        >
+        <h2>{{store.name}}</h2>
+      <div class="row">
+        <div class="col s5 mainstore_logo">
+          <img :src="store.mainstore.image.url">
+        </div>
+        <div class="col s7">
+          <table class="table">
+            <tbody>
+              <tr>
+                <th><i class="fas fa-clock"></i></th>
+                <td>
+                  {{store.business_hour}}
+                </td>
+              </tr>
+              <tr>
+                <th><i class="fas fa-map-marker-alt"></i></th>
+                <td>
+                  {{store.access | access_cut}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="icons_box">
+        <i class="fas fa-smoking" v-show="store.smoking"></i>
+        <i class="fas fa-wifi" v-show="store.wifi"></i>
+        <i class="fas fa-plug" v-show="store.socket"></i>
+        <div class="iccard_img_block" v-show="store.iccard">
+          <img src="/uploads/iccard_service.jpg" class="iccard_icon">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="moreread" @click="moreread" v-show="moreread_desp">
+    <i class="fas fa-angle-down"></i><span>もっとみる</span>
+  </div>
+</div>
+</template>
+<script>
+import axios from 'axios'
+export default {
+  data: function(){
+  return {
     stores: [],
     allStores: [],
     onSocket: false,
@@ -14,8 +96,9 @@ var app = new Vue({
     size: 10,
     pageRange: 5,
     moreread_desp: true,
+    }
   },
-  created: function(){
+  mounted: function(){
     this.fetchStores();
   },
   computed: {
@@ -62,42 +145,43 @@ var app = new Vue({
   },
   methods: {
     fetchStores: function(){
-      axios.get('/api/stores').then(function(response){
+      axios.get('/api/stores').then((response)=>{
         for(var i = 0; i < response.data.stores.length; i++){
-          app.stores.push(response.data.stores[i]);
+        console.log(response.data.stores[i]);
+          this.stores.push(response.data.stores[i]);
         }
-        app.allStores = app.stores
-      },function(){
+        this.allStores = this.stores
+      },(error) =>{
         alert('Sory');
       });
     },
     socketFilter: function(){
-      app.onSocket = !app.onSocket
-      app.refreshFilter();
+      this.onSocket = !this.onSocket
+      this.refreshFilter();
     },
     wifiFilter: function(){
-      app.onWifi = !app.onWifi
-      app.refreshFilter();
+      this.onWifi = !this.onWifi
+      this.refreshFilter();
     },
     refreshFilter: function(){
-      var search_stores = app.wordListupStores();
-      app.stores = app.filterListupStores(search_stores);
+      var search_stores = this.wordListupStores();
+      this.stores = this.filterListupStores(search_stores);
     },
     filterListupStores: function(search_stores){
       var stores_list =[];
-      if(app.onSocket && app.onWifi){
+      if(this.onSocket && this.onWifi){
         stores_list = search_stores.filter(function(value){
           return value.socket && value.wifi
         });
-      }else if(app.onSocket && !app.onWifi){
+      }else if(this.onSocket && !this.onWifi){
         stores_list = search_stores.filter(function(value){
           return value.socket
         });
-      }else if(!app.onSocket && app.onWifi){
+      }else if(!this.onSocket && this.onWifi){
         stores_list = search_stores.filter(function(value){
           return value.wifi
         });
-      }else if(!app.onSocket && !app.onWifi){
+      }else if(!this.onSocket && !this.onWifi){
         stores_list = search_stores
       }else{
         alart("Error!");
@@ -105,18 +189,18 @@ var app = new Vue({
       return stores_list
     },
     searchStores: function(){
-      var search_stores = app.wordListupStores();
-      app.stores = app.filterListupStores(search_stores);
+      var search_stores = this.wordListupStores();
+      this.stores = this.filterListupStores(search_stores);
       $('#aria').blur();
-      app.get_moreread_desp();
+      this.get_moreread_desp();
       this.size = 10
     },
     wordListupStores: function(){
       var searchWord = this.storeSearch && this.storeSearch.toLowerCase();
       if(!searchWord){
-        return app.stores = app.allStores
+        return this.stores = this.allStores
       }
-      var stores_list = app.allStores.filter(function(value){
+      var stores_list = this.allStores.filter(function(value){
         return Object.keys(value).some(function(key){
           if(key === 'name' || key === "city" || key === "other_address" || key === "access"){
             return String(value[key]).toLowerCase().indexOf(searchWord) > -1
@@ -126,8 +210,8 @@ var app = new Vue({
       return stores_list
     },
     resetFilter: function(){
-      app.onSocket= false
-      app.onWifi = false
+      this.onSocket= false
+      this.onWifi = false
     },
     inOrderFadein: function(){
       $('#stores .store').hide();
@@ -158,13 +242,13 @@ var app = new Vue({
     //もっと読むメソッド
     moreread (){
       this.size += 10
-      app.get_moreread_desp();
+      this.get_moreread_desp();
     },
     get_moreread_desp (){
       if(this.displayStores.length >= this.stores.length){
-        return app.moreread_desp = false
+        return this.moreread_desp = false
       }
-      return app.moreread_desp = true
+      return this.moreread_desp = true
     },
   },
   filters: {
@@ -179,10 +263,7 @@ var app = new Vue({
         return data.substr(0,data.search("[0-9]分|km")+2);
       }
       return data
-    },
-    blank_cut: function(data){
-      return data.replace(/\s/g,"");
     }
   }
-});
-
+};
+</script>
