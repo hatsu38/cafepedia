@@ -2,8 +2,6 @@
   <div>
     <h2>{{store.name}}</h2>
   </div>
-
-
 </template>
 
 

@@ -28,12 +28,15 @@ header{
               0 4px 5px 0 rgba(0,0,0,0.06),
               0 1px 10px 0 rgba(0,0,0,0.08);
   a{
-    font-size:2.2em;
-  }
-  h1.logo{
-    margin: 0;
-    letter-spacing:.2em;
-    font-size:1.3em;
+    i{
+      padding-bottom:.5em;
+      font-size:1.8em;
+    }
+    h1.logo{
+      margin: 0;
+      letter-spacing:.2em;
+      font-size:1.3em;
+    }
   }
 }
 
