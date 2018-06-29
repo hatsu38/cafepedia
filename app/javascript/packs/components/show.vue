@@ -7,13 +7,19 @@
       </router-link>
     </header>
     <h2>{{store.name}}</h2>
+    <!-- <div id='map'></div> -->
   </div>
 </template>
-
-
 <script>
+// function init() {
+//   var mapOptions = { "center": {  "lat": 34.3969159,  "lng": 132.4756738}, "mapTypeId": "roadmap","zoom": 15};
+//   var mapElement = document.getElementById('map');
+//   var map = new google.maps.Map(mapElement, mapOptions);
+//   google.maps.event.addDomListener(window, "resize", function() { var center = map.getCenter(); google.maps.event.trigger(map, "resize"); map.setCenter(center); });
+// }
+// google.maps.event.addDomListener(window, 'load', init);
+//
 import axios from 'axios';
-
 export default {
   data: function(){
     return {
