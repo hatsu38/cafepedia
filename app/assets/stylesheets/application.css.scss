@@ -124,6 +124,7 @@ header{
         tr{
           th{
             background-color:#eee;
+            text-align:center;
           }
           th,td{
             border-top: 1px solid #ccc;
@@ -201,8 +202,55 @@ white-space:pre-wrap;
 }
 
 
-// show
-#map{
-  width:500px;
-  height:500px;
+#store_detail{
+  h2{
+    font-size:2.5em;
+  }
+  table{
+    // height:139px;
+    border:1px solid #ccc;
+    tr{
+      th{
+        background-color:#eee;
+        text-align:center;
+      }
+      th,td{
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        pre{
+          margin: 0;
+          word-break:break-all;
+          white-space:pre-wrap;
+        }
+      }
+    }
+  }
+  .icons_box{
+    margin-bottom: 1em;
+    i{
+      border:1px solid #cdcdcd;
+      padding:.2em;
+      font-size: 1.5em;
+      margin: .2em .3em;
+      width: 1.8em;
+      text-align:center;
+      &:first-child{
+        margin-left:0;
+      }
+    }
+    .iccard_img_block{
+      display: inline-block;
+      border:1px solid #cdcdcd;
+      width: 37.8px;
+      img{
+        max-width: 100%;
+      }
+    }
+  }
+  #map{
+    width:100%;
+    height:400px;
+  }
 }
+
+// show
