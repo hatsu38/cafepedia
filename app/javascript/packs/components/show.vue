@@ -22,29 +22,30 @@ export default {
     this.fetchStoreDetail();
   },
   mounted: function(){
-      this.gmapdesp();
+      // this.gmapdesp();
+      // this.gmapcreate();
   },
   methods: {
     fetchStoreDetail: function(){
       var id = this.$route.params.id;
       axios.get('/api/stores/'+id).then((response)=>{
         this.store = response.data.store;
+        this.gmapcreate();
       },(error)=>{
         alart("Sorry");
       });
     },
     gmapcreate: function(){
-      var lat = parseFloat(this.store.lat);
-      var lng = parseFloat(this.store.lng);
-      var store_position = {"lat": lat,"lng": lng}
-      var mapOptions = {"center": store_position,"mapTypeId": "roadmap","zoom": 16};
-      var mapElement = document.getElementById('map');
-      var map = new google.maps.Map(mapElement, mapOptions);
-      google.maps.event.addDomListener(window, "resize", function() { var center = map.getCenter(); google.maps.event.trigger(map, "resize"); map.setCenter(center); });
-      this.gmarkerDesp(lat,lng,map);
-    },
-    gmapdesp: function(){
-      google.maps.event.addDomListener(window, 'load', this.gmapcreate);
+      var store_lat = parseFloat(this.store.lat);
+      var store_lng = parseFloat(this.store.lng);
+      var map = new google.maps.Map(document.getElementById('map'), { // #sampleに地図を埋め込む
+        center: { // 地図の中心を指定
+          lat: store_lat, // 緯度
+          lng: store_lng// 経度
+        },
+        zoom: 14 // 地図のズームを指定
+      });
+      this.gmarkerDesp(store_lat,store_lng,map);
     },
     gmarkerDesp: function(lat,lng,map){
       var marker = new google.maps.Marker({
