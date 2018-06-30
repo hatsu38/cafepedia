@@ -1,358 +1,358 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lon,lat
 0,エクセルシオール カフェ アスティ岐阜店,岐阜県,岐阜市,橋本町１-１０ＪＲ岐阜駅構内アスティ岐阜２Ｆ,岐阜駅徒歩1分以上,058-262-3064,"平日:07:00 - 22:00
 土曜日:07:00 - 22:00
-日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000247/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000247/,TRUE,TRUE,TRUE,FALSE,35.409372,136.7579021
 1,エクセルシオール カフェ アルカキット錦糸町店,東京都,墨田区,錦糸２-２-１アルカキット錦糸町１Ｆ,錦糸町駅徒歩2分以上,03-5610-7235,"平日:07:00 - 23:00
 土曜日:07:00 - 23:00
-日祝:07:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000069/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000069/,TRUE,TRUE,TRUE,FALSE,35.6975056,139.8129241
 2,エクセルシオール カフェ イトーヨーカドーららぽーと横浜店,神奈川県,横浜市,都筑区池辺町４０３５‐１イトーヨーカドーららぽーと横浜２Ｆ,鴨居駅徒歩11分以上,045-938-7065,"平日:10:00 - 22:00
 土曜日:10:00 - 22:00
-日祝:10:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000225/,FALSE,FALSE,FALSE,FALSE
+日祝:10:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000225/,FALSE,FALSE,FALSE,FALSE,35.518223,139.56721
 3,エクセルシオール カフェ イトーヨーカドー大宮宮原店,埼玉県,さいたま市,北区宮原町１‐８５４‐１イトーヨーカドー大宮宮原店２Ｆ,加茂宮駅徒歩8分以上,048-654-2150,"平日:10:00 - 21:00
 土曜日:10:00 - 21:00
-日祝:10:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000209/,TRUE,FALSE,TRUE,FALSE
+日祝:10:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000209/,TRUE,FALSE,TRUE,FALSE,35.932571,139.621885
 4,エクセルシオール カフェ ウィング久里浜店,神奈川県,横須賀市,久里浜４‐４‐１０ウィング久里浜２Ｆ,京急久里浜駅徒歩3分以内,046-876-5581,"平日:06:30 - 22:00
 土曜日:06:30 - 22:00
-日祝:06:30 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000232/,TRUE,FALSE,FALSE,FALSE
+日祝:06:30 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000232/,TRUE,FALSE,FALSE,FALSE,35.2309006,139.7024107
 5,エクセルシオール カフェ ウィング新橋店,東京都,港区,新橋２丁目ウィング新橋東口地下街１号,新橋駅徒歩2分以上,03-3574-7241,"平日:07:00 - 23:00
 土曜日:08:00 - 22:00
-日祝:08:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000223/,TRUE,FALSE,FALSE,FALSE
+日祝:08:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000223/,TRUE,FALSE,FALSE,FALSE,35.6662292,139.7591115
 6,エクセルシオール カフェ お茶の水店,東京都,千代田区,神田駿河台２‐１ユニオンビル１Ｆ,御茶ノ水駅徒歩5分以上,03-5283-9599,"平日:06:45 - 22:30
 土曜日:07:00 - 21:00
-日祝:07:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000030/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000030/,TRUE,TRUE,TRUE,FALSE,35.6998898,139.762213
 7,エクセルシオール カフェ さいたま新都心ランド・アクシス・タワー店,埼玉県,さいたま市,中央区新都心１１‐２ランド・アクシス・タワー２Ｆ,さいたま新都心駅徒歩1分以上,048-600-3686,"平日:07:00 - 22:00
 土曜日:07:00 - 22:00
-日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000074/,TRUE,FALSE,TRUE,FALSE
+日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000074/,TRUE,FALSE,TRUE,FALSE,35.8934035,139.6325374
 8,エクセルシオール カフェ シーフォートスクエア店,東京都,品川区,東品川２‐３‐１０シーフォートスクエア１Ｆ,天王洲アイル駅徒歩1分以上,03-5463-7044,"平日:07:00 - 22:30
 土曜日:08:00 - 22:00
-日祝:09:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000003/,TRUE,FALSE,FALSE,FALSE
+日祝:09:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000003/,TRUE,FALSE,FALSE,FALSE,35.6237738,139.7508669
 9,エクセルシオール カフェ デュオこうべ店,兵庫県,神戸市,中央区東川崎町１‐２‐３デュオこうべ内,ハーバーランド駅徒歩1分以上,078-351-2932,"平日:07:00 - 21:00
 土曜日:07:30 - 21:30
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000028/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000028/,TRUE,TRUE,TRUE,FALSE,34.6798466,135.1788633
 10,エクセルシオール カフェ バリスタ Ｔｈｉｎｋ Ｐａｒｋ店,東京都,品川区,大崎２‐１‐１ＴｈｉｎｋＰａｒｋＴｏｗｅｒ２Ｆ,大崎駅徒歩2分以上,03-3779-1132,"平日:07:00 - 23:00
 土曜日:08:00 - 23:00
-日祝:08:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000207/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000207/,TRUE,TRUE,TRUE,FALSE,35.6183478,139.7277742
 11,エクセルシオール カフェ バリスタ イオンモール幕張新都心店,千葉県,千葉市,美浜区豊砂１-１グランドモール２Ｆ,海浜幕張駅徒歩15分以上,043-211-1511,"平日:10:00 - 22:00
 土曜日:10:00 - 22:00
-日祝:10:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000258/,TRUE,TRUE,TRUE,FALSE
+日祝:10:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000258/,TRUE,TRUE,TRUE,FALSE,35.6533793,140.0320223
 12,エクセルシオール カフェ バリスタ コクーンシティさいたま新都心店,埼玉県,さいたま市,大宮区吉敷町４-２６７-２コクーン１２Ｆ,さいたま新都心駅徒歩4分以上,048-601-0488,"平日:09:30 - 23:00
 土曜日:09:30 - 23:00
-日祝:09:30 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000141/,TRUE,TRUE,FALSE,FALSE
+日祝:09:30 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000141/,TRUE,TRUE,FALSE,FALSE,35.8963918,139.6354473
 13,エクセルシオール カフェ バリスタ センター南サウスウッド店,神奈川県,横浜市,都筑区茅ケ崎中央６-１,センター南駅徒歩1分以上,045-945-7370,"平日:07:30 - 22:00
 土曜日:08:00 - 22:00
-日祝:08:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000251/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000251/,TRUE,TRUE,TRUE,FALSE,35.5440508,139.5743244
 14,エクセルシオール カフェ バリスタ ホテルサンルート川崎店,神奈川県,川崎市,川崎区砂子２‐１１‐１７ホテルサンルート川崎１Ｆ,京急川崎駅徒歩5分以上,044-211-0620,"平日:06:45 - 22:00
 土曜日:06:45 - 22:00
-日祝:06:45 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000173/,TRUE,TRUE,TRUE,FALSE
+日祝:06:45 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000173/,TRUE,TRUE,TRUE,FALSE,35.5301364,139.7017706
 15,エクセルシオール カフェ バリスタ モリタウン昭島店,東京都,昭島市,田中町５６２‐１モリタウン東館１Ｆ,昭島駅徒歩2分以上,042-546-4885,"平日:09:00 - 21:00
 土曜日:09:00 - 21:00
-日祝:09:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000158/,TRUE,TRUE,TRUE,FALSE
+日祝:09:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000158/,TRUE,TRUE,TRUE,FALSE,35.7138608,139.3636271
 16,エクセルシオール カフェ バリスタ 吉祥寺南口駅前店,東京都,武蔵野市,吉祥寺南町１-４-１井の頭ビル１Ｆ,吉祥寺駅徒歩1分以上,0422-44-8390,"平日:07:00 - 22:30
 土曜日:07:00 - 22:30
-日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000249/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000249/,TRUE,TRUE,TRUE,FALSE,35.7024735,139.5792898
 17,エクセルシオール カフェ バリスタ 京急ＥＸイン東銀座店,東京都,中央区,築地２-１５-１５,築地駅徒歩3分以内,03-3547-6055,"平日:06:45 - 22:00
 土曜日:07:00 - 22:00
-日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000253/,TRUE,TRUE,FALSE,FALSE
+日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000253/,TRUE,TRUE,FALSE,FALSE,35.6672147,139.7703338
 18,エクセルシオール カフェ バリスタ 京橋一丁目店,東京都,中央区,京橋１-３-５三井ガーデンホテル１Ｆ,京橋駅徒歩2分以上,03-3241-6913,"平日:06:45 - 22:00
 土曜日:07:00 - 20:00
-日祝:07:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000254/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000254/,TRUE,TRUE,TRUE,FALSE,35.678433,139.770797
 19,エクセルシオール カフェ バリスタ 銀座中央通り店,東京都,中央区,銀座７‐８‐７ＧＩＮＺＡＧＲＥＥＮ１Ｆ・２Ｆ,銀座駅徒歩3分以内,03-5537-0558,"平日:08:00 - 22:00
 土曜日:08:00 - 22:00
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000127/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000127/,TRUE,TRUE,TRUE,FALSE,35.6690862,139.7625178
 20,エクセルシオール カフェ バリスタ 恵比寿ガーデンプレイス店,東京都,渋谷区,恵比寿４‐２０‐３恵比寿ガーデンプレイスオフィスタワー１Ｆ,恵比寿駅徒歩9分以上,03-5448-9446,"平日:07:00 - 22:30
 土曜日:07:30 - 22:30
-日祝:07:30 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000009/,TRUE,TRUE,TRUE,FALSE
+日祝:07:30 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000009/,TRUE,TRUE,TRUE,FALSE,35.6422197,139.7130253
 21,エクセルシオール カフェ バリスタ 虎ノ門店,東京都,港区,虎ノ門１‐１‐２８ＴＯＴＯ虎ノ門ビル１Ｆ,虎ノ門駅徒歩3分以内,03-3519-5980,"平日:06:45 - 22:30
 土曜日:08:00 - 21:00
-日祝:08:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000105/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000105/,TRUE,TRUE,TRUE,FALSE,35.6704856,139.7496563
 22,エクセルシオール カフェ バリスタ 五反田ＴＯＣ店,東京都,品川区,西五反田７‐２２‐１７ＴＯＣビル１Ｆ,大崎広小路駅徒歩4分以上,03-3490-6201,"平日:07:00 - 21:00
 土曜日:07:00 - 21:00
-日祝:07:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000161/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000161/,TRUE,TRUE,TRUE,FALSE,35.6220841,139.7187434
 23,エクセルシオール カフェ バリスタ 渋谷マークシティ店,東京都,渋谷区,道玄坂１‐１２‐５渋谷マークシティウエスト４Ｆ,神泉駅徒歩6分以上,03-5428-5460,"平日:07:00 - 23:00
 土曜日:07:00 - 23:00
-日祝:07:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000021/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000021/,TRUE,TRUE,TRUE,FALSE,35.6581487,139.6979397
 24,エクセルシオール カフェ バリスタ 渋谷公園通り店,東京都,渋谷区,神南１‐２０‐１２遠山ビル１Ｆ・２Ｆ,渋谷駅徒歩8分以上,03-5728-7667,"平日:08:00 - 22:30
 土曜日:08:00 - 23:00
-日祝:08:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000040/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000040/,TRUE,TRUE,TRUE,FALSE,35.6621781,139.6995121
 25,エクセルシオール カフェ バリスタ 渋谷道玄坂店,東京都,渋谷区,道玄坂２‐６‐１岩崎ビル,渋谷駅徒歩5分以上,03-5428-3638,"平日:06:00 - 24:00
 土曜日:06:00 - 24:00
-日祝:06:00 - 24:00",http://sasp.mapion.co.jp/b/doutor/info/05000017/,TRUE,TRUE,TRUE,FALSE
+日祝:06:00 - 24:00",http://sasp.mapion.co.jp/b/doutor/info/05000017/,TRUE,TRUE,TRUE,FALSE,35.6592276,139.6990948
 26,エクセルシオール カフェ バリスタ 心斎橋店,大阪府,大阪市,中央区心斎橋筋２‐３‐２３,なんば駅徒歩5分以上,06-6214-5440,"平日:09:00 - 22:30
 土曜日:09:00 - 23:00
-日祝:09:00 - 22:30",http://sasp.mapion.co.jp/b/doutor/info/05000097/,TRUE,TRUE,TRUE,FALSE
+日祝:09:00 - 22:30",http://sasp.mapion.co.jp/b/doutor/info/05000097/,TRUE,TRUE,TRUE,FALSE,34.6699042,135.5015186
 27,エクセルシオール カフェ バリスタ 新宿三丁目店,東京都,新宿区,新宿３-２８-１５,新宿三丁目駅徒歩2分以上,03-5269-2340,"平日:08:00 - 23:00
 土曜日:08:00 - 23:00
-日祝:08:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000011/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000011/,TRUE,TRUE,TRUE,FALSE,35.6909155,139.7032217
 28,エクセルシオール カフェ バリスタ 新宿損保ジャパンビル店,東京都,新宿区,西新宿１‐２６新宿損保ジャパンビル１Ｆ,新宿西口駅徒歩3分以上,03-5909-0848,"平日:07:00 - 22:00
 土曜日:07:00 - 21:00
-日祝:08:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000135/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000135/,TRUE,TRUE,TRUE,FALSE,35.693115,139.6964308
 29,エクセルシオール カフェ バリスタ 水戸エクセル店,茨城県,水戸市,宮町１‐１‐１水戸エクセルビル２Ｆ,水戸駅徒歩1分以上,029-233-7036,"平日:06:45 - 22:00
 土曜日:07:00 - 22:00
-日祝:07:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000148/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000148/,TRUE,TRUE,TRUE,FALSE,36.3704983,140.4759694
 30,エクセルシオール カフェ バリスタ 成田空港第２ターミナルビル店,千葉県,成田市,古込字古込１‐１成田空港第２旅客ターミナルビル本館３Ｆ,空港第２ビル駅徒歩3分以内,0476-34-6868,"平日:07:00 - 21:00
 土曜日:07:00 - 21:00
-日祝:07:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000159/,FALSE,FALSE,FALSE,FALSE
+日祝:07:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000159/,FALSE,FALSE,FALSE,FALSE,35.773833,140.387326
 31,エクセルシオール カフェ バリスタ 千駄ヶ谷駅前店,東京都,渋谷区,千駄ヶ谷１‐３５‐１４,千駄ヶ谷駅徒歩1分以上,03-5411-5477,"平日:07:00 - 22:30
 土曜日:07:30 - 22:30
-日祝:07:30 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000188/,TRUE,TRUE,TRUE,FALSE
+日祝:07:30 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000188/,TRUE,TRUE,TRUE,FALSE,35.6811446,139.7106492
 32,エクセルシオール カフェ バリスタ 相模大野ステーションスクエア店,神奈川県,相模原市,南区相模大野３-８-１相模大野ステーションスクエア４Ｆ,相模大野駅徒歩3分以内,042-767-1251,"平日:10:00 - 21:00
 土曜日:10:00 - 21:00
-日祝:10:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000250/,TRUE,TRUE,TRUE,FALSE
+日祝:10:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000250/,TRUE,TRUE,TRUE,FALSE,35.5319163,139.4376545
 33,エクセルシオール カフェ バリスタ 中野サンモール店,東京都,中野区,中野５‐５６‐７,新井薬師前駅徒歩14分以上,03-5318-2476,"平日:06:30 - 22:30
 土曜日:07:00 - 22:30
-日祝:07:00 - 22:30",http://sasp.mapion.co.jp/b/doutor/info/05000034/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 22:30",http://sasp.mapion.co.jp/b/doutor/info/05000034/,TRUE,TRUE,TRUE,FALSE,35.7082679,139.6658769
 34,エクセルシオール カフェ バリスタ 東京汐留ビルディング店,東京都,港区,東新橋１‐９‐１東京汐留ビルディング２Ｆ２０２,汐留駅徒歩3分以内,03-5568-1865,"平日:07:00 - 21:00
 土曜日:08:00 - 21:00
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000147/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000147/,TRUE,TRUE,TRUE,FALSE,35.6629395,139.7612147
 35,エクセルシオール カフェ バリスタ 八重洲一丁目店,東京都,中央区,八重洲１‐４‐２２モリタニビル１Ｆ,三越前駅徒歩7分以上,03-3548-0988,"平日:06:45 - 23:00
 土曜日:07:00 - 20:00
-日祝:07:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000255/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000255/,TRUE,TRUE,TRUE,FALSE,35.6827257,139.7708928
 36,エクセルシオール カフェ バリスタ 浜松町ハマサイト店,東京都,港区,海岸１‐２‐２０汐留ビルディングハマサイトグルメ２Ｆ,モノレール浜松町駅徒歩4分以上,03-3431-2311,"平日:07:30 - 22:00
 土曜日:09:00 - 20:00
-日祝:09:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000212/,TRUE,TRUE,TRUE,FALSE
+日祝:09:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000212/,TRUE,TRUE,TRUE,FALSE,35.6568545,139.7594487
 37,エクセルシオール カフェ バリスタ 府中ル・シーニュ店,東京都,府中市,宮町１-１００府中ル・シーニュ１Ｆ,府中競馬正門前駅徒歩8分以上,042-362-5002,"平日:07:00 - 22:00
 土曜日:08:00 - 22:00
-日祝:08:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000261/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000261/,TRUE,TRUE,TRUE,FALSE,35.671979,139.479497
 38,エクセルシオール カフェ バリスタ 本厚木駅店,神奈川県,厚木市,泉町１‐１小田急厚木ホテル１Ｆ,本厚木駅徒歩3分以内,046-220-0006,"平日:06:30 - 23:00
 土曜日:07:00 - 23:00
-日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000070/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000070/,TRUE,TRUE,TRUE,FALSE,35.439349,139.364807
 39,エクセルシオール カフェ ホテルザ・ビー赤坂見附店,東京都,港区,赤坂３‐２１ホテルザ・ビー赤坂見附１Ｆ,赤坂見附駅徒歩1分以上,03-3568-1668,"平日:06:45 - 23:00
 土曜日:06:45 - 23:00
-日祝:06:45 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000101/,TRUE,TRUE,TRUE,FALSE
+日祝:06:45 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000101/,TRUE,TRUE,TRUE,FALSE,35.6766117,139.7359638
 40,エクセルシオール カフェ ホテルメッツ武蔵境店,東京都,武蔵野市,境南町２‐１‐８ホテルメッツ武蔵境,武蔵境駅徒歩2分以上,0422-39-7430,"平日:06:30 - 22:30
 土曜日:06:30 - 22:30
-日祝:06:30 - 22:30",http://sasp.mapion.co.jp/b/doutor/info/05000057/,TRUE,TRUE,TRUE,FALSE
+日祝:06:30 - 22:30",http://sasp.mapion.co.jp/b/doutor/info/05000057/,TRUE,TRUE,TRUE,FALSE,35.701886,139.545227
 41,エクセルシオール カフェ ミューザ川崎店,神奈川県,川崎市,幸区大宮町１３１０ミューザ川崎１４３,川崎駅徒歩2分以上,044-555-8447,"平日:07:00 - 22:30
 土曜日:07:00 - 22:30
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000125/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000125/,TRUE,TRUE,TRUE,FALSE,35.5310848,139.6946237
 42,エクセルシオール カフェ ららぽーと磐田店,静岡県,磐田市,高見丘１２００ららぽーと磐田１Ｆ,磐田駅徒歩64分以上,0538-38-5192,"平日:10:00 - 21:00
 土曜日:10:00 - 21:00
-日祝:10:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000235/,TRUE,FALSE,FALSE,FALSE
+日祝:10:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000235/,TRUE,FALSE,FALSE,FALSE,34.7504542,137.8429526
 43,エクセルシオール カフェ 永田町店,東京都,千代田区,平河町２‐７‐１塩崎ビル１Ｆ,永田町駅徒歩3分以上,03-3265-5130,"平日:06:45 - 22:30
 土曜日:08:00 - 20:30
-日祝:08:00 - 20:30",http://sasp.mapion.co.jp/b/doutor/info/05000164/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 20:30",http://sasp.mapion.co.jp/b/doutor/info/05000164/,TRUE,TRUE,TRUE,FALSE,35.6792645,139.7406539
 44,エクセルシオール カフェ 横浜トーヨー街店,神奈川県,横浜市,西区北幸１‐１‐８横浜東洋ビルＢ１Ｆ,横浜駅徒歩3分以内,045-323-6686,"平日:07:00 - 22:00
 土曜日:08:00 - 22:00
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000108/,TRUE,FALSE,FALSE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000108/,TRUE,FALSE,FALSE,FALSE,35.4676549,139.6214288
 45,エクセルシオール カフェ 会津中央病院店,福島県,会津若松市,鶴賀町１‐１会津中央病院Ｗ２棟Ｂ１Ｆ,会津若松駅徒歩28分以上,0242-24-0961,"平日:07:00 - 19:00
 土曜日:08:00 - 18:00
-日祝:08:00 - 18:00",http://sasp.mapion.co.jp/b/doutor/info/05000233/,TRUE,FALSE,FALSE,FALSE
+日祝:08:00 - 18:00",http://sasp.mapion.co.jp/b/doutor/info/05000233/,TRUE,FALSE,FALSE,FALSE,37.5220136,139.9447518
 46,エクセルシオール カフェ 鎌倉東口店,神奈川県,鎌倉市,小町１‐４‐１２,鎌倉駅徒歩2分以上,0467-25-0377,"平日:07:00 - 21:00
 土曜日:08:00 - 21:00
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000240/,TRUE,FALSE,TRUE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000240/,TRUE,FALSE,TRUE,FALSE,35.318345,139.551317
 47,エクセルシオール カフェ 関内マリナード店,神奈川県,横浜市,中区港町５‐２４‐１関内マリナード地下街Ｂ１Ｆ,関内駅徒歩2分以上,045-227-8815,"平日:07:30 - 21:00
 土曜日:08:00 - 21:00
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000126/,TRUE,FALSE,FALSE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000126/,TRUE,FALSE,FALSE,FALSE,35.4455502,139.6340401
 48,エクセルシオール カフェ 亀戸店,東京都,江東区,亀戸５‐１‐２ＦＲＥＮＴＥ１Ｆ,亀戸駅徒歩3分以内,03-5836-3800,"平日:07:00 - 22:30
 土曜日:07:00 - 22:30
-日祝:07:00 - 22:30",http://sasp.mapion.co.jp/b/doutor/info/05000109/,TRUE,FALSE,FALSE,FALSE
+日祝:07:00 - 22:30",http://sasp.mapion.co.jp/b/doutor/info/05000109/,TRUE,FALSE,FALSE,FALSE,35.6981036,139.8261336
 49,エクセルシオール カフェ 吉祥寺サンロード店,東京都,武蔵野市,吉祥寺本町１‐１５‐４ムサシノビル,吉祥寺駅徒歩3分以上,0422-28-6680,"平日:07:00 - 23:00
 土曜日:07:00 - 23:00
-日祝:07:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000066/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000066/,TRUE,TRUE,TRUE,FALSE,35.7038688,139.5826139
 50,エクセルシオール カフェ 九段下店,東京都,千代田区,九段北１‐１１‐４新光ビル１Ｆ,九段下駅徒歩3分以内,03-5275-6185,"平日:06:45 - 22:30
 土曜日:07:00 - 21:00
-日祝:07:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000056/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000056/,TRUE,TRUE,TRUE,FALSE,35.6968068,139.751173
 51,エクセルシオール カフェ 郡山桑野店,福島県,郡山市,山市下亀田１６‐１６,郡山駅徒歩53分以上,024-939-1133,"平日:09:00 - 22:00
 土曜日:09:00 - 22:00
-日祝:09:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000179/,TRUE,FALSE,FALSE,FALSE
+日祝:09:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000179/,TRUE,FALSE,FALSE,FALSE,#N/A,#N/A
 52,エクセルシオール カフェ 経堂店,東京都,世田谷区,経堂２‐１,経堂駅徒歩1分以上,03-5451-7930,"平日:06:30 - 21:30
 土曜日:07:00 - 21:30
-日祝:07:00 - 21:30",http://sasp.mapion.co.jp/b/doutor/info/05000132/,FALSE,FALSE,TRUE,FALSE
+日祝:07:00 - 21:30",http://sasp.mapion.co.jp/b/doutor/info/05000132/,FALSE,FALSE,TRUE,FALSE,35.6517657,139.635804
 53,エクセルシオール カフェ 五反田東口店,東京都,品川区,東五反田１-１３-１０さくらビル１Ｆ・２Ｆ,五反田駅徒歩4分以上,03-5793-3810,"平日:06:30 - 23:00
 土曜日:07:00 - 23:00
-日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000015/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000015/,TRUE,TRUE,TRUE,FALSE,35.6258546,139.7270237
 54,エクセルシオール カフェ 御成門駅前店,東京都,港区,西新橋３‐２４‐８山内ビル１Ｆ,御成門駅徒歩3分以内,03-5777-5449,"平日:06:45 - 22:30
 土曜日:07:00 - 20:00
-日祝:08:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000077/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000077/,TRUE,TRUE,TRUE,FALSE,35.6613711,139.751173
 55,エクセルシオール カフェ 江坂広芝店,大阪府,吹田市,広芝町１０‐３５江坂南口第２ビル１Ｆ,江坂駅徒歩1分以上,06-6385-0171,"平日:07:00 - 21:00
 土曜日:07:30 - 20:00
-日祝:07:30 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000220/,TRUE,TRUE,TRUE,FALSE
+日祝:07:30 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000220/,TRUE,TRUE,TRUE,FALSE,34.7572995,135.4973172
 56,エクセルシオール カフェ 麹町３丁目店,東京都,千代田区,麹町３‐２麹町共同ビル１Ｆ,麹町駅徒歩1分以上,03-5226-2362,"平日:07:00 - 22:00
 土曜日:08:00 - 21:00
-日祝:08:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000211/,TRUE,FALSE,FALSE,FALSE
+日祝:08:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000211/,TRUE,FALSE,FALSE,FALSE,35.6843129,139.7385782
 57,エクセルシオール カフェ 麹町店,東京都,千代田区,麹町４‐１西脇ビル１Ｆ,麹町駅徒歩1分以上,03-3263-2025,"平日:06:45 - 22:00
 土曜日:07:00 - 22:00
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000102/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000102/,TRUE,TRUE,TRUE,FALSE,35.6836493,139.7374606
 58,エクセルシオール カフェ 国立駅前店,東京都,国立市,中１‐８‐４５三井住友銀行国立支店,国立駅徒歩3分以内,042-580-4172,"平日:07:00 - 22:30
 土曜日:07:00 - 22:30
-日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000111/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000111/,TRUE,TRUE,TRUE,FALSE,35.6986474,139.4460896
 59,エクセルシオール カフェ 堺筋本町店,大阪府,大阪市,中央区久太郎町２‐１‐２５ＪＴＢビル,堺筋本町駅徒歩3分以内,06-6263-5236,"平日:07:30 - 21:30
 土曜日:08:00 - 19:00
-日祝:08:00 - 19:00",http://sasp.mapion.co.jp/b/doutor/info/05000170/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 19:00",http://sasp.mapion.co.jp/b/doutor/info/05000170/,TRUE,TRUE,TRUE,FALSE,34.6813149,135.5057866
 60,エクセルシオール カフェ 笹塚店,東京都,渋谷区,笹塚１‐５６‐１８京王クラウン街笹塚,笹塚駅徒歩3分以内,03-5333-7385,"平日:07:00 - 22:00
 土曜日:07:00 - 22:00
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000082/,TRUE,FALSE,TRUE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000082/,TRUE,FALSE,TRUE,FALSE,35.6737767,139.6675375
 61,エクセルシオール カフェ 三宮センター街店,兵庫県,神戸市,中央区三宮町１-５-２０,三宮・花時計前駅徒歩2分以上,078-391-8270,"平日:07:30 - 22:00
 土曜日:08:00 - 22:00
-日祝:08:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000265/,FALSE,TRUE,TRUE,FALSE
+日祝:08:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000265/,FALSE,TRUE,TRUE,FALSE,34.6915717,135.1931781
 62,エクセルシオール カフェ 三田店,東京都,港区,芝５‐３１‐５ＧＡＴＯ三田ビル１Ｆ,三田駅徒歩1分以上,03-5730-2810,"平日:06:45 - 23:00
 土曜日:07:00 - 22:00
-日祝:07:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000044/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000044/,TRUE,TRUE,TRUE,FALSE,35.6467742,139.7462004
 63,エクセルシオール カフェ 山王パークタワー店,東京都,千代田区,永田町２‐１１‐１山王パークタワー１Ｆ,溜池山王駅徒歩2分以上,03-3503-5550,"平日:07:00 - 22:00
 土曜日:-
-日祝:-",http://sasp.mapion.co.jp/b/doutor/info/05000169/,TRUE,TRUE,TRUE,FALSE
+日祝:-",http://sasp.mapion.co.jp/b/doutor/info/05000169/,TRUE,TRUE,TRUE,FALSE,35.6730726,139.7405186
 64,エクセルシオール カフェ 四条烏丸店,京都,府京都市,下京区四条通東洞院西入長刀鉾町３１ビヨンドビル１Ｆ,烏丸駅徒歩2分以上,075-212-1785,"平日:07:30 - 22:00
 土曜日:07:30 - 22:00
-日祝:07:30 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000215/,TRUE,FALSE,FALSE,FALSE
+日祝:07:30 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000215/,TRUE,FALSE,FALSE,FALSE,35.0035232,135.7609163
 65,エクセルシオール カフェ 四条河原町店,京都,府京都市,中京区河原町通四条上ル米屋町３９１河原町ニュートーキョービル１Ｆ,河原町駅徒歩3分以内,075-254-6235,"平日:07:30 - 22:30
 土曜日:07:30 - 23:00
-日祝:07:30 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000051/,TRUE,FALSE,FALSE,FALSE
+日祝:07:30 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000051/,TRUE,FALSE,FALSE,FALSE,35.004068,135.769095
 66,エクセルシオール カフェ 市ヶ谷駅前店,東京都,千代田区,五番町３‐１五番町グランドビル１Ｆ,半蔵門駅徒歩7分以上,03-3556-0590,"平日:06:30 - 23:00
 土曜日:07:00 - 21:00
-日祝:07:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000048/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000048/,TRUE,TRUE,TRUE,FALSE,35.6902832,139.7357882
 67,エクセルシオール カフェ 自由が丘マリクレール通り店,東京都,目黒区,自由が丘１‐９‐２ｆａｓｔｌｕｃｋ自由が丘２１１Ｆ・２Ｆ,自由が丘駅徒歩1分以上,03-3723-8685,"平日:07:00 - 23:00
 土曜日:07:00 - 23:00
-日祝:07:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000193/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000193/,TRUE,TRUE,TRUE,FALSE,35.6074823,139.6698016
 68,エクセルシオール カフェ 自由が丘駅前店,東京都,目黒区,自由が丘２‐１１‐１ジェイフェイスクリヤマビル１Ｆ・２Ｆ,自由が丘駅徒歩3分以内,03-5726-2576,"平日:06:30 - 23:20
 土曜日:07:00 - 23:20
-日祝:07:00 - 23:20",http://sasp.mapion.co.jp/b/doutor/info/05000050/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 23:20",http://sasp.mapion.co.jp/b/doutor/info/05000050/,TRUE,TRUE,TRUE,FALSE,35.6078136,139.6681573
 69,エクセルシオール カフェ 秋葉原ダイビル店,東京都,千代田区,外神田１‐１８,秋葉原駅徒歩4分以上,03-5294-7110,"平日:07:30 - 21:00
 土曜日:08:00 - 21:00
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000150/,TRUE,FALSE,FALSE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000150/,TRUE,FALSE,FALSE,FALSE,35.6990693,139.7723133
 70,エクセルシオール カフェ 秋葉原中央通り店,東京都,千代田区,外神田３‐１５‐１秋葉プレイス１Ｆ,末広町駅徒歩2分以上,03-5296-8232,"平日:07:00 - 22:00
 土曜日:07:30 - 21:30
-日祝:08:00 - 21:30",http://sasp.mapion.co.jp/b/doutor/info/05000142/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 21:30",http://sasp.mapion.co.jp/b/doutor/info/05000142/,TRUE,TRUE,TRUE,FALSE,35.7015398,139.7711584
 71,エクセルシオール カフェ 渋谷宇田川町店,東京都,渋谷区,宇田川町２５‐１江島屋ビル１Ｆ,渋谷駅徒歩6分以上,03-5428-1550,"平日:07:30 - 23:00
 土曜日:08:00 - 23:00
-日祝:08:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000023/,TRUE,FALSE,FALSE,FALSE
+日祝:08:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000023/,TRUE,FALSE,FALSE,FALSE,35.6605497,139.6992842
 72,エクセルシオール カフェ 渋谷宮益坂店,東京都,渋谷区,渋谷１‐１４‐８宮益ＳＫビル１Ｆ・２Ｆ,渋谷駅徒歩3分以上,03-3498-1158,"平日:07:00 - 23:00
 土曜日:07:00 - 23:00
-日祝:07:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000201/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000201/,TRUE,TRUE,TRUE,FALSE,35.6598386,139.7029813
 73,エクセルシオール カフェ 渋谷桜丘店,東京都,渋谷区,桜丘町２‐９第１カスヤビル１Ｆ,渋谷駅徒歩2分以上,03-3462-9271,"平日:07:30 - 22:30
 土曜日:08:00 - 22:30
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000094/,TRUE,FALSE,FALSE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000094/,TRUE,FALSE,FALSE,FALSE,35.6570861,139.7013565
 74,エクセルシオール カフェ 新お茶の水店,東京都,千代田区,神田駿河台４-３新お茶の水ビルディングサンクレールＢ１Ｆ,新御茶ノ水駅徒歩2分以上,03-3291-1231,"平日:07:00 - 22:30
 土曜日:07:00 - 22:00
-日祝:07:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000137/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000137/,TRUE,TRUE,TRUE,FALSE,35.6990246,139.7647964
 75,エクセルシオール カフェ 新橋２丁目店,東京都,港区,新橋２‐５‐１ＥＸＣＥＬ新橋１Ｆ・２Ｆ,汐留駅徒歩5分以上,03-3593-6565,"平日:07:00 - 22:00
 土曜日:08:00 - 21:00
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000191/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000191/,TRUE,TRUE,TRUE,FALSE,35.6679582,139.7560397
 76,エクセルシオール カフェ 新宿アイランド店,東京都,新宿区,西新宿６‐５‐１新宿アイランドタワー１Ｆ,西新宿駅徒歩1分以上,03-5339-9201,"平日:07:00 - 22:00
 土曜日:08:00 - 21:00
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000110/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000110/,TRUE,TRUE,TRUE,FALSE,35.693412,139.693125
 77,エクセルシオール カフェ 新宿パークタワー店,東京都,新宿区,西新宿３‐７‐１新宿パークタワーＢ１Ｆ郵便私書箱８１０７,都庁前駅徒歩8分以上,03-5323-3936,"平日:07:00 - 22:00
 土曜日:07:30 - 20:00
-日祝:08:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000008/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000008/,TRUE,TRUE,TRUE,FALSE,35.685374,139.69097
 78,エクセルシオール カフェ 新宿ファーストウエスト店,東京都,新宿区,西新宿１‐２３‐３新宿ファーストウエストビル１Ｆ,都庁前駅徒歩3分以上,03-5339-9021,"平日:07:00 - 22:00
 土曜日:07:00 - 20:00
-日祝:08:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000121/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000121/,TRUE,TRUE,TRUE,FALSE,35.689743,139.695556
 79,エクセルシオール カフェ 新宿小滝橋通り店,東京都,新宿区,西新宿７-２-５ＴＨ西新宿ビル１Ｆ・２Ｆ,新宿西口駅徒歩1分以上,03-3362-7606,"平日:07:00 - 22:00
 土曜日:08:00 - 21:00
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000256/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000256/,TRUE,TRUE,TRUE,FALSE,35.6952586,139.6986627
 80,エクセルシオール カフェ 新宿文化クイントビル店,東京都,渋谷区,代々木３‐２２‐７新宿文化クイントビル１Ｆ,南新宿駅徒歩6分以上,03-5304-8918,"平日:07:00 - 21:00
 土曜日:07:30 - 20:00
-日祝:07:30 - 18:00",http://sasp.mapion.co.jp/b/doutor/info/05000104/,TRUE,FALSE,FALSE,FALSE
+日祝:07:30 - 18:00",http://sasp.mapion.co.jp/b/doutor/info/05000104/,TRUE,FALSE,FALSE,FALSE,35.686203,139.6948068
 81,エクセルシオール カフェ 神戸元町店,兵庫県,神戸市,中央区栄町通１-２-３１東急ＲＥＩホテル１Ｆ,旧居留地・大丸前駅徒歩2分以上,078-321-7512,"平日:07:00 - 22:00
 土曜日:07:30 - 22:00
-日祝:07:30 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000242/,TRUE,TRUE,TRUE,FALSE
+日祝:07:30 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000242/,TRUE,TRUE,TRUE,FALSE,34.688179,135.1894713
 82,エクセルシオール カフェ 神田小川町店,東京都,千代田区,神田小川町１‐５‐１御幸ビル１Ｆ,小川町駅徒歩1分以上,03-5280-6235,"平日:07:00 - 22:30
 土曜日:07:30 - 21:00
-日祝:07:30 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000136/,TRUE,TRUE,TRUE,FALSE
+日祝:07:30 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000136/,TRUE,TRUE,TRUE,FALSE,35.6943293,139.7656073
 83,エクセルシオール カフェ 人形町店,東京都,中央区,日本橋人形町３‐８‐１ＴＴ‐２ビル１Ｆ,水天宮前駅徒歩6分以上,03-3669-5737,"平日:07:00 - 22:00
 土曜日:08:00 - 21:00
-日祝:08:00 - 19:00",http://sasp.mapion.co.jp/b/doutor/info/05000238/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 19:00",http://sasp.mapion.co.jp/b/doutor/info/05000238/,TRUE,TRUE,TRUE,FALSE,35.68668,139.782458
 84,エクセルシオール カフェ 水道橋西口店,東京都,千代田区,神田三崎町２‐２２‐１８西山興業新水道橋ビルＢ１Ｆ・１Ｆ・２Ｆ,水道橋駅徒歩4分以上,03-5211-7187,"平日:06:45 - 22:30
 土曜日:06:45 - 22:30
-日祝:06:45 - 22:30",http://sasp.mapion.co.jp/b/doutor/info/05000174/,TRUE,TRUE,TRUE,FALSE
+日祝:06:45 - 22:30",http://sasp.mapion.co.jp/b/doutor/info/05000174/,TRUE,TRUE,TRUE,FALSE,35.7023744,139.752155
 85,エクセルシオール カフェ 晴海トリトン店,東京都,中央区,晴海１‐８‐１６晴海トリトン３‐７,勝どき駅徒歩6分以上,03-5144-8241,"平日:07:00 - 22:00
 土曜日:08:00 - 22:00
-日祝:08:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000043/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000043/,TRUE,TRUE,TRUE,FALSE,35.6574706,139.7823685
 86,エクセルシオール カフェ 聖路加ガーデン店,東京都,中央区,明石町８‐１聖路加ガーデン２Ｆ,月島駅徒歩8分以上,03-5550-2323,"平日:07:00 - 21:00
 土曜日:08:00 - 20:00
-日祝:08:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000007/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000007/,TRUE,TRUE,TRUE,FALSE,35.6670372,139.7786722
 87,エクセルシオール カフェ 西那須野店,栃木県,那須塩原市,太夫塚６-２３２-８,西那須野駅徒歩16分以上,0287-37-4646,"平日:10:00 - 22:00
 土曜日:10:00 - 22:00
-日祝:10:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000262/,TRUE,FALSE,FALSE,FALSE
+日祝:10:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000262/,TRUE,FALSE,FALSE,FALSE,36.8847339,139.9735814
 88,エクセルシオール カフェ 赤坂パークビル店,東京都,港区,赤坂５‐２‐２０赤坂パークビルヂング１Ｆ,赤坂駅徒歩3分以上,03-5573-8889,"平日:06:45 - 21:00
 土曜日:-
-日祝:-",http://sasp.mapion.co.jp/b/doutor/info/05000006/,TRUE,FALSE,TRUE,FALSE
+日祝:-",http://sasp.mapion.co.jp/b/doutor/info/05000006/,TRUE,FALSE,TRUE,FALSE,35.67196,139.733409
 89,エクセルシオール カフェ 赤坂一ツ木通り店,東京都,港区,赤坂３‐１３‐１３赤坂中村ビル１Ｆ,赤坂駅徒歩2分以上,03-3568-6558,"平日:07:00 - 23:00
 土曜日:08:00 - 21:00
-日祝:08:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000036/,TRUE,FALSE,FALSE,FALSE
+日祝:08:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000036/,TRUE,FALSE,FALSE,FALSE,35.6733784,139.7372011
 90,エクセルシオール カフェ 仙台中央通り店,宮城県,仙台市,青葉区中央２‐１‐２３松澤ビル１Ｆ,あおば通駅徒歩3分以内,022-726-4680,"平日:07:00 - 22:00
 土曜日:07:30 - 22:00
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000061/,TRUE,FALSE,FALSE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000061/,TRUE,FALSE,FALSE,FALSE,38.261524,140.878122
 91,エクセルシオール カフェ 川越アトレ店,埼玉県,川越市,脇田町１０５川越アトレ２Ｆ,川越駅徒歩1分以上,049-227-7225,"平日:06:45 - 22:00
 土曜日:07:00 - 22:00
-日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000039/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000039/,TRUE,TRUE,TRUE,FALSE,35.9079843,139.4830951
 92,エクセルシオール カフェ 大岡山駅前店,東京都,目黒区,大岡山２‐１２‐１東工大蔵前会館１Ｆ,大岡山駅徒歩1分以上,03-3726-7772,"平日:07:30 - 21:00
 土曜日:08:00 - 21:00
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000234/,FALSE,TRUE,FALSE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000234/,FALSE,TRUE,FALSE,FALSE,35.6074751,139.6846766
 93,エクセルシオール カフェ 大山駅前店,東京都,板橋区,大山町３２‐１,大山駅徒歩1分以上,03-3973-7801,"平日:07:00 - 22:00
 土曜日:08:00 - 21:00
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000052/,TRUE,FALSE,TRUE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000052/,TRUE,FALSE,TRUE,FALSE,35.7490841,139.7018583
 94,エクセルシオール カフェ 池袋二丁目店,東京都,豊島区,池袋２‐１‐１杉山ビル１Ｆ,池袋駅徒歩4分以上,03-5979-1541,"平日:06:45 - 23:00
 土曜日:07:00 - 23:00
-日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000024/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000024/,TRUE,TRUE,TRUE,FALSE,35.7341919,139.7115116
 95,エクセルシオール カフェ 津田沼北口店,千葉県,習志野市,津田沼１‐１‐１津田沼駅北口駅ビル３Ｆ・４Ｆ,津田沼駅徒歩3分以内,047-403-2215,"平日:06:30 - 22:30
 土曜日:07:00 - 22:30
-日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000156/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000156/,TRUE,TRUE,TRUE,FALSE,35.6911566,140.0209005
 96,エクセルシオール カフェ 田町東口店,東京都,港区,芝浦３‐５‐３９イーストウイング１Ｆ,田町駅徒歩3分以上,03-5730-2620,"平日:07:00 - 22:30
 土曜日:07:00 - 21:00
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000106/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000106/,TRUE,TRUE,TRUE,FALSE,35.6438694,139.7486378
 97,エクセルシオール カフェ 都立大学駅前店,東京都,目黒区,平町１‐２７‐１パル都立大ビル１Ｆ,都立大学駅徒歩3分以内,03-5731-2751,"平日:06:45 - 23:00
 土曜日:07:00 - 23:00
-日祝:07:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000071/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000071/,TRUE,TRUE,TRUE,FALSE,35.6173547,139.6762749
 98,エクセルシオール カフェ 東京オペラシティ店,東京都,新宿区,西新宿３‐２０‐２東京オペラシティ１Ｆ,初台駅徒歩4分以上,03-3299-9088,"平日:07:30 - 22:00
 土曜日:08:00 - 22:00
-日祝:08:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000153/,TRUE,FALSE,TRUE,FALSE
+日祝:08:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000153/,TRUE,FALSE,TRUE,FALSE,35.6834362,139.6866486
 99,エクセルシオール カフェ 東京医療センター店,東京都,目黒区,東が丘２‐５‐１東京医療センター１Ｆ,駒沢大学駅徒歩13分以上,03-5430-2051,"平日:07:00 - 19:30
 土曜日:07:00 - 19:30
-日祝:07:00 - 19:30",http://sasp.mapion.co.jp/b/doutor/info/05000172/,FALSE,FALSE,FALSE,FALSE
+日祝:07:00 - 19:30",http://sasp.mapion.co.jp/b/doutor/info/05000172/,FALSE,FALSE,FALSE,FALSE,35.627216,139.666186
 100,エクセルシオール カフェ 東京競馬場店,東京都,府中市,日吉町１‐１新スタンド３Ｆ,府中競馬正門前駅徒歩5分以上,042-358-1201,"平日:-土曜日:09
 土曜日:09:00 - 16:00
-日祝:09:00 - 16:00",http://sasp.mapion.co.jp/b/doutor/info/05000095/,TRUE,FALSE,FALSE,FALSE
+日祝:09:00 - 16:00",http://sasp.mapion.co.jp/b/doutor/info/05000095/,TRUE,FALSE,FALSE,FALSE,35.6651476,139.4835565
 101,エクセルシオール カフェ 日テレプラザ店,東京都,港区,東新橋１‐６‐１日本テレビタワー２Ｆ,汐留駅徒歩1分以上,03-6215-8560,"平日:07:00 - 22:00
 土曜日:07:30 - 20:00
-日祝:07:30 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000117/,TRUE,FALSE,FALSE,FALSE
+日祝:07:30 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000117/,TRUE,FALSE,FALSE,FALSE,35.6644363,139.759937
 102,エクセルシオール カフェ 日土地西新宿ビル店,東京都,新宿区,西新宿６‐１０‐１日土地西新宿ビル２Ｆ,西新宿駅徒歩2分以上,03-5321-9515,"平日:06:00 - 20:00
 土曜日:09:00 - 19:00
-日祝:09:00 - 19:00",http://sasp.mapion.co.jp/b/doutor/info/05000103/,TRUE,FALSE,TRUE,FALSE
+日祝:09:00 - 19:00",http://sasp.mapion.co.jp/b/doutor/info/05000103/,TRUE,FALSE,TRUE,FALSE,35.6946035,139.6907535
 103,エクセルシオール カフェ 日暮里店,東京都,荒川区,西日暮里２‐１９‐６,日暮里駅徒歩1分以上,03-3803-0373,"平日:07:00 - 23:00
 土曜日:07:00 - 23:00
-日祝:07:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000038/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000038/,TRUE,TRUE,TRUE,FALSE,35.7282273,139.771451
 104,エクセルシオール カフェ 日本橋一丁目店,東京都,中央区,日本橋１‐２‐６黒江屋国分ビル１Ｆ,三越前駅徒歩5分以上,03-3516-7827,"平日:07:00 - 22:30
 土曜日:08:00 - 21:00
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000115/,TRUE,TRUE,TRUE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000115/,TRUE,TRUE,TRUE,FALSE,35.6833713,139.7737943
 105,エクセルシオール カフェ 品川イーストワンタワー店,東京都,港区,港南２‐１６‐１品川イーストワンタワー２Ｆ,品川駅徒歩5分以上,03-6718-2839,"平日:07:00 - 23:00
 土曜日:08:00 - 21:00
-日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000112/,TRUE,FALSE,FALSE,FALSE
+日祝:08:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000112/,TRUE,FALSE,FALSE,FALSE,35.627764,139.740875
 106,エクセルシオール カフェ 品川シーサイドフォレスト店,東京都,品川区,東品川４‐１２‐６品川シーサイドフォレストＢ１Ｆ,品川シーサイド駅徒歩1分以上,03-5769-2665,"平日:07:30 - 22:00
 土曜日:07:30 - 22:00
-日祝:07:30 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000093/,TRUE,TRUE,TRUE,FALSE
+日祝:07:30 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000093/,TRUE,TRUE,TRUE,FALSE,35.6097018,139.7483331
 107,エクセルシオール カフェ 浜松メイワン店,静岡県,浜松市,中区砂山町６‐１,浜松駅徒歩3分以内,053-457-3326,"平日:10:00 - 20:00
 土曜日:10:00 - 20:00
-日祝:10:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000230/,TRUE,TRUE,FALSE,FALSE
+日祝:10:00 - 20:00",http://sasp.mapion.co.jp/b/doutor/info/05000230/,TRUE,TRUE,FALSE,FALSE,34.7041825,137.7344534
 108,エクセルシオール カフェ 武蔵小杉店,神奈川県,川崎市,中原区小杉町１‐４０３‐６０小杉ビル１Ｆ,武蔵小杉駅徒歩2分以上,044-739-8925,"平日:06:45 - 22:30
 土曜日:07:00 - 22:30
-日祝:07:00 - 22:30",http://sasp.mapion.co.jp/b/doutor/info/05000090/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 22:30",http://sasp.mapion.co.jp/b/doutor/info/05000090/,TRUE,TRUE,TRUE,FALSE,35.5770398,139.6589404
 109,エクセルシオール カフェ 福島南店,福島県,福島市,黒岩字浜井場２４‐１,南福島駅徒歩18分以上,024-544-0375,"平日:09:00 - 22:00
 土曜日:09:00 - 22:00
-日祝:09:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000244/,FALSE,FALSE,FALSE,FALSE
+日祝:09:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000244/,FALSE,FALSE,FALSE,FALSE,37.7278317,140.4688884
 110,エクセルシオール カフェ 豊橋Ｋａｌｍｉａ店,愛知県,豊橋市,花田町西宿無番地,豊橋駅徒歩2分以上,0532-56-1007,"平日:07:00 - 21:00
 土曜日:07:00 - 21:00
-日祝:07:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000129/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000129/,TRUE,TRUE,TRUE,FALSE,34.7636862,137.3823026
 111,エクセルシオール カフェ 豊洲ＩＨＩビル店,東京都,江東区,豊洲３‐１‐１ＩＨＩビル１Ｆ,豊洲駅徒歩7分以上,03-3534-9400,"平日:07:00 - 18:00
 土曜日:-
-日祝:-",http://sasp.mapion.co.jp/b/doutor/info/05000221/,FALSE,FALSE,TRUE,FALSE
-112,エクセルシオール カフェ 本八幡駅北口店,千葉県,市川市,川市八幡２-１７-１,京成八幡駅徒歩4分以上,047-302-5731,"平日:06:30 - 23:00
+日祝:-",http://sasp.mapion.co.jp/b/doutor/info/05000221/,FALSE,FALSE,TRUE,FALSE,35.6596461,139.7938592
+112,エクセルシオール カフェ 本八幡駅北口店,千葉県,市川市,八幡２-１７-１,京成八幡駅徒歩4分以上,047-302-5731,"平日:06:30 - 23:00
 土曜日:07:00 - 23:00
-日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000260/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000260/,TRUE,TRUE,TRUE,FALSE,35.7211922,139.9270686
 113,エクセルシオール カフェ 名古屋国際ホテル店,愛知県,名古屋市,中区錦３‐２３‐３名古屋国際ホテル１Ｆ,栄駅徒歩4分以上,052-961-3130,"平日:07:00 - 23:00
 土曜日:07:30 - 23:00
-日祝:07:30 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000213/,TRUE,TRUE,TRUE,FALSE
+日祝:07:30 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000213/,TRUE,TRUE,TRUE,FALSE,35.1694797,136.9048461
 114,エクセルシオール カフェ 淀屋橋店,大阪府,大阪市,中央区伏見町４‐１‐１大阪明治生命館ランド・アクシスタワー１Ｆ,淀屋橋駅徒歩4分以上,06-6204-7610,"平日:07:00 - 22:00
 土曜日:08:00 - 18:00
-日祝:08:00 - 18:00",http://sasp.mapion.co.jp/b/doutor/info/05000054/,TRUE,TRUE,FALSE,FALSE
+日祝:08:00 - 18:00",http://sasp.mapion.co.jp/b/doutor/info/05000054/,TRUE,TRUE,FALSE,FALSE,34.6894227,135.5003733
 115,エクセルシオール カフェ 立川北口駅前店,東京都,立川市,曙町２‐１３‐１ＴＫ立川ビル１Ｆ,立川駅徒歩1分以上,042-540-2720,"平日:07:00 - 23:00
 土曜日:07:00 - 23:00
-日祝:07:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000100/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/05000100/,TRUE,TRUE,TRUE,FALSE,35.6986725,139.4147157
 116,エクセルシオール カフェ 立川北口店,東京都,立川市,曙町２‐５‐１７イノタケビル３Ｆ・４Ｆ,立川北駅徒歩3分以内,042-540-9150,"平日:07:00 - 22:40
 土曜日:07:00 - 22:40
-日祝:07:00 - 22:40",http://sasp.mapion.co.jp/b/doutor/info/05000088/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 22:40",http://sasp.mapion.co.jp/b/doutor/info/05000088/,TRUE,TRUE,TRUE,FALSE,35.700074,139.413226
 117,エクセルシオール カフェ 蓮田サービスエリア下り店,埼玉県,蓮田市,黒浜３４６９,白岡駅徒歩27分以上,048-768-6411,"平日:06:00 - 21:00
 土曜日:06:00 - 21:00
-日祝:06:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000227/,FALSE,FALSE,FALSE,FALSE
+日祝:06:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/05000227/,FALSE,FALSE,FALSE,FALSE,36.0008755,139.666752
 118,カフェ エクセルシオール 八重洲地下街店,東京都,中央区,八重洲２‐１八重洲地下街中１号Ａブロック３０３‐４３,東京駅徒歩5分以上,03-6202-0788,"平日:07:00 - 22:30
 土曜日:07:00 - 22:30
-日祝:07:00 - 22:30",http://sasp.mapion.co.jp/b/doutor/info/05000062/,TRUE,TRUE,TRUE,FALSE
+日祝:07:00 - 22:30",http://sasp.mapion.co.jp/b/doutor/info/05000062/,TRUE,TRUE,TRUE,FALSE,35.6804441,139.7688358

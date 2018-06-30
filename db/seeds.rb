@@ -78,6 +78,8 @@ csv_file_array.each_with_index do |csv_file,time|
       socket: data[10],
       smoking: data[11],
       iccard: data[12],
+      lat: data[13],
+      lng: data[14],
       mainstore_id: time+1
     )
   end

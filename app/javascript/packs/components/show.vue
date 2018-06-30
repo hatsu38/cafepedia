@@ -18,9 +18,11 @@ export default {
       store: []
     }
   },
-  mounted: function(){
+  created: function(){
     this.fetchStoreDetail();
-    this.gmapdesp();
+  },
+  mounted: function(){
+      this.gmapdesp();
   },
   methods: {
     fetchStoreDetail: function(){
@@ -31,14 +33,15 @@ export default {
         alart("Sorry");
       });
     },
-    gmapdesp: function(){
-      function init() {
-        var mapOptions = { "center": {  "lat": 34.3969159,  "lng": 132.4756738}, "mapTypeId": "roadmap","zoom": 15};
+    gmapcreate: function(){
+        console.log(this.store);
+        var mapOptions = {"center":{"lat": parseFloat(this.store.lat),"lng": parseFloat(this.store.lng)},"mapTypeId": "roadmap","zoom": 15};
         var mapElement = document.getElementById('map');
         var map = new google.maps.Map(mapElement, mapOptions);
         google.maps.event.addDomListener(window, "resize", function() { var center = map.getCenter(); google.maps.event.trigger(map, "resize"); map.setCenter(center); });
-      }
-      google.maps.event.addDomListener(window, 'load', init);
+    },
+    gmapdesp: function(){
+      google.maps.event.addDomListener(window, 'load', this.gmapcreate);
     }
   }
 }

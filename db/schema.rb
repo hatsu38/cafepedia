@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20180608121932) do
     t.boolean "socket"
     t.boolean "smoking"
     t.boolean "iccard"
+    t.string "lat"
+    t.string "lng"
     t.integer "mainstore_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

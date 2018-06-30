@@ -1,7 +1,7 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lon,lat
 0,ニナス パリ・静岡マルイ店,静岡県,静岡市,葵区御幸町６-１０静岡マルイ２Ｆ,新静岡駅徒歩2分以上,054-663-9832,"平日:10:00 - 19:30
 土曜日:10:00 - 19:30
-日祝:10:00 - 19:30",http://sasp.mapion.co.jp/b/doutor/info/03008894/,TRUE,FALSE,FALSE,FALSE
+日祝:10:00 - 19:30",http://sasp.mapion.co.jp/b/doutor/info/03008894/,TRUE,FALSE,FALSE,FALSE,34.9740662,138.3878357
 1,ニナス パリ・武蔵村山店,東京都,武蔵村,山市榎１-１-３-１０５１イオンモールむさし村山１Ｆ,武蔵砂川駅徒歩30分以上,042-564-3125,"平日:10:00 - 23:00
 土曜日:10:00 - 23:00
-日祝:10:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/03008872/,FALSE,FALSE,FALSE,FALSE
+日祝:10:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/03008872/,FALSE,FALSE,FALSE,FALSE,35.7467457,139.3849914
