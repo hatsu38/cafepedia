@@ -66,7 +66,7 @@
                      </td>
                    </tr>
                    <tr>
-                     <th><i class="fas fa-train"></i></th>
+                     <th><i class="fas fa-map-marker-alt"></i></th>
                      <td>
                        {{store.access | access_cut}}
                      </td>
