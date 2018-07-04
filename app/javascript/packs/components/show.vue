@@ -53,7 +53,6 @@
     <div id='map'></div>
   </div>
 </template>
-
 <script>
 import axios from 'axios';
 export default {
@@ -62,22 +61,25 @@ export default {
       store: []
     }
   },
+  created: function(){
+    this.fetchStoreDetail();
+  },
   methods: {
     fetchStoreDetail: function(){
       var id = this.$route.params.id;
       axios.get('/api/stores/'+id).then((response)=>{
         this.store = response.data.store;
-        // this.gmapCreate();
+        this.gmapCreate();
       },(error)=>{
         alart("Sorry");
       });
     },
-    // gmapCreate: function(){
-    //   var map = new google.maps.Map(document.getElementById('map'), {
-    //     center: {lat: this.store["lat"], lng: this.store["lng"]},
-    //     zoom: 14
-    //   });
-    // }
+    gmapCreate: function(){
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: this.store.lat, lng: this.store.lng},
+        zoom: 14
+      });
+    }
   }
 }
 </script>
