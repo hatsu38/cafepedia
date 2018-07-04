@@ -75,9 +75,22 @@ export default {
       });
     },
     gmapCreate: function(){
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: this.store.lat, lng: this.store.lng},
-        zoom: 14
+      var store_lat = parseFloat(this.store.lat);
+      var store_lng = parseFloat(this.store.lng);
+      var map = new google.maps.Map(document.getElementById('map'), { // #sampleに地図を埋め込む
+        center: { // 地図の中心を指定
+          lat: store_lat, // 緯度
+          lng: store_lng// 経度
+        },
+        zoom: 14 // 地図のズームを指定
+      });
+      this.gmarkerDesp(store_lat,store_lng,map);
+    },
+    gmarkerDesp: function(lat,lng,map){
+      var marker = new google.maps.Marker({
+        // マーカーを置く緯度経度
+        position: new google.maps.LatLng(lat,lng),
+        map: map
       });
     }
   }

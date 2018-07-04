@@ -123,45 +123,8 @@ export default {
     this.fetchStores();
   },
   computed: {
-    //ページネーション系メソッド
-    pages: function(){
-      return Math.ceil(this.stores.length/this.size);
-    },
-    displayPageRange: function(){
-      const half = Math.ceil(this.pageRange / 2);
-      let start, end;
-      if (this.pages < this.pageRange) {
-        // ページネーションのrangeよりページ数がすくない場合
-        start = 1;
-        end = this.pages;
-      } else if (this.currentPage < half) {
-        // 左端のページ番号が1になったとき
-        start = 1;
-        end = start + this.pageRange - 1;
-      } else if (this.pages - half < this.currentPage) {
-        // 右端のページ番号が総ページ数になったとき
-        end = this.pages;
-        start = end - this.pageRange + 1;
-      } else {
-        // activeページを中央にする
-        start = this.currentPage - half + 1;
-        end = this.currentPage + half;
-      }
-      let indexes = [];
-      for (let i = start; i <= end; i++) {
-        indexes.push(i);
-      }
-      return indexes;
-    },
     displayStores: function(){
-      //ページネーション系
-      // const head = this.currentPage * this.size;
-      // return this.stores.slice(head,head+this.size);
-      // もっと読む系
       return this.stores.slice(0,this.size)
-    },
-    isSelected(page){
-      return page - 1 === this.currentPage;
     },
   },
   methods: {
@@ -180,7 +143,6 @@ export default {
             var lng2 = store["lng"]
             var distance = that.getDistance(hereLat,hereLng,lat2,lng2,0,i)
             store.distance = distance
-            console.dir(store);
           })
           that.distanceSort()
         })
@@ -252,27 +214,6 @@ export default {
         $(this).delay(180 * i).fadeIn(500);
       });
     },
-    //ページネーション系メソッド
-    first () {
-      this.currentPage = 0;
-    },
-    last () {
-      this.currentPage = this.pages - 1;
-    },
-    prev () {
-      if (0 < this.currentPage) {
-        this.currentPage--;
-      }
-    },
-    next () {
-      if (this.currentPage < this.pages - 1) {
-        this.currentPage++;
-      }
-    },
-    pageSelect (index) {
-      this.currentPage = index - 1;
-    },
-    //もっと読むメソッド
     moreread (){
       this.size += 10
       this.get_moreread_desp();
@@ -293,7 +234,7 @@ export default {
         );
       });
     },
-    getDistance: function(lat1,lng1,lat2,lng2,precision,i){
+    getDistance: function(lat1,lng1,lat2,lng2,precision){
       var distance = 0;
       if ((Math.abs(lat1 - lat2) < 0.00001) && (Math.abs(lng1 - lng2) < 0.00001)) {
         distance = 0;
@@ -317,8 +258,6 @@ export default {
         var decimal_no = Math.pow(10, precision);
         distance = Math.round(decimal_no * distance / 1) / decimal_no;   // kmに変換するときは(1000で割る)
       }
-      console.log("距離"+i);
-      console.log(distance);
       return distance;
     },
     distanceSort: function(){
