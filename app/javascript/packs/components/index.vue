@@ -44,7 +44,6 @@
         </div>
       </div>
     </div>
-
     <div class="stores_box" id="stores">
     <div class="store_count">{{stores.length}}店舗</div>
       <div class="store mix"
@@ -92,7 +91,6 @@
 </template>
 <script>
 import axios from 'axios'
-
 export default {
   data: function(){
   return {
@@ -113,7 +111,7 @@ export default {
   computed: {
     //ページネーション系メソッド
     pages: function(){
-      return  Math.ceil(this.stores.length/this.size);
+      return Math.ceil(this.stores.length/this.size);
     },
     displayPageRange: function(){
       const half = Math.ceil(this.pageRange / 2);
@@ -159,6 +157,19 @@ export default {
           this.stores.push(response.data.stores[i]);
         }
         this.allStores = this.stores
+        this.herePosition(this).then(function (value) {
+          var hereLat = value[0];
+          var hereLng = value[1];
+          var that = value[2];
+          console.log(hereLat);
+          console.log(hereLng);
+          console.log(that);
+          that.allStores.forEach(function(store,i){
+            var lat2 = store["lat"]
+            var lng2 = store["lng"]
+            that.getDistance(hereLat,hereLng,lat2,lng2,0)
+          })
+        })
       },(error) =>{
         alert('Sory');
       });
@@ -258,6 +269,44 @@ export default {
       }
       return this.moreread_desp = true
     },
+    herePosition: function(that){
+      return new Promise((resolve,reject)=>{
+        navigator.geolocation.getCurrentPosition(
+          function (position) {
+            var herePos = [position.coords.latitude,position.coords.longitude,that]
+            resolve(herePos);
+          }
+        );
+      });
+    },
+    getDistance: function(lat1,lng1,lat2,lng2,precision){
+      var distance = 0;
+      if ((Math.abs(lat1 - lat2) < 0.00001) && (Math.abs(lng1 - lng2) < 0.00001)) {
+        distance = 0;
+      } else {
+        lat1 = lat1 * Math.PI / 180;
+        lng1 = lng1 * Math.PI / 180;
+        lat2 = lat2 * Math.PI / 180;
+        lng2 = lng2 * Math.PI / 180;
+
+        var A = 6378140;
+        var B = 6356755;
+        var F = (A - B) / A;
+
+        var P1 = Math.atan((B / A) * Math.tan(lat1));
+        var P2 = Math.atan((B / A) * Math.tan(lat2));
+
+        var X = Math.acos(Math.sin(P1) * Math.sin(P2) + Math.cos(P1) * Math.cos(P2) * Math.cos(lng1 - lng2));
+        var L = (F / 8) * ((Math.sin(X) - X) * Math.pow((Math.sin(P1) + Math.sin(P2)), 2) / Math.pow(Math.cos(X / 2), 2) - (Math.sin(X) - X) * Math.pow(Math.sin(P1) - Math.sin(P2), 2) / Math.pow(Math.sin(X), 2));
+
+        distance = A * (X + L);
+        var decimal_no = Math.pow(10, precision);
+        distance = Math.round(decimal_no * distance / 1) / decimal_no;   // kmに変換するときは(1000で割る)
+      }
+      console.log("距離");
+      console.log(distance);
+      return distance;
+    }
   },
   filters: {
     moment: function(data){
@@ -274,4 +323,5 @@ export default {
     }
   }
 };
+
 </script>

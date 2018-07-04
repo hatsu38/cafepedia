@@ -51,10 +51,32 @@
       </div>
     </div>
 
+    <div id='result'></div>
     <div id='map'></div>
   </div>
 </template>
+</script>
 <script>
+// var lat1 = 36.2939226;
+// var lng1 = 139.691706
+// var lat2 = 35.689487;
+// var lng2 = 139.691706;
+//
+// //距離の計算//
+// function getDistance(lat1, lng1, lat2, lng2) {
+//
+//   function radians(deg){
+//     return deg * Math.PI / 180;
+//   }
+//
+//   return 6378.14 * Math.acos(Math.cos(radians(lat1))* 
+//     Math.cos(radians(lat2))*
+//     Math.cos(radians(lng2)-radians(lng1))+
+//     Math.sin(radians(lat1))*
+//     Math.sin(radians(lat2)));
+// }
+// #<{(|結果|)}>#
+// alert(getDistance(lat1,lng1,lat2,lng2));
 import axios from 'axios';
 export default {
   data: function(){
@@ -64,6 +86,11 @@ export default {
   },
   created: function(){
     this.fetchStoreDetail();
+    var lat1 = 36.2939226;
+    var lng1 = 139.691706;
+    var lat2 = 35.689487;
+    var lng2 = 139.691706;
+    this.getDistance(lat1,lng1,lat2,lng2,0);
   },
   methods: {
     fetchStoreDetail: function(){
@@ -75,25 +102,6 @@ export default {
         alart("Sorry");
       });
     },
-    gmapcreate: function(){
-      var store_lat = parseFloat(this.store.lat);
-      var store_lng = parseFloat(this.store.lng);
-      var map = new google.maps.Map(document.getElementById('map'), { // #sampleに地図を埋め込む
-        center: { // 地図の中心を指定
-          lat: store_lat, // 緯度
-          lng: store_lng// 経度
-        },
-        zoom: 14 // 地図のズームを指定
-      });
-      this.gmarkerDesp(store_lat,store_lng,map);
-    },
-    gmarkerDesp: function(lat,lng,map){
-      var marker = new google.maps.Marker({
-        // マーカーを置く緯度経度
-        position: new google.maps.LatLng(lat,lng),
-        map: map
-      });
-    }
   }
 }
 </script>
