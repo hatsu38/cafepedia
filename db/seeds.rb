@@ -80,6 +80,7 @@ csv_file_array.each_with_index do |csv_file,time|
       iccard: data[12],
       lat: data[13],
       lng: data[14],
+      distance: 0,
       mainstore_id: time+1
     )
   end

@@ -15,6 +15,7 @@ json.set! :store do
     :iccard,
     :lat,
     :lng,
+    :distance,
     :mainstore_id,
     :mainstore,
     :created_at,

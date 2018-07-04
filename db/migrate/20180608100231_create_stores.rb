@@ -15,6 +15,7 @@ class CreateStores < ActiveRecord::Migration[5.1]
       t.boolean :iccard
       t.decimal :lat
       t.decimal :lng
+      t.integer :distance
       t.references :mainstore, foreign_key: true
       t.timestamps
     end

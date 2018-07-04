@@ -50,33 +50,11 @@
         <img src="/uploads/iccard_service.jpg" class="iccard_icon">
       </div>
     </div>
-
-    <div id='result'></div>
     <div id='map'></div>
   </div>
 </template>
-</script>
+
 <script>
-// var lat1 = 36.2939226;
-// var lng1 = 139.691706
-// var lat2 = 35.689487;
-// var lng2 = 139.691706;
-//
-// //距離の計算//
-// function getDistance(lat1, lng1, lat2, lng2) {
-//
-//   function radians(deg){
-//     return deg * Math.PI / 180;
-//   }
-//
-//   return 6378.14 * Math.acos(Math.cos(radians(lat1))* 
-//     Math.cos(radians(lat2))*
-//     Math.cos(radians(lng2)-radians(lng1))+
-//     Math.sin(radians(lat1))*
-//     Math.sin(radians(lat2)));
-// }
-// #<{(|結果|)}>#
-// alert(getDistance(lat1,lng1,lat2,lng2));
 import axios from 'axios';
 export default {
   data: function(){
@@ -84,24 +62,22 @@ export default {
       store: []
     }
   },
-  created: function(){
-    this.fetchStoreDetail();
-    var lat1 = 36.2939226;
-    var lng1 = 139.691706;
-    var lat2 = 35.689487;
-    var lng2 = 139.691706;
-    this.getDistance(lat1,lng1,lat2,lng2,0);
-  },
   methods: {
     fetchStoreDetail: function(){
       var id = this.$route.params.id;
       axios.get('/api/stores/'+id).then((response)=>{
         this.store = response.data.store;
-        this.gmapcreate();
+        // this.gmapCreate();
       },(error)=>{
         alart("Sorry");
       });
     },
+    // gmapCreate: function(){
+    //   var map = new google.maps.Map(document.getElementById('map'), {
+    //     center: {lat: this.store["lat"], lng: this.store["lng"]},
+    //     zoom: 14
+    //   });
+    // }
   }
 }
 </script>

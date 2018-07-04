@@ -43,6 +43,14 @@
              フリーWi-Fi
         </div>
       </div>
+      <div class="filter-block col s12 distanceSort">
+        <div class="filter_content sort"
+             @click="distanceSort"
+             >
+             <i class="fas fa-location-arrow"></i>
+             現在地から近い順に並び替え
+        </div>
+      </div>
     </div>
     <div class="stores_box" id="stores">
     <div class="store_count">{{stores.length}}店舗</div>
@@ -59,28 +67,34 @@
               <table class="table">
                 <tbody>
                   <tr>
-                     <th><i class="fas fa-clock"></i></th>
-                     <td>
-                       <pre>{{store.business_hour}}</pre>
-                     </td>
-                   </tr>
-                   <tr>
-                     <th><i class="fas fa-map-marker-alt"></i></th>
-                     <td>
-                       {{store.access | access_cut}}
-                     </td>
-                   </tr>
-                 </tbody>
-               </table>
-             </div>
-           </div>
-           <div class="icons_box">
-             <i class="fas fa-smoking" v-show="store.smoking"></i>
-             <i class="fas fa-wifi" v-show="store.wifi"></i>
-             <i class="fas fa-plug" v-show="store.socket"></i>
-             <div class="iccard_img_block" v-show="store.iccard">
-               <img src="/uploads/iccard_service.jpg" class="iccard_icon">
-             </div>
+                    <th><i class="fas fa-clock"></i></th>
+                    <td>
+                      <pre>{{store.business_hour}}</pre>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th><i class="fas fa-map-marker-alt"></i></th>
+                    <td>
+                      {{store.access | access_cut}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <th><i class="fas fa-location-arrow"></i></th>
+                    <td>
+                      {{store.distance}}m
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="icons_box">
+            <i class="fas fa-smoking" v-show="store.smoking"></i>
+            <i class="fas fa-wifi" v-show="store.wifi"></i>
+            <i class="fas fa-plug" v-show="store.socket"></i>
+            <div class="iccard_img_block" v-show="store.iccard">
+              <img src="/uploads/iccard_service.jpg" class="iccard_icon">
+            </div>
           </div>
       </div>
     </div>
@@ -161,14 +175,14 @@ export default {
           var hereLat = value[0];
           var hereLng = value[1];
           var that = value[2];
-          console.log(hereLat);
-          console.log(hereLng);
-          console.log(that);
           that.allStores.forEach(function(store,i){
             var lat2 = store["lat"]
             var lng2 = store["lng"]
-            that.getDistance(hereLat,hereLng,lat2,lng2,0)
+            var distance = that.getDistance(hereLat,hereLng,lat2,lng2,0,i)
+            store.distance = distance
+            console.dir(store);
           })
+          that.distanceSort()
         })
       },(error) =>{
         alert('Sory');
@@ -279,7 +293,7 @@ export default {
         );
       });
     },
-    getDistance: function(lat1,lng1,lat2,lng2,precision){
+    getDistance: function(lat1,lng1,lat2,lng2,precision,i){
       var distance = 0;
       if ((Math.abs(lat1 - lat2) < 0.00001) && (Math.abs(lng1 - lng2) < 0.00001)) {
         distance = 0;
@@ -303,9 +317,14 @@ export default {
         var decimal_no = Math.pow(10, precision);
         distance = Math.round(decimal_no * distance / 1) / decimal_no;   // kmに変換するときは(1000で割る)
       }
-      console.log("距離");
+      console.log("距離"+i);
       console.log(distance);
       return distance;
+    },
+    distanceSort: function(){
+      this.stores.sort(function(a, b) {
+        return (a.distance < b.distance) ? -1 : 1;
+      });
     }
   },
   filters: {

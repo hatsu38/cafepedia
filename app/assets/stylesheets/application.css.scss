@@ -45,6 +45,7 @@ header{
     padding-top: .8em;
     .search-form{
       width:95%;
+      margin-bottom:0;
       input{
         font-size:16px;
       }
@@ -53,6 +54,9 @@ header{
   .filter_box{
     width: 95%;
     margin:0 auto;
+    .distanceSort{
+      margin-top:1em;
+    }
     .filter-block{
         line-height:2.8em;
         height:2.8em;

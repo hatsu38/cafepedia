@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180608121932) do
     t.boolean "iccard"
     t.decimal "lat"
     t.decimal "lng"
+    t.integer "distance"
     t.integer "mainstore_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
