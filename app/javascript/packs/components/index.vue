@@ -261,9 +261,12 @@ export default {
       return distance;
     },
     distanceSort: function(){
-      this.stores.sort(function(a, b) {
+      this.storeSearch = ''
+      console.log("distanceSort");
+      this.stores = this.allStores.sort(function(a, b) {
         return (a.distance < b.distance) ? -1 : 1;
       });
+      this.refreshFilter();
     }
   },
   filters: {
