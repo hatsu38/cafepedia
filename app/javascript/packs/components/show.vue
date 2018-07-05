@@ -36,7 +36,7 @@
         <tr>
           <th>HP</th>
           <td>
-            <a :href="store.tel" target="_blank">公式HP</a>
+            <a :href="store.hp" target="_blank">公式HP</a>
           </td>
         </tr>
 

@@ -80,6 +80,11 @@ header{
         color: #136df9;
         font-weight: bold;
       }
+      .distanceSortOn{
+        background-color:#b0fcb8;
+        color: #25a856;
+        font-weight: bold;
+      }
     }
   }
   .stores_box{
@@ -255,7 +260,4 @@ white-space:pre-wrap;
     width:100%;
     height:400px;
   }
-}
-[v-cloak] {
-  display: none;
 }

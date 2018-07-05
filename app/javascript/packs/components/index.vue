@@ -46,6 +46,7 @@
       <div class="filter-block col s12 distanceSort">
         <div class="filter_content sort"
              @click="refreshDistanceCalc"
+             :class="{distanceSortOn: onDistanceSort}"
              >
              <i class="fas fa-location-arrow"></i>
              現在地から近い順に並び替え
@@ -53,53 +54,53 @@
       </div>
     </div>
     <div class="stores_box" id="stores">
-    <div class="store_count">{{stores.length}}店舗</div>
+      <div class="store_count">{{stores.length}}店舗</div>
       <div class="store mix"
            v-for="(store,index) in displayStores"
            :class="{socket: store.socket,wifi: store.wifi}"
            >
-          <h2><router-link :to="'/stores/' + store.id">{{store.name}}</router-link></h2>
-          <div class="row">
-            <div class="col s5 mainstore_logo">
-              <img :src="store.mainstore.image.url">
-            </div>
-            <div class="col s7">
-              <table class="table">
-                <tbody>
-                  <tr>
-                    <th><i class="fas fa-clock"></i></th>
-                    <td>
-                      <pre>{{store.business_hour}}</pre>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th><i class="fas fa-map-marker-alt"></i></th>
-                    <td>
-                      {{store.access | access_cut}}
-                    </td>
-                  </tr>
-                  <tr v-cloak>
-                    <th><i class="fas fa-location-arrow"></i></th>
-                    <td>
-                      約 {{store.distance | km_convert}}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="icons_box">
-            <i class="fas fa-smoking" v-show="store.smoking"></i>
-            <i class="fas fa-wifi" v-show="store.wifi"></i>
-            <i class="fas fa-plug" v-show="store.socket"></i>
-            <div class="iccard_img_block" v-show="store.iccard">
-              <img src="/uploads/iccard_service.jpg" class="iccard_icon">
-            </div>
-          </div>
+           <h2><router-link :to="'/stores/' + store.id">{{store.name}}</router-link></h2>
+           <div class="row">
+             <div class="col s5 mainstore_logo">
+               <img :src="store.mainstore.image.url">
+             </div>
+             <div class="col s7">
+               <table class="table" >
+                 <tbody>
+                   <tr>
+                     <th><i class="fas fa-clock"></i></th>
+                     <td>
+                       <pre>{{store.business_hour}}</pre>
+                     </td>
+                   </tr>
+                   <tr>
+                     <th><i class="fas fa-map-marker-alt"></i></th>
+                     <td>
+                       {{store.access | access_cut}}
+                     </td>
+                   </tr>
+                   <tr v-show="store.distance != undefined">
+                     <th><i class="fas fa-location-arrow"></i></th>
+                     <td>
+                       約 {{store.distance | km_convert}}
+                     </td>
+                   </tr>
+                 </tbody>
+               </table>
+             </div>
+           </div>
+           <div class="icons_box">
+             <i class="fas fa-smoking" v-show="store.smoking"></i>
+             <i class="fas fa-wifi" v-show="store.wifi"></i>
+             <i class="fas fa-plug" v-show="store.socket"></i>
+             <div class="iccard_img_block" v-show="store.iccard">
+               <img src="/uploads/iccard_service.jpg" class="iccard_icon">
+             </div>
+           </div>
       </div>
     </div>
     <div class="moreread" @click="moreread" v-show="moreread_desp">
-    <i class="fas fa-angle-down"></i><span>もっとみる</span>
+      <i class="fas fa-angle-down"></i><span>もっとみる</span>
     </div>
   </div>
 </template>
@@ -107,16 +108,17 @@
 import axios from 'axios'
 export default {
   data: function(){
-  return {
-    stores: [],
-    allStores: [],
-    onSocket: false,
-    onWifi: false,
-    storeSearch: '',
-    currentPage: 0,
-    size: 10,
-    pageRange: 5,
-    moreread_desp: true,
+    return {
+      stores: [],
+      allStores: [],
+      onSocket: false,
+      onWifi: false,
+      onDistanceSort: false,
+      storeSearch: '',
+      currentPage: 0,
+      size: 10,
+      pageRange: 5,
+      moreread_desp: true,
     }
   },
   mounted: function(){
@@ -135,21 +137,24 @@ export default {
         }
         this.allStores = this.stores
         this.refreshDistanceCalc();
-        },(error) =>{
+      },(error) =>{
         alert('Sory');
       });
     },
     socketFilter: function(){
       this.onSocket = !this.onSocket
       this.refreshFilter();
+      this.get_moreread_desp();
     },
     wifiFilter: function(){
       this.onWifi = !this.onWifi
       this.refreshFilter();
+      this.get_moreread_desp();
     },
     refreshFilter: function(){
       var search_stores = this.wordListupStores();
       this.stores = this.filterListupStores(search_stores);
+      this.get_moreread_desp();
     },
     filterListupStores: function(search_stores){
       var stores_list =[];
@@ -176,6 +181,7 @@ export default {
       var search_stores = this.wordListupStores();
       this.stores = this.filterListupStores(search_stores);
       $('#aria').blur();
+      this.onDistanceSort = false
       this.get_moreread_desp();
       this.size = 10
     },
@@ -208,7 +214,7 @@ export default {
       this.get_moreread_desp();
     },
     get_moreread_desp (){
-      if(this.displayStores.length >= this.stores.length){
+      if(this.displayStores.length >= this.stores.length || this.stores.length <= 10){
         return this.moreread_desp = false
       }
       return this.moreread_desp = true
@@ -226,6 +232,7 @@ export default {
         })
         that.distanceSort()
       })
+      this.onDistanceSort = true
     },
     herePosition: function(that){
       return new Promise((resolve,reject)=>{
@@ -273,9 +280,6 @@ export default {
     }
   },
   filters: {
-    moment: function(data){
-      return moment(data).format('HH:mm');
-    },
     access_cut: function(data){
       if(!data){
         return data
@@ -296,4 +300,3 @@ export default {
   }
 };
 </script>
-
