@@ -256,5 +256,6 @@ white-space:pre-wrap;
     height:400px;
   }
 }
-
-// show
+[v-cloak] {
+  display: none;
+}

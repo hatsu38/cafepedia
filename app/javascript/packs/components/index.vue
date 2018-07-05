@@ -78,10 +78,10 @@
                       {{store.access | access_cut}}
                     </td>
                   </tr>
-                  <tr>
+                  <tr v-cloak>
                     <th><i class="fas fa-location-arrow"></i></th>
                     <td>
-                      {{store.distance}}m
+                      約 {{store.distance | km_convert}}
                     </td>
                   </tr>
                 </tbody>
@@ -141,7 +141,7 @@ export default {
           that.allStores.forEach(function(store,i){
             var lat2 = store["lat"]
             var lng2 = store["lng"]
-            var distance = that.getDistance(hereLat,hereLng,lat2,lng2,0,i)
+            var distance = that.getDistance(hereLat,hereLng,lat2,lng2,0)
             store.distance = distance
           })
           that.distanceSort()
@@ -257,12 +257,12 @@ export default {
         distance = A * (X + L);
         var decimal_no = Math.pow(10, precision);
         distance = Math.round(decimal_no * distance / 1) / decimal_no;   // kmに変換するときは(1000で割る)
+        distance = Math.round(distance/10)*10
       }
       return distance;
     },
     distanceSort: function(){
       this.storeSearch = ''
-      console.log("distanceSort");
       this.stores = this.allStores.sort(function(a, b) {
         return (a.distance < b.distance) ? -1 : 1;
       });
@@ -281,8 +281,16 @@ export default {
         return data.substr(0,data.search("[0-9]分|km")+2);
       }
       return data
+    },
+    km_convert: function(data){
+      if(data >= 1000){
+        data = Math.round(data /100)*100
+        return (data / 1000) + "km"
+      }else{
+        return data+ "m"
+      }
     }
   }
 };
-
 </script>
+
