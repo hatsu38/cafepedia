@@ -45,7 +45,7 @@
       </div>
       <div class="filter-block col s12 distanceSort">
         <div class="filter_content sort"
-             @click="distanceSort"
+             @click="refreshDistanceCalc"
              >
              <i class="fas fa-location-arrow"></i>
              現在地から近い順に並び替え
@@ -134,19 +134,8 @@ export default {
           this.stores.push(response.data.stores[i]);
         }
         this.allStores = this.stores
-        this.herePosition(this).then(function (value) {
-          var hereLat = value[0];
-          var hereLng = value[1];
-          var that = value[2];
-          that.allStores.forEach(function(store,i){
-            var lat2 = store["lat"]
-            var lng2 = store["lng"]
-            var distance = that.getDistance(hereLat,hereLng,lat2,lng2,0)
-            store.distance = distance
-          })
-          that.distanceSort()
-        })
-      },(error) =>{
+        this.refreshDistanceCalc();
+        },(error) =>{
         alert('Sory');
       });
     },
@@ -223,6 +212,20 @@ export default {
         return this.moreread_desp = false
       }
       return this.moreread_desp = true
+    },
+    refreshDistanceCalc: function(){
+      this.herePosition(this).then(function (value) {
+        var hereLat = value[0];
+        var hereLng = value[1];
+        var that = value[2];
+        that.allStores.forEach(function(store,i){
+          var lat2 = store["lat"]
+          var lng2 = store["lng"]
+          var distance = that.getDistance(hereLat,hereLng,lat2,lng2,0)
+          store.distance = distance
+        })
+        that.distanceSort()
+      })
     },
     herePosition: function(that){
       return new Promise((resolve,reject)=>{
