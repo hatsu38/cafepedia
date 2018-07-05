@@ -149,7 +149,6 @@ white-space:pre-wrap;
       .icons_box{
         margin-bottom: 1em;
         i{
-          border:1px solid #cdcdcd;
           padding:.2em;
           font-size: 1.5em;
           margin: .2em .3em;
@@ -161,7 +160,6 @@ white-space:pre-wrap;
         }
         .iccard_img_block{
           display: inline-block;
-          border:1px solid #cdcdcd;
           width: 37.8px;
           img{
             max-width: 100%;
@@ -237,7 +235,6 @@ white-space:pre-wrap;
   .icons_box{
     margin-bottom: 1em;
     i{
-      border:1px solid #cdcdcd;
       padding:.2em;
       font-size: 1.5em;
       margin: .2em .3em;
@@ -259,5 +256,23 @@ white-space:pre-wrap;
   #map{
     width:100%;
     height:400px;
+  }
+}
+
+.icons_box{
+  .fa-smoking{
+    border:2px solid #b0fcb8;
+    color: #25a856;
+  }
+  .fa-wifi{
+    border:2px solid #ffaeae;
+    color: #ff3030;
+  }
+  .fa-plug{
+    border:2px solid #9ec4ff;
+    color: #136df9;
+  }
+  .iccard_img_block{
+    border:2px solid #f9f7a7;
   }
 }

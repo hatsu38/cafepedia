@@ -181,15 +181,16 @@ export default {
       var search_stores = this.wordListupStores();
       this.stores = this.filterListupStores(search_stores);
       $('#aria').blur();
-      this.onDistanceSort = false
       this.get_moreread_desp();
       this.size = 10
     },
     wordListupStores: function(){
       var searchWord = this.storeSearch && this.storeSearch.toLowerCase();
       if(!searchWord){
+        this.onDistanceSort = true
         return this.stores = this.allStores
       }
+      this.onDistanceSort = false
       var stores_list = this.allStores.filter(function(value){
         return Object.keys(value).some(function(key){
           if(key === 'name' || key === "city" || key === "other_address" || key === "access"){
