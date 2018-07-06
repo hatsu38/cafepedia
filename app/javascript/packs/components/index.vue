@@ -1,106 +1,111 @@
 <template>
   <div>
-    <header class="center white-text" id="top_header">
-      <router-link to="/" class="white-text">
-        <i class="fas fa-smoking"></i>
-        <h1 class="logo">喫煙カフェ</h1>
-      </router-link>
-    </header>
+    <div class="loading">
+      <img src="Loading.gif">
+    </div>
+    <div id="index_vue">
+      <header class="center white-text" id="top_header">
+        <router-link to="/" class="white-text">
+          <i class="fas fa-smoking"></i>
+          <h1 class="logo">喫煙カフェ</h1>
+        </router-link>
+      </header>
 
-    <div class="search_box">
-      <div class="row search-form">
-        <form class="input-field col s10"
-              action="/"
-              onsubmit="return false"
-              @submit.prevent="searchStores">
-          <input
-              type="search"
-              id="aria"
-              v-model="storeSearch"
-              >
-              <label for="aria">エリア・駅</label>
-        </form>
-        <a class="btn waves-effect waves-light col s2 input-field"
-           @click="searchStores">検索</a>
-      </div>
-    </div>
-    <div class="filter_box row center">
-      <div class="filter-block col s6">
-        <div class="filter_content sort"
-             @click="socketFilter"
-             :class="{socketFilterOn: onSocket}"
-             >
-             <i class="fas fa-plug"></i>
-             コンセント
+      <div class="search_box">
+        <div class="row search-form">
+          <form class="input-field col s10"
+                action="/"
+                onsubmit="return false"
+                @submit.prevent="searchStores">
+            <input
+                type="search"
+                id="aria"
+                v-model="storeSearch"
+                >
+                <label for="aria">エリア・駅</label>
+          </form>
+          <a class="btn waves-effect waves-light col s2 input-field"
+             @click="searchStores">検索</a>
         </div>
       </div>
-      <div class="filter-block col s6">
-        <div class="filter_content sort"
-             @click="wifiFilter"
-             :class="{wifiFilterOn: onWifi}"
-             >
-             <i class="fas fa-wifi"></i>
-             フリーWi-Fi
+      <div class="filter_box row center">
+        <div class="filter-block col s6">
+          <div class="filter_content sort"
+               @click="socketFilter"
+               :class="{socketFilterOn: onSocket}"
+               >
+               <i class="fas fa-plug"></i>
+               コンセント
+          </div>
+        </div>
+        <div class="filter-block col s6">
+          <div class="filter_content sort"
+               @click="wifiFilter"
+               :class="{wifiFilterOn: onWifi}"
+               >
+               <i class="fas fa-wifi"></i>
+               フリーWi-Fi
+          </div>
+        </div>
+        <div class="filter-block col s12 distanceSort">
+          <div class="filter_content sort"
+               @click="refreshDistanceCalc"
+               :class="{distanceSortOn: onDistanceSort}"
+               >
+               <i class="fas fa-location-arrow"></i>
+               現在地から近い順に並び替え
+          </div>
         </div>
       </div>
-      <div class="filter-block col s12 distanceSort">
-        <div class="filter_content sort"
-             @click="refreshDistanceCalc"
-             :class="{distanceSortOn: onDistanceSort}"
+      <div class="stores_box" id="stores">
+        <div class="store_count">{{stores.length}}店舗</div>
+        <div class="store mix"
+             v-for="(store,index) in displayStores"
+             :class="{socket: store.socket,wifi: store.wifi}"
              >
-             <i class="fas fa-location-arrow"></i>
-             現在地から近い順に並び替え
+             <h2><router-link :to="'/stores/' + store.id">{{store.name}}</router-link></h2>
+             <div class="row">
+               <div class="col s5 mainstore_logo">
+                 <img :src="store.mainstore.image.url">
+               </div>
+               <div class="col s7">
+                 <table class="table" >
+                   <tbody>
+                     <tr>
+                       <th><i class="fas fa-clock"></i></th>
+                       <td>
+                         <pre>{{store.business_hour}}</pre>
+                       </td>
+                     </tr>
+                     <tr>
+                       <th><i class="fas fa-map-marker-alt"></i></th>
+                       <td>
+                         {{store.access | access_cut}}
+                       </td>
+                     </tr>
+                     <tr v-show="store.distance != undefined">
+                       <th><i class="fas fa-location-arrow"></i></th>
+                       <td>
+                         約 {{store.distance | km_convert}}
+                       </td>
+                     </tr>
+                   </tbody>
+                 </table>
+               </div>
+             </div>
+             <div class="icons_box">
+               <i class="fas fa-smoking" v-show="store.smoking"></i>
+               <i class="fas fa-wifi" v-show="store.wifi"></i>
+               <i class="fas fa-plug" v-show="store.socket"></i>
+               <div class="iccard_img_block" v-show="store.iccard">
+                 <img src="/uploads/iccard_service.jpg" class="iccard_icon">
+               </div>
+             </div>
         </div>
       </div>
-    </div>
-    <div class="stores_box" id="stores">
-      <div class="store_count">{{stores.length}}店舗</div>
-      <div class="store mix"
-           v-for="(store,index) in displayStores"
-           :class="{socket: store.socket,wifi: store.wifi}"
-           >
-           <h2><router-link :to="'/stores/' + store.id">{{store.name}}</router-link></h2>
-           <div class="row">
-             <div class="col s5 mainstore_logo">
-               <img :src="store.mainstore.image.url">
-             </div>
-             <div class="col s7">
-               <table class="table" >
-                 <tbody>
-                   <tr>
-                     <th><i class="fas fa-clock"></i></th>
-                     <td>
-                       <pre>{{store.business_hour}}</pre>
-                     </td>
-                   </tr>
-                   <tr>
-                     <th><i class="fas fa-map-marker-alt"></i></th>
-                     <td>
-                       {{store.access | access_cut}}
-                     </td>
-                   </tr>
-                   <tr v-show="store.distance != undefined">
-                     <th><i class="fas fa-location-arrow"></i></th>
-                     <td>
-                       約 {{store.distance | km_convert}}
-                     </td>
-                   </tr>
-                 </tbody>
-               </table>
-             </div>
-           </div>
-           <div class="icons_box">
-             <i class="fas fa-smoking" v-show="store.smoking"></i>
-             <i class="fas fa-wifi" v-show="store.wifi"></i>
-             <i class="fas fa-plug" v-show="store.socket"></i>
-             <div class="iccard_img_block" v-show="store.iccard">
-               <img src="/uploads/iccard_service.jpg" class="iccard_icon">
-             </div>
-           </div>
+      <div class="moreread" @click="moreread" v-show="moreread_desp">
+        <i class="fas fa-angle-down"></i><span>もっとみる</span>
       </div>
-    </div>
-    <div class="moreread" @click="moreread" v-show="moreread_desp">
-      <i class="fas fa-angle-down"></i><span>もっとみる</span>
     </div>
   </div>
 </template>
@@ -122,6 +127,7 @@ export default {
     }
   },
   mounted: function(){
+    // $("#index_vue").hide();
     this.fetchStores();
   },
   computed: {
@@ -232,6 +238,7 @@ export default {
           store.distance = distance
         })
         that.distanceSort()
+        $('.loading').fadeOut();
       })
       this.onDistanceSort = true
     },

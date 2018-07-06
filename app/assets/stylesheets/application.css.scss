@@ -21,6 +21,12 @@ $primary-color: color("green","darken-3") !default;
 body{
   background-color:#fefefe;
 }
+.loading{
+  width: 100%;
+  position:absolute;
+  top:42%;
+  text-align:center;
+}
 header{
   background: linear-gradient(283deg, #d5ffd5, #01b76e 61%, #005d38);
   padding:.5em;
