@@ -188,34 +188,26 @@ export default {
       this.refreshFilter();
       this.get_moreread_desp();
     },
-    refreshFilter: function(){
-      var search_stores = this.wordListupStores();
-      this.stores = this.filterListupStores(search_stores);
-      this.get_moreread_desp();
-    },
     smokingFilter: function(){
       this.onSmoking= !this.onSmoking
       this.refreshFilter();
       this.get_moreread_desp();
     },
+    refreshFilter: function(){
+      var search_stores = this.wordListupStores();
+      this.stores = this.filterListupStores(search_stores);
+      this.get_moreread_desp();
+    },
     filterListupStores: function(search_stores){
       var stores_list =[];
-      if(this.onSocket && this.onWifi){
-        stores_list = search_stores.filter(function(value){
-          return value.socket && value.wifi
-        });
-      }else if(this.onSocket && !this.onWifi){
-        stores_list = search_stores.filter(function(value){
-          return value.socket
-        });
-      }else if(!this.onSocket && this.onWifi){
-        stores_list = search_stores.filter(function(value){
-          return value.wifi
-        });
-      }else if(!this.onSocket && !this.onWifi){
-        stores_list = search_stores
-      }else{
-        alart("Error!");
+      var wifi    = this.onWifi
+      var socket  = this.onSocket
+      var smoking = this.onSmoking
+      stores_list = search_stores.filter(function(value){
+        var wifiList = wifi ? value.wifi : value.wifi + !value.wifi
+        var socketList = socket ? value.socket: value.socket+ !value.socket
+        var smokingList = smoking ? value.smoking : value.smoking + !value.smoking
+        return (wifiList) && (socketList) && (smokingList)
       }
       return stores_list
     },
