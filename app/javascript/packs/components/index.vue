@@ -248,6 +248,7 @@ export default {
       return this.moreread_desp = true
     },
     refreshDistanceCalc: function(){
+      $('.loading').show();
       this.herePosition(this).then(function (value) {
         var hereLat = value[0];
         var hereLng = value[1];
@@ -259,7 +260,7 @@ export default {
           store.distance = distance
         })
         that.distanceSort()
-        $('.loading').fadeOut();
+        $('.loading').hide();
         that.onDistanceSort = true
         that.saveStorageStore();
       })
