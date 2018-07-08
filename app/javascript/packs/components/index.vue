@@ -63,7 +63,7 @@
              v-for="(store,index) in displayStores"
              :class="{socket: store.socket,wifi: store.wifi}"
              >
-             <h2><router-link :to="'/stores/' + store.id">{{store.name}}</router-link></h2>
+             <h2 @click="saveStorage(displayStores,'storesListStorage')"><router-link :to="'/stores/' + store.id">{{store.name}}</router-link></h2>
              <div class="row">
                <div class="col s5 mainstore_logo">
                  <img :src="store.mainstore.image.url">
@@ -127,8 +127,17 @@ export default {
     }
   },
   mounted: function(){
-    // $("#index_vue").hide();
-    this.fetchStores();
+    var storeListObj = localStorage.getItem("storesListStorage"); // なかったらnullが返る
+    var allStoreListObj = localStorage.getItem("allStoresStorage"); // なかったらnullが返る
+    var storeList = JSON.parse(storeListObj);
+    var allStoreList = JSON.parse(allStoreListObj);
+    if(storeList && allStoreList){
+      this.stores = storeList
+      this.allStores = allStoreList
+      $('.loading').fadeOut();
+    } else {
+      this.fetchStores();
+    }
   },
   computed: {
     displayStores: function(){
@@ -142,6 +151,7 @@ export default {
           this.stores.push(response.data.stores[i]);
         }
         this.allStores = this.stores
+        this.saveStorage(this.allStores,'allStoresStorage');
         this.refreshDistanceCalc();
       },(error) =>{
         alert('Sory');
@@ -261,17 +271,13 @@ export default {
         lng1 = lng1 * Math.PI / 180;
         lat2 = lat2 * Math.PI / 180;
         lng2 = lng2 * Math.PI / 180;
-
         var A = 6378140;
         var B = 6356755;
         var F = (A - B) / A;
-
         var P1 = Math.atan((B / A) * Math.tan(lat1));
         var P2 = Math.atan((B / A) * Math.tan(lat2));
-
         var X = Math.acos(Math.sin(P1) * Math.sin(P2) + Math.cos(P1) * Math.cos(P2) * Math.cos(lng1 - lng2));
         var L = (F / 8) * ((Math.sin(X) - X) * Math.pow((Math.sin(P1) + Math.sin(P2)), 2) / Math.pow(Math.cos(X / 2), 2) - (Math.sin(X) - X) * Math.pow(Math.sin(P1) - Math.sin(P2), 2) / Math.pow(Math.sin(X), 2));
-
         distance = A * (X + L);
         var decimal_no = Math.pow(10, precision);
         distance = Math.round(decimal_no * distance / 1) / decimal_no;   // kmに変換するときは(1000で割る)
@@ -285,7 +291,10 @@ export default {
         return (a.distance < b.distance) ? -1 : 1;
       });
       this.refreshFilter();
-    }
+    },
+    saveStorage: function(storesList,storageName){
+      localStorage.setItem(storageName, JSON.stringify(storesList));
+    },
   },
   filters: {
     access_cut: function(data){
