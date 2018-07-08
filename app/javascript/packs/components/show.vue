@@ -71,7 +71,7 @@ export default {
         this.store = response.data.store;
         this.gmapCreate();
       },(error)=>{
-        alart("Sorry");
+        alert("Sorry");
       });
     },
     gmapCreate: function(){

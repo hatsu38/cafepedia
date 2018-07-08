@@ -19,10 +19,10 @@
                 @submit.prevent="searchStores">
             <input
                 type="search"
-                id="aria"
-                v-model="storeSearch"
+                id="area"
+                v-model="searchWord"
                 >
-                <label for="aria">エリア・駅</label>
+                <label for="area">エリア・駅</label>
           </form>
           <a class="btn waves-effect waves-light col s2 input-field"
              @click="searchStores">検索</a>
@@ -63,7 +63,7 @@
              v-for="(store,index) in displayStores"
              :class="{socket: store.socket,wifi: store.wifi}"
              >
-             <h2 @click="saveStorage(displayStores,'storesListStorage')"><router-link :to="'/stores/' + store.id">{{store.name}}</router-link></h2>
+             <h2 @click="saveStorageCondition"><router-link :to="'/stores/' + store.id">{{store.name}}</router-link></h2>
              <div class="row">
                <div class="col s5 mainstore_logo">
                  <img :src="store.mainstore.image.url">
@@ -119,21 +119,33 @@ export default {
       onSocket: false,
       onWifi: false,
       onDistanceSort: false,
-      storeSearch: '',
-      currentPage: 0,
+      searchWord: '',
       size: 10,
-      pageRange: 5,
       moreread_desp: true,
     }
   },
   mounted: function(){
-    var storeListObj = localStorage.getItem("storesListStorage"); // なかったらnullが返る
-    var allStoreListObj = localStorage.getItem("allStoresStorage"); // なかったらnullが返る
-    var storeList = JSON.parse(storeListObj);
-    var allStoreList = JSON.parse(allStoreListObj);
-    if(storeList && allStoreList){
-      this.stores = storeList
-      this.allStores = allStoreList
+    var allStoresListObj = localStorage.getItem("allStoresListStorage");
+    var wifiConditionObj = localStorage.getItem("wifiCondition");
+    var socketConditionObj = localStorage.getItem("socketCondition");
+    var searchWordConditionObj = localStorage.getItem("searchWordCondition");
+    var distanceSortConditionObj = localStorage.getItem("distanceSortCondition");
+    var allStoresList = JSON.parse(allStoresListObj);
+    var wifiCondition = JSON.parse(wifiConditionObj);
+    var socketCondition = JSON.parse(socketConditionObj);
+    var searchWordCondition = JSON.parse(searchWordConditionObj);
+    var distanceSortCondition = JSON.parse(distanceSortConditionObj);
+    if(allStoresList){
+      this.allStores = allStoresList
+      this.onWifi = wifiCondition
+      this.onSocket = socketCondition
+      this.searchWord = searchWordCondition
+      this.onDistanceSort = distanceSortCondition
+      if(this.searchWord){
+        console.log("move!!");
+        $('label[for="area"]').addClass("active");
+      }
+      this.refreshFilter();
       $('.loading').fadeOut();
     } else {
       this.fetchStores();
@@ -151,7 +163,6 @@ export default {
           this.stores.push(response.data.stores[i]);
         }
         this.allStores = this.stores
-        this.saveStorage(this.allStores,'allStoresStorage');
         this.refreshDistanceCalc();
       },(error) =>{
         alert('Sory');
@@ -196,12 +207,12 @@ export default {
     searchStores: function(){
       var search_stores = this.wordListupStores();
       this.stores = this.filterListupStores(search_stores);
-      $('#aria').blur();
+      $('#area').blur();
       this.get_moreread_desp();
       this.size = 10
     },
     wordListupStores: function(){
-      var searchWord = this.storeSearch && this.storeSearch.toLowerCase();
+      var searchWord = this.searchWord && this.searchWord.toLowerCase();
       if(!searchWord){
         this.onDistanceSort = true
         return this.stores = this.allStores
@@ -249,8 +260,9 @@ export default {
         })
         that.distanceSort()
         $('.loading').fadeOut();
+        that.onDistanceSort = true
+        that.saveStorageStore();
       })
-      this.onDistanceSort = true
     },
     herePosition: function(that){
       return new Promise((resolve,reject)=>{
@@ -286,14 +298,20 @@ export default {
       return distance;
     },
     distanceSort: function(){
-      this.storeSearch = ''
+      this.searchWord = ''
       this.stores = this.allStores.sort(function(a, b) {
         return (a.distance < b.distance) ? -1 : 1;
       });
       this.refreshFilter();
     },
-    saveStorage: function(storesList,storageName){
-      localStorage.setItem(storageName, JSON.stringify(storesList));
+    saveStorageStore: function(){
+      localStorage.setItem('allStoresListStorage', JSON.stringify(this.allStores));
+    },
+    saveStorageCondition: function(){
+      localStorage.setItem('socketCondition', JSON.stringify(this.onSocket));
+      localStorage.setItem('wifiCondition', JSON.stringify(this.onWifi));
+      localStorage.setItem('distanceSortCondition', JSON.stringify(this.onDistanceSort));
+      localStorage.setItem('searchWordCondition', JSON.stringify(this.searchWord));
     },
   },
   filters: {
