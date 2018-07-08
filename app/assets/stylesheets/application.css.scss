@@ -50,7 +50,7 @@ header{
   .search_box{
     padding-top: .8em;
     .search-form{
-      width:95%;
+      width:97%;
       margin-bottom:0;
       input{
         font-size:16px;
@@ -58,7 +58,7 @@ header{
     }
   }
   .filter_box{
-    width: 95%;
+    width: 97%;
     margin:0 auto;
     .distanceSort{
       margin-top:1em;
@@ -72,6 +72,9 @@ header{
         font-size:1.15em;
         background-color:#fff;
         box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+        .smoking_filter_text{
+          letter-spacing: 2px;
+        }
       }
       &.col{
         padding:0 0.2em;
@@ -86,9 +89,14 @@ header{
         color: #136df9;
         font-weight: bold;
       }
-      .distanceSortOn{
+      .smokingFilterOn{
         background-color:#b0fcb8;
         color: #25a856;
+        font-weight: bold;
+      }
+      .distanceSortOn{
+        background-color:#ffd19e;
+        color: #f99420;
         font-weight: bold;
       }
     }
@@ -220,7 +228,6 @@ white-space:pre-wrap;
     font-size:2.5em;
   }
   table{
-    // height:139px;
     border:1px solid #ccc;
     tr{
       th{

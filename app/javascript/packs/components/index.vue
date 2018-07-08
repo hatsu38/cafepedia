@@ -7,7 +7,7 @@
       <header class="center white-text" id="top_header">
         <router-link to="/" class="white-text">
           <i class="fas fa-smoking"></i>
-          <h1 class="logo">喫煙カフェ</h1>
+          <h1 class="logo">カフェペディア</h1>
         </router-link>
       </header>
 
@@ -29,31 +29,40 @@
         </div>
       </div>
       <div class="filter_box row center">
-        <div class="filter-block col s6">
+        <div class="filter-block col s4">
           <div class="filter_content sort"
                @click="socketFilter"
                :class="{socketFilterOn: onSocket}"
                >
                <i class="fas fa-plug"></i>
-               コンセント
+               <span>コンセント</span>
           </div>
         </div>
-        <div class="filter-block col s6">
+        <div class="filter-block col s4">
           <div class="filter_content sort"
                @click="wifiFilter"
                :class="{wifiFilterOn: onWifi}"
                >
                <i class="fas fa-wifi"></i>
-               フリーWi-Fi
+               <span>フリーWi-Fi</span>
+          </div>
+        </div>
+        <div class="filter-block col s4">
+          <div class="filter_content sort"
+               @click="smokingFilter"
+               :class="{smokingFilterOn: onSmoking}"
+               >
+              <i class="fas fa-smoking"></i>
+              <span class="smoking_filter_text">喫煙席</span>
           </div>
         </div>
         <div class="filter-block col s12 distanceSort">
           <div class="filter_content sort"
                @click="refreshDistanceCalc"
                :class="{distanceSortOn: onDistanceSort}"
-               >
-               <i class="fas fa-location-arrow"></i>
-               現在地から近い順に並び替え
+              >
+              <i class="fas fa-location-arrow"></i>
+              <span>現在地から近い順に並び替え</span>
           </div>
         </div>
       </div>
@@ -118,6 +127,7 @@ export default {
       allStores: [],
       onSocket: false,
       onWifi: false,
+      onSmoking: false,
       onDistanceSort: false,
       searchWord: '',
       size: 10,
@@ -181,6 +191,11 @@ export default {
     refreshFilter: function(){
       var search_stores = this.wordListupStores();
       this.stores = this.filterListupStores(search_stores);
+      this.get_moreread_desp();
+    },
+    smokingFilter: function(){
+      this.onSmoking= !this.onSmoking
+      this.refreshFilter();
       this.get_moreread_desp();
     },
     filterListupStores: function(search_stores){
