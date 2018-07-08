@@ -10,7 +10,6 @@
           <h1 class="logo">カフェペディア</h1>
         </router-link>
       </header>
-
       <div class="search_box">
         <div class="row search-form">
           <form class="input-field col s10"
@@ -138,21 +137,23 @@ export default {
     var allStoresListObj = localStorage.getItem("allStoresListStorage");
     var wifiConditionObj = localStorage.getItem("wifiCondition");
     var socketConditionObj = localStorage.getItem("socketCondition");
+    var smokingConditionObj = localStorage.getItem("smokingCondition");
     var searchWordConditionObj = localStorage.getItem("searchWordCondition");
     var distanceSortConditionObj = localStorage.getItem("distanceSortCondition");
     var allStoresList = JSON.parse(allStoresListObj);
     var wifiCondition = JSON.parse(wifiConditionObj);
     var socketCondition = JSON.parse(socketConditionObj);
+    var smokingCondition = JSON.parse(smokingConditionObj);
     var searchWordCondition = JSON.parse(searchWordConditionObj);
     var distanceSortCondition = JSON.parse(distanceSortConditionObj);
     if(allStoresList){
       this.allStores = allStoresList
       this.onWifi = wifiCondition
       this.onSocket = socketCondition
+      this.onSmoking= smokingCondition
       this.searchWord = searchWordCondition
       this.onDistanceSort = distanceSortCondition
       if(this.searchWord){
-        console.log("move!!");
         $('label[for="area"]').addClass("active");
       }
       this.refreshFilter();
@@ -208,7 +209,7 @@ export default {
         var socketList = socket ? value.socket: value.socket+ !value.socket
         var smokingList = smoking ? value.smoking : value.smoking + !value.smoking
         return (wifiList) && (socketList) && (smokingList)
-      }
+      });
       return stores_list
     },
     searchStores: function(){
@@ -318,6 +319,7 @@ export default {
     saveStorageCondition: function(){
       localStorage.setItem('socketCondition', JSON.stringify(this.onSocket));
       localStorage.setItem('wifiCondition', JSON.stringify(this.onWifi));
+      localStorage.setItem('smokingCondition', JSON.stringify(this.onSmoking));
       localStorage.setItem('distanceSortCondition', JSON.stringify(this.onDistanceSort));
       localStorage.setItem('searchWordCondition', JSON.stringify(this.searchWord));
     },
