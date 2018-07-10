@@ -10,6 +10,8 @@ set :branch, 'dev/aws_deploy'
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/var/www/cafepedia"
+# rubyのバージョン
+set :rbenv_ruby, '2.4.0'
 
 # シンボリックリンクをはるファイル。(※後述)
 set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
