@@ -134,7 +134,7 @@ export default {
     }
   },
   mounted: function(){
-    // var allStoresList = JSON.parse(localStorage.getItem("allStoresListStorage"));
+    var allStoresList = JSON.parse(localStorage.getItem("allStoresListStorage"));
     var displayStoresList = JSON.parse(localStorage.getItem("displayStoresListStorage"));
     var wifiCondition = JSON.parse(localStorage.getItem("wifiCondition"));
     var socketCondition = JSON.parse(localStorage.getItem("socketCondition"));
@@ -142,20 +142,22 @@ export default {
     var searchWordCondition = JSON.parse(localStorage.getItem("searchWordCondition"));
     var distanceSortCondition = JSON.parse(localStorage.getItem("distanceSortCondition"));
     var displayStoresCount = localStorage.getItem("displayStoresCount");
-    if(displayStoresList){
-      // this.allStores = allStoresList
+    this.onWifi = wifiCondition
+    this.onSocket = socketCondition
+    this.onSmoking= smokingCondition
+    this.searchWord = searchWordCondition
+    this.onDistanceSort = distanceSortCondition
+    this.stores.length = displayStoresCount
+    if(this.searchWord){
+      $('label[for="area"]').addClass("active");
+    }
+    if(allStoresList){
+      this.allStores = allStoresList
+      this.refreshFilter();
+      $('.loading').fadeOut();
+    } else if(displayStoresList){
       this.stores = displayStoresList
-      this.onWifi = wifiCondition
-      this.onSocket = socketCondition
-      this.onSmoking= smokingCondition
-      this.searchWord = searchWordCondition
-      this.onDistanceSort = distanceSortCondition
-      this.stores.length = displayStoresCount
-      if(this.searchWord){
-        $('label[for="area"]').addClass("active");
-      }
-      this.fetchStores();
-      // this.refreshFilter();
+      this.mountFetchStores();
       $('.loading').fadeOut();
     } else {
       this.fetchStores();
@@ -177,6 +179,33 @@ export default {
       },(error) =>{
         alert('Sory');
       });
+    },
+    mountFetchStores: function(){
+      axios.get('/api/stores').then((response)=>{
+        var storesList = []
+        for(var i = 0; i < response.data.stores.length; i++){
+          storesList.push(response.data.stores[i]);
+        }
+        this.allStores = storesList
+        this.mountDistanceCalc();
+      },(error) =>{
+        alert('Sory');
+      });
+    },
+    mountDistanceCalc: function(){
+      this.herePosition(this).then(function (value) {
+        var hereLat = value[0];
+        var hereLng = value[1];
+        var that = value[2];
+        that.allStores.forEach(function(store,i){
+          var lat2 = store["lat"]
+          var lng2 = store["lng"]
+          var distance = that.getDistance(hereLat,hereLng,lat2,lng2,0)
+          store.distance = distance
+        })
+        that.distanceSort()
+        that.saveStorageStore();
+      })
     },
     socketFilter: function(){
       this.onSocket = !this.onSocket
@@ -255,7 +284,7 @@ export default {
       return this.moreread_desp = true
     },
     refreshDistanceCalc: function(){
-      // $('.loading').show();
+      $('.loading').show();
       this.herePosition(this).then(function (value) {
         var hereLat = value[0];
         var hereLng = value[1];
@@ -266,6 +295,7 @@ export default {
           var distance = that.getDistance(hereLat,hereLng,lat2,lng2,0)
           store.distance = distance
         })
+        that.searchWord = ''
         that.distanceSort()
         $('.loading').hide();
         that.onDistanceSort = true
@@ -306,10 +336,11 @@ export default {
       return distance;
     },
     distanceSort: function(){
-      this.searchWord = ''
-      this.stores = this.allStores.sort(function(a, b) {
+      var storesList = []
+      storesList = this.allStores.sort(function(a, b) {
         return (a.distance < b.distance) ? -1 : 1;
       });
+      this.stores = storesList
       this.refreshFilter();
     },
     saveStorageStore: function(){
