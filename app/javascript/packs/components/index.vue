@@ -157,6 +157,7 @@ export default {
       $('.loading').fadeOut();
     } else if(displayStoresList){
       this.stores = displayStoresList
+      this.stores.length = displayStoresCount
       this.mountFetchStores();
       $('.loading').fadeOut();
     } else {
