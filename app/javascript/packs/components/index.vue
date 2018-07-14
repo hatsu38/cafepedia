@@ -134,29 +134,28 @@ export default {
     }
   },
   mounted: function(){
-    var allStoresListObj = localStorage.getItem("allStoresListStorage");
-    var wifiConditionObj = localStorage.getItem("wifiCondition");
-    var socketConditionObj = localStorage.getItem("socketCondition");
-    var smokingConditionObj = localStorage.getItem("smokingCondition");
-    var searchWordConditionObj = localStorage.getItem("searchWordCondition");
-    var distanceSortConditionObj = localStorage.getItem("distanceSortCondition");
-    var allStoresList = JSON.parse(allStoresListObj);
-    var wifiCondition = JSON.parse(wifiConditionObj);
-    var socketCondition = JSON.parse(socketConditionObj);
-    var smokingCondition = JSON.parse(smokingConditionObj);
-    var searchWordCondition = JSON.parse(searchWordConditionObj);
-    var distanceSortCondition = JSON.parse(distanceSortConditionObj);
-    if(allStoresList){
-      this.allStores = allStoresList
+    // var allStoresList = JSON.parse(localStorage.getItem("allStoresListStorage"));
+    var displayStoresList = JSON.parse(localStorage.getItem("displayStoresListStorage"));
+    var wifiCondition = JSON.parse(localStorage.getItem("wifiCondition"));
+    var socketCondition = JSON.parse(localStorage.getItem("socketCondition"));
+    var smokingCondition = JSON.parse(localStorage.getItem("smokingCondition"));
+    var searchWordCondition = JSON.parse(localStorage.getItem("searchWordCondition"));
+    var distanceSortCondition = JSON.parse(localStorage.getItem("distanceSortCondition"));
+    var displayStoresCount = localStorage.getItem("displayStoresCount");
+    if(displayStoresList){
+      // this.allStores = allStoresList
+      this.stores = displayStoresList
       this.onWifi = wifiCondition
       this.onSocket = socketCondition
       this.onSmoking= smokingCondition
       this.searchWord = searchWordCondition
       this.onDistanceSort = distanceSortCondition
+      this.stores.length = displayStoresCount
       if(this.searchWord){
         $('label[for="area"]').addClass("active");
       }
-      this.refreshFilter();
+      this.fetchStores();
+      // this.refreshFilter();
       $('.loading').fadeOut();
     } else {
       this.fetchStores();
@@ -256,7 +255,7 @@ export default {
       return this.moreread_desp = true
     },
     refreshDistanceCalc: function(){
-      $('.loading').show();
+      // $('.loading').show();
       this.herePosition(this).then(function (value) {
         var hereLat = value[0];
         var hereLng = value[1];
@@ -322,6 +321,8 @@ export default {
       localStorage.setItem('smokingCondition', JSON.stringify(this.onSmoking));
       localStorage.setItem('distanceSortCondition', JSON.stringify(this.onDistanceSort));
       localStorage.setItem('searchWordCondition', JSON.stringify(this.searchWord));
+      localStorage.setItem('displayStoresListStorage', JSON.stringify(this.displayStores));
+      localStorage.setItem('displayStoresCount', this.stores.length);
     },
   },
   filters: {
