@@ -51,6 +51,9 @@
         <img src="/uploads/iccard_service.jpg" class="iccard_icon">
       </div>
     </div>
+    <p class="map_app_text">
+      <a href="" id="to_map_app" target="_blank">地図アプリで見る</a>
+    </p>
     <div id='map'></div>
   </div>
 </template>
@@ -65,6 +68,7 @@ export default {
   },
   mounted: function(){
     this.gmapCreate();
+    this.toMapAppHrefCreate();
   },
   methods: {
     gmapCreate: function(){
@@ -85,8 +89,17 @@ export default {
         position: new google.maps.LatLng(lat,lng),
         map: map
       });
+    },
+    toMapAppHrefCreate: function(){
+      var agent = navigator.userAgent;
+      var store_lat = parseFloat(this.store.lat);
+      var store_lng = parseFloat(this.store.lng);
+      if(agent.search(/iPhone/) != -1 || agent.search(/iPad/) != -1){
+        $("#to_map_app").attr("href", `http://maps.apple.com/maps?saddr=&daddr=${store_lat},${store_lng}&z=14`);
+      }else{
+        $("#to_map_app").attr("href", `http://maps.google.com/maps?saddr=&daddr=${store_lat},${store_lng}&z=14`);
+      }
     }
-
   }
 }
 </script>
