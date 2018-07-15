@@ -15,6 +15,7 @@
  */
 @import "materialize/components/color";
 $primary-color: color("green","darken-3") !default;
+$base-color: #7a2700;
 @import "materialize";
 @import 'font-awesome.css';
 
@@ -28,7 +29,7 @@ body{
   text-align:center;
 }
 header{
-  background: linear-gradient(283deg, #d5ffd5, #01b76e 61%, #005d38);
+  background: linear-gradient(283deg, #ffb18c, #cc8d70 61%, #996a54);
   padding:.5em;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,.32),
               0 4px 5px 0 rgba(0,0,0,0.06),
@@ -45,7 +46,9 @@ header{
     }
   }
 }
-
+.btn{
+  background-color:$base-color;
+}
 .content{
   .search_box{
     padding-top: .8em;
