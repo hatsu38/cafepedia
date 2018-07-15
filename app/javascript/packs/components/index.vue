@@ -71,7 +71,8 @@
              v-for="(store,index) in displayStores"
              :class="{socket: store.socket,wifi: store.wifi}"
              >
-             <h2 @click="saveStorageCondition"><router-link :to="'/stores/' + store.id">{{store.name}}</router-link></h2>
+             <!-- <h2 @click="saveStorageCondition"><router&#45;link :to="'/stores/' + store.id">{{store.name}}</router&#45;link></h2> -->
+             <h2 @click="modal_open(store)">{{store.name}}</h2>
              <div class="row">
                <div class="col s5 mainstore_logo">
                  <img :src="store.mainstore.image.url">
@@ -115,10 +116,17 @@
         <i class="fas fa-angle-down"></i><span>もっとみる</span>
       </div>
     </div>
+    <modals-container></modals-container>
+    <!-- <pickStoreComponent></modal&#45;container> -->
+    <!-- <modal name="hello&#45;world"> -->
+    <!--   hello, world! -->
+    <!--   <h3>{{pickStore}}</h3> -->
+    <!-- </modal> -->
   </div>
 </template>
 <script>
 import axios from 'axios'
+import pickStoreComponent from './pickStoreComponent'
 export default {
   data: function(){
     return {
@@ -131,6 +139,7 @@ export default {
       searchWord: '',
       size: 10,
       moreread_desp: true,
+      pickStore: '',
     }
   },
   mounted: function(){
@@ -355,6 +364,21 @@ export default {
       localStorage.setItem('searchWordCondition', JSON.stringify(this.searchWord));
       localStorage.setItem('displayStoresListStorage', JSON.stringify(this.displayStores));
       localStorage.setItem('displayStoresCount', this.stores.length);
+    },
+    modal_open: function(store){
+      this.$modal.show(pickStoreComponent, {
+        pickStore: store
+      },{
+        width: 330,
+        height: 1200
+      },{
+        scrollable: true
+      },{
+      clickToClose: true
+      })
+    },
+    modal_close: function(){
+      this.$modal.hide('hello-world');
     },
   },
   filters: {
