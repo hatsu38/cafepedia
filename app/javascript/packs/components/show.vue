@@ -2,7 +2,7 @@
   <div id="store_detail">
     <header class="center white-text" id="top_header">
       <router-link to="/" class="white-text">
-        <i class="fas fa-smoking"></i>
+        <i class="fas fa-coffee"></i>
         <h1 class="logo">カフェペディア</h1>
       </router-link>
     </header>
