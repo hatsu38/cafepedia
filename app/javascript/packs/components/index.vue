@@ -71,8 +71,9 @@
              v-for="(store,index) in displayStores"
              :class="{socket: store.socket,wifi: store.wifi}"
              >
-             <!-- <h2 @click="saveStorageCondition"><router&#45;link :to="'/stores/' + store.id">{{store.name}}</router&#45;link></h2> -->
-             <h2 @click="modal_open(store)">{{store.name}}</h2>
+
+             <h2 @click="saveStorageCondition"  v-if="pc"><router-link :to="'/stores/' + store.id">{{store.name}}</router-link></h2>
+             <h2 @click="modal_open(store)" v-else>{{store.name}}</h2>
              <div class="row">
                <div class="col s5 mainstore_logo">
                  <img :src="store.mainstore.image.url">
@@ -117,11 +118,6 @@
       </div>
     </div>
     <modals-container></modals-container>
-    <!-- <pickStoreComponent></modal&#45;container> -->
-    <!-- <modal name="hello&#45;world"> -->
-    <!--   hello, world! -->
-    <!--   <h3>{{pickStore}}</h3> -->
-    <!-- </modal> -->
   </div>
 </template>
 <script>
@@ -140,7 +136,11 @@ export default {
       size: 10,
       moreread_desp: true,
       pickStore: '',
+      pc: false,
     }
+  },
+  created: function(){
+    this.isPc();
   },
   mounted: function(){
     var allStoresList = JSON.parse(localStorage.getItem("allStoresListStorage"));
@@ -216,6 +216,13 @@ export default {
         that.distanceSort()
         that.saveStorageStore();
       })
+    },
+    isPc: function(){
+      if(!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
+        this.pc = true
+      }else{
+        this.pc = false
+      }
     },
     socketFilter: function(){
       this.onSocket = !this.onSocket
@@ -369,12 +376,11 @@ export default {
       this.$modal.show(pickStoreComponent, {
         pickStore: store
       },{
-        width: 330,
-        height: 1200
-      },{
-        scrollable: true
-      },{
-      clickToClose: true
+        width: "330px",
+        height: "auto",
+        pivotY: 0.9,
+        scrollable: true,
+        clickToClose: true,
       })
     },
     modal_close: function(){

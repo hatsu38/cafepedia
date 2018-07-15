@@ -2,7 +2,7 @@
   <!-- <modal name="pickStoreComponent"> -->
   <div id="store_detail">
       <!-- <div @click="modal_close">閉じる</div> -->
-    <h2>{{pickStore.name}}</h2>
+    <h2 @click="gmapCreate">{{pickStore.name}}</h2>
     <table class="table">
       <tbody>
         <tr>
@@ -53,34 +53,38 @@
 import axios from 'axios';
 export default {
   props: ['pickStore'],
-  // created: function(){
-  //   this.gmapCteate();
-  // },
+  data: function(){
+    return {
+     store: this.pickStore
+    }
+  },
+  mounted: function(){
+    this.gmapCreate();
+  },
   methods: {
     modal_close: function(){
-      // this.$modal.hide('pickStoreComponent');
       this.$modal.hide('modals-container');
+    },
+    gmapCreate: function(){
+      var store_lat = parseFloat(this.store.lat);
+      var store_lng = parseFloat(this.store.lng);
+      var map = new google.maps.Map(document.getElementById('map'), { // #sampleに地図を埋め込む
+        center: { // 地図の中心を指定
+          lat: store_lat, // 緯度
+          lng: store_lng// 経度
+        },
+        zoom: 14 // 地図のズームを指定
+      });
+      this.gmarkerDesp(store_lat,store_lng,map);
+    },
+    gmarkerDesp: function(lat,lng,map){
+      var marker = new google.maps.Marker({
+        // マーカーを置く緯度経度
+        position: new google.maps.LatLng(lat,lng),
+        map: map
+      });
     }
-  //   gmapCreate: function(){
-  //     var store_lat = parseFloat(this.store.lat);
-  //     var store_lng = parseFloat(this.store.lng);
-  //     var map = new google.maps.Map(document.getElementById('map'), { // #sampleに地図を埋め込む
-  //       center: { // 地図の中心を指定
-  //         lat: store_lat, // 緯度
-  //         lng: store_lng// 経度
-  //       },
-  //       zoom: 14 // 地図のズームを指定
-  //     });
-  //     this.gmarkerDesp(store_lat,store_lng,map);
-  //   },
-  //   gmarkerDesp: function(lat,lng,map){
-  //     var marker = new google.maps.Marker({
-  //       // マーカーを置く緯度経度
-  //       position: new google.maps.LatLng(lat,lng),
-  //       map: map
-  //     });
-  //   }
-  //
+
   }
 }
 </script>
