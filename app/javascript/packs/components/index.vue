@@ -378,7 +378,7 @@ export default {
       this.$modal.show(pickStoreComponent, {
         pickStore: store
       },{
-        width: "330px",
+        width: "100%",
         height: "auto",
         pivotY: 0.9,
         scrollable: true,
