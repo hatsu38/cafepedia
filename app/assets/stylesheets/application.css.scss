@@ -322,19 +322,16 @@ white-space:pre-wrap;
       margin-top: 14px;
     }
   }
-  p.map_app_text{
-    text-align:right;
-    a{
-      background-image: linear-gradient(to bottom,#fff 20%,#fbfbf9 100%);
-      color: #666;
-      padding: 4px 8px;
-      position:absolute;
-      z-index: 99;
-      left: 10px;
-      bottom: 1em;
-      border: solid 1px #cdc1b5;
-      border-radius:3px;
-    }
+  a#to_map_app{
+    background-image: linear-gradient(to bottom,#fff 20%,#fbfbf9 100%);
+    color: #666;
+    padding: 4px 8px;
+    position:absolute;
+    z-index: 99;
+    left: 10px;
+    bottom: 1em;
+    border: solid 1px #cdc1b5;
+    border-radius:3px;
   }
   #map{
     margin-bottom:10px;

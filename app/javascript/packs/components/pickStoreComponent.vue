@@ -51,9 +51,7 @@
         <img src="/uploads/iccard_service.jpg" class="iccard_icon">
       </div>
     </div>
-    <p class="map_app_text">
-      <a href="" id="to_map_app" target="_blank">地図アプリで見る</a>
-    </p>
+    <a href="" id="to_map_app" target="_blank">地図アプリで見る</a>
     <div id='map'></div>
   </div>
 </template>

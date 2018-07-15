@@ -269,7 +269,11 @@ export default {
     wordListupStores: function(){
       var searchWord = this.searchWord && this.searchWord.toLowerCase();
       if(!searchWord){
-        this.onDistanceSort = true
+        navigator.geolocation.getCurrentPosition(
+          function(error) {
+            this.onDistanceSort = true
+          }
+        )
         return this.stores = this.allStores
       }
       this.onDistanceSort = false
@@ -327,6 +331,10 @@ export default {
           function (position) {
             var herePos = [position.coords.latitude,position.coords.longitude,that]
             resolve(herePos);
+          },
+          function(error) {
+            $('.loading').hide();
+            that.saveStorageStore();
           }
         );
       });
