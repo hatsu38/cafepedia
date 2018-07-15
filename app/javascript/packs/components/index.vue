@@ -386,7 +386,7 @@ export default {
       })
     },
     modal_close: function(){
-      this.$modal.hide('hello-world');
+      this.$modal.hide(pickStoreComponent);
     },
   },
   filters: {

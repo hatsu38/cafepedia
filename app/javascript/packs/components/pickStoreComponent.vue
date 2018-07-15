@@ -1,8 +1,14 @@
 <template>
-  <!-- <modal name="pickStoreComponent"> -->
   <div id="store_detail">
-      <!-- <div @click="modal_close">閉じる</div> -->
-    <h2 @click="gmapCreate">{{pickStore.name}}</h2>
+    <div class="row">
+      <p class="img_logo_block col s2">
+        <img :src="pickStore.mainstore.image.url">
+      </p>
+      <p class="col s9 store-name">{{pickStore.name}}</p>
+      <p class="close-icon-block col s1">
+        <i class="fas fa-times" @click="$emit('close')"></i>
+      </p>
+    </div>
     <table class="table">
       <tbody>
         <tr>
@@ -47,7 +53,6 @@
     </div>
     <div id='map'></div>
   </div>
-  <!-- </modal> -->
 </template>
 <script>
 import axios from 'axios';
@@ -55,16 +60,13 @@ export default {
   props: ['pickStore'],
   data: function(){
     return {
-     store: this.pickStore
+      store: this.pickStore
     }
   },
   mounted: function(){
     this.gmapCreate();
   },
   methods: {
-    modal_close: function(){
-      this.$modal.hide('modals-container');
-    },
     gmapCreate: function(){
       var store_lat = parseFloat(this.store.lat);
       var store_lng = parseFloat(this.store.lng);
