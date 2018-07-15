@@ -71,8 +71,7 @@
              v-for="(store,index) in displayStores"
              :class="{socket: store.socket,wifi: store.wifi}"
              >
-
-             <h2 @click="saveStorageCondition"  v-if="pc"><router-link :to="'/stores/' + store.id">{{store.name}}</router-link></h2>
+             <h2 v-if="pc"><router-link :to="'/stores/' + store.id">{{store.name}}</router-link></h2>
              <h2 @click="modal_open(store)" v-else>{{store.name}}</h2>
              <div class="row">
                <div class="col s5 mainstore_logo">
@@ -138,6 +137,9 @@ export default {
       pickStore: '',
       pc: false,
     }
+  },
+  updated: function(){
+    this.saveStorageCondition();
   },
   created: function(){
     this.isPc();
