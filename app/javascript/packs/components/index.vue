@@ -166,11 +166,11 @@ export default {
       this.allStores = allStoresList
       this.refreshFilter();
       $('.loading').fadeOut();
-    } else if(displayStoresList){
+    } else
+      if(displayStoresList){
       this.stores = displayStoresList
       this.stores.length = displayStoresCount
       this.mountFetchStores();
-      $('.loading').fadeOut();
     } else {
       this.fetchStores();
     }
@@ -216,6 +216,7 @@ export default {
           store.distance = distance
         })
         that.distanceSort()
+        $('.loading').hide();
         that.saveStorageStore();
       })
     },
@@ -269,14 +270,11 @@ export default {
     wordListupStores: function(){
       var searchWord = this.searchWord && this.searchWord.toLowerCase();
       if(!searchWord){
-        navigator.geolocation.getCurrentPosition(
-          function(error) {
-            this.onDistanceSort = true
-          }
-        )
+        this.onDistanceSort = true
         return this.stores = this.allStores
       }
       this.onDistanceSort = false
+      if(this.allStores){
       var stores_list = this.allStores.filter(function(value){
         return Object.keys(value).some(function(key){
           if(key === 'name' || key === "city" || key === "other_address" || key === "access"){
@@ -285,6 +283,9 @@ export default {
         })
       })
       return stores_list
+      }else{
+        this.fetchStores();
+      }
     },
     resetFilter: function(){
       this.onSocket= false
@@ -307,7 +308,6 @@ export default {
       return this.moreread_desp = true
     },
     refreshDistanceCalc: function(){
-      $('.loading').show();
       this.herePosition(this).then(function (value) {
         var hereLat = value[0];
         var hereLng = value[1];
@@ -333,6 +333,7 @@ export default {
             resolve(herePos);
           },
           function(error) {
+            alert("現在地を取得できません");
             $('.loading').hide();
             that.saveStorageStore();
           }
