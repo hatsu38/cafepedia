@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="filter_box row center">
-        <div class="filter-block col s4">
+        <div class="filter-block col s4 socket">
           <div class="filter_content sort"
                @click="socketFilter"
                :class="{socketFilterOn: onSocket}"
@@ -37,7 +37,7 @@
                <span>コンセント</span>
           </div>
         </div>
-        <div class="filter-block col s4">
+        <div class="filter-block col s4 wifi">
           <div class="filter_content sort"
                @click="wifiFilter"
                :class="{wifiFilterOn: onWifi}"
@@ -46,7 +46,7 @@
                <span>フリーWi-Fi</span>
           </div>
         </div>
-        <div class="filter-block col s4">
+        <div class="filter-block col s4 smoking">
           <div class="filter_content sort"
                @click="smokingFilter"
                :class="{smokingFilterOn: onSmoking}"
@@ -117,6 +117,11 @@
       </div>
     </div>
     <modals-container></modals-container>
+    <div id="loading_anime">
+      <div class="loading_block">
+        <img src="loading_2.gif">
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -162,12 +167,14 @@ export default {
     if(this.searchWord){
       $('label[for="area"]').addClass("active");
     }
-    if(allStoresList){
-      this.allStores = allStoresList
-      this.refreshFilter();
-      $('.loading').fadeOut();
-    } else
+    // if(allStoresList){
+    //   this.allStores = allStoresList
+    //   this.refreshFilter();
+    //   $('.loading').fadeOut();
+    // } else
       if(displayStoresList){
+      $('.loading').hide();
+      this.loading_show();
       this.stores = displayStoresList
       this.stores.length = displayStoresCount
       this.mountFetchStores();
@@ -215,8 +222,8 @@ export default {
           var distance = that.getDistance(hereLat,hereLng,lat2,lng2,0)
           store.distance = distance
         })
-        that.distanceSort()
-        $('.loading').hide();
+        that.distanceSort();
+        that.loading_hide();
         that.saveStorageStore();
       })
     },
@@ -308,6 +315,7 @@ export default {
       return this.moreread_desp = true
     },
     refreshDistanceCalc: function(){
+      this.loading_show();
       this.herePosition(this).then(function (value) {
         var hereLat = value[0];
         var hereLng = value[1];
@@ -320,7 +328,7 @@ export default {
         })
         that.searchWord = ''
         that.distanceSort()
-        $('.loading').hide();
+        // $('.loading').hide();
         that.onDistanceSort = true
         that.saveStorageStore();
       })
@@ -397,6 +405,13 @@ export default {
     modal_close: function(){
       this.$modal.hide(pickStoreComponent);
     },
+    loading_show: function(){
+      console.log("loading_show");
+      $("#loading_anime").show();
+    },
+    loading_hide: function(){
+      $("#loading_anime").fadeOut();
+    }
   },
   filters: {
     access_cut: function(data){

@@ -14,13 +14,22 @@
  *= require_self
  */
 @import "materialize/components/color";
-$primary-color: color("green","darken-3") !default;
-$base-color: #7a2700;
 @import "materialize";
 @import 'font-awesome.css';
+$base: #7a2700;
+$bg:#fefefe;
+$myglay: #ccc;
+$smoking-color: #25a856;
+$wifi-color: #ff3030;
+$socket-color: #136df9;
+$distance-color: #f99420;
+$smoking-bg: #b0fcb8;
+$wifi-bg: #ffaeae;
+$socket-bg: #9ec4ff;
+$distance-bg: #ffd19e;
 
 body{
-  background-color:#fefefe;
+  background-color:$bg;
 }
 .loading{
   width: 100%;
@@ -47,7 +56,7 @@ header{
   }
 }
 .btn{
-  background-color:$base-color;
+  background-color:$base;
 }
 .content{
   .search_box{
@@ -66,13 +75,17 @@ header{
     .distanceSort{
       margin-top:1em;
     }
+    .wifi{
+      font-size:1em;
+      padding:0 .1em;
+    }
     .filter-block{
         line-height:2.8em;
         height:2.8em;
       .filter_content{
         border: 1px solid #cdcdcd;
         border-radius: 5px;
-        font-size:1.1em;
+        font-size:1em;
         background-color:#fff;
         box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
         .smoking_filter_text{
@@ -84,23 +97,23 @@ header{
         padding:0 0.2em;
       }
       .wifiFilterOn{
-        background-color:#ffaeae;
-        color: #ff3030;
+        background-color:$wifi-bg;
+        color: $wifi-color;
         font-weight: bold;
       }
       .socketFilterOn{
-        background-color:#9ec4ff;
-        color: #136df9;
+        background-color:$socket-bg;
+        color: $socket-color;
         font-weight: bold;
       }
       .smokingFilterOn{
-        background-color:#b0fcb8;
-        color: #25a856;
+        background-color:$smoking-bg;
+        color: $smoking-color;
         font-weight: bold;
       }
       .distanceSortOn{
-        background-color:#ffd19e;
-        color: #f99420;
+        background-color:$distance-bg;
+        color: $distance-color;
         font-weight: bold;
       }
     }
@@ -147,15 +160,15 @@ header{
       }
       table{
         height:139px;
-        border:1px solid #ccc;
+        border:1px solid $myglay;
         tr{
           th{
             background-color:#eee;
             text-align:center;
           }
           th,td{
-            border-top: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
+            border-top: 1px solid $myglay;
+            border-bottom: 1px solid $myglay;
             pre{
               margin: 0;
               word-break:break-all;
@@ -197,7 +210,7 @@ white-space:pre-wrap;
     height: 2.8em;
     line-height:2.8em;
     border-radius:20px;
-    font-size: 1.1em;
+    font-size: 1em;
     box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
     position:relative;
     i{
@@ -232,15 +245,15 @@ white-space:pre-wrap;
     font-size:2.5em;
   }
   table{
-    border:1px solid #ccc;
+    border:1px solid $myglay;
     tr{
       th{
         background-color:#eee;
         text-align:center;
       }
       th,td{
-        border-top: 1px solid #ccc;
-        border-bottom: 1px solid #ccc;
+        border-top: 1px solid $myglay;
+        border-bottom: 1px solid $myglay;
         pre{
           margin: 0;
           word-break:break-all;
@@ -278,25 +291,38 @@ white-space:pre-wrap;
 
 .icons_box{
   .fa-smoking{
-    border:2px solid #b0fcb8;
-    color: #25a856;
+    border:2px solid $smoking-bg;
+    color: $smoking-color;
   }
   .fa-wifi{
-    border:2px solid #ffaeae;
-    color: #ff3030;
+    border:2px solid $wifi-bg;
+    color: $wifi-color;
   }
   .fa-plug{
-    border:2px solid #9ec4ff;
-    color: #136df9;
+    border:2px solid $socket-bg;
+    color: $socket-color;
   }
   .iccard_img_block{
     border:2px solid #f9f7a7;
   }
 }
 
-.v--modal-box{
-  // top:15px !important;
+#loading_anime{
+  position:fixed;
+  top:330px;
+  z-index:9;
+  background-color:#fff;
+  height:100vh;
+  width:100vw;
+  .loading_block{
+    line-height:50vh;
+    text-align:center;
+    img{
+
+    }
+  }
 }
+
 #store_detail{
   .row{
     margin-bottom: 0;
