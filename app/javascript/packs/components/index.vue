@@ -67,49 +67,51 @@
       </div>
       <div class="stores_box" id="stores">
         <div class="store_count">{{stores.length}}店舗</div>
-        <div class="store mix"
-             v-for="(store,index) in displayStores"
-             :class="{socket: store.socket,wifi: store.wifi}"
-             >
-             <h2 v-if="pc"><router-link :to="'/stores/' + store.id">{{store.name}}</router-link></h2>
-             <h2 @click="modal_open(store)" v-else>{{store.name}}</h2>
-             <div class="row">
-               <div class="col s5 mainstore_logo">
-                 <img :src="store.mainstore.image.url">
+        <div id="stores_array">
+          <div class="store "
+               v-for="(store,index) in displayStores"
+               :class="{socket: store.socket,wifi: store.wifi}"
+               >
+               <h2 v-if="pc"><router-link :to="'/stores/' + store.id">{{store.name}}</router-link></h2>
+               <h2 @click="modal_open(store)" v-else>{{store.name}}</h2>
+               <div class="row">
+                 <div class="col s5 mainstore_logo">
+                   <img :src="store.mainstore.image.url">
+                 </div>
+                 <div class="col s7">
+                   <table class="table" >
+                     <tbody>
+                       <tr>
+                         <th><i class="fas fa-clock"></i></th>
+                         <td>
+                           <pre>{{store.business_hour}}</pre>
+                         </td>
+                       </tr>
+                       <tr>
+                         <th><i class="fas fa-map-marker-alt"></i></th>
+                         <td>
+                           {{store.access | access_cut}}
+                         </td>
+                       </tr>
+                       <tr v-show="store.distance != undefined">
+                         <th><i class="fas fa-location-arrow"></i></th>
+                         <td>
+                           約 {{store.distance | km_convert}}
+                         </td>
+                       </tr>
+                     </tbody>
+                   </table>
+                 </div>
                </div>
-               <div class="col s7">
-                 <table class="table" >
-                   <tbody>
-                     <tr>
-                       <th><i class="fas fa-clock"></i></th>
-                       <td>
-                         <pre>{{store.business_hour}}</pre>
-                       </td>
-                     </tr>
-                     <tr>
-                       <th><i class="fas fa-map-marker-alt"></i></th>
-                       <td>
-                         {{store.access | access_cut}}
-                       </td>
-                     </tr>
-                     <tr v-show="store.distance != undefined">
-                       <th><i class="fas fa-location-arrow"></i></th>
-                       <td>
-                         約 {{store.distance | km_convert}}
-                       </td>
-                     </tr>
-                   </tbody>
-                 </table>
+               <div class="icons_box">
+                 <i class="fas fa-smoking" v-show="store.smoking"></i>
+                 <i class="fas fa-wifi" v-show="store.wifi"></i>
+                 <i class="fas fa-plug" v-show="store.socket"></i>
+                 <div class="iccard_img_block" v-show="store.iccard">
+                   <img src="/uploads/iccard_service.jpg" class="iccard_icon">
+                 </div>
                </div>
-             </div>
-             <div class="icons_box">
-               <i class="fas fa-smoking" v-show="store.smoking"></i>
-               <i class="fas fa-wifi" v-show="store.wifi"></i>
-               <i class="fas fa-plug" v-show="store.socket"></i>
-               <div class="iccard_img_block" v-show="store.iccard">
-                 <img src="/uploads/iccard_service.jpg" class="iccard_icon">
-               </div>
-             </div>
+          </div>
         </div>
       </div>
       <div class="moreread" @click="moreread" v-show="moreread_desp">
@@ -121,6 +123,23 @@
       <div class="loading_block">
         <img src="loading_2.gif">
       </div>
+      <p id="loading_text">
+        <span>現</span>
+        <span>在</span>
+        <span>地</span>
+        <span>か</span>
+        <span>ら</span>
+        <span>カ</span>
+        <span>フ</span>
+        <span>ェ</span>
+        <span>を</span>
+        <span>検</span>
+        <span>索</span>
+        <span>中</span>
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+      </p>
     </div>
   </div>
 </template>
@@ -328,7 +347,7 @@ export default {
         })
         that.searchWord = ''
         that.distanceSort()
-        // $('.loading').hide();
+        that.loading_hide();
         that.onDistanceSort = true
         that.saveStorageStore();
       })
@@ -406,12 +425,13 @@ export default {
       this.$modal.hide(pickStoreComponent);
     },
     loading_show: function(){
-      console.log("loading_show");
       $("#loading_anime").show();
+      $("#stores_array").hide();
     },
     loading_hide: function(){
       $("#loading_anime").fadeOut();
-    }
+      $("#stores_array").fadeIn();
+    },
   },
   filters: {
     access_cut: function(data){

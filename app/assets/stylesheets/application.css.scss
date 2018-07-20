@@ -28,6 +28,25 @@ $wifi-bg: #ffaeae;
 $socket-bg: #9ec4ff;
 $distance-bg: #ffd19e;
 
+@mixin step-in-animation($name, $duration, $length, $index, $iterationCount: infinite) {
+  animation: $name $duration ease 1s $iterationCount;
+  @keyframes #{$name} {
+    0% {
+      opacity: 0;
+    }
+    #{100 / $length * ($index - 1)}% {
+      opacity: 0;
+    }
+    #{100 / $length * $index}% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+
 body{
   background-color:$bg;
 }
@@ -80,8 +99,8 @@ header{
       padding:0 .1em;
     }
     .filter-block{
-        line-height:2.8em;
-        height:2.8em;
+        line-height:2.5em;
+        height:2.5em;
       .filter_content{
         border: 1px solid #cdcdcd;
         border-radius: 5px;
@@ -197,13 +216,13 @@ white-space:pre-wrap;
           }
         }
       }
-      &:nth-child(2){
+      &:nth-child(1){
         margin-top: 0;
       }
     }
   }
   .moreread{
-    width: 325px;
+    width:85%;
     margin: 0 auto 1em;
     text-align:center;
     border: 1.2px solid #cdcdcd;
@@ -309,7 +328,7 @@ white-space:pre-wrap;
 
 #loading_anime{
   position:fixed;
-  top:330px;
+  top:320px;
   z-index:9;
   background-color:#fff;
   height:100vh;
@@ -318,11 +337,22 @@ white-space:pre-wrap;
     line-height:50vh;
     text-align:center;
     img{
-
+    }
+  }
+  #loading_text{
+    position:fixed;
+    top:500px;
+    width:100%;
+    text-align:center;
+    $duration: 4.5s;
+    $length: 21;
+    @for $i from 1 through $length {
+      span:nth-child(#{$i}) {
+        @include step-in-animation(hoge_#{$i}, $duration, $length, $i);
+      }
     }
   }
 }
-
 #store_detail{
   .row{
     margin-bottom: 0;
