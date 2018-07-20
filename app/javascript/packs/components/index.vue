@@ -138,6 +138,9 @@
         <span>.</span>
       </p>
     </div>
+    <div id="noresult">
+      <p><span>「{{noResultWord}}」</span>が住所やアクセスに含まれるカフェは見つかりません。</p>
+    </div>
   </div>
 </template>
 <script>
@@ -153,6 +156,7 @@ export default {
       onSmoking: false,
       onDistanceSort: false,
       searchWord: '',
+      noResultWord: '',
       size: 10,
       moreread_desp: true,
       pickStore: '',
@@ -283,6 +287,12 @@ export default {
     searchStores: function(){
       var search_stores = this.wordListupStores();
       this.stores = this.filterListupStores(search_stores);
+      if(this.stores.length == 0){
+        this.noResultWord = this.searchWord
+       $("#noresult").show();
+      }else{
+        $("#noresult").hide();
+      }
       $('#area').blur();
       this.get_moreread_desp();
       this.size = 10
