@@ -1,8 +1,5 @@
 <template>
   <div>
-    <div class="loading">
-      <img src="Loading.gif">
-    </div>
     <div id="index_vue">
       <header class="center white-text" id="top_header">
         <router-link to="/" class="white-text">
@@ -189,9 +186,7 @@ export default {
     if(allStoresList){
       this.allStores = allStoresList
       this.refreshFilter();
-      $('.loading').fadeOut();
     } else if(displayStoresList){
-      $('.loading').hide();
       this.loading_show();
       this.stores = displayStoresList
       this.stores.length = displayStoresCount
@@ -426,10 +421,12 @@ export default {
     loading_show: function(){
       $("#loading_anime").show();
       $("#stores_array").hide();
+      $(".moreread").hide();
     },
     loading_hide: function(){
       $("#loading_anime").fadeOut();
       $("#stores_array").fadeIn();
+      $(".moreread").fadeIn();
     },
   },
   filters: {
