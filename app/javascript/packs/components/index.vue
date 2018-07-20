@@ -186,12 +186,11 @@ export default {
     if(this.searchWord){
       $('label[for="area"]').addClass("active");
     }
-    // if(allStoresList){
-    //   this.allStores = allStoresList
-    //   this.refreshFilter();
-    //   $('.loading').fadeOut();
-    // } else
-      if(displayStoresList){
+    if(allStoresList){
+      this.allStores = allStoresList
+      this.refreshFilter();
+      $('.loading').fadeOut();
+    } else if(displayStoresList){
       $('.loading').hide();
       this.loading_show();
       this.stores = displayStoresList
