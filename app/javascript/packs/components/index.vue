@@ -154,7 +154,7 @@
         <li class="col s4">
           <div class="facebook sns">
             <a href="https://www.facebook.com/share.php?u=https://cafepedia.herokuapp.com/&amp;t=カフェぺディア | あなたの近くにあるカフェがすぐに見つかる" target="_blank">
-              <i class="fa fa-facebook-f"></i>
+              <i class="fab fa-facebook-f"></i>
             </a>
           </div>
         </li>
