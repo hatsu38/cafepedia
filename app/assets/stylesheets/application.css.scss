@@ -27,6 +27,8 @@ $smoking-bg: #b0fcb8;
 $wifi-bg: #ffaeae;
 $socket-bg: #9ec4ff;
 $distance-bg: #ffd19e;
+$coffee-gradient: linear-gradient(283deg, #ffb18c, #cc8d70 61%, #996a54);
+
 
 @mixin step-in-animation($name, $duration, $length, $index, $iterationCount: infinite) {
   animation: $name $duration ease 1s $iterationCount;
@@ -57,7 +59,7 @@ body{
   text-align:center;
 }
 header{
-  background: linear-gradient(283deg, #ffb18c, #cc8d70 61%, #996a54);
+  background: $coffee-gradient;
   padding:.5em;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,.32),
               0 4px 5px 0 rgba(0,0,0,0.06),
@@ -73,6 +75,47 @@ header{
       font-size:1.3em;
     }
   }
+}
+
+footer{
+  margin: 2.7em auto 0;
+  .footer_border_top{
+    width:85%;
+    height:4px;
+    background:$coffee-gradient;
+    margin: 0 auto;
+  }
+ .sns_block{
+  text-align:center;
+  width: 60%;
+  margin: 0 auto;
+  font-size:2em;
+  color: #fff;
+  margin-top:.8em;
+  .sns{
+    border-radius:5px;
+  }
+  .twitter{
+    background-color: #74c1f8;
+  }
+  .facebook{
+    background-color:#668ad8;
+  }
+  .hatena{
+    background-color:#6eaff3;
+  }
+  a{
+    margin-top:7px;
+    i{
+      color: #fff;
+    }
+  }
+}
+.footer_copy{
+  font-size:12px;
+  text-align:center;
+  margin-bottom:10px;
+}
 }
 .btn{
   background-color:$base;
@@ -259,6 +302,7 @@ white-space:pre-wrap;
 }
 
 #noresult{
+  display:none;
   margin:5em 1em;
   span{
     font-weight:bold;
