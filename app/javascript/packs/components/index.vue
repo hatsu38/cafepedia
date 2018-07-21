@@ -146,21 +146,21 @@
       <ul class="sns_block row">
         <li class="col s4">
           <div class="twitter sns">
-            <a href="https://twitter.com/share?url=https://saruwakakun.com/life/recipe&amp;text=力尽きたときのためのレシピ 〜超簡単に作れるズボラ飯〜" target="_blank">
+            <a href="https://twitter.com/share?url=https://cafepedia.herokuapp.com/&amp;text=カフェぺディア | あなたの近くにあるカフェがすぐに見つかる" target="_blank">
               <i class="fab fa-twitter"></i>
             </a>
           </div>
         </li>
         <li class="col s4">
           <div class="facebook sns">
-            <a href="https://www.facebook.com/share.php?u=https://saruwakakun.com/life/recipe&amp;t=力尽きたときのためのレシピ 〜超簡単に作れるズボラ飯〜" target="_blank">
+            <a href="https://www.facebook.com/share.php?u=https://cafepedia.herokuapp.com/&amp;t=カフェぺディア | あなたの近くにあるカフェがすぐに見つかる" target="_blank">
               <i class="fa fa-facebook-f"></i>
             </a>
           </div>
         </li>
         <li class="col s4">
           <div class="hatena sns">
-            <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="touch" title="このエントリーをはてなブックマークに追加">
+            <a href="http://b.hatena.ne.jp/entry/https://cafepedia.herokuapp.com/" class="hatena-bookmark-button" data-hatena-bookmark-layout="touch" title="このエントリーをはてなブックマークに追加" target="_blank">
               <i>B!</i>
             </a>
           </div>
@@ -169,7 +169,7 @@
       <div class="info_block">
         <a href="https://twitter.com/hatsu_38" target="_blank"><i class="fas fa-play-circle"></i>運営者</a>
         |
-        <a href="#" target="_blank"><i class="fas fa-play-circle"></i>リークする</a>
+        <a href="https://goo.gl/forms/GLAZMVpeUTnJWgg72" target="_blank"><i class="fas fa-play-circle"></i>リークする</a>
       </div>
       <p class="footer_copy">
       © Copyright 2018 hastu All rights reserved.
