@@ -166,6 +166,11 @@
           </div>
         </li>
       </ul>
+      <div class="info_block">
+        <a href="https://twitter.com/hatsu_38" target="_blank"><i class="fas fa-play-circle"></i>運営者</a>
+        |
+        <a href="#" target="_blank"><i class="fas fa-play-circle"></i>リークする</a>
+      </div>
       <p class="footer_copy">
       © Copyright 2018 hastu All rights reserved.
       </p>
