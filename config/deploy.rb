@@ -3,17 +3,30 @@ lock "~> 3.11.0"
 
 set :application, "cafepedia"
 set :repo_url, "git@github.com:toywonder/cafepedia.git"
+<<<<<<< HEAD
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, 'dev/aws_deploy'
 
 # deploy先のディレクトリ。
 set :deploy_to, '/var/www/cafepedia'
+=======
+
+# Default branch is :master
+# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+set :branch, 'dev/aws_deploy'
+
+# Default deploy_to directory is /var/www/my_app_name
+set :deploy_to, "/var/www/cafepedia"
+# rubyのバージョン
+set :rbenv_ruby, '2.4.0'
+>>>>>>> 086e6409fc4e612566905406d997ac80b77ac359
 
 # シンボリックリンクをはるファイル。(※後述)
 set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
 
 # シンボリックリンクをはるフォルダ。(※後述)
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
+<<<<<<< HEAD
 
 # 保持するバージョンの個数(※後述)
 set :keep_releases, 5
@@ -24,6 +37,10 @@ set :rbenv_ruby, '2.1.3'
 #出力するログのレベル。
 set :log_level, :debug
 
+=======
+#出力するログのレベル。
+set :log_level, :debug
+>>>>>>> 086e6409fc4e612566905406d997ac80b77ac359
 namespace :deploy do
   desc 'Restart application'
   task :restart do
@@ -59,19 +76,28 @@ namespace :deploy do
     end
   end
 end
+<<<<<<< HEAD
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
+=======
+# 追記は上記まで
+>>>>>>> 086e6409fc4e612566905406d997ac80b77ac359
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
 # You can configure the Airbrussh format using :format_options.
 # These are the defaults.
+<<<<<<< HEAD
 # set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
+=======
+# set :format_options, command_output: true,
+# log_file: "log/capistrano.log", color: :auto, truncate: :auto
+>>>>>>> 086e6409fc4e612566905406d997ac80b77ac359
 
 # Default value for :pty is false
 # set :pty, true

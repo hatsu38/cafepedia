@@ -39,3 +39,7 @@
   after_fork do |server, worker|
     defined?(ActiveRecord::Base) and ActiveRecord::Base.establish_connection
   end
+<<<<<<< HEAD
+=======
+
+>>>>>>> 086e6409fc4e612566905406d997ac80b77ac359
