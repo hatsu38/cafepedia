@@ -16,7 +16,7 @@ class CreateStores < ActiveRecord::Migration[5.1]
       t.decimal :lat
       t.decimal :lng
       t.integer :distance
-      t.references :mainstore, foreign_key: true
+      t.references :mainstore, foreign_key: false
       t.timestamps
     end
   end
