@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 server '13.113.90.206', user: 'hajime', roles: %w{app db web}
 set :ssh_options, keys: '~/.ssh/cafepedia_rsa'
-
-=======
->>>>>>> 086e6409fc4e612566905406d997ac80b77ac359
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
@@ -65,17 +61,4 @@ set :ssh_options, keys: '~/.ssh/cafepedia_rsa'
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
-<<<<<<< HEAD
-=======
 
-
-
-server '54.64.88.159', user: 'hajime', roles: %w{app db web}
-set :ssh_options, keys: '~/.ssh/cafepedia_key_rsa'
-
-
-
-
-
-
->>>>>>> 086e6409fc4e612566905406d997ac80b77ac359

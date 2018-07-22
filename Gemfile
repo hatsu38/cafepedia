@@ -18,12 +18,7 @@ gem 'carrierwave'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use sqlite3 as the database for Active Record
-<<<<<<< HEAD
 # gem 'sqlite3'
-=======
-gem 'sqlite3'
-gem 'mysql2', '~> 0.4.10'
->>>>>>> 086e6409fc4e612566905406d997ac80b77ac359
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -50,13 +45,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 group :production, :staging do
   gem 'unicorn'
-<<<<<<< HEAD
   gem 'mysql2'
 end
 
-=======
-end
->>>>>>> 086e6409fc4e612566905406d997ac80b77ac359
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -71,10 +62,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
-<<<<<<< HEAD
   gem 'sqlite3'
-=======
->>>>>>> 086e6409fc4e612566905406d997ac80b77ac359
 end
 
 group :development do
