@@ -55,11 +55,7 @@ namespace :unicorn do
     end
   end
 
-<<<<<<< HEAD
 #unicornを強制終了させるtask
-=======
-#unicornを強制終了させるtask 
->>>>>>> 086e6409fc4e612566905406d997ac80b77ac359
   desc "Stop unicorn server immediately"
   task force_stop: :environment do
     on roles(:app) do
