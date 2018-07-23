@@ -22,10 +22,10 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 set :log_level, :debug
 
 namespace :deploy do
-  desc 'Restart application'
-  task :restart do
-    invoke 'unicorn:restart'
-  end
+  # desc 'Restart application'
+  # task :restart do
+  #   invoke 'unicorn:restart'
+  # end
 
   desc 'Create database'
   task :db_create do
