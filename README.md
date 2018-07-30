@@ -1,24 +1,10 @@
-# README
+# CafePedia
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Demo](https://raw.githubusercontent.com/wiki/toywonder/cafepedia/img/cafepedia_demo.gif)
 
-Things you may want to cover:
+## Description
+カフェペディアは、現在地に近いカフェを探すことができるサービスです。電源、Wi-Fi、喫煙席などのお気に入りの設備のあるカフェもサクサク見つけることが出来ます。
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
