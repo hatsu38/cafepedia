@@ -365,7 +365,8 @@ export default {
           },
           function(error) {
             alert("現在地を取得できません");
-            $('.loading').hide();
+            that.loading_hide();
+            // $('.loading').hide();
             that.saveStorageStore();
           }
         );
