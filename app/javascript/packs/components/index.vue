@@ -196,6 +196,7 @@ export default {
       this.stores.length = displayStoresCount
       this.mountFetchStores();
     } else {
+      this.loading_show();
       this.fetchStores();
     }
   },
