@@ -98,37 +98,37 @@ gtag('set', {'user_id': 'USER_ID'});
         <p class="contact_message">カフェペディアをより使いやすいサービスにするため、カフェの情報を募集しております。</p>
         <p class="contact_message">リークして頂いたカフェ情報は運営側で確認したのち、サイトに追加されます。リークはすべて匿名で送られますのでご安心ください。</p>
       </div>
-      <%= form_tag(stores_contact_path, method: :post, remote: true, class: "row") { %>
+      <%= form_tag(stores_leak_path, method: :post, remote: true, class: "row") { %>
         <div class="input-field message_form">
           <i class="fas fa-store prefix"></i>
-          <%= text_field :store, :name,:class => "", :id => "icon_prefix2", :placeholder => "" %>
+          <%= text_field :store, :name,:class => "", :id => "icon_prefix2", :placeholder => "" ,:required => true %>
           <label for="icon_prefix2">店名・店舗名をご記入ください</label>
         </div>
 
         <div class="input-field message_form">
           <i class="fas fa-map-marker-alt prefix"></i>
-          <%= text_field :store, :address ,:class => "", :id => "icon_prefix2",:placeholder => "" %>
+          <%= text_field :store, :address ,:class => "", :id => "icon_prefix2",:placeholder => "" ,:required => true  %>
           <label for="icon_prefix2" class="">住所をご記入ください</label>
         </div>
 
         <div class="input-field message_form">
           <i class="fas fa-link prefix"></i>
-          <%= text_field :store, :url,:class => "", :id => "icon_prefix2",:placeholder => "" %>
+          <%= text_field :store, :url,:class => "", :id => "icon_prefix2",:placeholder => "" ,:required => true  %>
           <label for="icon_prefix2" class="">お店のURLをご記入ください</label>
         </div>
 
         <div class="facility_form_block row">
           <h4>利用可能設備</h4>
           <div class="facility_check col s4">
-            <%= check_box :store, :socket,:class => "", :id => "socket_leak",:placeholder => "" %>
+            <%= check_box :store, :socket,:class => "", :id => "socket_leak" %>
             <label for="socket_leak" class="leack_chcke_label">電源</label>
           </div>
           <div class="facility_check col s4">
-            <%= check_box :store, :wifi,:class => "", :id => "icon_prefix2 wifi_leak",:placeholder => "" %>
+            <%= check_box :store, :wifi,:class => "", :id => "icon_prefix2 wifi_leak" %>
             <label for="icon_prefix2 wifi_leak" class="leack_chcke_label">wifi</label>
           </div>
           <div class="facility_check col s4">
-            <%= check_box :store, :smoking,:class => "", :id => "icon_prefix2 smoking_leak",:placeholder => "" %>
+            <%= check_box :store, :smoking,:class => "", :id => "icon_prefix2 smoking_leak" %>
             <label for="icon_prefix2 smoking_leak" class="leack_chcke_label">喫煙席</label>
           </div>
         </div>
@@ -150,7 +150,7 @@ gtag('set', {'user_id': 'USER_ID'});
       <%= form_tag(stores_contact_path, method: :post, remote: true, class: "row") { %>
         <div class="input-field message_form">
           <i class="fas fa-pencil-alt prefix"></i>
-          <%= text_area :contact, :message,:class => "materialize-textarea", :id => "icon_prefix2", :placeholder => "" %>
+          <%= text_area :contact, :message,:class => "materialize-textarea", :id => "icon_prefix2", :placeholder => "",:required => true %>
           <label for="icon_prefix2">ご意見をご記入ください</label>
         </div>
 

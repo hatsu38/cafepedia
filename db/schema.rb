@@ -10,11 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180803114105) do
+ActiveRecord::Schema.define(version: 20180807121327) do
 
   create_table "inquiries", force: :cascade do |t|
     t.string "email"
     t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "leaks", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "url"
+    t.boolean "socket"
+    t.boolean "wifi"
+    t.boolean "smoking"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
