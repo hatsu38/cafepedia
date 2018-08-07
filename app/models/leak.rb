@@ -1,0 +1,2 @@
+class Leak < ApplicationRecord
+end

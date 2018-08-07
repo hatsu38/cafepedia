@@ -60,6 +60,10 @@ body{
   top:42%;
   text-align:center;
 }
+span.emphasis{
+  color:$base;
+  font-weight:bold;
+}
 header{
   background: $coffee-gradient;
   padding:.5em;
@@ -516,7 +520,7 @@ white-space:pre-wrap;
     font-size:14px;
   }
 }
-#contact_form{
+#contact_form,#leak_form{
   width: 97%;
   max-width: 900px;
   padding:15px;
@@ -542,6 +546,18 @@ white-space:pre-wrap;
     margin:0 auto;
     .contact_send_btn{
       padding: 0 1.2rem;
+    }
+  }
+  .facility_form_block{
+    width:92%;
+    margin:0 auto 30px;
+    h4{
+      font-size:18px;
+    }
+    .facility_check{
+      .leack_chcke_label{
+        padding-left:23px;
+      }
     }
   }
 }

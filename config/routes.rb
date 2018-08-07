@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'stores/index'
   post 'stores/contact'
+  post 'stores/leak'
   get '/stores/:id',to: 'stores#index'
   root to: 'stores#index'
 
