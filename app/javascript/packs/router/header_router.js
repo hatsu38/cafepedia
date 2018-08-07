@@ -1,6 +1,6 @@
 import VueRouter from 'vue-router'
 import Vue from 'vue'
-import Header from '../components/header.vue'
+// import Header from '../components/header.vue'
 console.log("header_router");
 export default new VueRouter({
   mode: 'history',
