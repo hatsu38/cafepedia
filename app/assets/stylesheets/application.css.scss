@@ -61,6 +61,10 @@ body{
   top:42%;
   text-align:center;
 }
+span.emphasis{
+  color:$base;
+  font-weight:bold;
+}
 header{
   background: $coffee-gradient;
   padding:.5em;
