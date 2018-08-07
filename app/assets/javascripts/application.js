@@ -16,9 +16,4 @@
 //= require materialize-sprockets
 //= require_tree .
 
-$(function(){
-  $(document).ready(function(){
-    $('.modal').modal();
-  });
-});
 
