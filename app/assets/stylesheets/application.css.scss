@@ -64,6 +64,10 @@ span.emphasis{
   color:$base;
   font-weight:bold;
 }
+span.red-text{
+  font-weight: bold;
+  opacity: .8;
+}
 header{
   background: $coffee-gradient;
   padding:.5em;
