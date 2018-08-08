@@ -102,19 +102,19 @@ gtag('set', {'user_id': 'USER_ID'});
         <div class="input-field message_form">
           <i class="fas fa-store prefix"></i>
           <%= text_field :store, :name,:class => "", :id => "icon_prefix2", :placeholder => "" ,:required => true %>
-          <label for="icon_prefix2">店名・店舗名をご記入ください</label>
+          <label for="icon_prefix2">店名・店舗名をご記入ください <span class="red-text">(必須)</span></label>
         </div>
 
         <div class="input-field message_form">
           <i class="fas fa-map-marker-alt prefix"></i>
           <%= text_field :store, :address ,:class => "", :id => "icon_prefix2",:placeholder => "" ,:required => true  %>
-          <label for="icon_prefix2" class="">住所をご記入ください</label>
+          <label for="icon_prefix2" class="">住所をご記入ください <span class="red-text">(必須)</span></label>
         </div>
 
         <div class="input-field message_form">
           <i class="fas fa-link prefix"></i>
           <%= text_field :store, :url,:class => "", :id => "icon_prefix2",:placeholder => "" ,:required => true  %>
-          <label for="icon_prefix2" class="">お店のURLをご記入ください</label>
+          <label for="icon_prefix2" class="">お店のURLをご記入ください <span class="red-text">(必須)</span></label>
         </div>
 
         <div class="facility_form_block row">
@@ -151,7 +151,7 @@ gtag('set', {'user_id': 'USER_ID'});
         <div class="input-field message_form">
           <i class="fas fa-pencil-alt prefix"></i>
           <%= text_area :contact, :message,:class => "materialize-textarea", :id => "icon_prefix2", :placeholder => "",:required => true %>
-          <label for="icon_prefix2">ご意見をご記入ください</label>
+          <label for="icon_prefix2">ご意見をご記入ください <span class="red-text">(必須)</span></label>
         </div>
 
         <div class="input-field message_form">
