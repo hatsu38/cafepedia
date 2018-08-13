@@ -449,21 +449,17 @@ footer{
 
 #loading_anime{
   display:none;
-  position:fixed;
-  top:320px;
-  z-index:9;
-  background-color:#fff;
-  height:100vh;
+  background-color:$bg;
+  height:380px;
   width:100vw;
+  display: table-cell;
+  vertical-align: middle;
   .loading_block{
-    line-height:50vh;
     text-align:center;
     img{
     }
   }
   #loading_text{
-    position:fixed;
-    top:500px;
     width:100%;
     text-align:center;
     $duration: 4.5s;

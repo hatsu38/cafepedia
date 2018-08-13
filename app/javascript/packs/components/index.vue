@@ -193,6 +193,7 @@ export default {
         this.mountFetchStores();
       }
       this.refreshFilter();
+      this.loading_hide();
     } else if(displayStoresList){
       this.loading_show();
       this.stores = displayStoresList
