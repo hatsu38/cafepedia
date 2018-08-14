@@ -189,7 +189,7 @@ export default {
     }
     if(allStoresList){
       this.allStores = allStoresList
-      if(this.allStores.count !== "4658"){
+      if(this.allStores.length != 4658){
         this.mountFetchStores();
       }
       this.refreshFilter();
