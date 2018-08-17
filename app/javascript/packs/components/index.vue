@@ -211,12 +211,19 @@ export default {
   },
   methods: {
     fetchStores: function(){
-      axios.get('/api/stores').then((response)=>{
+      axios.get('/public/allstores.json').then(function (response) {
         for(var i = 0; i < response.data.stores.length; i++){
           this.stores.push(response.data.stores[i]);
         }
         this.allStores = this.stores
         this.refreshDistanceCalc();
+      // })
+      // axios.get('/api/stores').then((response)=>{
+      //   for(var i = 0; i < response.data.stores.length; i++){
+      //     this.stores.push(response.data.stores[i]);
+      //   }
+      //   this.allStores = this.stores
+      //   this.refreshDistanceCalc();
       },(error) =>{
         alert('Sory');
       });

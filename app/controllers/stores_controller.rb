@@ -1,6 +1,7 @@
 class StoresController < ApplicationController
   def index
     @stores = Store.all
+    # csv_export()
   end
 
   def contact
@@ -26,4 +27,17 @@ class StoresController < ApplicationController
     LeakMailer.send_mail(leak).deliver_now
   end
 
+
+  def csv_export
+    File.open('allStores.csv', 'w') do |f|
+      csv_string = CSV.generate do |csv|
+        csv << Store.column_names
+        stores = Store.where(id: [1..4658])
+        stores.each do |store|
+          csv << store.attributes.values_at(*Store.column_names)
+        end
+      end
+      f.puts csv_string
+    end
+  end
 end
