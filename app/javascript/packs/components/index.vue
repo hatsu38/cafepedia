@@ -229,11 +229,15 @@ export default {
       });
     },
     mountFetchStores: function(){
-      axios.get('/api/stores').then((response)=>{
-        var storesList = []
+      axios.get('/public/allstores.json').then(function (response) {
         for(var i = 0; i < response.data.stores.length; i++){
-          storesList.push(response.data.stores[i]);
+          this.stores.push(response.data.stores[i]);
         }
+      //axios.get('/api/stores').then((response)=>{
+      //  var storesList = []
+      //  for(var i = 0; i < response.data.stores.length; i++){
+      //    storesList.push(response.data.stores[i]);
+      //  }
         this.allStores = storesList
         this.mountDistanceCalc();
       },(error) =>{
