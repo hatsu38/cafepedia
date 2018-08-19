@@ -1,8 +1,8 @@
 {
   "application.js": "/assets/application-9031e2d08311842bd118.js",
   "application.js.map": "/assets/application-9031e2d08311842bd118.js.map",
-  "components/index.js": "/assets/components/index-5d4c273e9148bdabc398.js",
-  "components/index.js.map": "/assets/components/index-5d4c273e9148bdabc398.js.map",
+  "components/index.js": "/assets/components/index-b95cd6931b71c84cf89a.js",
+  "components/index.js.map": "/assets/components/index-b95cd6931b71c84cf89a.js.map",
   "components/pickStoreComponent.js": "/assets/components/pickStoreComponent-7f25fefbaabfee07317d.js",
   "components/pickStoreComponent.js.map": "/assets/components/pickStoreComponent-7f25fefbaabfee07317d.js.map",
   "components/show.js": "/assets/components/show-25e15cdc613bb70a9832.js",
@@ -14,8 +14,8 @@
   "hello_vue.js.map": "/assets/hello_vue-41d81caf7ea2f72b8d60.js.map",
   "router/header_router.js": "/assets/router/header_router-d0fefbe93d5cd5107c28.js",
   "router/header_router.js.map": "/assets/router/header_router-d0fefbe93d5cd5107c28.js.map",
-  "router/router.js": "/assets/router/router-56bf12dbbb8835a265c2.js",
-  "router/router.js.map": "/assets/router/router-56bf12dbbb8835a265c2.js.map",
-  "store.js": "/assets/store-0f4fdfe974715195dabd.js",
-  "store.js.map": "/assets/store-0f4fdfe974715195dabd.js.map"
+  "router/router.js": "/assets/router/router-42e7f4e8cf0a91ea10a1.js",
+  "router/router.js.map": "/assets/router/router-42e7f4e8cf0a91ea10a1.js.map",
+  "store.js": "/assets/store-edccad3cc25fa2282afa.js",
+  "store.js.map": "/assets/store-edccad3cc25fa2282afa.js.map"
 }
