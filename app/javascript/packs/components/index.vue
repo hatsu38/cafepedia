@@ -189,7 +189,11 @@ export default {
     }
     if(allStoresList){
       this.allStores = allStoresList
+      if(this.allStores.length != 4658){
+        this.mountFetchStores();
+      }
       this.refreshFilter();
+      this.loading_hide();
     } else if(displayStoresList){
       this.loading_show();
       this.stores = displayStoresList
@@ -207,22 +211,33 @@ export default {
   },
   methods: {
     fetchStores: function(){
-      axios.get('/api/stores').then((response)=>{
+      axios.get('/public/allstores.json').then(function (response) {
         for(var i = 0; i < response.data.stores.length; i++){
           this.stores.push(response.data.stores[i]);
         }
         this.allStores = this.stores
         this.refreshDistanceCalc();
+      // })
+      // axios.get('/api/stores').then((response)=>{
+      //   for(var i = 0; i < response.data.stores.length; i++){
+      //     this.stores.push(response.data.stores[i]);
+      //   }
+      //   this.allStores = this.stores
+      //   this.refreshDistanceCalc();
       },(error) =>{
         alert('Sory');
       });
     },
     mountFetchStores: function(){
-      axios.get('/api/stores').then((response)=>{
-        var storesList = []
+      axios.get('/public/allstores.json').then(function (response) {
         for(var i = 0; i < response.data.stores.length; i++){
-          storesList.push(response.data.stores[i]);
+          this.stores.push(response.data.stores[i]);
         }
+      //axios.get('/api/stores').then((response)=>{
+      //  var storesList = []
+      //  for(var i = 0; i < response.data.stores.length; i++){
+      //    storesList.push(response.data.stores[i]);
+      //  }
         this.allStores = storesList
         this.mountDistanceCalc();
       },(error) =>{

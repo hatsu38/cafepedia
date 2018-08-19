@@ -2,20 +2,55 @@
 <html>
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-81051454-13"></script>
-  <script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81051454-13"></script>
+    <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-81051454-13');
 gtag('set', {'user_id': 'USER_ID'});
-  </script>
+    </script>
 
     <title>カフェぺディア | あなたの近くにあるカフェがすぐに見つかる</title>
     <%= csrf_meta_tags %>
     <meta name=”description” content="カフェペディアは、あなたの近所にあるカフェをすぐに見つけることができるサービスです。「Wi-Fi」「コンセント」「喫煙席」など設備に応じて気になるカフェを探すことも可能です。1度読み込んだらページの読み込みは必要ないため、どのサイトよりもサクサク動きます。是非カフェ探しにご活用ください。" />
-    <link rel="shortcut icon" type="img/x-icon" href="favicon.ico">
-
+    <link rel="icon" type="img/x-icon" href="favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="36x36" href="favicons/android-chrome-36x36.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicons/android-chrome-48x48.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="favicons/android-chrome-72x72.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/android-chrome-96x96.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="favicons/android-chrome-128x128.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="favicons/android-chrome-144x144.png">
+    <link rel="icon" type="image/png" sizes="152x152" href="favicons/android-chrome-152x152.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="favicons/android-chrome-256x256.png">
+    <link rel="icon" type="image/png" sizes="384x384" href="favicons/android-chrome-384x384.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="favicons/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="36x36" href="favicons/icon-36x36.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicons/icon-48x48.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="favicons/icon-72x72.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="favicons/icon-128x128.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="favicons/icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="152x152" href="favicons/icon-152x152.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="favicons/icon-160x160.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicons/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="196x196" href="favicons/icon-196x196.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="favicons/icon-256x256.png">
+    <link rel="icon" type="image/png" sizes="384x384" href="favicons/icon-384x384.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="favicons/icon-512x512.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/icon-16x16.png">
+    <link rel="icon" type="image/png" sizes="24x24" href="favicons/icon-24x24.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/icon-32x32.png">
     <meta property="og:title" content="カフェぺディア | あなたの近くにあるカフェがすぐに見つかる" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<%= root_url%>" />
@@ -35,13 +70,10 @@ gtag('set', {'user_id': 'USER_ID'});
     <meta name="twitter:description" content="カフェペディアは、あなたの近所にあるカフェをすぐに見つけることができるサービスです。「Wi-Fi」「コンセント」「喫煙席」など設備に応じて気になるカフェを探すことも可能です。1度読み込んだらページの読み込みは必要ないため、どのサイトよりもサクサク動きます。是非カフェ探しにご活用ください。" />
     <meta name="twitter:image" content="<%= root_url%>ogp_img.png" />
 
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXMDiQ7fiqsxFqsLR9CgrDMqezrp4ggl8"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -84,7 +116,7 @@ gtag('set', {'user_id': 'USER_ID'});
       <div class="info_block">
         <a href="https://twitter.com/hatsu_38" target="_blank"><i class="fas fa-play-circle"></i>運営者</a>
         |
-    <span data-target="leak_form" class="modal-trigger"><i class="fas fa-play-circle"></i>リークする</span>
+        <span data-target="leak_form" class="modal-trigger modal_leak"><i class="fas fa-play-circle"></i>リークする</span>
       </div>
       <p class="footer_copy">
       © Copyright 2018 hastu All rights reserved.
@@ -164,12 +196,12 @@ gtag('set', {'user_id': 'USER_ID'});
         </div>
       <% } %>
     </div>
-  <script>
+    <script>
 $(function(){
   $(document).ready(function(){
     $('.modal').modal();
   });
 });
-  </script>
+    </script>
   </body>
 </html>

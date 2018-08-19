@@ -13,9 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
 @import "materialize/components/color";
 @import "materialize";
-@import 'font-awesome.css';
 $base: #7a2700;
 $bg:#fefefe;
 $base-font-color: #555;
@@ -73,8 +73,8 @@ header{
   background: $coffee-gradient;
   padding:.5em;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,.32),
-              0 4px 5px 0 rgba(0,0,0,0.06),
-              0 1px 10px 0 rgba(0,0,0,0.08);
+  0 4px 5px 0 rgba(0,0,0,0.06),
+  0 1px 10px 0 rgba(0,0,0,0.08);
   a{
     i{
       padding-bottom:.5em;
@@ -178,8 +178,8 @@ footer{
       margin-top:1em;
     }
     .filter-block{
-        line-height:2.5em;
-        height:2.5em;
+      line-height:2.5em;
+      height:2.5em;
       .filter_content{
         border: 1px solid #cdcdcd;
         border-radius: 5px;
@@ -192,9 +192,9 @@ footer{
         }
       }
       @media screen and (min-width: 0px) and (max-device-width: 320px) {
-      .filter_content{
-        font-size:12.5px;
-      }
+        .filter_content{
+          font-size:12.5px;
+        }
       }
       &.col{
         padding:0 0.2em;
@@ -285,7 +285,7 @@ footer{
             pre{
               margin: 0;
               word-break:break-all;
-white-space:pre-wrap;
+              white-space:pre-wrap;
             }
           }
         }
@@ -449,21 +449,17 @@ white-space:pre-wrap;
 
 #loading_anime{
   display:none;
-  position:fixed;
-  top:320px;
-  z-index:9;
-  background-color:#fff;
-  height:100vh;
+  background-color:$bg;
+  height:380px;
   width:100vw;
+  display: table-cell;
+  vertical-align: middle;
   .loading_block{
-    line-height:50vh;
     text-align:center;
     img{
     }
   }
   #loading_text{
-    position:fixed;
-    top:500px;
     width:100%;
     text-align:center;
     $duration: 4.5s;
@@ -516,6 +512,9 @@ white-space:pre-wrap;
   }
 }
 
+span.modal_leak{
+  cursor:pointer;
+}
 .contact_modal_btn{
   position:fixed;
   bottom:0;
