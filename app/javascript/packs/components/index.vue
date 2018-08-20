@@ -212,13 +212,6 @@ export default {
   },
   methods: {
     fetchStores: function(){
-      // axios.get('/allstores.json').then(function (response) {
-        // for(var i = 0; i < response.data.stores.length; i++){
-        //   this.stores.push(response.data.stores[i]);
-        // }
-        // this.allStores = this.stores
-        // this.refreshDistanceCalc();
-      // })
       axios.get('/api/stores').then((response)=>{
         for(var i = 0; i < response.data.stores.length; i++){
           this.stores.push(response.data.stores[i]);
@@ -230,22 +223,11 @@ export default {
       });
     },
     mountFetchStores: function(){
-      // axios.get('/allstores.json').then((response)=> {
-      //   console.log(response);
-      //   console.log(response.data);
-      //   console.log(response.data[0]);
-      //   console.log(response.data[1])
-      //   this.stores = response.data;
-      // axios.get('/public/allstores.json').then(function (response) {
-      //   for(var i = 0; i < response.data.stores.length; i++){
-      //     this.stores.push(response.data.stores[i]);
-      //   }
       axios.get('/api/stores').then((response)=>{
        var storesList = []
        for(var i = 0; i < response.data.stores.length; i++){
          storesList.push(response.data.stores[i]);
        }
-        // this.allStores = response.data;
         this.allStores = storesList
         this.mountDistanceCalc();
       },(error) =>{
