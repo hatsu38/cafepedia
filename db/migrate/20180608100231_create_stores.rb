@@ -13,8 +13,8 @@ class CreateStores < ActiveRecord::Migration[5.1]
       t.boolean :socket
       t.boolean :smoking
       t.boolean :iccard
-      t.decimal :lat
-      t.decimal :lng
+      t.decimal :lat, :precision => 10, :scale => 7
+      t.decimal :lng, :precision => 11, :scale => 7
       t.integer :distance
       t.references :mainstore, foreign_key: false
       t.timestamps

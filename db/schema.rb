@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 20180807121327) do
     t.boolean "socket"
     t.boolean "smoking"
     t.boolean "iccard"
-    t.decimal "lat"
-    t.decimal "lng"
+    t.decimal "lat", precision: 10, scale: 7
+    t.decimal "lng", precision: 11, scale: 7
     t.integer "distance"
     t.integer "mainstore_id"
     t.datetime "created_at", null: false
