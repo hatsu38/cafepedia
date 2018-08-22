@@ -165,7 +165,7 @@ gtag('set', {'user_id': 'USER_ID'});
         </div>
 
         <div class="submit_btn_cover center">
-          <%= submit_tag '送信する' ,:class => "btn leak_send_btn",:disabled =>true %>
+          <%= submit_tag '送信する' ,:class => "btn leak_send_btn",:id=>"leak_submit",:disabled =>true %>
         </div>
       <% } %>
     </div>
@@ -192,7 +192,7 @@ gtag('set', {'user_id': 'USER_ID'});
           <label for="icon_prefix2" class="mail_label">返信を希望する場合はメールアドレスをご記入ください</label>
         </div>
         <div class="submit_btn_cover center">
-          <%= submit_tag '送信する' ,:class => "btn contact_send_btn",:disabled =>true %>
+          <%= submit_tag '送信する' ,:class => "btn contact_send_btn",:id=>"contact_submit",:disabled =>true %>
         </div>
       <% } %>
     </div>
@@ -200,15 +200,6 @@ gtag('set', {'user_id': 'USER_ID'});
 $(function(){
   $(document).ready(function(){
     $('.modal').modal();
-  });
-  $('#contact_form .contact_send_btn').on('click',function(){
-    $('.contact_flash').delay(2800).fadeIn();
-    $('.contact_flash').delay(5000).fadeOut();
-  });
-
-  $('#leak_form .leak_send_btn').on('click',function(){
-    $('.leak_flash').delay(2800).fadeIn();
-    $('.leak_flash').delay(4000).fadeOut();
   });
 
   $("#contact_form .validate_input").on("keydown keyup keypress change", function() {
@@ -225,6 +216,24 @@ $(function(){
     } else {
       $("#leak_form .leak_send_btn").prop("disabled", true);
     }
+  });
+
+  $('#contact_form').on('ajax:send',function(data, status, xhr){
+    $('#contact_submit').val('送信中').attr({disabled: true});
+  });
+  $('#contact_form').on('ajax:success',function(data, status, xhr){
+    $('#contact_submit').val('送信する').attr({disabled: false});
+    $('.contact_flash').fadeIn();
+    $('.contact_flash').delay(4000).fadeOut();
+  });
+
+  $('#leak_form').on('ajax:send',function(data, status, xhr){
+    $('#leak_submit').val('送信中').attr({disabled: true});
+  });
+  $('#leak_form').on('ajax:success',function(data, status, xhr){
+    $('#leak_submit').val('送信する').attr({disabled: false});
+    $('.leak_flash').fadeIn();
+    $('.leak_flash').delay(4000).fadeOut();
   });
 
   function leak_validate(){
