@@ -291,21 +291,27 @@ footer{
       }
       .icons_box{
         margin-bottom: 1em;
+        overflow:hidden;
         i{
           padding:.2em;
           font-size: 1.5em;
           margin: .2em .3em;
           width: 1.8em;
           text-align:center;
+          float:left;
           &:first-child{
             margin-left:0;
           }
         }
         .iccard_img_block{
           display: inline-block;
-          width: 37.8px;
+          width: 36px;
+          height:33.4px;
+          margin:.3rem .45rem;
           img{
             max-width: 100%;
+            height:25px;
+            padding: 0 1px;
           }
         }
       }
@@ -526,12 +532,22 @@ span.modal_leak{
 #contact_form,#leak_form{
   width: 97%;
   max-width: 900px;
+  max-height: 90%;
   padding:15px;
+  top:5% !important;
   .title{
     font-size:22px;
     text-align:center;
     margin-top: 15px;
     font-weight:bold;
+  }
+  .flash_message{
+    text-align:center;
+    background-color:#cce5ff;
+    border:1px solid #b8daff;
+    color:#004085;
+    padding: 7px 0;
+    display:none;
   }
   .contact_message_block{
     margin:15px;
@@ -548,7 +564,7 @@ span.modal_leak{
   .center{
     width:100%;
     margin:0 auto;
-    .contact_send_btn{
+    .contact_send_btn,.leak_send_btn{
       padding: 0 1.2rem;
     }
   }

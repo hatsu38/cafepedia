@@ -4,25 +4,27 @@ class StoresController < ApplicationController
   end
 
   def contact
-    message = params[:contact][:message]
-    email = params[:contact][:email]
+    message = params[:inquiry][:message]
+    email = params[:inquiry][:email]
     inquiry = Inquiry.new(email: email, message: message)
+    inquiry.save
     InquiryMailer.send_mail(inquiry).deliver_now
   end
 
   def leak
-    name = params[:store][:name]
-    address = params[:store][:address]
-    url = params[:store][:url]
-    socket = params[:store][:socket]
-    wifi = params[:store][:wifi]
-    smoking = params[:store][:smoking]
+    name = params[:leak][:name]
+    address = params[:leak][:address]
+    url = params[:leak][:url]
+    socket = params[:leak][:socket]
+    wifi = params[:leak][:wifi]
+    smoking = params[:leak][:smoking]
     leak = Leak.new(name: name,
                     address: address,
                    url: url,
                    socket: socket,
                    wifi: wifi,
                    smoking: smoking)
+    leak.save
     LeakMailer.send_mail(leak).deliver_now
   end
 
@@ -38,5 +40,11 @@ class StoresController < ApplicationController
       end
       f.puts csv_string
     end
+  end
+
+
+  private
+  def inquiry_params
+    params.require(:leak).permit(:email,:message)
   end
 end

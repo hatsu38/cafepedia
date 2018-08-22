@@ -4,7 +4,7 @@ class LeakMailer < ApplicationMailer
     mail(
       from: 'toy.wonder70@gmail.com',
       to:   'toy.wonder70@gmail.com',
-      subject: 'リーク通知'
+      subject: 'リーク通知 | Cafepedia'
     )
   end
 end
