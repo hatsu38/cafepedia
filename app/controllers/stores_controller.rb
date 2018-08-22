@@ -1,7 +1,6 @@
 class StoresController < ApplicationController
   def index
     @stores = Store.all
-    # csv_export()
   end
 
   def contact
