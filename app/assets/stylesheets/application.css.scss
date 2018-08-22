@@ -358,33 +358,6 @@ footer{
     }
   }
 }
-@media screen and (min-width: 480px) {
-  .content{
-    .stores_box{
-      #stores_array{
-        column-count: 2;
-        text-align:justify;
-      }
-    }
-  }
-}
-@media screen and (min-width: 700px) {
-  .content{
-    .stores_box{
-      #stores_array{
-        column-count: 3;
-        text-align:justify;
-      }
-    }
-  }
-}
-#noresult{
-  display:none;
-  margin:5em 1em;
-  span{
-    font-weight:bold;
-  }
-}
 
 #store_detail{
   h2{
@@ -477,6 +450,7 @@ footer{
     }
   }
 }
+
 #store_detail{
   .row{
     margin-bottom: 0;
@@ -531,12 +505,19 @@ span.modal_leak{
     font-size:14px;
   }
 }
+
 #contact_form,#leak_form{
   width: 97%;
   max-width: 900px;
   max-height: 90%;
   padding:15px;
   top:5% !important;
+  textarea,input:not([type='submit']){
+    font-size:16px;
+    transform: scale(0.8);
+    width: 92%;
+    margin-left: 1rem;
+  }
   .title{
     font-size:22px;
     text-align:center;
@@ -583,3 +564,39 @@ span.modal_leak{
     }
   }
 }
+@media screen and (min-width: 480px) {
+  .content{
+    .stores_box{
+      #stores_array{
+        column-count: 2;
+        text-align:justify;
+      }
+    }
+  }
+  #contact_form,#leak_form{
+    textarea,input:not([type='submit']){
+      font-size:14.5px;
+      transform: scale(1.0);
+      margin-left: 3rem;
+    }
+  }
+}
+@media screen and (min-width: 700px) {
+  .content{
+    .stores_box{
+      #stores_array{
+        column-count: 3;
+        text-align:justify;
+      }
+    }
+  }
+}
+#noresult{
+  display:none;
+  margin:5em 1em;
+  span{
+    font-weight:bold;
+  }
+}
+
+
