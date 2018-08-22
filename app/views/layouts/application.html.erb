@@ -123,6 +123,7 @@ gtag('set', {'user_id': 'USER_ID'});
 
     <div id="leak_form" class="leak_modal modal">
       <h3 class="title">カフェ情報のリークはこちら</h3>
+      <div class="flash_message leak_flash">お店情報をありがとうございました。</div>
       <div class="contact_message_block">
         <p class="contact_message">カフェペディアをご利用頂きありがとうございます。</p>
         <p class="contact_message">カフェペディアをより使いやすいサービスにするため、カフェの情報を募集しております。</p>
@@ -131,40 +132,40 @@ gtag('set', {'user_id': 'USER_ID'});
       <%= form_tag(stores_leak_path, method: :post, remote: true, class: "row") { %>
         <div class="input-field message_form">
           <i class="fas fa-store prefix"></i>
-          <%= text_field :store, :name,:class => "", :id => "icon_prefix2", :placeholder => "" ,:required => true %>
+          <%= text_field :leak, :name,:class => "validate_input leak_name_input", :id => "icon_prefix2", :placeholder => "" ,:required => true %>
           <label for="icon_prefix2">店名・店舗名をご記入ください <span class="red-text">(必須)</span></label>
         </div>
 
         <div class="input-field message_form">
           <i class="fas fa-map-marker-alt prefix"></i>
-          <%= text_field :store, :address ,:class => "", :id => "icon_prefix2",:placeholder => "" ,:required => true  %>
+          <%= text_field :leak, :address ,:class => "validate_input leak_address_input", :id => "icon_prefix2",:placeholder => "" ,:required => true  %>
           <label for="icon_prefix2" class="">住所をご記入ください <span class="red-text">(必須)</span></label>
         </div>
 
         <div class="input-field message_form">
           <i class="fas fa-link prefix"></i>
-          <%= text_field :store, :url,:class => "", :id => "icon_prefix2",:placeholder => "" ,:required => true  %>
+          <%= text_field :leak, :url,:class => "validate_input leak_url_input", :id => "icon_prefix2",:placeholder => "" ,:required => true  %>
           <label for="icon_prefix2" class="">お店のURLをご記入ください <span class="red-text">(必須)</span></label>
         </div>
 
         <div class="facility_form_block row">
           <h4>利用可能設備</h4>
           <div class="facility_check col s4">
-            <%= check_box :store, :socket,:class => "", :id => "socket_leak" %>
+            <%= check_box :leak, :socket,:class => "", :id => "socket_leak" %>
             <label for="socket_leak" class="leack_chcke_label">電源</label>
           </div>
           <div class="facility_check col s4">
-            <%= check_box :store, :wifi,:class => "", :id => "icon_prefix2 wifi_leak" %>
+            <%= check_box :leak, :wifi,:class => "", :id => "icon_prefix2 wifi_leak" %>
             <label for="icon_prefix2 wifi_leak" class="leack_chcke_label">wifi</label>
           </div>
           <div class="facility_check col s4">
-            <%= check_box :store, :smoking,:class => "", :id => "icon_prefix2 smoking_leak" %>
+            <%= check_box :leak, :smoking,:class => "", :id => "icon_prefix2 smoking_leak" %>
             <label for="icon_prefix2 smoking_leak" class="leack_chcke_label">喫煙席</label>
           </div>
         </div>
 
         <div class="submit_btn_cover center">
-          <%= submit_tag '送信する' ,:class => "btn contact_send_btn"%>
+          <%= submit_tag '送信する' ,:class => "btn leak_send_btn",:disabled =>true %>
         </div>
       <% } %>
     </div>
@@ -172,6 +173,7 @@ gtag('set', {'user_id': 'USER_ID'});
     <button data-target="contact_form" class="btn modal-trigger right contact_modal_btn"><i class="far fa-envelope"></i>ご意見箱</button>
     <div id="contact_form" class="modal">
       <h3 class="title">ご意見・ご感想はこちら</h3>
+      <div class="flash_message contact_flash">ご意見ありがとうございました。</div>
       <div class="contact_message_block">
         <p class="contact_message">カフェペディアをご利用頂きありがとうございます。</p>
         <p class="contact_message">カフェペディアをより使いやすいサービスにするため、ご意見を募集しております。</p>
@@ -180,17 +182,17 @@ gtag('set', {'user_id': 'USER_ID'});
       <%= form_tag(stores_contact_path, method: :post, remote: true, class: "row") { %>
         <div class="input-field message_form">
           <i class="fas fa-pencil-alt prefix"></i>
-          <%= text_area :contact, :message,:class => "materialize-textarea", :id => "icon_prefix2", :placeholder => "",:required => true %>
+          <%= text_area :inquiry, :message,:class => "materialize-textarea validate_input", :id => "icon_prefix2", :placeholder => "",:required => true %>
           <label for="icon_prefix2">ご意見をご記入ください <span class="red-text">(必須)</span></label>
         </div>
 
         <div class="input-field message_form">
           <i class="far fa-envelope prefix"></i>
-          <%= text_field :contact, :email,:class => "", :id => "icon_prefix2",:placeholder => "example@cafepedia.com" %>
+          <%= text_field :inquiry, :email,:class => "", :id => "icon_prefix2",:placeholder => "example@cafepedia.com" %>
           <label for="icon_prefix2" class="mail_label">返信を希望する場合はメールアドレスをご記入ください</label>
         </div>
         <div class="submit_btn_cover center">
-          <%= submit_tag '送信する' ,:class => "btn contact_send_btn"%>
+          <%= submit_tag '送信する' ,:class => "btn contact_send_btn",:disabled =>true %>
         </div>
       <% } %>
     </div>
@@ -199,6 +201,39 @@ $(function(){
   $(document).ready(function(){
     $('.modal').modal();
   });
+  $('#contact_form .contact_send_btn').on('click',function(){
+    $('.contact_flash').fadeIn();
+    $('.contact_flash').delay(1000).fadeOut();
+  });
+
+  $('#leak_form .leak_send_btn').on('click',function(){
+    $('.leak_flash').fadeIn();
+    $('.leak_flash').delay(1000).fadeOut();
+  });
+
+  $("#contact_form .validate_input").on("keydown keyup keypress change", function() {
+    if ($(this).val()) {
+      $("#contact_form .contact_send_btn").prop("disabled", false);
+    } else {
+      $("#contact_form .contact_send_btn").prop("disabled", true);
+    }
+  });
+
+  $("#leak_form .validate_input").on("keydown keyup keypress change", function() {
+    if(leak_validate()) {
+      $("#leak_form .leak_send_btn").prop("disabled", false);
+    } else {
+      $("#leak_form .leak_send_btn").prop("disabled", true);
+    }
+  });
+
+  function leak_validate(){
+    if($(".leak_name_input").val() && $(".leak_address_input").val() && $(".leak_url_input").val()){
+      return true;
+    }else{
+      return false;
+    }
+  }
 });
     </script>
   </body>

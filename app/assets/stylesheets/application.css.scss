@@ -527,12 +527,22 @@ span.modal_leak{
 #contact_form,#leak_form{
   width: 97%;
   max-width: 900px;
+  max-height: 90%;
   padding:15px;
+  top:5% !important;
   .title{
     font-size:22px;
     text-align:center;
     margin-top: 15px;
     font-weight:bold;
+  }
+  .flash_message{
+    text-align:center;
+    background-color:#cce5ff;
+    border:1px solid #b8daff;
+    color:#004085;
+    padding: 7px 0;
+    display:none;
   }
   .contact_message_block{
     margin:15px;
@@ -549,7 +559,7 @@ span.modal_leak{
   .center{
     width:100%;
     margin:0 auto;
-    .contact_send_btn{
+    .contact_send_btn,.leak_send_btn{
       padding: 0 1.2rem;
     }
   }
