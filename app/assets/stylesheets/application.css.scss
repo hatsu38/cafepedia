@@ -190,11 +190,6 @@ footer{
           padding-left: 4px;
         }
       }
-      @media screen and (min-width: 0px) and (max-device-width: 320px) {
-        .filter_content{
-          font-size:12.5px;
-        }
-      }
       &.col{
         padding:0 0.2em;
       }
@@ -588,6 +583,20 @@ span.modal_leak{
         text-align:justify;
       }
     }
+  }
+}
+@media screen and (min-width: 0px) and (max-device-width: 320px) {
+  .content{
+    .filter_box{
+      .filter-block{
+        .filter_content{
+          font-size:12.5px;
+        }
+      }
+    }
+  }
+  #contact_form .mail_label{
+    font-size:12.3px;
   }
 }
 #noresult{
