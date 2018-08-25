@@ -12968,46 +12968,40 @@ footer .footer_copy {
   letter-spacing: 5px;
   padding-left: 4px;
 }
-@media screen and (min-width: 0px) and (max-device-width: 320px) {
-  /* line 195, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
-  .content .filter_box .filter-block .filter_content {
-    font-size: 12.5px;
-  }
-}
-/* line 199, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 194, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .filter_box .filter-block.col {
   padding: 0 0.2em;
 }
-/* line 202, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 197, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .filter_box .filter-block .wifiFilterOn {
   background-color: #ffaeae;
   color: #ff3030;
   font-weight: bold;
 }
-/* line 207, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 202, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .filter_box .filter-block .socketFilterOn {
   background-color: #9ec4ff;
   color: #136df9;
   font-weight: bold;
 }
-/* line 212, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 207, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .filter_box .filter-block .smokingFilterOn {
   background-color: #b0fcb8;
   color: #25a856;
   font-weight: bold;
 }
-/* line 217, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 212, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .filter_box .filter-block .distanceSortOn {
   background-color: #ffd19e;
   color: #f99420;
   font-weight: bold;
 }
-/* line 224, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 219, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box {
   max-width: 900px;
   margin: 0 auto;
 }
-/* line 227, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 222, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box .store_count {
   border: 1px solid #cdcdcd;
   color: #aaa;
@@ -13018,12 +13012,12 @@ footer .footer_copy {
   margin-top: 2em;
   font-size: 1.2em;
 }
-/* line 237, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 232, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box #stores_array {
   column-count: 1;
   text-align: justify;
 }
-/* line 241, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 236, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box .store {
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
@@ -13035,13 +13029,13 @@ footer .footer_copy {
   padding: 0 .5em;
   box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
 }
-/* line 251, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 246, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box .store h2 {
   font-size: 1.2em;
   margin: .6em auto .5em;
   color: #333;
 }
-/* line 256, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 251, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box .store .access {
   font-size: .8em;
   color: #595960;
@@ -13049,47 +13043,47 @@ footer .footer_copy {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/* line 263, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 258, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box .store .row {
   margin-bottom: 0;
 }
-/* line 266, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 261, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box .store .mainstore_logo {
   padding-left: 0px;
 }
-/* line 268, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 263, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box .store .mainstore_logo img {
   padding: .5em;
   max-width: 100%;
   border: 1px solid #999;
 }
-/* line 274, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 269, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box .store table {
   height: 139px;
   border: 1px solid #ccc;
 }
-/* line 278, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 273, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box .store table tr th {
   background-color: #eee;
   text-align: center;
 }
-/* line 282, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 277, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box .store table tr th, .content .stores_box .store table tr td {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
-/* line 285, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 280, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box .store table tr th pre, .content .stores_box .store table tr td pre {
   margin: 0;
   word-break: break-all;
   white-space: pre-wrap;
 }
-/* line 293, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 288, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box .store .icons_box {
   margin-bottom: 1em;
   overflow: hidden;
 }
-/* line 296, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 291, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box .store .icons_box i {
   padding: .2em;
   font-size: 1.5em;
@@ -13098,28 +13092,28 @@ footer .footer_copy {
   text-align: center;
   float: left;
 }
-/* line 303, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 298, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box .store .icons_box i:first-child {
   margin-left: 0;
 }
-/* line 307, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 302, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box .store .icons_box .iccard_img_block {
   display: inline-block;
   width: 36px;
   height: 33.4px;
   margin: .3rem .45rem;
 }
-/* line 312, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 307, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box .store .icons_box .iccard_img_block img {
   max-width: 100%;
   height: 25px;
   padding: 0 1px;
 }
-/* line 319, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 314, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .stores_box .store:nth-child(1) {
   margin-top: 0;
 }
-/* line 324, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 319, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .moreread {
   width: 85%;
   max-width: 550px;
@@ -13133,62 +13127,62 @@ footer .footer_copy {
   box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
   position: relative;
 }
-/* line 336, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 331, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .moreread i {
   line-height: 3em;
   position: absolute;
   left: 1.5em;
 }
-/* line 341, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 336, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .moreread span {
   position: absolute;
   left: 0;
   right: 0;
 }
-/* line 347, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 342, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .pagination {
   text-align: center;
 }
-/* line 349, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 344, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .pagination .page-item {
   border: 1px solid #eee;
   height: 3em;
   line-height: 3em;
 }
-/* line 354, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 349, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .content .pagination .page-item a i {
   font-size: 1em;
 }
 
-/* line 363, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 358, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #store_detail h2 {
   font-size: 2.5em;
 }
-/* line 366, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 361, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #store_detail table {
   border: 1px solid #ccc;
 }
-/* line 369, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 364, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #store_detail table tr th {
   background-color: #eee;
   text-align: center;
 }
-/* line 373, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 368, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #store_detail table tr th, #store_detail table tr td {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
-/* line 376, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 371, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #store_detail table tr th pre, #store_detail table tr td pre {
   margin: 0;
   word-break: break-all;
   white-space: pre-wrap;
 }
-/* line 384, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 379, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #store_detail .icons_box {
   margin-bottom: 1em;
 }
-/* line 386, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 381, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #store_detail .icons_box i {
   padding: .2em;
   font-size: 1.5em;
@@ -13196,47 +13190,47 @@ footer .footer_copy {
   width: 1.8em;
   text-align: center;
 }
-/* line 392, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 387, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #store_detail .icons_box i:first-child {
   margin-left: 0;
 }
-/* line 396, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 391, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #store_detail .icons_box .iccard_img_block {
   display: inline-block;
   border: 1px solid #cdcdcd;
   width: 37.8px;
 }
-/* line 400, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 395, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #store_detail .icons_box .iccard_img_block img {
   max-width: 100%;
 }
-/* line 405, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 400, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #store_detail #map {
   width: 100%;
   height: 400px;
 }
 
-/* line 412, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 407, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .icons_box .fa-smoking {
   border: 2px solid #b0fcb8;
   color: #25a856;
 }
-/* line 416, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 411, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .icons_box .fa-wifi {
   border: 2px solid #ffaeae;
   color: #ff3030;
 }
-/* line 420, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 415, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .icons_box .fa-plug {
   border: 2px solid #9ec4ff;
   color: #136df9;
 }
-/* line 424, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 419, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .icons_box .iccard_img_block {
   border: 2px solid #f9f7a7;
 }
 
-/* line 429, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 424, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime {
   display: none;
   background-color: #fefefe;
@@ -13245,16 +13239,16 @@ footer .footer_copy {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 436, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 431, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime .loading_block {
   text-align: center;
 }
-/* line 441, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 436, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text {
   width: 100%;
   text-align: center;
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(1) {
   animation: hoge_1 4.5s ease 1s infinite;
 }
@@ -13272,7 +13266,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(2) {
   animation: hoge_2 4.5s ease 1s infinite;
 }
@@ -13290,7 +13284,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(3) {
   animation: hoge_3 4.5s ease 1s infinite;
 }
@@ -13308,7 +13302,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(4) {
   animation: hoge_4 4.5s ease 1s infinite;
 }
@@ -13326,7 +13320,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(5) {
   animation: hoge_5 4.5s ease 1s infinite;
 }
@@ -13344,7 +13338,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(6) {
   animation: hoge_6 4.5s ease 1s infinite;
 }
@@ -13362,7 +13356,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(7) {
   animation: hoge_7 4.5s ease 1s infinite;
 }
@@ -13380,7 +13374,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(8) {
   animation: hoge_8 4.5s ease 1s infinite;
 }
@@ -13398,7 +13392,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(9) {
   animation: hoge_9 4.5s ease 1s infinite;
 }
@@ -13416,7 +13410,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(10) {
   animation: hoge_10 4.5s ease 1s infinite;
 }
@@ -13434,7 +13428,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(11) {
   animation: hoge_11 4.5s ease 1s infinite;
 }
@@ -13452,7 +13446,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(12) {
   animation: hoge_12 4.5s ease 1s infinite;
 }
@@ -13470,7 +13464,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(13) {
   animation: hoge_13 4.5s ease 1s infinite;
 }
@@ -13488,7 +13482,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(14) {
   animation: hoge_14 4.5s ease 1s infinite;
 }
@@ -13506,7 +13500,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(15) {
   animation: hoge_15 4.5s ease 1s infinite;
 }
@@ -13524,7 +13518,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(16) {
   animation: hoge_16 4.5s ease 1s infinite;
 }
@@ -13542,7 +13536,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(17) {
   animation: hoge_17 4.5s ease 1s infinite;
 }
@@ -13560,7 +13554,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(18) {
   animation: hoge_18 4.5s ease 1s infinite;
 }
@@ -13578,7 +13572,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(19) {
   animation: hoge_19 4.5s ease 1s infinite;
 }
@@ -13596,7 +13590,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(20) {
   animation: hoge_20 4.5s ease 1s infinite;
 }
@@ -13614,7 +13608,7 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 447, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 442, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #loading_anime #loading_text span:nth-child(21) {
   animation: hoge_21 4.5s ease 1s infinite;
 }
@@ -13632,32 +13626,32 @@ footer .footer_copy {
     opacity: 1;
   }
 }
-/* line 455, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 450, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #store_detail .row {
   margin-bottom: 0;
   margin-top: 1em;
 }
-/* line 459, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 454, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #store_detail .row .img_logo_block img {
   max-width: 100%;
 }
-/* line 463, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 458, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #store_detail .row .store-name {
   font-size: 1.4em;
   padding: auto 0;
 }
-/* line 468, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 463, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #store_detail .row .close-icon-block i {
   font-size: 1.3em;
   color: #aaa;
 }
-/* line 473, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 468, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #store_detail .row p {
   vertical-align: middle;
   display: inline-block;
   margin-top: 14px;
 }
-/* line 479, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 474, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #store_detail a#to_map_app {
   background-image: linear-gradient(to bottom, #fff 20%, #fbfbf9 100%);
   color: #666;
@@ -13669,17 +13663,17 @@ footer .footer_copy {
   border: solid 1px #cdc1b5;
   border-radius: 3px;
 }
-/* line 490, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 485, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #store_detail #map {
   margin-bottom: 10px;
 }
 
-/* line 495, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 490, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 span.modal_leak {
   cursor: pointer;
 }
 
-/* line 498, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 493, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .contact_modal_btn {
   cursor: pointer;
   position: fixed;
@@ -13687,12 +13681,12 @@ span.modal_leak {
   right: 0;
   padding: 0 1rem;
 }
-/* line 504, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 499, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 .contact_modal_btn i {
   font-size: 14px;
 }
 
-/* line 509, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 504, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #contact_form, #leak_form {
   width: 97%;
   max-width: 900px;
@@ -13700,21 +13694,21 @@ span.modal_leak {
   padding: 15px;
   top: 5% !important;
 }
-/* line 515, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 510, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #contact_form textarea, #contact_form input:not([type='submit']), #leak_form textarea, #leak_form input:not([type='submit']) {
   font-size: 16px;
   transform: scale(0.8);
   width: 92%;
   margin-left: 1rem;
 }
-/* line 521, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 516, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #contact_form .title, #leak_form .title {
   font-size: 22px;
   text-align: center;
   margin-top: 15px;
   font-weight: bold;
 }
-/* line 527, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 522, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #contact_form .flash_message, #leak_form .flash_message {
   text-align: center;
   background-color: #cce5ff;
@@ -13723,53 +13717,53 @@ span.modal_leak {
   padding: 7px 0;
   display: none;
 }
-/* line 535, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 530, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #contact_form .contact_message_block, #leak_form .contact_message_block {
   margin: 15px;
 }
-/* line 537, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 532, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #contact_form .contact_message_block .contact_message, #leak_form .contact_message_block .contact_message {
   font-size: 14px;
 }
-/* line 541, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 536, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #contact_form .message_form, #leak_form .message_form {
   margin-top: 55px;
 }
-/* line 544, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 539, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #contact_form .mail_label, #leak_form .mail_label {
   width: 360px;
 }
-/* line 547, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 542, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #contact_form .center, #leak_form .center {
   width: 100%;
   margin: 0 auto;
 }
-/* line 550, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 545, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #contact_form .center .contact_send_btn, #contact_form .center .leak_send_btn, #leak_form .center .contact_send_btn, #leak_form .center .leak_send_btn {
   padding: 0 1.2rem;
 }
-/* line 554, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 549, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #contact_form .facility_form_block, #leak_form .facility_form_block {
   width: 92%;
   margin: 0 auto 30px;
 }
-/* line 557, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 552, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #contact_form .facility_form_block h4, #leak_form .facility_form_block h4 {
   font-size: 18px;
 }
-/* line 561, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 556, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #contact_form .facility_form_block .facility_check .leack_chcke_label, #leak_form .facility_form_block .facility_check .leack_chcke_label {
   padding-left: 23px;
 }
 
 @media screen and (min-width: 480px) {
-  /* line 570, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+  /* line 565, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
   .content .stores_box #stores_array {
     column-count: 2;
     text-align: justify;
   }
 
-  /* line 577, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+  /* line 572, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
   #contact_form textarea, #contact_form input:not([type='submit']), #leak_form textarea, #leak_form input:not([type='submit']) {
     font-size: 14.5px;
     transform: scale(1);
@@ -13777,18 +13771,29 @@ span.modal_leak {
   }
 }
 @media screen and (min-width: 700px) {
-  /* line 587, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+  /* line 582, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
   .content .stores_box #stores_array {
     column-count: 3;
     text-align: justify;
   }
 }
-/* line 594, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+@media screen and (min-width: 0px) and (max-device-width: 320px) {
+  /* line 593, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+  .content .filter_box .filter-block .filter_content {
+    font-size: 12.5px;
+  }
+
+  /* line 599, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+  #contact_form .mail_label {
+    font-size: 12.3px;
+  }
+}
+/* line 603, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #noresult {
   display: none;
   margin: 5em 1em;
 }
-/* line 597, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
+/* line 606, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
 #noresult span {
   font-weight: bold;
 }
