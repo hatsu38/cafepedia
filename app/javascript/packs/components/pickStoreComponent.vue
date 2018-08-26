@@ -51,8 +51,10 @@
         <img src="/uploads/iccard_service.jpg" class="iccard_icon">
       </div>
     </div>
-    <a href="" id="to_map_app" target="_blank">地図アプリで見る</a>
-    <div id='map'></div>
+    <div class="map_block">
+      <div id='map'></div>
+      <a href="" id="to_map_app" target="_blank">地図アプリで見る</a>
+    </div>
   </div>
 </template>
 <script>
@@ -77,7 +79,9 @@ export default {
           lat: store_lat, // 緯度
           lng: store_lng// 経度
         },
-        zoom: 14 // 地図のズームを指定
+        zoom: 14, // 地図のズームを指定
+        mapTypeControl: false,
+        streetViewControl: false,
       });
       this.gmarkerDesp(store_lat,store_lng,map);
     },
@@ -94,11 +98,13 @@ export default {
       var store_lat = parseFloat(this.store.lat);
       var store_lng = parseFloat(this.store.lng);
       var store_address = this.store.prefecture+this.store.city+this.store.other_address;
-      console.log(store_address);
+      $("#to_map_app").attr("href", `http://maps.google.com/maps?saddr=現在地&daddr=${store_address}&dirflg=r&z=14`);
+
+        //iPhoneとAndroidの仕分け
       // if(agent.search(/iPhone/) != -1 || agent.search(/iPad/) != -1){
       //   $("#to_map_app").attr("href", `http://maps.apple.com/maps?saddr=&daddr=${store_lat},${store_lng}&z=14`);
       // }else{
-        $("#to_map_app").attr("href", `http://maps.google.com/maps?saddr=現在地&daddr=${store_address}&dirflg=r&z=14`);
+        // $("#to_map_app").attr("href", `http://maps.google.com/maps?saddr=現在地&daddr=${store_address}&dirflg=r&z=14`);
       // }
     }
   }

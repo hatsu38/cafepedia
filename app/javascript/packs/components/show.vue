@@ -50,7 +50,11 @@
         <img src="/uploads/iccard_service.jpg" class="iccard_icon">
       </div>
     </div>
-    <div id='map'></div>
+    <div class="map_block">
+      <div id='map'></div>
+      <a href="" id="to_map_app" target="_blank">地図アプリで見る</a>
+    </div>
+
   </div>
 </template>
 <script>
@@ -63,6 +67,7 @@ export default {
   },
   created: function(){
     this.fetchStoreDetail();
+    this.toMapAppHrefCreate();
   },
   methods: {
     fetchStoreDetail: function(){
@@ -82,7 +87,9 @@ export default {
           lat: store_lat, // 緯度
           lng: store_lng// 経度
         },
-        zoom: 14 // 地図のズームを指定
+        zoom: 14, // 地図のズームを指定
+        mapTypeControl: false,
+        streetViewControl: false,
       });
       this.gmarkerDesp(store_lat,store_lng,map);
     },
@@ -92,6 +99,13 @@ export default {
         position: new google.maps.LatLng(lat,lng),
         map: map
       });
+    },
+    toMapAppHrefCreate: function(){
+      var agent = navigator.userAgent;
+      var store_lat = parseFloat(this.store.lat);
+      var store_lng = parseFloat(this.store.lng);
+      var store_address = this.store.prefecture+this.store.city+this.store.other_address;
+      $("#to_map_app").attr("href", `http://maps.google.com/maps?saddr=現在地&daddr=${store_address}&dirflg=r&z=14`);
     }
   }
 }
