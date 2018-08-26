@@ -85,6 +85,7 @@ export default {
       var marker = new google.maps.Marker({
         // マーカーを置く緯度経度
         position: new google.maps.LatLng(lat,lng),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
         map: map
       });
     },
@@ -92,11 +93,13 @@ export default {
       var agent = navigator.userAgent;
       var store_lat = parseFloat(this.store.lat);
       var store_lng = parseFloat(this.store.lng);
-      if(agent.search(/iPhone/) != -1 || agent.search(/iPad/) != -1){
-        $("#to_map_app").attr("href", `http://maps.apple.com/maps?saddr=&daddr=${store_lat},${store_lng}&z=14`);
-      }else{
-        $("#to_map_app").attr("href", `http://maps.google.com/maps?saddr=&daddr=${store_lat},${store_lng}&z=14`);
-      }
+      var store_address = this.store.prefecture+this.store.city+this.store.other_address;
+      console.log(store_address);
+      // if(agent.search(/iPhone/) != -1 || agent.search(/iPad/) != -1){
+      //   $("#to_map_app").attr("href", `http://maps.apple.com/maps?saddr=&daddr=${store_lat},${store_lng}&z=14`);
+      // }else{
+        $("#to_map_app").attr("href", `http://maps.google.com/maps?saddr=現在地&daddr=${store_address}&dirflg=r&z=14`);
+      // }
     }
   }
 }
