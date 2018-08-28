@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "serviceworker-rails"
+
 gem 'materialize-sass'
 # gem "font-awesome-rails"
 # gem 'font-awesome-sass'
