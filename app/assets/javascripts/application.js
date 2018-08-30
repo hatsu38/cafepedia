@@ -16,6 +16,3 @@
 //= require materialize-sprockets
 //= require serviceworker-companion
 //= require_tree .
-
-
-//= require serviceworker-companion
