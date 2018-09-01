@@ -84,14 +84,14 @@
                            <pre>{{store.business_hour}}</pre>
                          </td>
                        </tr>
-                       <!-- <tr> -->
-                       <!--   <th><i class="fas fa&#45;clock"></i></th> -->
-                       <!--   <td> -->
-                       <!--     {{store.prefecture}}{{store.city}}{{store.other_address}} -->
-                       <!--   </td> -->
-                       <!-- </tr> -->
                        <tr>
                          <th><i class="fas fa-map-marker-alt"></i></th>
+                         <td>
+                           {{store.prefecture}}{{store.city}}{{store.other_address}}
+                         </td>
+                       </tr>
+                       <tr>
+                         <th><i class="fas fa-route"></i></th>
                          <td>
                            {{store.access | access_cut}}
                          </td>
@@ -236,13 +236,6 @@ export default {
   },
   methods: {
     fetchStores: function(){
-      // axios.get('/public/allstores.json').then(function (response) {
-      //   for(var i = 0; i < response.data.stores.length; i++){
-      //     this.stores.push(response.data.stores[i]);
-      //   }
-      //   this.allStores = this.stores
-      //   this.refreshDistanceCalc();
-      // })
       axios.get('/api/stores').then((response)=>{
         for(var i = 0; i < response.data.stores.length; i++){
           this.stores.push(response.data.stores[i]);
@@ -254,10 +247,6 @@ export default {
       });
     },
     mountFetchStores: function(){
-      // axios.get('/public/allstores.json').then(function (response) {
-      //   for(var i = 0; i < response.data.stores.length; i++){
-      //     this.stores.push(response.data.stores[i]);
-      //   }
       axios.get('/api/stores').then((response)=>{
        var storesList = []
        for(var i = 0; i < response.data.stores.length; i++){
@@ -349,6 +338,9 @@ export default {
       var stores_list = this.allStores.filter(function(value){
         return Object.keys(value).some(function(key){
           if(key === 'name' || key === "city" || key === "other_address" || key === "access"){
+            if(key === "access" && value["access"].match(/.+?[0-9]分|.+?[0-9]km/)){
+              value["access"] = value["access"].substr(0,value["access"].search("[0-9]分|km")+2);
+            }
             return String(value[key]).toLowerCase().indexOf(searchWord) > -1
           }
         })
@@ -480,20 +472,6 @@ export default {
       $("#stores_array").fadeIn();
       $(".moreread").fadeIn();
     },
-    auto_complete: function(){
-      var data = [
-        'sample1',
-        'sample2',
-        'sample3',
-        'sample4'
-    ];
-    $('input#area').autocomplete({
-        source: data,
-        autoFocus: true,
-        delay: 500,
-        minLength: 2
-    });
-    }
   },
 };
 </script>

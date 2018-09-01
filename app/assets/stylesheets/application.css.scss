@@ -55,9 +55,6 @@ body{
   font-family: 'Ropa Sans', -apple-system, "Helvetica Neue", "Arial", "hiragino kaku gothic pron", sans-serif;
   color:$base-font-color;
 }
-.highlight {
-  background-color: yellow;
-}
 .loading{
   width: 100%;
   position:fixed;
@@ -273,6 +270,7 @@ footer{
         height:139px;
         border:1px solid $myglay;
         tr{
+          line-height:1.5rem;
           th{
             background-color:#eee;
             text-align:center;
@@ -280,6 +278,7 @@ footer{
           th,td{
             border-top: 1px solid $myglay;
             border-bottom: 1px solid $myglay;
+            padding: 10px 5px;
             pre{
               margin: 0;
               word-break:break-all;

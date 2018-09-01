@@ -18,15 +18,21 @@
           </td>
         </tr>
         <tr>
-          <th><i class="fas fa-train"></i></th>
+          <th><i class="fas fa-map-marker-alt"></i></th>
+          <td>
+            {{pickStore.prefecture}}{{pickStore.city}}{{pickStore.other_address}}
+          </td>
+        </tr>
+        <tr>
+          <th><i class="fas fa-route"></i></th>
           <td>
             {{pickStore.access}}
           </td>
         </tr>
-        <tr>
-          <th><i class="fas fa-map-marker-alt"></i></th>
+        <tr v-show="store.distance != undefined">
+          <th><i class="fas fa-location-arrow"></i></th>
           <td>
-            {{pickStore.prefecture}}{{pickStore.city}}{{pickStore.other_address}}
+            約 {{pickStore.distance | km_convert}}
           </td>
         </tr>
         <tr>
@@ -69,6 +75,16 @@ export default {
   mounted: function(){
     this.gmapCreate();
     this.toMapAppHrefCreate();
+  },
+  filters: {
+    km_convert: function(data){
+      if(data >= 1000){
+        data = Math.round(data /100)*100
+        return (data / 1000) + "km"
+      }else{
+        return data+ "m"
+      }
+    }
   },
   methods: {
     gmapCreate: function(){
