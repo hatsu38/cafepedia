@@ -69,7 +69,9 @@
                v-for="(store,index) in displayStores"
                :class="{socket: store.socket,wifi: store.wifi}"
                >
-               <h2 v-if="pc"><router-link :to="'/stores/' + store.id">{{store.name}}</router-link></h2>
+               <h2 v-if="pc">
+                 <router-link :to="'/stores/' + store.id">{{store.name}}</router-link>
+               </h2>
                <h2 @click="modal_open(store)" v-else>{{store.name}}</h2>
                <div class="row">
                  <div class="col s5 mainstore_logo">
@@ -87,6 +89,12 @@
                        </tr>
                        <tr>
                          <th><i class="fas fa-map-marker-alt"></i></th>
+                         <td>
+                           {{store.prefecture}}{{store.city}}{{store.other_address}}
+                         </td>
+                       </tr>
+                       <tr>
+                         <th><i class="fas fa-route"></i></th>
                          <td>
                            {{store.access | access_cut}}
                          </td>
@@ -210,6 +218,25 @@ export default {
       return this.stores.slice(0,this.size)
     },
   },
+  filters: {
+    access_cut: function(data){
+      if(!data){
+        return data
+      }
+      if(data.match(/.+?[0-9]分|.+?[0-9]km/)){
+        return data.substr(0,data.search("[0-9]分|km")+2);
+      }
+      return data
+    },
+    km_convert: function(data){
+      if(data >= 1000){
+        data = Math.round(data /100)*100
+        return (data / 1000) + "km"
+      }else{
+        return data+ "m"
+      }
+    }
+  },
   methods: {
     fetchStores: function(){
       axios.get('/api/stores').then((response)=>{
@@ -224,10 +251,10 @@ export default {
     },
     mountFetchStores: function(){
       axios.get('/api/stores').then((response)=>{
-       var storesList = []
-       for(var i = 0; i < response.data.stores.length; i++){
-         storesList.push(response.data.stores[i]);
-       }
+        var storesList = []
+        for(var i = 0; i < response.data.stores.length; i++){
+          storesList.push(response.data.stores[i]);
+        }
         this.allStores = storesList
         this.mountDistanceCalc();
       },(error) =>{
@@ -295,7 +322,7 @@ export default {
       this.stores = this.filterListupStores(search_stores);
       if(this.stores.length == 0){
         this.noResultWord = this.searchWord
-       $("#noresult").show();
+        $("#noresult").show();
       }else{
         $("#noresult").hide();
       }
@@ -311,14 +338,17 @@ export default {
       }
       this.onDistanceSort = false
       if(this.allStores){
-      var stores_list = this.allStores.filter(function(value){
-        return Object.keys(value).some(function(key){
-          if(key === 'name' || key === "city" || key === "other_address" || key === "access"){
-            return String(value[key]).toLowerCase().indexOf(searchWord) > -1
-          }
+        var stores_list = this.allStores.filter(function(value){
+          return Object.keys(value).some(function(key){
+            if(key === 'name' || key === "city" || key === "other_address" || key === "access"){
+              if(key === "access" && value["access"].match(/.+?[0-9]分|.+?[0-9]km/)){
+                value["access"] = value["access"].substr(0,value["access"].search("[0-9]分|km")+2);
+              }
+              return String(value[key]).toLowerCase().indexOf(searchWord) > -1
+            }
+          })
         })
-      })
-      return stores_list
+        return stores_list
       }else{
         this.fetchStores();
       }
@@ -413,6 +443,7 @@ export default {
       localStorage.setItem('allStoresListStorage', JSON.stringify(this.allStores));
     },
     saveStorageCondition: function(){
+      localStorage.setItem('isFirstVist', JSON.stringify(true));
       localStorage.setItem('socketCondition', JSON.stringify(this.onSocket));
       localStorage.setItem('wifiCondition', JSON.stringify(this.onWifi));
       localStorage.setItem('smokingCondition', JSON.stringify(this.onSmoking));
@@ -420,6 +451,10 @@ export default {
       localStorage.setItem('searchWordCondition', JSON.stringify(this.searchWord));
       localStorage.setItem('displayStoresListStorage', JSON.stringify(this.displayStores));
       localStorage.setItem('displayStoresCount', this.stores.length);
+    },
+    first_visit_modal: function(){
+      console.log("firstvisit");
+      $('#modal1').trigger('click');
     },
     modal_open: function(store){
       this.$modal.show(pickStoreComponent, {
@@ -446,24 +481,5 @@ export default {
       $(".moreread").fadeIn();
     },
   },
-  filters: {
-    access_cut: function(data){
-      if(!data){
-        return data
-      }
-      if(data.match(/.+?[0-9]分|.+?[0-9]km/)){
-        return data.substr(0,data.search("[0-9]分|km")+2);
-      }
-      return data
-    },
-    km_convert: function(data){
-      if(data >= 1000){
-        data = Math.round(data /100)*100
-        return (data / 1000) + "km"
-      }else{
-        return data+ "m"
-      }
-    }
-  }
 };
 </script>

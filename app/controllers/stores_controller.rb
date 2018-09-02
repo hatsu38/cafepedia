@@ -1,6 +1,7 @@
 class StoresController < ApplicationController
   def index
     @stores = Store.all
+    @mainstores = Mainstore.all
   end
 
   def contact

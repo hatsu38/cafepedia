@@ -13,7 +13,7 @@ gtag('set', {'user_id': 'USER_ID'});
 
     <title>カフェぺディア | あなたの近くにあるカフェがすぐに見つかる</title>
     <%= csrf_meta_tags %>
-    <meta name=”description” content="カフェペディアは、あなたの近所にあるカフェをすぐに見つけることができるサービスです。「Wi-Fi」「コンセント」「喫煙席」など設備に応じて気になるカフェを探すことも可能です。1度読み込んだらページの読み込みは必要ないため、どのサイトよりもサクサク動きます。是非カフェ探しにご活用ください。" />
+    <meta name=”description” content="カフェペディアは、全国のカフェの設備情報サイトです。「Wi-Fi」「コンセント」「喫煙席」など設備に応じて気になるカフェを探すことが可能です。位置情報をONにすれば、すぐにあなたの近くにあるカフェもわかります。是非カフェ探しにご活用ください!" />
     <link rel="icon" type="img/x-icon" href="favicons/favicon.ico">
     <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon-60x60.png">
@@ -56,7 +56,7 @@ gtag('set', {'user_id': 'USER_ID'});
     <meta property="og:url" content="<%= root_url%>" />
     <meta property="og:image" content="<%= root_url%>ogp_img.png" />
     <meta property="og:site_name"  content="カフェぺディア | あなたの近くにあるカフェがすぐに見つかる" />
-    <meta property="og:description" content="カフェペディアは、あなたの近所にあるカフェをすぐに見つけることができるサービスです。「Wi-Fi」「コンセント」「喫煙席」など設備に応じて気になるカフェを探すことも可能です。1度読み込んだらページの読み込みは必要ないため、どのサイトよりもサクサク動きます。是非カフェ探しにご活用ください。" />
+    <meta property="og:description" content="カフェペディアは、全国のカフェの設備情報サイトです。「Wi-Fi」「コンセント」「喫煙席」など設備に応じて気になるカフェを探すことが可能です。位置情報をONにすれば、すぐにあなたの近くにあるカフェもわかります。是非カフェ探しにご活用ください!" />
 
     <!-- //Facebook用 -->
     <meta property="fb:app_id" content="1104643199674110" />
@@ -67,24 +67,54 @@ gtag('set', {'user_id': 'USER_ID'});
     <meta name="twitter:site" content="@hatsu" />
     <meta name="twitter:title" content="カフェぺディア | あなたの近くにあるカフェがすぐに見つかる" />
     <meta name="twitter:url" content="<%= root_url%>" />
-    <meta name="twitter:description" content="カフェペディアは、あなたの近所にあるカフェをすぐに見つけることができるサービスです。「Wi-Fi」「コンセント」「喫煙席」など設備に応じて気になるカフェを探すことも可能です。1度読み込んだらページの読み込みは必要ないため、どのサイトよりもサクサク動きます。是非カフェ探しにご活用ください。" />
+    <meta name="twitter:description" content="カフェペディアは、全国のカフェの設備情報サイトです。「Wi-Fi」「コンセント」「喫煙席」など設備に応じて気になるカフェを探すことが可能です。位置情報をONにすれば、すぐにあなたの近くにあるカフェもわかります。是非カフェ探しにご活用ください!" />
     <meta name="twitter:image" content="<%= root_url%>ogp_img.png" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXMDiQ7fiqsxFqsLR9CgrDMqezrp4ggl8"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <link rel="manifest" href="/manifest.json" />
-<meta name="apple-mobile-web-app-capable" content="yes"></head>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes"></head>
   <body>
     <%#= render 'shared/header' %>
     <%= yield %>
     <div class="about">
       <h2>カフェペディアとは</h2>
       <div class="grad_border"></div>
-      <p>カフェペディアは、あなたの近所にあるカフェをすぐに見つけることができるサービスです。<span class="emphasis">「Wi-Fi」</span><span class="emphasis">「コンセント」</span><span class="emphasis">「喫煙席」</span>など設備に応じて気になるカフェを探すことも可能です。1度読み込んだらページの読み込みは必要ないため、どのサイトよりも<span class="emphasis">サクサク</span>動きます。是非カフェ探しにご活用ください。</p>
+      <p>カフェペディアは、<span class="emphasis">全国のカフェの設備情報サイト</span>です。
+      <span class="emphasis">「Wi-Fi」</span><span class="emphasis">「コンセント」</span><span class="emphasis">「喫煙席」</span>など設備に応じて気になるカフェを探すことが可能です。
+      <span class="emphasis">位置情報をON</span>にすれば、すぐにあなたの近くにあるカフェもわかります。
+      是非カフェ探しにご活用ください!</p>
+    </div>
+    <div class="cafe_list_about">
+      <h2>掲載カフェ</h2>
+      <div class="grad_border"></div>
+      <ul class="cafe_list_block">
+        <li>
+          <i class="fas fa-coffee"></i>スターバックスコーヒー
+        </li>
+        <li>
+          <i class="fas fa-coffee"></i>ドトールコーヒー系列
+        </li>
+        <li>
+          <i class="fas fa-coffee"></i>タリーズコーヒー系列
+        </li>
+        <li>
+          <i class="fas fa-coffee"></i>ルノアール系列
+        </li>
+        <li>
+          <i class="fas fa-coffee"></i>コメダ珈琲
+        </li>
+      </ul>
+      <div class="mainstore_logos">
+        <% @mainstores.each do |mainstore| %>
+          <div class="mainstore_image_cover">
+            <%= image_tag mainstore.image ,:class=>"materialboxed" %>
+          </div>
+        <% end %>
+      </div>
     </div>
     <footer>
       <h2>シェア</h2>
@@ -197,10 +227,56 @@ gtag('set', {'user_id': 'USER_ID'});
         </div>
       <% } %>
     </div>
+  <!-- Modal Trigger -->
+    <button data-target="first_modal" class="btn modal-trigger contact_modal_btn" id="first_modal_btn"><i class="far fa-envelope"></i>modal</button>
+
+  <!-- Modal Structure -->
+  <div id="first_modal" class="modal modal-fixed-footer">
+      <h3 class="first_modal_title center">カフェペディアとは</h3>
+      <div class="grad_border"></div>
+      <div class="first_modal_text_block">
+        <p>カフェペディアは、<span class="emphasis">全国のカフェの設備情報サイト</span>です。</p>
+        <p><span class="emphasis">「Wi-Fi」</span><span class="emphasis">「コンセント」</span><span class="emphasis">「喫煙席」</span>など設備に応じて気になるカフェを探すことが可能です。</p>
+        <p><span class="emphasis">位置情報をON</span>にすれば、すぐにあなたの近くにあるカフェもわかります。</p>
+        <p>是非カフェ探しにご活用ください!</p>
+      </div>
+      <h3 class="first_modal_title center">掲載カフェ</h3>
+      <div class="grad_border"></div>
+      <ul class="cafe_list_block">
+        <li>
+          <i class="fas fa-coffee"></i>スターバックスコーヒー
+        </li>
+        <li>
+          <i class="fas fa-coffee"></i>ドトールコーヒー系列
+        </li>
+        <li>
+          <i class="fas fa-coffee"></i>タリーズコーヒー系列
+        </li>
+        <li>
+          <i class="fas fa-coffee"></i>ルノアール系列
+        </li>
+        <li>
+          <i class="fas fa-coffee"></i>コメダ珈琲
+        </li>
+      </ul>
+      <div class="mainstore_logos">
+        <% @mainstores.each do |mainstore| %>
+          <div class="mainstore_image_cover">
+            <%= image_tag mainstore.image ,:class=>"materialboxed" %>
+          </div>
+        <% end %>
+      </div>
+  </div>
+
     <script>
 $(function(){
   $(document).ready(function(){
     $('.modal').modal();
+    var isFirstVist = JSON.parse(localStorage.getItem("isFirstVist"));
+    if(!isFirstVist){
+      $('#first_modal_btn').trigger('click');
+    }
+    $('#first_modal_btn').hide();
   });
 
   $("#contact_form .validate_input").on("keydown keyup keypress change", function() {

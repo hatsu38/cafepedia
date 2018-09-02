@@ -86,19 +86,47 @@ header{
     }
   }
 }
-footer,.about{
+footer,.about,.cafe_list_about{
   h2{
     color:#4a4949;
     text-align:center;
-    margin:45px auto 9px;
+    margin:45px auto 6px;
     font-size:22px;
     font-weight:bold;
   }
 }
+
+.cafe_list_about{
+  h2{
+    margin-top:15px;
+  }
+  .cafe_list_block{
+    margin:.7rem 1rem .2rem;
+    li{
+      margin-bottom:.3rem;
+      font-weight:bold;
+      padding-left:1rem;
+      i.fa-coffee{
+        color:$base;
+        margin-right:.2rem;
+        font-size:.95rem;
+      }
+    }
+  }
+  .mainstore_logos{
+    column-count:5;
+    column-gap:.2rem;
+    padding:0 20px;
+      img{
+        max-width:100%;
+      }
+  }
+}
+
 .about{
   p{
     line-height: 1.7;
-    padding: 15px 20px;
+    padding: .7rem 2rem 1.5rem;
     max-width: 700px;
     margin:0 auto;
     font-size:1.1em;
@@ -269,6 +297,7 @@ footer{
         height:139px;
         border:1px solid $myglay;
         tr{
+          line-height:1.5rem;
           th{
             background-color:#eee;
             text-align:center;
@@ -276,6 +305,7 @@ footer{
           th,td{
             border-top: 1px solid $myglay;
             border-bottom: 1px solid $myglay;
+            padding: 10px 5px;
             pre{
               margin: 0;
               word-break:break-all;
@@ -505,7 +535,7 @@ span.modal_leak{
 #contact_form,#leak_form{
   width: 97%;
   max-width: 900px;
-  max-height: 90%;
+  max-height: 85%;
   padding:15px;
   top:5% !important;
   textarea,input:not([type='submit']){
@@ -560,6 +590,51 @@ span.modal_leak{
     }
   }
 }
+
+#first_modal{
+  border-radius:10px;
+  padding:20px;
+  background:#fff;
+  top: 5% !important;
+  height: 90% !important;
+  max-height: 90% !important;
+  .first_modal_title{
+    font-size:1.5rem;
+    font-weight:bold;
+    margin-bottom:.3rem;
+  }
+  .grad_border{
+    height:2px;
+  }
+  .first_modal_text_block{
+    margin:.7rem .2rem 2rem;
+    p{
+      margin:.5rem 0;
+    }
+  }
+  .cafe_list_block{
+    margin:.7rem .2rem .2rem;
+    li{
+      margin-bottom:.3rem;
+      font-weight:bold;
+      padding-left:1rem;
+      i.fa-coffee{
+        color:$base;
+        margin-right:.2rem;
+        font-size:.95rem;
+      }
+    }
+  }
+  .mainstore_logos{
+    column-count:5;
+    column-gap:.2rem;
+    padding:0 .3rem;
+      img{
+        max-width:100%;
+      }
+  }
+}
+
 @media screen and (min-width: 480px) {
   .content{
     .stores_box{
