@@ -83,7 +83,38 @@ gtag('set', {'user_id': 'USER_ID'});
     <div class="about">
       <h2>カフェペディアとは</h2>
       <div class="grad_border"></div>
-      <p>カフェペディアは、あなたの近所にあるカフェをすぐに見つけることができるサービスです。<span class="emphasis">「Wi-Fi」</span><span class="emphasis">「コンセント」</span><span class="emphasis">「喫煙席」</span>など設備に応じて気になるカフェを探すことも可能です。1度読み込んだらページの読み込みは必要ないため、どのサイトよりも<span class="emphasis">サクサク</span>動きます。是非カフェ探しにご活用ください。</p>
+      <p>カフェペディアは、<span class="emphasis">全国のカフェの設備情報サイト</span>です。
+      <span class="emphasis">「Wi-Fi」</span><span class="emphasis">「コンセント」</span><span class="emphasis">「喫煙席」</span>など設備に応じて気になるカフェを探すことが可能です。
+      <span class="emphasis">位置情報をON</span>にすれば、すぐにあなたの近くにあるカフェもわかります。
+      是非カフェ探しにご活用ください!</p>
+    </div>
+    <div class="cafe_list_about">
+      <h2>掲載カフェ</h2>
+      <div class="grad_border"></div>
+      <ul class="cafe_list_block">
+        <li>
+          <i class="fas fa-coffee"></i>スターバックスコーヒー
+        </li>
+        <li>
+          <i class="fas fa-coffee"></i>ドトールコーヒー系列
+        </li>
+        <li>
+          <i class="fas fa-coffee"></i>タリーズコーヒー系列
+        </li>
+        <li>
+          <i class="fas fa-coffee"></i>ルノアール系列
+        </li>
+        <li>
+          <i class="fas fa-coffee"></i>コメダ珈琲
+        </li>
+      </ul>
+      <div class="mainstore_logos">
+        <% @mainstores.each do |mainstore| %>
+          <div class="mainstore_image_cover">
+            <%= image_tag mainstore.image ,:class=>"materialboxed" %>
+          </div>
+        <% end %>
+      </div>
     </div>
     <footer>
       <h2>シェア</h2>
@@ -244,8 +275,8 @@ $(function(){
     var isFirstVist = JSON.parse(localStorage.getItem("isFirstVist"));
     if(!isFirstVist){
       $('#first_modal_btn').trigger('click');
-      $('#first_modal_btn').hide();
     }
+    $('#first_modal_btn').hide();
   });
 
   $("#contact_form .validate_input").on("keydown keyup keypress change", function() {

@@ -87,19 +87,47 @@ header{
     }
   }
 }
-footer,.about{
+footer,.about,.cafe_list_about{
   h2{
     color:#4a4949;
     text-align:center;
-    margin:45px auto 9px;
+    margin:45px auto 6px;
     font-size:22px;
     font-weight:bold;
   }
 }
+
+.cafe_list_about{
+  h2{
+    margin-top:15px;
+  }
+  .cafe_list_block{
+    margin:.7rem 1rem .2rem;
+    li{
+      margin-bottom:.3rem;
+      font-weight:bold;
+      padding-left:1rem;
+      i.fa-coffee{
+        color:$base;
+        margin-right:.2rem;
+        font-size:.95rem;
+      }
+    }
+  }
+  .mainstore_logos{
+    column-count:5;
+    column-gap:.2rem;
+    padding:0 20px;
+      img{
+        max-width:100%;
+      }
+  }
+}
+
 .about{
   p{
     line-height: 1.7;
-    padding: 15px 20px;
+    padding: .7rem 2rem 1.5rem;
     max-width: 700px;
     margin:0 auto;
     font-size:1.1em;

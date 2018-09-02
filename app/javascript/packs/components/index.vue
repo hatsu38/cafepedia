@@ -179,6 +179,7 @@ export default {
   },
   mounted: function(){
     var allStoresList = JSON.parse(localStorage.getItem("allStoresListStorage"));
+    var displayStoresList = JSON.parse(localStorage.getItem("displayStoresListStorage"));
     var wifiCondition = JSON.parse(localStorage.getItem("wifiCondition"));
     var socketCondition = JSON.parse(localStorage.getItem("socketCondition"));
     var smokingCondition = JSON.parse(localStorage.getItem("smokingCondition"));
@@ -197,10 +198,15 @@ export default {
     if(allStoresList){
       this.allStores = allStoresList
       if(this.allStores.length != 4658){
-        this.fetchStores();
+        this.mountFetchStores();
       }
       this.refreshFilter();
       this.loading_hide();
+    } else if(displayStoresList){
+      this.loading_show();
+      this.stores = displayStoresList
+      this.stores.length = displayStoresCount
+      this.mountFetchStores();
     } else {
       this.loading_show();
       this.fetchStores();
@@ -210,25 +216,6 @@ export default {
     displayStores: function(){
       return this.stores.slice(0,this.size)
     },
-  },
-  filters: {
-    access_cut: function(data){
-      if(!data){
-        return data
-      }
-      if(data.match(/.+?[0-9]分|.+?[0-9]km/)){
-        return data.substr(0,data.search("[0-9]分|km")+2);
-      }
-      return data
-    },
-    km_convert: function(data){
-      if(data >= 1000){
-        data = Math.round(data /100)*100
-        return (data / 1000) + "km"
-      }else{
-        return data+ "m"
-      }
-    }
   },
   methods: {
     fetchStores: function(){
@@ -241,6 +228,34 @@ export default {
       },(error) =>{
         alert('Sory');
       });
+    },
+    mountFetchStores: function(){
+      axios.get('/api/stores').then((response)=>{
+        var storesList = []
+        for(var i = 0; i < response.data.stores.length; i++){
+          storesList.push(response.data.stores[i]);
+        }
+        this.allStores = storesList
+        this.mountDistanceCalc();
+      },(error) =>{
+        alert('Sory');
+      });
+    },
+    mountDistanceCalc: function(){
+      this.herePosition(this).then(function (value) {
+        var hereLat = value[0];
+        var hereLng = value[1];
+        var that = value[2];
+        that.allStores.forEach(function(store,i){
+          var lat2 = store["lat"]
+          var lng2 = store["lng"]
+          var distance = that.getDistance(hereLat,hereLng,lat2,lng2,0)
+          store.distance = distance
+        })
+        that.distanceSort();
+        that.loading_hide();
+        that.saveStorageStore();
+      })
     },
     isPc: function(){
       if(!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
@@ -287,7 +302,7 @@ export default {
       this.stores = this.filterListupStores(search_stores);
       if(this.stores.length == 0){
         this.noResultWord = this.searchWord
-       $("#noresult").show();
+        $("#noresult").show();
       }else{
         $("#noresult").hide();
       }
@@ -303,17 +318,17 @@ export default {
       }
       this.onDistanceSort = false
       if(this.allStores){
-      var stores_list = this.allStores.filter(function(value){
-        return Object.keys(value).some(function(key){
-          if(key === 'name' || key === "city" || key === "other_address" || key === "access"){
-            if(key === "access" && value["access"].match(/.+?[0-9]分|.+?[0-9]km/)){
-              value["access"] = value["access"].substr(0,value["access"].search("[0-9]分|km")+2);
+        var stores_list = this.allStores.filter(function(value){
+          return Object.keys(value).some(function(key){
+            if(key === 'name' || key === "city" || key === "other_address" || key === "access"){
+              if(key === "access" && value["access"].match(/.+?[0-9]分|.+?[0-9]km/)){
+                value["access"] = value["access"].substr(0,value["access"].search("[0-9]分|km")+2);
+              }
+              return String(value[key]).toLowerCase().indexOf(searchWord) > -1
             }
-            return String(value[key]).toLowerCase().indexOf(searchWord) > -1
-          }
+          })
         })
-      })
-      return stores_list
+        return stores_list
       }else{
         this.fetchStores();
       }
@@ -408,13 +423,14 @@ export default {
       localStorage.setItem('allStoresListStorage', JSON.stringify(this.allStores));
     },
     saveStorageCondition: function(){
+      localStorage.setItem('isFirstVist', JSON.stringify(true));
       localStorage.setItem('socketCondition', JSON.stringify(this.onSocket));
       localStorage.setItem('wifiCondition', JSON.stringify(this.onWifi));
       localStorage.setItem('smokingCondition', JSON.stringify(this.onSmoking));
       localStorage.setItem('distanceSortCondition', JSON.stringify(this.onDistanceSort));
       localStorage.setItem('searchWordCondition', JSON.stringify(this.searchWord));
+      localStorage.setItem('displayStoresListStorage', JSON.stringify(this.displayStores));
       localStorage.setItem('displayStoresCount', this.stores.length);
-      localStorage.setItem('isFirstVist', JSON.stringify(true));
     },
     first_visit_modal: function(){
       console.log("firstvisit");
