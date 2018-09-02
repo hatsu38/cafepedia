@@ -98,6 +98,8 @@ footer,.about,.cafe_list_about{
 }
 
 .cafe_list_about{
+  max-width:500px;
+  margin:0 auto;
   h2{
     margin-top:15px;
   }
@@ -117,9 +119,10 @@ footer,.about,.cafe_list_about{
   .mainstore_logos{
     column-count:5;
     column-gap:.2rem;
-    padding:0 20px;
+    padding:20px 20px 0;
       img{
         max-width:100%;
+        display:block;
       }
   }
 }
@@ -599,6 +602,7 @@ span.modal_leak{
   top: 5% !important;
   height: 90% !important;
   max-height: 90% !important;
+  max-width:500px;
   .first_modal_title{
     font-size:1.5rem;
     font-weight:bold;
@@ -632,6 +636,7 @@ span.modal_leak{
     padding:0 .3rem;
       img{
         max-width:100%;
+        display:block;
       }
   }
 }

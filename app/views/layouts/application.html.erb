@@ -91,27 +91,27 @@ gtag('set', {'user_id': 'USER_ID'});
     <div class="cafe_list_about">
       <h2>掲載カフェ</h2>
       <div class="grad_border"></div>
-      <ul class="cafe_list_block">
-        <li>
-          <i class="fas fa-coffee"></i>スターバックスコーヒー
-        </li>
-        <li>
-          <i class="fas fa-coffee"></i>ドトールコーヒー系列
-        </li>
-        <li>
-          <i class="fas fa-coffee"></i>タリーズコーヒー系列
-        </li>
-        <li>
-          <i class="fas fa-coffee"></i>ルノアール系列
-        </li>
-        <li>
-          <i class="fas fa-coffee"></i>コメダ珈琲
-        </li>
-      </ul>
+      <!-- <ul class="cafe_list_block"> -->
+      <!--   <li> -->
+      <!--     <i class="fas fa&#45;coffee"></i>スターバックスコーヒー -->
+      <!--   </li> -->
+      <!--   <li> -->
+      <!--     <i class="fas fa&#45;coffee"></i>ドトールコーヒー系列 -->
+      <!--   </li> -->
+      <!--   <li> -->
+      <!--     <i class="fas fa&#45;coffee"></i>タリーズコーヒー系列 -->
+      <!--   </li> -->
+      <!--   <li> -->
+      <!--     <i class="fas fa&#45;coffee"></i>ルノアール系列 -->
+      <!--   </li> -->
+      <!--   <li> -->
+      <!--     <i class="fas fa&#45;coffee"></i>コメダ珈琲 -->
+      <!--   </li> -->
+      <!-- </ul> -->
       <div class="mainstore_logos">
         <% @mainstores.each do |mainstore| %>
           <div class="mainstore_image_cover">
-            <%= image_tag mainstore.image ,:class=>"materialboxed" %>
+            <%= image_tag mainstore.image %>
           </div>
         <% end %>
       </div>
@@ -262,7 +262,7 @@ gtag('set', {'user_id': 'USER_ID'});
       <div class="mainstore_logos">
         <% @mainstores.each do |mainstore| %>
           <div class="mainstore_image_cover">
-            <%= image_tag mainstore.image ,:class=>"materialboxed" %>
+            <%= image_tag mainstore.image %>
           </div>
         <% end %>
       </div>
@@ -273,7 +273,7 @@ $(function(){
   $(document).ready(function(){
     $('.modal').modal();
     var isFirstVist = JSON.parse(localStorage.getItem("isFirstVist"));
-    if(!isFirstVist){
+    if(!isFirstVist && navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
       $('#first_modal_btn').trigger('click');
     }
     $('#first_modal_btn').hide();
