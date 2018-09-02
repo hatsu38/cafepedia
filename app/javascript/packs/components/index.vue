@@ -441,9 +441,9 @@ export default {
     },
     saveStorageStore: function(){
       localStorage.setItem('allStoresListStorage', JSON.stringify(this.allStores));
+      localStorage.setItem('isFirstVist', JSON.stringify(true));
     },
     saveStorageCondition: function(){
-      localStorage.setItem('isFirstVist', JSON.stringify(true));
       localStorage.setItem('socketCondition', JSON.stringify(this.onSocket));
       localStorage.setItem('wifiCondition', JSON.stringify(this.onWifi));
       localStorage.setItem('smokingCondition', JSON.stringify(this.onSmoking));
