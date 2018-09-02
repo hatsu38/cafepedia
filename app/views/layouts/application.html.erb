@@ -242,8 +242,10 @@ $(function(){
   $(document).ready(function(){
     $('.modal').modal();
     var isFirstVist = JSON.parse(localStorage.getItem("isFirstVist"));
-    $('#first_modal_btn').trigger('click');
-    $('#first_modal_btn').hide();
+    if(!isFirstVist){
+      $('#first_modal_btn').trigger('click');
+      $('#first_modal_btn').hide();
+    }
   });
 
   $("#contact_form .validate_input").on("keydown keyup keypress change", function() {
