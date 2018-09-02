@@ -217,6 +217,25 @@ export default {
       return this.stores.slice(0,this.size)
     },
   },
+  filters: {
+    access_cut: function(data){
+      if(!data){
+        return data
+      }
+      if(data.match(/.+?[0-9]分|.+?[0-9]km/)){
+        return data.substr(0,data.search("[0-9]分|km")+2);
+      }
+      return data
+    },
+    km_convert: function(data){
+      if(data >= 1000){
+        data = Math.round(data /100)*100
+        return (data / 1000) + "km"
+      }else{
+        return data+ "m"
+      }
+    }
+  },
   methods: {
     fetchStores: function(){
       axios.get('/api/stores').then((response)=>{
