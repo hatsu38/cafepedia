@@ -196,10 +196,54 @@ gtag('set', {'user_id': 'USER_ID'});
         </div>
       <% } %>
     </div>
+  <!-- Modal Trigger -->
+    <button data-target="first_modal" class="btn modal-trigger contact_modal_btn" id="first_modal_btn"><i class="far fa-envelope"></i>modal</button>
+
+  <!-- Modal Structure -->
+  <div id="first_modal" class="modal modal-fixed-footer">
+      <h3 class="first_modal_title center">カフェペディアとは</h3>
+      <div class="grad_border"></div>
+      <div class="first_modal_text_block">
+        <p>カフェペディアは、<span class="emphasis">全国のカフェの設備情報サイト</span>です。</p>
+        <p><span class="emphasis">「Wi-Fi」</span><span class="emphasis">「コンセント」</span><span class="emphasis">「喫煙席」</span>など設備に応じて気になるカフェを探すことが可能です。</p>
+        <p><span class="emphasis">位置情報をON</span>にすれば、すぐにあなたの近くにあるカフェもわかります。</p>
+        <p>是非カフェ探しにご活用ください!</p>
+      </div>
+      <h3 class="first_modal_title center">掲載カフェ</h3>
+      <div class="grad_border"></div>
+      <ul class="cafe_list_block">
+        <li>
+          <i class="fas fa-coffee"></i>スターバックスコーヒー
+        </li>
+        <li>
+          <i class="fas fa-coffee"></i>ドトールコーヒー系列
+        </li>
+        <li>
+          <i class="fas fa-coffee"></i>タリーズコーヒー系列
+        </li>
+        <li>
+          <i class="fas fa-coffee"></i>ルノアール系列
+        </li>
+        <li>
+          <i class="fas fa-coffee"></i>コメダ珈琲
+        </li>
+      </ul>
+      <div class="mainstore_logos">
+        <% @mainstores.each do |mainstore| %>
+          <div class="mainstore_image_cover">
+            <%= image_tag mainstore.image ,:class=>"materialboxed" %>
+          </div>
+        <% end %>
+      </div>
+  </div>
+
     <script>
 $(function(){
   $(document).ready(function(){
     $('.modal').modal();
+    var isFirstVist = JSON.parse(localStorage.getItem("isFirstVist"));
+    $('#first_modal_btn').trigger('click');
+    $('#first_modal_btn').hide();
   });
 
   $("#contact_form .validate_input").on("keydown keyup keypress change", function() {

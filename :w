@@ -147,6 +147,16 @@
     <div id="noresult">
       <p><span>「{{noResultWord}}」</span>が住所やアクセスに含まれるカフェは見つかりません。</p>
     </div>
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1" id="first_modal">Modal</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+  </div>
   </div>
 </template>
 <script>
@@ -174,6 +184,7 @@ export default {
   },
   created: function(){
     this.isPc();
+    this.first_visit_modal();
   },
   mounted: function(){
     var allStoresList = JSON.parse(localStorage.getItem("allStoresListStorage"));
@@ -183,6 +194,7 @@ export default {
     var searchWordCondition = JSON.parse(localStorage.getItem("searchWordCondition"));
     var distanceSortCondition = JSON.parse(localStorage.getItem("distanceSortCondition"));
     var displayStoresCount = localStorage.getItem("displayStoresCount");
+    var isFirstVist = JSON.parse(localStorage.getItem("isFirstVist"));
     this.onWifi = wifiCondition
     this.onSocket = socketCondition
     this.onSmoking= smokingCondition
@@ -416,7 +428,8 @@ export default {
     },
     first_visit_modal: function(){
       console.log("firstvisit");
-      $('#modal1').trigger('click');
+      $('#first_modal').trigger('click');
+      $('#first_modal').click();
     },
     modal_open: function(store){
       this.$modal.show(pickStoreComponent, {
