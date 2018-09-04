@@ -20,13 +20,13 @@
                 >
                 <label for="area">エリア・駅</label>
           </form>
-          <a class="btn waves-effect waves-light col s2 input-field"
+          <a class="btn waves-effect waves-light col s2 input-field search_btn"
              @click="searchStores">検索</a>
         </div>
       </div>
       <div class="filter_box row center">
         <div class="filter-block col s4 socket">
-          <div class="filter_content sort"
+          <div class="filter_content sort socket_filter_btn"
                @click="socketFilter"
                :class="{socketFilterOn: onSocket}"
                >
@@ -35,7 +35,7 @@
           </div>
         </div>
         <div class="filter-block col s4 wifi">
-          <div class="filter_content sort"
+          <div class="filter_content sort wifi_filter_btn"
                @click="wifiFilter"
                :class="{wifiFilterOn: onWifi}"
                >
@@ -44,7 +44,7 @@
           </div>
         </div>
         <div class="filter-block col s4 smoking">
-          <div class="filter_content sort"
+          <div class="filter_content sort smoking_filter_btn"
                @click="smokingFilter"
                :class="{smokingFilterOn: onSmoking}"
                >
@@ -53,7 +53,7 @@
           </div>
         </div>
         <div class="filter-block col s12 distanceSort">
-          <div class="filter_content sort"
+          <div class="filter_content sort distanceSort_btn"
                @click="refreshDistanceCalc"
                :class="{distanceSortOn: onDistanceSort}"
                >
@@ -69,10 +69,10 @@
                v-for="(store,index) in displayStores"
                :class="{socket: store.socket,wifi: store.wifi}"
                >
-               <h2 v-if="pc">
+               <h2 v-if="pc" id="store_name">
                  <router-link :to="'/stores/' + store.id">{{store.name}}</router-link>
                </h2>
-               <h2 @click="modal_open(store)" v-else>{{store.name}}</h2>
+               <h2 id="store_name" @click="modal_open(store)" v-else>{{store.name}}</h2>
                <div class="row">
                  <div class="col s5 mainstore_logo">
                    <img :src="store.mainstore.image.url">
