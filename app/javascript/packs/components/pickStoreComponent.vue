@@ -1,13 +1,16 @@
 <template>
   <div id="store_detail">
+    <header class="center white-text" id="top_header" @click="$emit('close')">
+      <router-link to="/" class="white-text">
+        <i class="fas fa-coffee"></i>
+        <h1 class="logo">カフェペディア</h1>
+      </router-link>
+    </header>
     <div class="row">
       <p class="img_logo_block col s2">
         <img :src="pickStore.mainstore.image.url">
       </p>
-      <p class="col s9 store-name">{{pickStore.name}}</p>
-      <p class="close-icon-block col s1">
-        <i class="fas fa-times" @click="$emit('close')"></i>
-      </p>
+      <p class="col s10 store-name">{{pickStore.name}}</p>
     </div>
     <table class="table">
       <tbody>
@@ -60,6 +63,9 @@
     <div class="map_block">
       <div id='map'></div>
       <a href="" id="to_map_app" target="_blank">地図アプリで見る</a>
+    </div>
+    <div class="modal_footer" @click="$emit('close')">
+     CLOSE
     </div>
   </div>
 </template>

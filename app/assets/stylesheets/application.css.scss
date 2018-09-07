@@ -389,31 +389,22 @@ footer{
   }
 }
 
+
+.v--modal-overlay .v--modal-background-click{
+  padding-bottom:0 !important;
+}
 #store_detail{
   //スマホ
   .row{
-    margin-bottom: 0;
-    margin-top: 1em;
+    margin: 0 auto;
     .img_logo_block,{
       img{
         max-width:100%;
       }
     }
     .store-name{
-      font-size:1.4em;
+      font-size:1.2em;
       padding: auto 0;
-    }
-    .close-icon-block{
-      padding:0;
-      i{
-        font-size:1.5em;
-        color: #aaa;
-      }
-    }
-    p{
-      vertical-align:middle;
-      display: inline-block;
-      margin-top: 14px;
     }
   }
   a#to_map_app{
@@ -426,6 +417,15 @@ footer{
     top: 1rem;
     border: solid 1px #cdc1b5;
     border-radius:3px;
+  }
+  .modal_footer{
+    margin-top:-10px;
+    text-align:center;
+    font-size:1.3rem;
+    letter-spacing:4px;
+    line-height:40px;
+    border-top: 1px solid #eee;
+    font-weight:bold;
   }
   //PC
   h2{
@@ -451,6 +451,7 @@ footer{
   }
   .icons_box{
     margin-bottom: 1em;
+    display:flex;
     i{
       padding:.2em;
       font-size: 1.5em;
@@ -465,8 +466,9 @@ footer{
       display: inline-block;
       border:1px solid #cdcdcd;
       width: 37.8px;
+      margin: .3rem .45rem;
       img{
-        max-width: 100%;
+        max-width: 90%;
       }
     }
   }
