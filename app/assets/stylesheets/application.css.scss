@@ -119,10 +119,13 @@ footer,.about,.cafe_list_about{
     column-count:5;
     column-gap:.2rem;
     padding:20px 20px 0;
+    .mainstore_image_cover{
+      display:block;
       img{
         max-width:100%;
         display:block;
       }
+    }
   }
 }
 
@@ -402,7 +405,7 @@ footer{
     .close-icon-block{
       padding:0;
       i{
-        font-size:1.3em;
+        font-size:1.5em;
         color: #aaa;
       }
     }
