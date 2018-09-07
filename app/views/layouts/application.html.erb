@@ -265,6 +265,14 @@ $(function(){
     $('#first_modal_btn').hide();
   });
 
+  var ua = navigator.userAgent;
+  if ((/Android/.test(ua) && /Linux; U;/.test(ua) && !/Chrome/.test(ua)) ||
+    (/Android/.test(ua) && /Chrome/.test(ua) && /Version/.test(ua)) ||
+    (/Android/.test(ua) && /Chrome/.test(ua) && /SamsungBrowser/.test(ua))) {
+    // Android標準ブラウザだったときの処理
+    $('.mainstore_image_cover').css('width','20%');
+  }
+
   $("#contact_form .validate_input").on("keydown keyup keypress change", function() {
     if ($(this).val()) {
       $("#contact_form .contact_send_btn").prop("disabled", false);

@@ -439,7 +439,9 @@ export default {
       this.refreshFilter();
     },
     saveStorageStore: function(){
-      localStorage.setItem('allStoresListStorage', JSON.stringify(this.allStores));
+      if(this.isPc()){
+        localStorage.setItem('allStoresListStorage', JSON.stringify(this.allStores));
+      }
       localStorage.setItem('isFirstVist', JSON.stringify(true));
     },
     saveStorageCondition: function(){
