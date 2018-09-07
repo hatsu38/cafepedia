@@ -6,6 +6,7 @@
         <h1 class="logo">カフェペディア</h1>
       </router-link>
     </header>
+    <div class="container">
     <h2>{{store.name}}</h2>
     <table class="table">
       <tbody>
@@ -39,7 +40,6 @@
             <a :href="store.hp" target="_blank">公式HP</a>
           </td>
         </tr>
-
       </tbody>
     </table>
     <div class="icons_box">
@@ -54,7 +54,7 @@
       <div id='map'></div>
       <a href="" id="to_map_app" target="_blank">地図アプリで見る</a>
     </div>
-
+    </div>
   </div>
 </template>
 <script>
