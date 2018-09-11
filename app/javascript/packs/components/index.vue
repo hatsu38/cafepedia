@@ -110,9 +110,9 @@
                  </div>
                </div>
                <div class="icons_box">
-                 <i class="fas fa-smoking" v-show="store.smoking"></i>
-                 <i class="fas fa-wifi" v-show="store.wifi"></i>
                  <i class="fas fa-plug" v-show="store.socket"></i>
+                 <i class="fas fa-wifi" v-show="store.wifi"></i>
+                 <i class="fas fa-smoking" v-show="store.smoking"></i>
                  <div class="iccard_img_block" v-show="store.iccard">
                    <img src="/uploads/iccard_service.jpg" class="iccard_icon">
                  </div>
