@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20180807121327) do
     t.text "access"
     t.string "tel"
     t.text "business_hour"
+    t.string "chair"
     t.string "hp"
     t.boolean "wifi"
     t.boolean "socket"

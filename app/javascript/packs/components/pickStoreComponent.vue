@@ -32,6 +32,12 @@
             {{pickStore.access}}
           </td>
         </tr>
+        <tr v-show="store.chair">
+          <th><i class="fas fa-store-alt"></i></th>
+          <td class="chair_volume">
+            {{pickStore.chair}}
+          </td>
+        </tr>
         <tr v-show="store.distance != undefined">
           <th><i class="fas fa-location-arrow"></i></th>
           <td>
