@@ -98,6 +98,12 @@
                            {{store.access | access_cut}}
                          </td>
                        </tr>
+                       <tr v-show="store.chair">
+                         <th><i class="fas fa-store-alt"></i></th>
+                         <td class="chair_volume">
+                           {{store.chair}}
+                         </td>
+                       </tr>
                        <tr v-show="store.distance != undefined">
                          <th><i class="fas fa-location-arrow"></i></th>
                          <td>
@@ -197,7 +203,8 @@ export default {
     }
     if(allStoresList){
       this.allStores = allStoresList
-      if(this.allStores.length != 4658){
+      console.log(this.allStores.length);
+      if(this.allStores.length != 4870){
         this.mountFetchStores();
       }
       this.refreshFilter();
@@ -233,6 +240,20 @@ export default {
         return (data / 1000) + "km"
       }else{
         return data+ "m"
+      }
+    },
+    chair_add_line: function(data){
+      if(data==null){
+        return data;
+      }
+      if(data.indexOf("(") == -1){
+        return data;
+      }else{
+      var first_kakko = data.indexOf("(");
+      console.log(first_kakko);
+      var edited = data.slice(0, first_kakko) + "<br>"+ data.slice(first_kakko);
+      document.getElementById("chair_volume").innerHTML = edited;
+      return data;
       }
     }
   },

@@ -9,6 +9,7 @@ json.set! :stores do
       :access,
       :tel,
       :business_hour,
+      :chair,
       :hp,
       :wifi,
       :socket,

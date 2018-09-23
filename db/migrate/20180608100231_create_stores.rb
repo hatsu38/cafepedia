@@ -8,6 +8,7 @@ class CreateStores < ActiveRecord::Migration[5.1]
       t.text :access
       t.string :tel
       t.text :business_hour
+      t.string :chair
       t.string :hp
       t.boolean :wifi
       t.boolean :socket

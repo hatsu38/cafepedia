@@ -311,11 +311,15 @@ footer{
           th,td{
             border-top: 1px solid $myglay;
             border-bottom: 1px solid $myglay;
-            padding: 10px 5px;
+            padding: 8px 5px;
+            &.chair_volume{
+              font-size:.98rem;
+            }
             pre{
               margin: 0;
               word-break:break-all;
               white-space:pre-wrap;
+              font-size:.92rem;
             }
           }
         }
