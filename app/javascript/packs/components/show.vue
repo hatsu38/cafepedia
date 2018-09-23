@@ -28,6 +28,12 @@
             {{store.prefecture}}{{store.city}}{{store.other_address}}
           </td>
         </tr>
+        <tr v-show="store.chair">
+          <th><i class="fas fa-store-alt"></i></th>
+          <td class="chair_volume">
+            {{store.chair}}
+          </td>
+        </tr>
         <tr>
           <th><i class="fas fa-phone"></i></th>
           <td>
