@@ -26,16 +26,16 @@
             {{pickStore.prefecture}}{{pickStore.city}}{{pickStore.other_address}}
           </td>
         </tr>
-        <tr>
-          <th><i class="fas fa-route"></i></th>
-          <td>
-            {{pickStore.access}}
-          </td>
-        </tr>
         <tr v-show="store.chair">
           <th><i class="fas fa-store-alt"></i></th>
           <td class="chair_volume">
             {{pickStore.chair}}
+          </td>
+        </tr>
+        <tr>
+          <th><i class="fas fa-route"></i></th>
+          <td>
+            {{pickStore.access}}
           </td>
         </tr>
         <tr v-show="store.distance != undefined">
