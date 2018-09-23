@@ -204,7 +204,6 @@ export default {
     }
     if(allStoresList){
       this.allStores = allStoresList
-      console.log(this.allStores.length);
       if(this.allStores.length != 4870){
         this.mountFetchStores();
       }
