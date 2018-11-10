@@ -13732,7 +13732,7 @@ span.modal_leak {
   cursor: pointer;
   position: fixed;
   bottom: 0;
-  right: 0;
+  left: 0;
   padding: 0 1rem;
 }
 /* line 542, /Users/hajime/programing/project/cafepedia/app/assets/stylesheets/application.css.scss */
