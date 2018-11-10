@@ -40,6 +40,7 @@ mainstore_array = [["スターバックス","./app/assets/images/starbacks_logo.
                    ["カフェプラザ|上島珈琲店","./app/assets/images/ueshima/plaza.jpeg"],
                    ["ウイーンの森|上島珈琲店","./app/assets/images/ueshima/wien.png"],
                    ["その他|上島珈琲店","./app/assets/images/ueshima/other.png"],
+                   ["Senbon Lab.","./app/assets/images/senbonlab_logo.jpg"],
 ]
 
 mainstore_array.each_with_index do |mainstore,i|
@@ -83,6 +84,7 @@ csv_file_array = ["db/starbacks.csv",
                   "db/ueshima/plaza.csv",
                   "db/ueshima/wien.csv",
                   "db/ueshima/other.csv",
+                  "db/senbonlab.csv"
                   ]
 
 csv_file_array.each_with_index do |csv_file,time|
