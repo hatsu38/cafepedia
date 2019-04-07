@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'stores/index'
   post 'stores/contact'
   post 'stores/leak'
