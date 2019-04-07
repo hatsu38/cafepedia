@@ -54,6 +54,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'faker'
   gem 'pry-rails'
+  gem 'pry-byebug'
   gem 'hirb'
   gem 'hirb-unicode'
 end
