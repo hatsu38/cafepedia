@@ -8,6 +8,10 @@
 	<div class="row">
 		<div class="col s5 mainstore_logo">
 			<img src="<%= store.mainstore.image.url %>">
+			<p>
+				<%= link_to "編集", edit_admin_path(store) %>
+				<%= link_to "詳細", admin_path(store) %>
+			</p>
 		</div>
 		<div class="col s7">
 			<table class="table">
