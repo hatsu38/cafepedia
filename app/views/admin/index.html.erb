@@ -1,0 +1,55 @@
+<h1>Admin</h1>
+<div id="stores" class="content">
+<div id="stores_array">
+<div class="stores_box">
+<% @stores.each do |store| %>
+<div class="store">
+	<h2><%= store.name %></h2>
+	<div class="row">
+		<div class="col s5 mainstore_logo">
+			<img src="<%= store.mainstore.image.url %>">
+		</div>
+		<div class="col s7">
+			<table class="table">
+				<tbody>
+					<tr>
+						<th><i class="fas fa-clock"></i></th>
+						<td>
+							<pre><%= store.business_hour %></pre>
+						</td>
+					</tr>
+					<tr>
+						<th><i class="fas fa-map-marker-alt"></i></th>
+						<td>
+							<%= store.prefecture %><%= store.city %><%= store.other_address %>
+						</td>
+					</tr>
+					<% if store.chair %>
+					<tr>
+						<th><i class="fas fa-store-alt"></i></th>
+						<td class="chair_volume">
+							<%= store.chair %>
+						</td>
+					</tr>
+					<% end %>
+					<tr>
+						<th><i class="fas fa-route"></i></th>
+						<td>
+							<%= store.access%>
+						</td>
+					</tr>
+					<tr>
+						<th><i class="fas fa-location-arrow"></i></th>
+						<td>
+							約 <%= store.distance %>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<% end %>
+</div>
+</div>
+</div>
