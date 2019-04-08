@@ -4,7 +4,7 @@ class AdminController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @stores = Store.limit(10).order(:id)
+    @stores = Store.page(params[:page]).per(25)
     @mainstores = Mainstore.all
   end
 
