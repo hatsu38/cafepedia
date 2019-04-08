@@ -57,6 +57,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'hirb'
   gem 'hirb-unicode'
+  gem 'rubocop', require: false
 end
 
 group :development do
