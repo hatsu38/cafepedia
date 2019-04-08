@@ -1,0 +1,76 @@
+<h1><%= @store.name %>@Admin</h1>
+<%= form_for(@store, :url => {:action => 'update'} ) do |f| %>
+  <table>
+    <tr>
+      <td><%= f.label :店名 %></td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :都道府県 %></td>
+      <td><%= f.text_field :prefecture %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :city %></td>
+      <td><%= f.text_field :city %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :other_address %></td>
+      <td><%= f.text_field :other_address %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :tel %></td>
+      <td><%= f.text_field :tel %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :business_hour %></td>
+      <td><%= f.text_field :business_hour %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :chair %></td>
+      <td><%= f.text_field :chair %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :hp %></td>
+      <td><%= f.text_field :hp %></td>
+    </tr>
+    <tr class="radio-edit">
+    	<td>Wi-Fi</td>
+      <td class="row">
+        <label class="col s6"><%= f.radio_button :wifi, true %><span>True</span></label>
+        <label class="col s6"><%= f.radio_button :wifi, false %><span>False</span></label>
+      </td>
+    </tr>
+		<tr class="radio-edit">
+      <td>socket</td>
+      <td class="row">
+        <label class="col s6"><%= f.radio_button :socket, true %><span>True</span></label>
+        <label class="col s6"><%= f.radio_button :socket, false %><span>False</span></label>
+      </td>
+    </tr>
+    <tr class="radio-edit">
+      <td>smoking</td>
+      <td class="row">
+        <label class="col s6"><%= f.radio_button :smoking, true %><span>True</span></label>
+        <label class="col s6"><%= f.radio_button :smoking, false %><span>False</span></label>
+      </td>
+    </tr>
+    <tr class="radio-edit">
+      <td>iccard</td>
+      <td class="row">
+        <label class="col s6"><%= f.radio_button :iccard, true %><span>True</span></label>
+        <label class="col s6"><%= f.radio_button :iccard, false %><span>False</span></label>
+      </td>
+    </tr>
+    <tr>
+      <td><%= f.label :lat %></td>
+      <td><%= f.text_field :lat %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :lng %></td>
+      <td><%= f.text_field :lng %></td>
+    </tr>
+    </table>
+		<p class="center">
+    	<%= f.submit "更新", :class=>"btn" %>
+		</p>
+<% end %>

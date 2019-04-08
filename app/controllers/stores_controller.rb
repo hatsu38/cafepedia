@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class StoresController < ApplicationController
   def index
     @stores = Store.all
@@ -22,14 +24,13 @@ class StoresController < ApplicationController
     smoking = params[:leak][:smoking]
     leak = Leak.new(name: name,
                     address: address,
-                   url: url,
-                   socket: socket,
-                   wifi: wifi,
-                   smoking: smoking)
+                    url: url,
+                    socket: socket,
+                    wifi: wifi,
+                    smoking: smoking)
     leak.save
     LeakMailer.send_mail(leak).deliver_now
   end
-
 
   def csv_export
     File.open('allStores.csv', 'w') do |f|
@@ -44,9 +45,9 @@ class StoresController < ApplicationController
     end
   end
 
-
   private
+
   def inquiry_params
-    params.require(:leak).permit(:email,:message)
+    params.require(:leak).permit(:email, :message)
   end
 end
