@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 json.set! :store do
   json.extract! @store,
     :id,

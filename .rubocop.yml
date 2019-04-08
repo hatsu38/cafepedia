@@ -12,7 +12,8 @@ AllCops:
     - spec/*_helper.rb
     - tmp/**/*
     - vendor/**/*
-  TargetRubyVersion: 2.3
+    - node_modules/node-sass/src/libsass/**/*
+  TargetRubyVersion: 2.5
 
 ##################### Style ##################################
 PercentLiteralDelimiters:
