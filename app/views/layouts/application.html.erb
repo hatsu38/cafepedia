@@ -99,6 +99,7 @@
       <!--     <i class="fas fa&#45;coffee"></i>コメダ珈琲 -->
       <!--   </li> -->
       <!-- </ul> -->
+      <% if @mainstores.present? %>
       <div class="mainstore_logos">
         <% @mainstores.each do |mainstore| %>
           <div class="mainstore_image_cover">
@@ -106,6 +107,7 @@
           </div>
         <% end %>
       </div>
+      <% end %>
     </div>
     <footer>
       <h2>シェア</h2>
@@ -245,6 +247,7 @@
           <i class="fas fa-coffee"></i>コメダ珈琲
         </li>
       </ul>
+      <% if @mainstores.present? %>
       <div class="mainstore_logos">
         <% @mainstores.each do |mainstore| %>
           <div class="mainstore_image_cover">
@@ -252,6 +255,7 @@
           </div>
         <% end %>
       </div>
+      <% end %>
   </div>
 
     <script>
@@ -285,7 +289,7 @@ $(function(){
     if(leak_validate()) {
       $("#leak_form .leak_send_btn").prop("disabled", false);
     } else {
-      $("#leak_form .leak_send_btn").prop("disabled", true);
+      $("#leak_form 1.leak_send_btn").prop("disabled", true);
     }
   });
 
