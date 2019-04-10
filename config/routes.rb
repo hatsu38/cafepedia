@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :admin
+  get 'stores_to_csv' => 'admin#stores_to_csv'
 
   # devise_for :users
   devise_for :users, skip: :all
