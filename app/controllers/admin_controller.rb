@@ -6,6 +6,13 @@ class AdminController < ApplicationController
   def index
     @stores = Store.page(params[:page]).per(25)
     @mainstores = Mainstore.all
+    @allstores = Store.all
+    respond_to do |format|
+      format.html
+      format.csv do
+        send_data render_to_string, filename: 'stores.csv', type: :csv
+      end
+    end
   end
 
   def show
