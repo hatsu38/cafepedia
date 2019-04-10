@@ -2,7 +2,8 @@
 
 class Api::StoresController < ApplicationController
   def index
-    @stores = Store.all
+    @stores = Store.all.includes(:mainstore)
+    @mainstores = Mainstore.all
   end
 
   def show

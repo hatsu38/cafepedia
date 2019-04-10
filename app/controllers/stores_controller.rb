@@ -2,9 +2,8 @@
 
 class StoresController < ApplicationController
   def index
-    @stores = Store.all
+    @stores = Store.all.includes(:mainstore)
     @mainstores = Mainstore.all
-    # csv_export()
   end
 
   def contact

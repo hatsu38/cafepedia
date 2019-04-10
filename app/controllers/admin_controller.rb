@@ -4,7 +4,7 @@ class AdminController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @stores = Store.page(params[:page]).per(25)
+    @stores = Store.page(params[:page]).per(25).includes(:mainstore)
     @mainstores = Mainstore.all
     @allstores = Store.all
     respond_to do |format|
