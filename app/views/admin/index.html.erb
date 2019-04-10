@@ -1,6 +1,9 @@
-<h1>Admin</h1>
+<h1 class="admin_title">Admin</h1>
 
-<%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<ul>
+<li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+<li><%= link_to 'csv出力', admin_index_path(format: :csv) %></li>
+</ul>
 <div id="stores" class="content">
 <div id="stores_array">
 <div class="stores_box">
