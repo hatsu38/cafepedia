@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :mainstore, class: Mainstore do
-    sequence(:id) { |n| "#{n}" }
+    sequence(:id, &:to_s)
     sequence(:name) { |n| "MainName_#{n}" }
 
     after(:create) do |mainstore|

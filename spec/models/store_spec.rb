@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe Store, type: :model do
   before do
     @mainstore = create(:mainstore)
-    @store =  @mainstore.stores.last
+    @store = @mainstore.stores.last
   end
 
   it 'storeが作成されていること' do
@@ -15,5 +15,4 @@ RSpec.describe Store, type: :model do
   it 'Mainstoreに紐づいていること' do
     expect(@store.mainstore.id).to eq(@mainstore.id)
   end
-
 end
