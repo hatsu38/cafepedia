@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :store do
+  factory :store, class: Store do
     sequence(:id, &:to_s)
     sequence(:name) { |n| "name_#{n}" }
     sequence(:prefecture) { |n| "prefecture#{n}" }
