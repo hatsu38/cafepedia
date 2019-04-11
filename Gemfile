@@ -63,6 +63,11 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rubocop', require: false
   gem 'selenium-webdriver'
+
+  # RSpec
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
 end
 
 group :development do
