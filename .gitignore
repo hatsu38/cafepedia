@@ -30,3 +30,6 @@ yarn-debug.log*
 
 # Ignore encrypted secrets key file.
 config/secrets.yml.key
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
