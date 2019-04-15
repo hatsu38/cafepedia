@@ -100,11 +100,13 @@
       <!--   </li> -->
       <!-- </ul> -->
       <div class="mainstore_logos">
+      <% if @mainstores %>
         <% @mainstores.each do |mainstore| %>
           <div class="mainstore_image_cover">
             <%= image_tag mainstore.image.to_s %>
           </div>
         <% end %>
+      <% end %>
       </div>
     </div>
     <footer>
@@ -246,11 +248,13 @@
         </li>
       </ul>
       <div class="mainstore_logos">
+      <% if @mainstores %>
         <% @mainstores.each do |mainstore| %>
           <div class="mainstore_image_cover">
             <%= image_tag mainstore.image.to_s %>
           </div>
         <% end %>
+      <% end %>
       </div>
   </div>
 
