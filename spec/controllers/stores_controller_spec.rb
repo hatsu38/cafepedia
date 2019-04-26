@@ -18,13 +18,13 @@ describe StoresController, type: :controller do
       let(:params) do
         {
           message: 'お問い合わせです！',
-          email: 'example@gmail.com'
+          email: 'example@gmail.com',
         }
       end
       let(:inquiry) do
         {
           message: 'お問い合わせです！',
-          email: 'example@gmail.com'
+          email: 'example@gmail.com',
         }
       end
       it 'save出来ること' do
@@ -49,7 +49,7 @@ describe StoresController, type: :controller do
       let(:params) do
         {
           message: '',
-          email: 'example@gmail.com'
+          email: 'example@gmail.com',
         }
       end
 

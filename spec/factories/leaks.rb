@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :leak do
     sequence(:name) { |n| "name_#{n}" }

@@ -13,7 +13,7 @@ class StoresController < ApplicationController
     if inquiry.save
       InquiryMailer.send_mail(inquiry).deliver_now
     else
-      render :action => "index"
+      render action: 'index'
     end
   end
 
