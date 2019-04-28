@@ -17,6 +17,7 @@ json.set! :stores do
       :socket,
       :smoking,
       :iccard,
+      :is_open,
       :lat,
       :lng,
       :mainstore_id,

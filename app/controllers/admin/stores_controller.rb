@@ -29,7 +29,7 @@ module Admin
       @store = Store.find(params[:id])
       if @store.update(store_params)
         # updateが完了したら一覧ページへリダイレクト
-        redirect_to admin_path
+        redirect_to admin_stores_path
       else
         # updateを失敗すると編集ページへ
         render 'edit'
@@ -41,7 +41,7 @@ module Admin
     def store_params
       params.require(:store).permit(:name, :prefecture, :city, :other_address,
         :tel, :business_hour, :chair, :hp, :wifi,
-        :socket, :smoking, :iccard, :lat, :lng)
+        :socket, :smoking, :iccard, :is_open, :lat, :lng)
     end
   end
 end
