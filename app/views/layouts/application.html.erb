@@ -64,6 +64,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXMDiQ7fiqsxFqsLR9CgrDMqezrp4ggl8"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="manifest" href="/manifest.json" />
@@ -172,16 +173,22 @@
         <div class="facility_form_block row">
           <h4>利用可能設備</h4>
           <div class="facility_check col s4">
-            <%= check_box :leak, :socket,:class => "", :id => "socket_leak" %>
-            <label for="socket_leak" class="leack_chcke_label">電源</label>
+            <label>
+              <%= check_box :leak, :socket,:class => "", :id => "socket_leak" %>
+              <span for="socket_leak" class="leack_chcke_label">電源</span>
+            </label>
           </div>
           <div class="facility_check col s4">
-            <%= check_box :leak, :wifi,:class => "", :id => "icon_prefix2 wifi_leak" %>
-            <label for="icon_prefix2 wifi_leak" class="leack_chcke_label">wifi</label>
+            <label>
+              <%= check_box :leak, :wifi,:class => "", :id => "icon_prefix2 wifi_leak" %>
+              <span for="icon_prefix2 wifi_leak" class="leack_chcke_label">wifi</span>
+            </label>
           </div>
           <div class="facility_check col s4">
-            <%= check_box :leak, :smoking,:class => "", :id => "icon_prefix2 smoking_leak" %>
-            <label for="icon_prefix2 smoking_leak" class="leack_chcke_label">喫煙席</label>
+            <label>
+              <%= check_box :leak, :smoking,:class => "", :id => "icon_prefix2 smoking_leak" %>
+              <span for="icon_prefix2 smoking_leak" class="leack_chcke_label">喫煙席</span>
+            </label>
           </div>
         </div>
 
