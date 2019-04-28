@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :stores, :except => [:post, :delete]
+    resources :contacts, :except => [:post, :delete]
   end
 
   # devise_for :users
