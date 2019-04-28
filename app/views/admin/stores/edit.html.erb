@@ -1,4 +1,4 @@
-<h1><%= @store.name %>@Admin</h1>
+<h1 class="admin_title"><%= @store.name %>@Admin</h1>
 <%= form_for(@store, :url => {:action => 'update'} ) do |f| %>
   <table>
     <tr>
@@ -59,6 +59,13 @@
       <td class="row">
         <label class="col s6"><%= f.radio_button :iccard, true %><span>True</span></label>
         <label class="col s6"><%= f.radio_button :iccard, false %><span>False</span></label>
+      </td>
+    </tr>
+    <tr class="radio-edit">
+      <td>is_open</td>
+      <td class="row">
+        <label class="col s6"><%= f.radio_button :is_open, true %><span>True</span></label>
+        <label class="col s6"><%= f.radio_button :is_open, false %><span>False</span></label>
       </td>
     </tr>
     <tr>
