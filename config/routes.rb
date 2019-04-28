@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  # resources :admin, :except => [:post, :delete]
+
+  get 'admin' => 'admin#index'
 
   namespace :admin do
     resources :stores, :except => [:post, :delete]
