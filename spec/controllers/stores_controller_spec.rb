@@ -55,10 +55,47 @@ describe StoresController, type: :controller do
 
       it 'work' do
         post :contact, params: { inquiry: params }
-          aggregate_failures do
-            expect(response.status).to eq(200)
-            expect(response).to render_template(:index)
-          end
+        aggregate_failures do
+          expect(response.status).to eq(200)
+          expect(response).to render_template(:index)
+        end
+      end
+    end
+  end
+
+  describe 'Leak' do
+    context 'work' do
+      let(:params) do
+        {
+          name: 'カフェの名前',
+          address: '東京都',
+          url: 'https://example.com',
+          socket: true,
+          wifi: true,
+          smoking: true,
+        }
+      end
+      it 'leak-save出来ること' do
+        post :leak, params: { leak: params }
+        aggregate_failures do
+          expect(response.status).to eq(204)
+          latest_leak = Leak.last
+          expect(latest_leak.name).to eq(params[:name])
+          expect(latest_leak.address).to eq(params[:address])
+          expect(latest_leak.url).to eq(params[:url])
+          expect(latest_leak.address).to eq(params[:address])
+          expect(latest_leak.socket).to eq(params[:socket])
+          expect(latest_leak.wifi).to eq(params[:wifi])
+          expect(latest_leak.smoking).to eq(params[:smoking])
+        end
+      end
+
+      describe 'メールが送れること' do
+        let(:leak) { create(:leak) }
+        subject { LeakMailer.send_mail(leak).deliver_now }
+        it 'work' do
+          expect(response.status).to eq(200)
+        end
       end
     end
   end

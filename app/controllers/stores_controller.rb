@@ -30,8 +30,11 @@ class StoresController < ApplicationController
                     socket: socket,
                     wifi: wifi,
                     smoking: smoking)
-    leak.save
-    LeakMailer.send_mail(leak).deliver_now
+    if leak.save
+      LeakMailer.send_mail(leak).deliver_now
+    else
+      render action: 'index'
+    end
   end
 
   def csv_export
