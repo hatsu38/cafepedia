@@ -1,0 +1,36 @@
+<h1 class="admin_title">Admin Contact</h1>
+
+<ul>
+	<li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+	<li><%= link_to 'csv出力', admin_leaks_path(format: :csv) %></li>
+</ul>
+
+<table class="highlight centered responsive-table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>店名</th>
+			<th>住所</th>
+			<th>URL</th>
+			<th>電源</th>
+			<th>Wi-Fi</th>
+			<th>喫煙</th>
+			<th>送信時間</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @leaks.each do |leak| %>
+		<tr>
+			<td><%= leak.id %></td>
+			<td><%= leak.name %></td>
+			<td><%= leak.address %></td>
+			<td><%= leak.url %></td>
+			<td><%= leak.socket %></td>
+			<td><%= leak.wifi %></td>
+			<td><%= leak.smoking %></td>
+			<td><%= leak.created_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
+<%= paginate @leaks %>
