@@ -2,7 +2,7 @@
 
 <ul>
 <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-<li><%= link_to 'csv出力', admin_index_path(format: :csv) %></li>
+<li><%= link_to 'csv出力', admin_stores_path(format: :csv) %></li>
 </ul>
 <div id="stores" class="content">
 <div id="stores_array">
@@ -14,8 +14,8 @@
 		<div class="col s5 mainstore_logo">
 			<img src="<%= store.mainstore.image.url %>">
 			<p>
-				<%= link_to "編集", edit_admin_path(store) %>
-				<%= link_to "詳細", admin_path(store) %>
+				<%= link_to "編集", edit_admin_store_path(store) %>
+				<%= link_to "詳細", admin_store_path(store) %>
 			</p>
 		</div>
 		<div class="col s7">

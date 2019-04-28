@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :admin
-  get 'stores_to_csv' => 'admin#stores_to_csv'
+  # resources :admin, :except => [:post, :delete]
+
+  namespace :admin do
+    resources :stores, :except => [:post, :delete]
+  end
 
   # devise_for :users
   devise_for :users, skip: :all

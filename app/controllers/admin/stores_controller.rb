@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
-class AdminController < ApplicationController
+module Admin
+class StoresController < ApplicationController
   before_action :authenticate_user!
 
+  # Storeに関して
   def index
     @stores = Store.page(params[:page]).per(25).includes(:mainstore)
     @mainstores = Mainstore.all
@@ -41,4 +43,6 @@ class AdminController < ApplicationController
       :tel, :business_hour, :chair, :hp, :wifi,
       :socket, :smoking, :iccard, :lat, :lng)
   end
+end
+
 end
