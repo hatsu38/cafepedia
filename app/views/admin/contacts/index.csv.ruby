@@ -8,8 +8,8 @@ CSV.generate do |csv|
   @all_contacts.each do |contact|
     csv_column_values = [
       contact.id, contact.message, contact.email,
-      contact.created_at.strftime("%Y/%m/%d %H:%M:%S"),
-      contact.updated_at.strftime("%Y/%m/%d %H:%M:%S")
+      contact.created_at.strftime('%Y/%m/%d %H:%M:%S'),
+      contact.updated_at.strftime('%Y/%m/%d %H:%M:%S')
     ]
     csv << csv_column_values
   end

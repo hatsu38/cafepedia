@@ -9,8 +9,8 @@ CSV.generate do |csv|
     csv_column_values = [
       leak.id, leak.name, leak.address, leak.url,
       leak.socket, leak.wifi, leak.smoking,
-      leak.created_at.strftime("%Y/%m/%d %H:%M:%S"),
-      leak.updated_at.strftime("%Y/%m/%d %H:%M:%S")
+      leak.created_at.strftime('%Y/%m/%d %H:%M:%S'),
+      leak.updated_at.strftime('%Y/%m/%d %H:%M:%S')
     ]
     csv << csv_column_values
   end
