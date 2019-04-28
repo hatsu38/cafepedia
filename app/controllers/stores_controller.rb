@@ -10,8 +10,11 @@ class StoresController < ApplicationController
     message = params[:inquiry][:message]
     email = params[:inquiry][:email]
     inquiry = Inquiry.new(email: email, message: message)
-    inquiry.save
-    InquiryMailer.send_mail(inquiry).deliver_now
+    if inquiry.save
+      InquiryMailer.send_mail(inquiry).deliver_now
+    else
+      render action: 'index'
+    end
   end
 
   def leak
@@ -27,8 +30,11 @@ class StoresController < ApplicationController
                     socket: socket,
                     wifi: wifi,
                     smoking: smoking)
-    leak.save
-    LeakMailer.send_mail(leak).deliver_now
+    if leak.save
+      LeakMailer.send_mail(leak).deliver_now
+    else
+      render action: 'index'
+    end
   end
 
   def csv_export

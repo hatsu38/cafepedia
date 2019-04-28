@@ -134,6 +134,8 @@
         <a href="https://twitter.com/hatsu_38" target="_blank"><i class="fas fa-play-circle"></i>運営者</a>
         |
         <span data-target="leak_form" class="modal-trigger modal_leak"><i class="fas fa-play-circle"></i>リークする</span>
+        |
+        <span data-target="contact_form" class="modal-trigger"><i class="fas fa-play-circle"></i>ご意見箱</span>
       </div>
       <p class="footer_copy">
       © Copyright 2018 hastu All rights reserved.
@@ -170,16 +172,22 @@
         <div class="facility_form_block row">
           <h4>利用可能設備</h4>
           <div class="facility_check col s4">
-            <%= check_box :leak, :socket,:class => "", :id => "socket_leak" %>
-            <label for="socket_leak" class="leack_chcke_label">電源</label>
+            <label>
+              <%= check_box :leak, :socket,:class => "", :id => "socket_leak" %>
+              <span for="socket_leak" class="leack_chcke_label">電源</span>
+            </label>
           </div>
           <div class="facility_check col s4">
-            <%= check_box :leak, :wifi,:class => "", :id => "icon_prefix2 wifi_leak" %>
-            <label for="icon_prefix2 wifi_leak" class="leack_chcke_label">wifi</label>
+            <label>
+              <%= check_box :leak, :wifi,:class => "", :id => "icon_prefix2 wifi_leak" %>
+              <span for="icon_prefix2 wifi_leak" class="leack_chcke_label">wifi</span>
+            </label>
           </div>
           <div class="facility_check col s4">
-            <%= check_box :leak, :smoking,:class => "", :id => "icon_prefix2 smoking_leak" %>
-            <label for="icon_prefix2 smoking_leak" class="leack_chcke_label">喫煙席</label>
+            <label>
+              <%= check_box :leak, :smoking,:class => "", :id => "icon_prefix2 smoking_leak" %>
+              <span for="icon_prefix2 smoking_leak" class="leack_chcke_label">喫煙席</span>
+            </label>
           </div>
         </div>
 
@@ -189,7 +197,6 @@
       <% } %>
     </div>
 
-    <button data-target="contact_form" class="btn modal-trigger right contact_modal_btn"><i class="far fa-envelope"></i>ご意見箱</button>
     <div id="contact_form" class="modal">
       <h3 class="title">ご意見・ご感想はこちら</h3>
       <div class="flash_message contact_flash">ご意見ありがとうございました。</div>
