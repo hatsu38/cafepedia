@@ -13,7 +13,7 @@ set :deploy_to, "/var/www/cafepedia"
 set :rbenv_ruby, '2.5.3'
 
 # シンボリックリンクをはるファイル。(※後述)
-set :linked_files, fetch(:linked_files, []).push('config/secrets.yml', '.env', 'config/master.key', 'config/secrets.yml.enc')
+set :linked_files, fetch(:linked_files, []).push('config/secrets.yml', '.env', 'config/master.key', 'config/secrets.yml.key')
 
 # シンボリックリンクをはるフォルダ。(※後述)
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
