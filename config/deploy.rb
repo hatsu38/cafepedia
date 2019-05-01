@@ -18,6 +18,9 @@ set :linked_files, fetch(:linked_files, []).push('.env', 'config/master.key', 'c
 # シンボリックリンクをはるフォルダ。(※後述)
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
+# 保持するバージョンの個数
+set :keep_releases, 5
+
 #出力するログのレベル。
 set :log_level, :debug
 
