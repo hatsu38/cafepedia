@@ -52,6 +52,34 @@ namespace :deploy do
     end
   end
 
+  desc 'Run rake npm install'
+  task :npm_install do
+    on roles(:web) do
+      within release_path do
+        execute("cd #{release_path} && npm install")
+      end
+    end
+  end
+  desc 'Initial Deploy'
+  task :initial do
+    on roles(:app) do
+      before "deploy:restart", "puma:start"
+      invoke "deploy"
+    end
+  end
+
+  desc "Restart application"
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      Rake::Task["puma:restart"].reenable
+      invoke "puma:restart"
+    end
+  end
+  before :starting, :check_revision
+  before 'deploy:assets:precompile', 'deploy:npm_install'
+  after :finishing, :compile_assets
+  after :finishing, :cleanup
+
   after :publishing, :restart
 
   after :restart, :clear_cache do
