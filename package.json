@@ -13,5 +13,8 @@
   },
   "devDependencies": {
     "webpack-dev-server": "3.3.0"
-  }
+  },
+  "scripts": {
+    "start": "node --max-old-space-size=2048"
+  },
 }
