@@ -24,6 +24,9 @@ set :keep_releases, 5
 #出力するログのレベル。
 set :log_level, :debug
 
+# 参照するパス
+set :bundle_binstubs, -> { shared_path.join('bin') }
+
 namespace :deploy do
   desc 'Restart application'
   task :restart do
