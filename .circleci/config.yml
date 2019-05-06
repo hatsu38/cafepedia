@@ -62,6 +62,10 @@ jobs:
               --format progress \
               $TEST_FILES
 
+      - add_ssh_keys:
+          fingerprints:
+            - {{fingerprints}}
+
       - deploy:
           name: Capistrano Deploy
           command: |
