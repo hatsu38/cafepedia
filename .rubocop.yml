@@ -234,6 +234,7 @@ Metrics/BlockLength:
     - "Gemfile"
     - "Rakefile"
     - "spec/**/*.rb"
+    - "lib/capistrano/tasks/unicorn.rb"
 
 Metrics/ParameterLists:
   Max: 6
