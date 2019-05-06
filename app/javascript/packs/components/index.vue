@@ -203,7 +203,7 @@ export default {
     }
     if(allStoresList){
       this.allStores = allStoresList
-      if(this.allStores.length != 4870){
+      if(this.allStores.length != 4871){
         this.mountFetchStores();
       }
       this.refreshFilter();
@@ -249,7 +249,6 @@ export default {
         return data;
       }else{
       var first_kakko = data.indexOf("(");
-      console.log(first_kakko);
       var edited = data.slice(0, first_kakko) + "<br>"+ data.slice(first_kakko);
       document.getElementById("chair_volume").innerHTML = edited;
       return data;
@@ -474,7 +473,6 @@ export default {
       localStorage.setItem('displayStoresCount', this.stores.length);
     },
     first_visit_modal: function(){
-      console.log("firstvisit");
       $('#modal1').trigger('click');
     },
     modal_open: function(store){
