@@ -30,6 +30,7 @@ set :bundle_binstubs, -> { shared_path.join('bin') }
 namespace :deploy do
   desc 'Restart application'
   task :restart do
+    exec("kill -QUIT `cat current/tmp/pids/unicorn.pid`")
     invoke 'unicorn:restart'
   end
 
