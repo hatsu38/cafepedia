@@ -64,7 +64,7 @@ jobs:
 
       - deploy:
           name: Capistrano Deploy
-          command:
+          command: |
             if [[ "${CIRCLE_BRANCH}" == "release"* ]]; then
               bundle exec cap production deploy
               bundle exec cap production unicorn:stop
