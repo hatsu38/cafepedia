@@ -6,7 +6,9 @@ set :repo_url, "git@github.com:toywonder/cafepedia.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-set :branch, 'release/0.0.1'
+# リリースするブランチ名を記述↓
+set :branch, 'release/1.0.0'
+
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/var/www/cafepedia"
 

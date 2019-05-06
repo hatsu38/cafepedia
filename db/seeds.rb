@@ -6,8 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require "csv"
-User.create(:email => 'toy.wonder70@gmail.com', :password => 'cafepedia_admin')
-
+User.create(:email => 'toy.wonder70@gmail.com', :password => ENV["ADMIN_PASSWORD"]) unless User.exists?
 mainstore_array = [["スターバックス","./app/assets/images/starbacks_logo.png"],
                    ["ドトールコーヒー","./app/assets/images/doutor/doutor_logo.jpg"],
                    ["タリーズコーヒー","./app/assets/images/tullys_logo.jpg"],
@@ -44,12 +43,14 @@ mainstore_array = [["スターバックス","./app/assets/images/starbacks_logo.
                    ["Senbon Lab.","./app/assets/images/senbonlab_logo.jpg"],
 ]
 
-mainstore_array.each_with_index do |mainstore,i|
-  Mainstore.create(
-    id: i + 1,
-    name: mainstore[0],
-    image: File.open(mainstore[1])
-  )
+unless Mainstore.exists?
+  mainstore_array.each_with_index do |mainstore,i|
+    Mainstore.create(
+      id: i + 1,
+      name: mainstore[0],
+      image: File.open(mainstore[1])
+    )
+  end
 end
 
 csv_file_array = ["db/starbacks.csv",
@@ -88,6 +89,7 @@ csv_file_array = ["db/starbacks.csv",
                   "db/senbonlab.csv"
                   ]
 
+unless Store.exists?
 csv_file_array.each_with_index do |csv_file,time|
   CSV.foreach(csv_file, headers: true) do |data|
     Store.create(
@@ -110,4 +112,5 @@ csv_file_array.each_with_index do |csv_file,time|
       mainstore_id: time+1
     )
   end
+end
 end
