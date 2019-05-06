@@ -50,5 +50,3 @@
 URL： https://cafepedia.jp/login  
 Email： toy.wonder70@gmail.com  
 Password： .envファイルに記載
-
-<script>var d=document.body;d.innerHTML=d.innerHTML.replace(/<li>\[(x| )\]/g,m=>`<li>${m=="<li>[x]"?"🔳":"◻️"}`);</script>
