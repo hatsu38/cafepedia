@@ -75,9 +75,20 @@ header{
   box-shadow: 0 2px 4px -1px rgba(0,0,0,.32),
   0 4px 5px 0 rgba(0,0,0,0.06),
   0 1px 10px 0 rgba(0,0,0,0.08);
-  a{
-    i{
-      padding-bottom:.5em;
+  position: relative;
+  .menu{
+    position: absolute;
+    height: 90%;
+    padding-right: 10px;
+    .fa-bars{
+      font-size: 1.8rem;
+    }
+  }
+  .site-name{
+    width: 100%;
+    display: block;
+    .fa-coffee{
+      padding-bottom:.3em;
       font-size:1.8em;
     }
     h1.logo{
@@ -125,6 +136,30 @@ footer,.about,.cafe_list_about{
       img{
         max-width:100%;
         display:block;
+      }
+    }
+  }
+}
+
+.sidenav{
+  width: 230px;
+}
+.searchs-block{
+  .search-block-title{
+    margin: 0rem;
+    padding:  1rem 0.5rem 0.7rem;
+    font-size: 1.45rem;
+  }
+  li{
+    border-top: 1px solid #ddd;
+    .collapsible-body{
+      .collection{
+        .collection-item{
+          &.prefecture-active{
+            background: $base;
+            color: #fff;
+          }
+        }
       }
     }
   }
