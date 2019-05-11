@@ -159,22 +159,24 @@ footer,.about,.cafe_list_about{
           .collapsible-header{
             padding: 0 .7rem;
           }
-          .collapsible-body{
-            .collection{
-              .collection-item{
-                padding: .5rem 1rem;
-                &.prefecture-active{
-                  background: $base;
-                  color: #fff;
-                }
-              }
-            }
+        }
+      }
+    }
+    .collapsible-body{
+      .collection{
+        .collection-item{
+          padding: .5rem 1rem;
+          &.prefecture-active,
+          &.cafe-chain-active{
+            background: $base;
+            color: #fff;
           }
         }
       }
     }
   }
 }
+
 
 .about{
   p{

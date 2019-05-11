@@ -206,6 +206,7 @@ export default {
       onSmoking: false,
       onDistanceSort: false,
       onState: false,
+      isCafeChain: '',
       searchWord: '',
       noResultWord: '',
       prefecture: '',
@@ -515,7 +516,11 @@ export default {
       e.currentTarget.className += " prefecture-active";
     },
     cafeChainSearch: function(e){
-
+      this.isCafeChain = e.currentTarget.innerText;
+      // 指定の都道府県以外はActiveクラスを除く
+      console.log(this.isCafeChain);
+      $(".searchs-block").find(".cafe-chain-active").removeClass("cafe-chain-active");
+      e.currentTarget.className += " cafe-chain-active";
     },
     resetFilter: function(){
       this.onSocket= false
