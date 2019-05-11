@@ -149,8 +149,8 @@ footer,.about,.cafe_list_about{
     .collapsible-body{
       .collection{
         .collection-item{
-          &:hover {
-            background: #ddd;
+          &.active{
+            background: $base;
           }
         }
       }

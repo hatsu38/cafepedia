@@ -158,92 +158,15 @@
     </div>
     <ul id="slide-out" class="sidenav collapsible searchs-block">
       <h3 class="search-block-title">都道府県から検索</h3>
-      <li>
-        <div class="collapsible-header">北海道・東北地方</div>
+      <li v-for="region in regions">
+        <div class="collapsible-header">{{ region.name }}</div>
         <div class="collapsible-body">
           <ul class="collection">
-            <li class="collection-item">北海道</li>
-            <li class="collection-item">青森県</li>
-            <li class="collection-item">岩手県</li>
-            <li class="collection-item">宮城県</li>
-            <li class="collection-item">秋田県</li>
-            <li class="collection-item">山形県</li>
-            <li class="collection-item">福島県</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <div class="collapsible-header">関東地方</div>
-        <div class="collapsible-body">
-          <ul class="collection">
-            <li class="collection-item">茨城県</li>
-            <li class="collection-item">栃木県</li>
-            <li class="collection-item">群馬県</li>
-            <li class="collection-item">埼玉県</li>
-            <li class="collection-item">千葉県</li>
-            <li class="collection-item">東京都</li>
-            <li class="collection-item">神奈川県</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <div class="collapsible-header">中部地方</div>
-        <div class="collapsible-body">
-          <ul class="collection">
-            <li class="collection-item">新潟県</li>
-            <li class="collection-item">富山県</li>
-            <li class="collection-item">石川県</li>
-            <li class="collection-item">福井県</li>
-            <li class="collection-item">山梨県</li>
-            <li class="collection-item">長野県</li>
-            <li class="collection-item">岐阜県</li>
-            <li class="collection-item">静岡県</li>
-            <li class="collection-item">愛知県</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <div class="collapsible-header">近畿地方</div>
-        <div class="collapsible-body">
-          <ul class="collection">
-            <li class="collection-item">三重県</li>
-            <li class="collection-item">滋賀県</li>
-            <li class="collection-item">京都府</li>
-            <li class="collection-item">大阪府</li>
-            <li class="collection-item">兵庫県</li>
-            <li class="collection-item">奈良県</li>
-            <li class="collection-item">和歌山県</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <div class="collapsible-header">中国・四国地方</div>
-        <div class="collapsible-body">
-          <ul class="collection">
-            <li class="collection-item">鳥取県</li>
-            <li class="collection-item">島根県</li>
-            <li class="collection-item">岡山県</li>
-            <li class="collection-item">広島県</li>
-            <li class="collection-item">山口県</li>
-            <li class="collection-item">徳島県</li>
-            <li class="collection-item">香川県</li>
-            <li class="collection-item">愛媛県</li>
-            <li class="collection-item">高知県</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <div class="collapsible-header">九州・沖縄地方</div>
-        <div class="collapsible-body">
-          <ul class="collection">
-            <li class="collection-item">福岡県</li>
-            <li class="collection-item">佐賀県</li>
-            <li class="collection-item">長崎県</li>
-            <li class="collection-item">熊本県</li>
-            <li class="collection-item">大分県</li>
-            <li class="collection-item">宮崎県</li>
-            <li class="collection-item">鹿児島県</li>
-            <li class="collection-item">沖縄県</li>
+            <li v-for="state in region.states"
+                @click="prefectureSearch"
+                class="collection-item">
+              {{ state.name }}
+            </li>
           </ul>
         </div>
       </li>
@@ -262,12 +185,95 @@ export default {
       onWifi: false,
       onSmoking: false,
       onDistanceSort: false,
+      onState: false,
       searchWord: '',
       noResultWord: '',
       size: 10,
       moreread_desp: true,
       pickStore: '',
       pc: false,
+      regions: [
+        {
+          name: "北海道・東北地方",
+          states: [
+            { name: '北海道' },
+            { name: '青森県' },
+            { name: '岩手県' },
+            { name: '宮城県' },
+            { name: '秋田県' },
+            { name: '山形県' },
+            { name: '福島県' }
+          ],
+        },
+        {
+          name: "関東地方",
+          states: [
+            { name: '茨城県' },
+            { name: '栃木県' },
+            { name: '群馬県' },
+            { name: '埼玉県' },
+            { name: '千葉県' },
+            { name: '東京都' },
+            { name: '神奈川県' }
+          ],
+        },
+        {
+          name: "中部地方",
+          states: [
+            { name: '新潟県' },
+            { name: '富山県' },
+            { name: '石川県' },
+            { name: '福井県' },
+            { name: '山梨県' },
+            { name: '岐阜県' },
+            { name: '静岡県' }
+          ],
+        },
+        {
+          name: "近畿地方",
+          states: [
+            { name: '三重県' },
+            { name: '滋賀県' },
+            { name: '京都府' },
+            { name: '大阪府' },
+            { name: '兵庫県' },
+            { name: '奈良県' },
+            { name: '和歌山県' }
+          ],
+        },
+        {
+          name: "中国地方",
+          states: [
+            { name: '鳥取県' },
+            { name: '島根県' },
+            { name: '岡山県' },
+            { name: '広島県' },
+            { name: '山口県' },
+          ],
+        },
+        {
+          name: "四国地方",
+          states: [
+            { name: '徳島県' },
+            { name: '香川県' },
+            { name: '愛媛県' },
+            { name: '高知県' },
+          ],
+        },
+        {
+          name: "九州地方",
+          states: [
+            { name: '福岡県' },
+            { name: '佐賀県' },
+            { name: '長崎県' },
+            { name: '熊本県' },
+            { name: '大分県' },
+            { name: '宮崎県' },
+            { name: '鹿児島県' },
+            { name: '沖縄県' },
+          ],
+        },
+      ],
     }
   },
   updated: function(){
@@ -463,6 +469,15 @@ export default {
       }else{
         this.fetchStores();
       }
+    },
+    prefectureSearch: function(e){
+      // 指定の都道府県以外はActiveクラスを除く
+      var li = e.currentTarget.parentNode.querySelectorAll(":scope > li");
+      for (var i = 0; i < li.length; i++) {
+        li[i].className = "collection-item";
+      }
+      // クリックされた都道府県にはActiveクラスを付ける
+      e.currentTarget.className += " active";
     },
     resetFilter: function(){
       this.onSocket= false
