@@ -1,8 +1,11 @@
 <template>
   <div>
     <div id="index_vue">
-      <header class="center white-text" id="top_header">
-        <router-link to="/" class="white-text">
+      <header class="white-text" id="top_header">
+        <div  data-target="slide-out" class="sidenav-trigger menu">
+          <i class="fas fa-bars"></i>
+        </div>
+        <router-link to="/" class="white-text center site-name">
           <i class="fas fa-coffee"></i>
           <h1 class="logo">カフェペディア</h1>
         </router-link>
@@ -155,6 +158,21 @@
     <div id="noresult">
       <p><span>「{{noResultWord}}」</span>が住所やアクセスに含まれるカフェは見つかりません。</p>
     </div>
+    <ul id="slide-out" class="sidenav collapsible searchs-block">
+      <h3 class="search-block-title">都道府県から検索</h3>
+      <li v-for="region in regions">
+        <div class="collapsible-header">{{ region.name }}</div>
+        <div class="collapsible-body">
+          <ul class="collection">
+            <li v-for="state in region.states"
+                @click="prefectureSearch"
+                class="collection-item">
+              {{ state.name }}
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
 <script>
@@ -169,12 +187,96 @@ export default {
       onWifi: false,
       onSmoking: false,
       onDistanceSort: false,
+      onState: false,
       searchWord: '',
       noResultWord: '',
+      prefecture: '',
       size: 10,
       moreread_desp: true,
       pickStore: '',
       pc: false,
+      regions: [
+        {
+          name: "北海道・東北地方",
+          states: [
+            { name: '北海道' },
+            { name: '青森県' },
+            { name: '岩手県' },
+            { name: '宮城県' },
+            { name: '秋田県' },
+            { name: '山形県' },
+            { name: '福島県' }
+          ],
+        },
+        {
+          name: "関東地方",
+          states: [
+            { name: '茨城県' },
+            { name: '栃木県' },
+            { name: '群馬県' },
+            { name: '埼玉県' },
+            { name: '千葉県' },
+            { name: '東京都' },
+            { name: '神奈川県' }
+          ],
+        },
+        {
+          name: "中部地方",
+          states: [
+            { name: '新潟県' },
+            { name: '富山県' },
+            { name: '石川県' },
+            { name: '福井県' },
+            { name: '山梨県' },
+            { name: '岐阜県' },
+            { name: '静岡県' }
+          ],
+        },
+        {
+          name: "近畿地方",
+          states: [
+            { name: '三重県' },
+            { name: '滋賀県' },
+            { name: '京都府' },
+            { name: '大阪府' },
+            { name: '兵庫県' },
+            { name: '奈良県' },
+            { name: '和歌山県' }
+          ],
+        },
+        {
+          name: "中国地方",
+          states: [
+            { name: '鳥取県' },
+            { name: '島根県' },
+            { name: '岡山県' },
+            { name: '広島県' },
+            { name: '山口県' },
+          ],
+        },
+        {
+          name: "四国地方",
+          states: [
+            { name: '徳島県' },
+            { name: '香川県' },
+            { name: '愛媛県' },
+            { name: '高知県' },
+          ],
+        },
+        {
+          name: "九州地方",
+          states: [
+            { name: '福岡県' },
+            { name: '佐賀県' },
+            { name: '長崎県' },
+            { name: '熊本県' },
+            { name: '大分県' },
+            { name: '宮崎県' },
+            { name: '鹿児島県' },
+            { name: '沖縄県' },
+          ],
+        },
+      ],
     }
   },
   updated: function(){
@@ -304,6 +406,7 @@ export default {
     },
     socketFilter: function(){
       this.onSocket = !this.onSocket
+      this.getPrefectureStores(this.prefecture);
       this.refreshFilter();
       this.get_moreread_desp();
     },
@@ -337,6 +440,7 @@ export default {
     },
     searchStores: function(){
       var search_stores = this.wordListupStores();
+      $(".searchs-block").find(".prefecture-active").removeClass("prefecture-active");
       this.stores = this.filterListupStores(search_stores);
       if(this.stores.length == 0){
         this.noResultWord = this.searchWord
@@ -358,7 +462,7 @@ export default {
       if(this.allStores){
         var stores_list = this.allStores.filter(function(value){
           return Object.keys(value).some(function(key){
-            if(key === 'name' || key === "city" || key === "other_address" || key === "access"){
+            if(key === "name" || key === "city" || key === "other_address" || key === "access", key === "prefecture"){
               if(key === "access" && value["access"].match(/.+?[0-9]分|.+?[0-9]km/)){
                 value["access"] = value["access"].substr(0,value["access"].search("[0-9]分|km")+2);
               }
@@ -370,6 +474,28 @@ export default {
       }else{
         this.fetchStores();
       }
+    },
+    prefectureSearch: function(e){
+      this.searchWord = e.currentTarget.innerText;
+      $('label[for="area"]').addClass("active");
+      // 都道府県で絞ったStores(array)を返す
+      var filterStores = this.wordListupStores();
+      this.stores = this.filterListupStores(filterStores);
+
+      // 指定の都道府県以外はActiveクラスを除く
+      $(".searchs-block").find(".prefecture-active").removeClass("prefecture-active");
+      // クリックされた都道府県にはActiveクラスを付ける
+      e.currentTarget.className += " prefecture-active";
+    },
+    getPrefectureStores: function(stateName){
+      var stores_list = this.allStores.filter(function(value){
+        return Object.keys(value).some(function(key){
+          if(key === 'prefecture'){
+            return String(value[key]).toLowerCase().indexOf(stateName) > -1
+          }
+        })
+      })
+      return stores_list
     },
     resetFilter: function(){
       this.onSocket= false
