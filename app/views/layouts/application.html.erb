@@ -265,7 +265,7 @@
       </div>
   </div>
 
-    <script>
+  <script>
 $(function(){
   $(document).ready(function(){
     $('.modal').modal();
@@ -274,6 +274,8 @@ $(function(){
       $('#first_modal_btn').trigger('click');
     }
     $('#first_modal_btn').hide();
+    $('.sidenav').sidenav();
+    $('.collapsible').collapsible();
   });
 
   var ua = navigator.userAgent;
@@ -326,6 +328,6 @@ $(function(){
     }
   }
 });
-    </script>
+  </script>
   </body>
 </html>

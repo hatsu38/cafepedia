@@ -1,8 +1,9 @@
 <template>
   <div>
     <div id="index_vue">
-      <header class="center white-text" id="top_header">
-        <router-link to="/" class="white-text">
+      <header class="white-text" id="top_header">
+        <i data-target="slide-out" class="sidenav-trigger fas fa-bars"></i>
+        <router-link to="/" class="white-text center site-name">
           <i class="fas fa-coffee"></i>
           <h1 class="logo">カフェペディア</h1>
         </router-link>
@@ -155,6 +156,98 @@
     <div id="noresult">
       <p><span>「{{noResultWord}}」</span>が住所やアクセスに含まれるカフェは見つかりません。</p>
     </div>
+    <ul id="slide-out" class="sidenav collapsible searchs-block">
+      <h3 class="search-block-title">都道府県から検索</h3>
+      <li>
+        <div class="collapsible-header">北海道・東北地方</div>
+        <div class="collapsible-body">
+          <ul class="collection">
+            <li class="collection-item">北海道</li>
+            <li class="collection-item">青森県</li>
+            <li class="collection-item">岩手県</li>
+            <li class="collection-item">宮城県</li>
+            <li class="collection-item">秋田県</li>
+            <li class="collection-item">山形県</li>
+            <li class="collection-item">福島県</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">関東地方</div>
+        <div class="collapsible-body">
+          <ul class="collection">
+            <li class="collection-item">茨城県</li>
+            <li class="collection-item">栃木県</li>
+            <li class="collection-item">群馬県</li>
+            <li class="collection-item">埼玉県</li>
+            <li class="collection-item">千葉県</li>
+            <li class="collection-item">東京都</li>
+            <li class="collection-item">神奈川県</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">中部地方</div>
+        <div class="collapsible-body">
+          <ul class="collection">
+            <li class="collection-item">新潟県</li>
+            <li class="collection-item">富山県</li>
+            <li class="collection-item">石川県</li>
+            <li class="collection-item">福井県</li>
+            <li class="collection-item">山梨県</li>
+            <li class="collection-item">長野県</li>
+            <li class="collection-item">岐阜県</li>
+            <li class="collection-item">静岡県</li>
+            <li class="collection-item">愛知県</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">近畿地方</div>
+        <div class="collapsible-body">
+          <ul class="collection">
+            <li class="collection-item">三重県</li>
+            <li class="collection-item">滋賀県</li>
+            <li class="collection-item">京都府</li>
+            <li class="collection-item">大阪府</li>
+            <li class="collection-item">兵庫県</li>
+            <li class="collection-item">奈良県</li>
+            <li class="collection-item">和歌山県</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">中国・四国地方</div>
+        <div class="collapsible-body">
+          <ul class="collection">
+            <li class="collection-item">鳥取県</li>
+            <li class="collection-item">島根県</li>
+            <li class="collection-item">岡山県</li>
+            <li class="collection-item">広島県</li>
+            <li class="collection-item">山口県</li>
+            <li class="collection-item">徳島県</li>
+            <li class="collection-item">香川県</li>
+            <li class="collection-item">愛媛県</li>
+            <li class="collection-item">高知県</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">九州・沖縄地方</div>
+        <div class="collapsible-body">
+          <ul class="collection">
+            <li class="collection-item">福岡県</li>
+            <li class="collection-item">佐賀県</li>
+            <li class="collection-item">長崎県</li>
+            <li class="collection-item">熊本県</li>
+            <li class="collection-item">大分県</li>
+            <li class="collection-item">宮崎県</li>
+            <li class="collection-item">鹿児島県</li>
+            <li class="collection-item">沖縄県</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
 <script>
