@@ -159,15 +159,33 @@
       <p><span>「{{noResultWord}}」</span>が住所やアクセスに含まれるカフェは見つかりません。</p>
     </div>
     <ul id="slide-out" class="sidenav collapsible searchs-block">
-      <h3 class="search-block-title">都道府県から検索</h3>
-      <li v-for="region in regions">
-        <div class="collapsible-header">{{ region.name }}</div>
+      <li class="search-block">
+        <h3 class="search-block-title collapsible-header">都道府県から検索</h3>
+        <div class="collapsible-body">
+          <ul class="collapsible">
+            <li v-for="region in regions" class="regions">
+              <div class="collapsible-header">{{ region.name }}</div>
+              <div class="collapsible-body">
+                <ul class="collection">
+                  <li v-for="state in region.states"
+                      @click="prefectureSearch"
+                      class="collection-item">
+                    {{ state.name }}
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="search-block">
+        <h3 class="search-block-title collapsible-header">お店から検索</h3>
         <div class="collapsible-body">
           <ul class="collection">
-            <li v-for="state in region.states"
-                @click="prefectureSearch"
+            <li v-for="cafe in cafes"
+                @click="cafeChainSearch"
                 class="collection-item">
-              {{ state.name }}
+              {{ cafe.name }}
             </li>
           </ul>
         </div>
@@ -195,6 +213,15 @@ export default {
       moreread_desp: true,
       pickStore: '',
       pc: false,
+      cafes: [
+        { name: 'スターバックス' },
+        { name: 'タリーズコーヒー' },
+        { name: 'コメダ珈琲' },
+        { name: 'Pront' },
+        { name: 'ドトール系列' },
+        { name: 'ルノアール系列' },
+        { name: '上島珈琲店' }
+      ],
       regions: [
         {
           name: "北海道・東北地方",
@@ -487,15 +514,8 @@ export default {
       // クリックされた都道府県にはActiveクラスを付ける
       e.currentTarget.className += " prefecture-active";
     },
-    getPrefectureStores: function(stateName){
-      var stores_list = this.allStores.filter(function(value){
-        return Object.keys(value).some(function(key){
-          if(key === 'prefecture'){
-            return String(value[key]).toLowerCase().indexOf(stateName) > -1
-          }
-        })
-      })
-      return stores_list
+    cafeChainSearch: function(e){
+
     },
     resetFilter: function(){
       this.onSocket= false

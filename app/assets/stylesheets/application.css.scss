@@ -145,19 +145,30 @@ footer,.about,.cafe_list_about{
   width: 230px;
 }
 .searchs-block{
-  .search-block-title{
-    margin: 0rem;
-    padding:  1rem 0.5rem 0.7rem;
-    font-size: 1.45rem;
-  }
-  li{
-    border-top: 1px solid #ddd;
+  .search-block{
+    border-bottom: 1px solid #ddd;
+    .search-block-title{
+      margin: 0rem;
+      padding: 0rem .5rem;
+      font-size: 1.15rem;
+    }
     .collapsible-body{
-      .collection{
-        .collection-item{
-          &.prefecture-active{
-            background: $base;
-            color: #fff;
+      .collapsible{
+        .regions{
+          border-top: 1px solid #ddd;
+          .collapsible-header{
+            padding: 0 .7rem;
+          }
+          .collapsible-body{
+            .collection{
+              .collection-item{
+                padding: .5rem 1rem;
+                &.prefecture-active{
+                  background: $base;
+                  color: #fff;
+                }
+              }
+            }
           }
         }
       }
