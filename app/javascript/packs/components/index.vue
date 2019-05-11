@@ -2,7 +2,9 @@
   <div>
     <div id="index_vue">
       <header class="white-text" id="top_header">
-        <i data-target="slide-out" class="sidenav-trigger fas fa-bars"></i>
+        <div  data-target="slide-out" class="sidenav-trigger menu">
+          <i class="fas fa-bars"></i>
+        </div>
         <router-link to="/" class="white-text center site-name">
           <i class="fas fa-coffee"></i>
           <h1 class="logo">カフェペディア</h1>
@@ -188,6 +190,7 @@ export default {
       onState: false,
       searchWord: '',
       noResultWord: '',
+      prefecture: '',
       size: 10,
       moreread_desp: true,
       pickStore: '',
@@ -403,6 +406,7 @@ export default {
     },
     socketFilter: function(){
       this.onSocket = !this.onSocket
+      this.getPrefectureStores(this.prefecture);
       this.refreshFilter();
       this.get_moreread_desp();
     },
@@ -436,6 +440,7 @@ export default {
     },
     searchStores: function(){
       var search_stores = this.wordListupStores();
+      $(".searchs-block").find(".prefecture-active").removeClass("prefecture-active");
       this.stores = this.filterListupStores(search_stores);
       if(this.stores.length == 0){
         this.noResultWord = this.searchWord
@@ -457,7 +462,7 @@ export default {
       if(this.allStores){
         var stores_list = this.allStores.filter(function(value){
           return Object.keys(value).some(function(key){
-            if(key === 'name' || key === "city" || key === "other_address" || key === "access"){
+            if(key === "name" || key === "city" || key === "other_address" || key === "access", key === "prefecture"){
               if(key === "access" && value["access"].match(/.+?[0-9]分|.+?[0-9]km/)){
                 value["access"] = value["access"].substr(0,value["access"].search("[0-9]分|km")+2);
               }
@@ -471,13 +476,26 @@ export default {
       }
     },
     prefectureSearch: function(e){
+      this.searchWord = e.currentTarget.innerText;
+      $('label[for="area"]').addClass("active");
+      // 都道府県で絞ったStores(array)を返す
+      var filterStores = this.wordListupStores();
+      this.stores = this.filterListupStores(filterStores);
+
       // 指定の都道府県以外はActiveクラスを除く
-      var li = e.currentTarget.parentNode.querySelectorAll(":scope > li");
-      for (var i = 0; i < li.length; i++) {
-        li[i].className = "collection-item";
-      }
+      $(".searchs-block").find(".prefecture-active").removeClass("prefecture-active");
       // クリックされた都道府県にはActiveクラスを付ける
-      e.currentTarget.className += " active";
+      e.currentTarget.className += " prefecture-active";
+    },
+    getPrefectureStores: function(stateName){
+      var stores_list = this.allStores.filter(function(value){
+        return Object.keys(value).some(function(key){
+          if(key === 'prefecture'){
+            return String(value[key]).toLowerCase().indexOf(stateName) > -1
+          }
+        })
+      })
+      return stores_list
     },
     resetFilter: function(){
       this.onSocket= false
