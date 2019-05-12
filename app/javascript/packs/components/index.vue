@@ -159,15 +159,33 @@
       <p><span>「{{noResultWord}}」</span>が住所やアクセスに含まれるカフェは見つかりません。</p>
     </div>
     <ul id="slide-out" class="sidenav collapsible searchs-block">
-      <h3 class="search-block-title">都道府県から検索</h3>
-      <li v-for="region in regions">
-        <div class="collapsible-header">{{ region.name }}</div>
+      <li class="search-block">
+        <h3 class="search-block-title collapsible-header">都道府県から検索</h3>
+        <div class="collapsible-body">
+          <ul class="collapsible">
+            <li v-for="region in regions" class="regions">
+              <div class="collapsible-header">{{ region.name }}</div>
+              <div class="collapsible-body">
+                <ul class="collection">
+                  <li v-for="state in region.states"
+                      @click="prefectureSearch"
+                      class="collection-item">
+                    {{ state.name }}
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="search-block">
+        <h3 class="search-block-title collapsible-header">お店から検索</h3>
         <div class="collapsible-body">
           <ul class="collection">
-            <li v-for="state in region.states"
-                @click="prefectureSearch"
+            <li v-for="cafe in cafes"
+                @click="cafeChainSearch"
                 class="collection-item">
-              {{ state.name }}
+              {{ cafe.name }}
             </li>
           </ul>
         </div>
@@ -188,6 +206,7 @@ export default {
       onSmoking: false,
       onDistanceSort: false,
       onState: false,
+      isCafeChain: '',
       searchWord: '',
       noResultWord: '',
       prefecture: '',
@@ -195,6 +214,15 @@ export default {
       moreread_desp: true,
       pickStore: '',
       pc: false,
+      cafes: [
+        { name: 'スターバックス' },
+        { name: 'タリーズコーヒー' },
+        { name: 'コメダ珈琲' },
+        { name: 'PRONTO' },
+        { name: 'ドトールコーヒー系列' },
+        { name: 'ルノアール系列' },
+        { name: '上島珈琲店' }
+      ],
       regions: [
         {
           name: "北海道・東北地方",
@@ -406,7 +434,6 @@ export default {
     },
     socketFilter: function(){
       this.onSocket = !this.onSocket
-      this.getPrefectureStores(this.prefecture);
       this.refreshFilter();
       this.get_moreread_desp();
     },
@@ -427,14 +454,16 @@ export default {
     },
     filterListupStores: function(search_stores){
       var stores_list =[];
-      var wifi    = this.onWifi
-      var socket  = this.onSocket
-      var smoking = this.onSmoking
+      var wifiAble    = this.onWifi
+      var socketAble  = this.onSocket
+      var smokingAble = this.onSmoking
+      var selectCafeChain = this.isCafeChain
       stores_list = search_stores.filter(function(value){
-        var wifiList = wifi ? value.wifi : value.wifi + !value.wifi
-        var socketList = socket ? value.socket: value.socket+ !value.socket
-        var smokingList = smoking ? value.smoking : value.smoking + !value.smoking
-        return (wifiList) && (socketList) && (smokingList)
+        var wifiList = wifiAble ? value.wifi : true
+        var socketList = socketAble ? value.socket : true
+        var smokingList = smokingAble ? value.smoking : true
+        var cafeChainList  = selectCafeChain ? value.mainstore.name === selectCafeChain : true
+        return (wifiList) && (socketList) && (smokingList) && (cafeChainList)
       });
       return stores_list
     },
@@ -462,7 +491,7 @@ export default {
       if(this.allStores){
         var stores_list = this.allStores.filter(function(value){
           return Object.keys(value).some(function(key){
-            if(key === "name" || key === "city" || key === "other_address" || key === "access", key === "prefecture"){
+            if(key === "name" || key === "city" || key === "other_address" || key === "access" || key === "prefecture"){
               if(key === "access" && value["access"].match(/.+?[0-9]分|.+?[0-9]km/)){
                 value["access"] = value["access"].substr(0,value["access"].search("[0-9]分|km")+2);
               }
@@ -487,15 +516,18 @@ export default {
       // クリックされた都道府県にはActiveクラスを付ける
       e.currentTarget.className += " prefecture-active";
     },
-    getPrefectureStores: function(stateName){
-      var stores_list = this.allStores.filter(function(value){
-        return Object.keys(value).some(function(key){
-          if(key === 'prefecture'){
-            return String(value[key]).toLowerCase().indexOf(stateName) > -1
-          }
-        })
-      })
-      return stores_list
+    cafeChainSearch: function(e){
+      var selectCafeName = e.currentTarget.innerText
+      //(例えば)「ドトールコーヒー」が含まれるもの全て検索するため
+      // 系列店を全て検索するよう「系列」と言う文字を削除する
+      if ( selectCafeName.indexOf('系列') != -1) {
+        selectCafeName = selectCafeName.replace( /系列/g , "" ) ;
+      }
+      this.isCafeChain = this.isCafeChain === selectCafeName ? '' : selectCafeName;
+      this.refreshFilter();
+      // 指定のカフェチェーン店以外はActiveクラスを除く
+      $(".searchs-block").find(".cafe-chain-active").removeClass("cafe-chain-active");
+      if(this.isCafeChain) e.currentTarget.className += " cafe-chain-active";
     },
     resetFilter: function(){
       this.onSocket= false
