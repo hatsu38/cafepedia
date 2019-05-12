@@ -10,6 +10,14 @@
           <h1 class="logo">カフェペディア</h1>
         </router-link>
       </header>
+      <div class="chips-block" v-if="prefecture || isCafeChain">
+        <div class="chip" v-if="prefecture">
+          {{prefecture}}<i class="close material-icons" @click="resetPrefecture()">close</i>
+        </div>
+        <div class="chip" v-if="isCafeChain">
+          {{isCafeChain}}<i class="close material-icons" @click="resetCafeChain()">close</i>
+        </div>
+      </div>
       <div class="search_box">
         <div class="row search-form">
           <form class="input-field col s10"
@@ -320,12 +328,16 @@ export default {
     var socketCondition = JSON.parse(localStorage.getItem("socketCondition"));
     var smokingCondition = JSON.parse(localStorage.getItem("smokingCondition"));
     var searchWordCondition = JSON.parse(localStorage.getItem("searchWordCondition"));
+    var selectPrefectureCondition = JSON.parse(localStorage.getItem("selectPrefectureCondition"));
+    var selectCafeChainCondition = JSON.parse(localStorage.getItem("selectCafeChainCondition"));
     var distanceSortCondition = JSON.parse(localStorage.getItem("distanceSortCondition"));
     var displayStoresCount = localStorage.getItem("displayStoresCount");
     this.onWifi = wifiCondition
     this.onSocket = socketCondition
     this.onSmoking= smokingCondition
     this.searchWord = searchWordCondition
+    this.prefecture = selectPrefectureCondition
+    this.isCafeChain = selectCafeChainCondition
     this.onDistanceSort = distanceSortCondition
     this.stores.length = displayStoresCount
     if(this.searchWord){
@@ -458,12 +470,14 @@ export default {
       var socketAble  = this.onSocket
       var smokingAble = this.onSmoking
       var selectCafeChain = this.isCafeChain
+      var selectPrefecture = this.prefecture
       stores_list = search_stores.filter(function(value){
         var wifiList = wifiAble ? value.wifi : true
         var socketList = socketAble ? value.socket : true
         var smokingList = smokingAble ? value.smoking : true
         var cafeChainList  = selectCafeChain ? value.mainstore.name === selectCafeChain : true
-        return (wifiList) && (socketList) && (smokingList) && (cafeChainList)
+        var prefectureList  = selectPrefecture ? value.prefecture === selectPrefecture : true
+        return (wifiList) && (socketList) && (smokingList) && (cafeChainList) && (prefectureList)
       });
       return stores_list
     },
@@ -491,7 +505,7 @@ export default {
       if(this.allStores){
         var stores_list = this.allStores.filter(function(value){
           return Object.keys(value).some(function(key){
-            if(key === "name" || key === "city" || key === "other_address" || key === "access" || key === "prefecture"){
+            if(key === "name" || key === "city" || key === "other_address" || key === "access"){
               if(key === "access" && value["access"].match(/.+?[0-9]分|.+?[0-9]km/)){
                 value["access"] = value["access"].substr(0,value["access"].search("[0-9]分|km")+2);
               }
@@ -505,16 +519,14 @@ export default {
       }
     },
     prefectureSearch: function(e){
-      this.searchWord = e.currentTarget.innerText;
-      $('label[for="area"]').addClass("active");
-      // 都道府県で絞ったStores(array)を返す
-      var filterStores = this.wordListupStores();
-      this.stores = this.filterListupStores(filterStores);
+      var selectPrefecture = e.currentTarget.innerText;
+      this.prefecture = this.prefecture === selectPrefecture ? '' : selectPrefecture;
+      this.refreshFilter();
 
       // 指定の都道府県以外はActiveクラスを除く
       $(".searchs-block").find(".prefecture-active").removeClass("prefecture-active");
       // クリックされた都道府県にはActiveクラスを付ける
-      e.currentTarget.className += " prefecture-active";
+      if(this.prefecture) e.currentTarget.className += " prefecture-active";
     },
     cafeChainSearch: function(e){
       var selectCafeName = e.currentTarget.innerText
@@ -528,6 +540,16 @@ export default {
       // 指定のカフェチェーン店以外はActiveクラスを除く
       $(".searchs-block").find(".cafe-chain-active").removeClass("cafe-chain-active");
       if(this.isCafeChain) e.currentTarget.className += " cafe-chain-active";
+    },
+    resetPrefecture: function(){
+      this.prefecture = ''
+      $(".searchs-block").find(".prefecture-active").removeClass("prefecture-active");
+      this.refreshFilter()
+    },
+    resetCafeChain: function(){
+      this.isCafeChain = ''
+      $(".searchs-block").find(".cafe-chain-active").removeClass("cafe-chain-active");
+      this.refreshFilter()
     },
     resetFilter: function(){
       this.onSocket= false
@@ -627,6 +649,8 @@ export default {
       localStorage.setItem('smokingCondition', JSON.stringify(this.onSmoking));
       localStorage.setItem('distanceSortCondition', JSON.stringify(this.onDistanceSort));
       localStorage.setItem('searchWordCondition', JSON.stringify(this.searchWord));
+      localStorage.setItem('selectPrefectureCondition', JSON.stringify(this.prefecture));
+      localStorage.setItem('selectCafeChainCondition', JSON.stringify(this.isCafeChain));
       localStorage.setItem('displayStoresListStorage', JSON.stringify(this.displayStores));
       localStorage.setItem('displayStoresCount', this.stores.length);
     },
