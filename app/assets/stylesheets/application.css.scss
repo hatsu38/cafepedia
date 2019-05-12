@@ -92,12 +92,12 @@ header{
       padding-bottom:.3em;
       font-size:1.8em;
     }
-    h1.logo{
-      margin: 0;
-      letter-spacing:.2em;
-      font-size:1.3em;
-    }
   }
+}
+h1.logo{
+  margin: 0;
+  letter-spacing:.2em;
+  font-size:1.3em;
 }
 footer,.about,.cafe_list_about{
   h2{
@@ -464,10 +464,6 @@ footer{
       img{
         max-width:100%;
       }
-    }
-    .store-name{
-      font-size:1.2em;
-      padding: auto 0;
     }
   }
   a#to_map_app{
