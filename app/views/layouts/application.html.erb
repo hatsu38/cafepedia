@@ -60,8 +60,7 @@
     <meta name="twitter:url" content="<%= root_url%>" />
     <meta name="twitter:description" content="カフェペディアは、全国のカフェの設備情報サイトです。「Wi-Fi」「コンセント」「喫煙席」など設備に応じて気になるカフェを探すことが可能です。位置情報をONにすれば、すぐにあなたの近くにあるカフェもわかります。是非カフェ探しにご活用ください!" />
     <meta name="twitter:image" content="<%= root_url%>ogp_img.png" />
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXMDiQ7fiqsxFqsLR9CgrDMqezrp4ggl8"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY_GOOGLEMAP'] %>"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="viewport" content="width=device-width">
