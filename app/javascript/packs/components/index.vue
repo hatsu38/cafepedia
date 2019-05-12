@@ -218,8 +218,8 @@ export default {
         { name: 'スターバックス' },
         { name: 'タリーズコーヒー' },
         { name: 'コメダ珈琲' },
-        { name: 'Pront' },
-        { name: 'ドトール系列' },
+        { name: 'PRONTO' },
+        { name: 'ドトールコーヒー系列' },
         { name: 'ルノアール系列' },
         { name: '上島珈琲店' }
       ],
@@ -458,12 +458,11 @@ export default {
       var socketAble  = this.onSocket
       var smokingAble = this.onSmoking
       var selectCafeChain = this.isCafeChain
-      console.log(selectCafeChain);
       stores_list = search_stores.filter(function(value){
-        var wifiList = wifiAble ? value.wifi : value.wifi + !value.wifi
-        var socketList = socketAble ? value.socket : value.socket + !value.socket
-        var smokingList = smokingAble ? value.smoking : value.smoking + !value.smoking
-        var cafeChainList  = selectCafeChain ? value.mainstore.name === selectCafeChain : (value.mainstore.name !== selectCafeChain) + value.mainstore.name === selectCafeChain
+        var wifiList = wifiAble ? value.wifi : true
+        var socketList = socketAble ? value.socket : true
+        var smokingList = smokingAble ? value.smoking : true
+        var cafeChainList  = selectCafeChain ? value.mainstore.name === selectCafeChain : true
         return (wifiList) && (socketList) && (smokingList) && (cafeChainList)
       });
       return stores_list
@@ -492,7 +491,7 @@ export default {
       if(this.allStores){
         var stores_list = this.allStores.filter(function(value){
           return Object.keys(value).some(function(key){
-            if(key === "name" || key === "city" || key === "other_address" || key === "access", key === "prefecture"){
+            if(key === "name" || key === "city" || key === "other_address" || key === "access" || key === "prefecture"){
               if(key === "access" && value["access"].match(/.+?[0-9]分|.+?[0-9]km/)){
                 value["access"] = value["access"].substr(0,value["access"].search("[0-9]分|km")+2);
               }
@@ -518,12 +517,17 @@ export default {
       e.currentTarget.className += " prefecture-active";
     },
     cafeChainSearch: function(e){
-      this.isCafeChain = e.currentTarget.innerText;
-      // 指定のカフェチェーン店以外はActiveクラスを除く
-      console.log(this.isCafeChain);
+      var selectCafeName = e.currentTarget.innerText
+      //(例えば)「ドトールコーヒー」が含まれるもの全て検索するため
+      // 系列店を全て検索するよう「系列」と言う文字を削除する
+      if ( selectCafeName.indexOf('系列') != -1) {
+        selectCafeName = selectCafeName.replace( /系列/g , "" ) ;
+      }
+      this.isCafeChain = this.isCafeChain === selectCafeName ? '' : selectCafeName;
       this.refreshFilter();
+      // 指定のカフェチェーン店以外はActiveクラスを除く
       $(".searchs-block").find(".cafe-chain-active").removeClass("cafe-chain-active");
-      e.currentTarget.className += " cafe-chain-active";
+      if(this.isCafeChain) e.currentTarget.className += " cafe-chain-active";
     },
     resetFilter: function(){
       this.onSocket= false
