@@ -168,7 +168,7 @@
     </div>
     <ul id="slide-out" class="sidenav collapsible searchs-block">
       <li class="search-block">
-        <h3 class="search-block-title collapsible-header">都道府県から検索</h3>
+        <h3 class="search-block-title collapsible-header">都道府県で絞込み</h3>
         <div class="collapsible-body">
           <ul class="collapsible">
             <li v-for="region in regions" class="regions">
@@ -187,7 +187,7 @@
         </div>
       </li>
       <li class="search-block">
-        <h3 class="search-block-title collapsible-header">お店から検索</h3>
+        <h3 class="search-block-title collapsible-header">チェーン店から絞込み</h3>
         <div class="collapsible-body">
           <ul class="collection">
             <li v-for="cafe in cafes"
