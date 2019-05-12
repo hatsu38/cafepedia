@@ -1,7 +1,10 @@
 <template>
   <div id="store_detail">
-    <header class="center white-text" id="top_header">
-      <router-link to="/" class="white-text">
+    <header class="white-text" id="top_header">
+      <div  data-target="slide-out" class="sidenav-trigger menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <router-link to="/" class="white-text center site-name">
         <i class="fas fa-coffee"></i>
         <h1 class="logo">カフェペディア</h1>
       </router-link>
