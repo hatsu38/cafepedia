@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require "csv"
+require 'zip'
+
+
 User.create(:email => 'toy.wonder70@gmail.com', :password => ENV["ADMIN_PASSWORD"]) unless User.exists?
 mainstore_array = [["スターバックス","./app/assets/images/starbacks_logo.png"],
                    ["ドトールコーヒー","./app/assets/images/doutor/doutor_logo.jpg"],
