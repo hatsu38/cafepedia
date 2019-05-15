@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_14_115919) do
+ActiveRecord::Schema.define(version: 2019_05_15_062707) do
 
   create_table "cities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "prefecture_id"
+    t.bigint "pref_id"
     t.string "name", limit: 16
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["pref_id"], name: "index_cities_on_pref_id"
   end
 
   create_table "inquiries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -44,7 +45,7 @@ ActiveRecord::Schema.define(version: 2019_05_14_115919) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "prefs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", limit: 4
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -71,7 +72,9 @@ ActiveRecord::Schema.define(version: 2019_05_14_115919) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_open", default: false, null: false
+    t.bigint "pref_id", default: 13, null: false
     t.index ["mainstore_id"], name: "index_stores_on_mainstore_id"
+    t.index ["pref_id"], name: "index_stores_on_pref_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -86,5 +89,7 @@ ActiveRecord::Schema.define(version: 2019_05_14_115919) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cities", "prefs"
   add_foreign_key "stores", "mainstores"
+  add_foreign_key "stores", "prefs"
 end

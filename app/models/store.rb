@@ -2,4 +2,5 @@
 
 class Store < ApplicationRecord
   belongs_to :mainstore
+  belongs_to :pref
 end
