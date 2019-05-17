@@ -7,6 +7,7 @@ export default new VueRouter({
   mode: 'history',
   routes: [
     { path: '/', component: Index },
+    { path: '/:name', component: Index },
     { path: '/stores/:id', component: Show },
   ],
 })
