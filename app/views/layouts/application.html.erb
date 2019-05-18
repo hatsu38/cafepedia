@@ -68,6 +68,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="manifest" href="/manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes"></head>
+    <% if Rails.env.production? %>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-1127095554868031",
+              enable_page_level_ads: true
+        });
+    </script>
+    <% end %>
   <body>
     <%#= render 'shared/header' %>
     <%= yield %>
