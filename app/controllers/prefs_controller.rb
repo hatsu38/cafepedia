@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PrefsController < ApplicationController
   def show
     @pref = Pref.find_by(name: params[:name])

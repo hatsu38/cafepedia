@@ -4,6 +4,6 @@ json.set! :prefs do
   json.array! @prefs do |pref|
     json.extract! pref,
       :id,
-      :name,
+      :name
   end
 end

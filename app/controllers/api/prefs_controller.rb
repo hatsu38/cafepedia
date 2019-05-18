@@ -1,5 +1,6 @@
-class Api::PrefsController < ApplicationController
+# frozen_string_literal: true
 
+class Api::PrefsController < ApplicationController
   def index
     @prefs = Pref.all
   end
