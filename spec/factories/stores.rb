@@ -16,6 +16,11 @@ FactoryBot.define do
     socket { true }
     smoking { true }
     iccard { true }
+    lat { 0 }
+    lng { 0 }
     mainstore_id { 1 }
+    is_open { true }
+    association :pref
+    association :mainstore
   end
 end
