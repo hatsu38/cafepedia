@@ -3,16 +3,16 @@
 require 'rails_helper'
 
 RSpec.describe Store, type: :model do
-  before do
-    @mainstore = create(:mainstore)
-    @store = @mainstore.stores.last
+  describe '.create' do
+    it '生成できる' do
+      expect(create(:store)).to be_present
+    end
   end
 
-  it 'storeが作成されていること' do
-    expect(@store.present?).to eq(true)
-  end
-
-  it 'Mainstoreに紐づいていること' do
-    expect(@store.mainstore.id).to eq(@mainstore.id)
+  describe 'validations' do
+    let(:store) { create(:store) }
+    it 'is valid' do
+      expect(store).to be_valid
+    end
   end
 end
